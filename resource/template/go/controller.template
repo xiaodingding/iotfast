@@ -1,0 +1,109 @@
+// ==========================================================================
+// 物联网快速开发自动生成控制器相关代码，只生成一次，按需修改,再次生成不会覆盖.
+// 生成日期：{{.table.CreateTime}}
+// 生成路径: {{.table.PackageName}}/controller/{{.table.BusinessName}}.go
+// 生成人：{{.table.FunctionAuthor}}
+// ==========================================================================
+////
+{{$structName := .table.BusinessName | CaseCamelLower}}
+
+package controller
+
+{{$hasGStr:=false}}
+{{$gjsonTag:=false}}
+{{$libTag:=false}}
+{{range $index,$column:=.table.Columns}}
+{{if eq $column.HtmlType "checkbox"}}
+{{$hasGStr = true}}
+{{else if eq $column.HtmlType "images" "file" "files"}}
+{{$gjsonTag = true}}
+{{$libTag = true}}
+{{end}}
+{{end}}
+
+import (
+    "context"
+    "iotfast/api/v1/{{$.table.ModuleName}}"
+    systemConsts "iotfast/internal/app/system/consts"
+    {{if ne $.table.ModuleName "system"}}
+    sysApi "iotfast/app/system/api"
+    {{end}}
+    {{if $libTag}}
+    "iotfast/library"
+    {{end}}
+    "{{.table.PackageName}}/dao"
+    "{{.table.PackageName}}/service"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/util/gvalid"
+    {{if $hasGStr}}
+    "github.com/gogf/gf/text/gstr"
+    {{end}}
+    {{if $gjsonTag}}
+    "github.com/gogf/gf/encoding/gjson"
+    {{end}}
+)
+
+type {{.table.ClassName| CaseCamelLower}}Controller struct {
+    //{{if ne $.table.ModuleName "system"}}
+    //sysApi.SystemBase
+    //{{else}}
+    //SystemBase
+    //{{end}}
+    BaseController
+}
+
+var {{.table.ClassName}} = {{.table.ClassName| CaseCamelLower}}Controller{}
+
+// List 列表
+func (c *{{.table.ClassName| CaseCamelLower}}Controller) List(ctx context.Context, req *{{.table.ModuleName}}.{{.table.ClassName}}SearchReq) (res *{{.table.ModuleName}}.{{.table.ClassName}}SearchRes, err error){
+	res = &{{.table.ModuleName}}.{{.table.ClassName}}SearchRes{}
+    if req.PageNum == 0 {
+        req.PageNum = 1
+    }
+    if req.PageSize == 0 {
+        req.PageSize = systemConsts.PageSize
+    }
+    res.CurrentPage = req.PageNum
+	res.Total, _, res.List, err = service.{{.table.ClassName}}().List(ctx, req)
+    return
+}
+
+// Add 添加
+func (c *{{.table.ClassName| CaseCamelLower}}Controller) Add(ctx context.Context,req *{{.table.ModuleName}}.{{.table.ClassName}}AddReq)(res *{{.table.ModuleName}}.{{.table.ClassName}}AddRes, err error) {
+    err = service.{{.table.ClassName}}().Add(ctx, req)
+    return
+}
+
+
+// Get 获取
+func (c *{{.table.ClassName| CaseCamelLower}}Controller) Get(ctx context.Context,  req *{{.table.ModuleName}}.{{.table.ClassName}}GetReq) (res *{{.table.ModuleName}}.{{.table.ClassName}}GetRes, err error) {
+	res = &{{.table.ModuleName}}.{{.table.ClassName}}GetRes{}
+    res.{{.table.ClassName}}, err = service.{{.table.ClassName}}().Get(ctx, int64(req.Id))
+    return
+}
+
+// Edit 修改
+func (c *{{.table.ClassName| CaseCamelLower}}Controller) Edit(ctx context.Context, req *{{.table.ModuleName}}.{{.table.ClassName}}EditReq)  (res *{{.table.ModuleName}}.{{.table.ClassName}}EditRes, err error){
+    err = service.{{.table.ClassName}}().Edit(ctx, req)
+    return
+}
+
+
+// Delete 删除
+func (c *{{.table.ClassName| CaseCamelLower}}Controller) Delete(ctx context.Context,  req *{{.table.ModuleName}}.{{.table.ClassName}}DeleteReq) (res *{{.table.ModuleName}}.{{.table.ClassName}}DeleteRes, err error) {
+	err = service.{{.table.ClassName}}().DeleteByIds(ctx,  req.Ids)
+	return
+}
+
+{{range $index,$column:= .table.Columns}}
+{{if and (HasSuffix $column.ColumnName "status") (eq $column.IsList "1") }}
+// Change{{$column.GoField}} 修改状态
+func (c *{{$.table.ClassName| CaseCamelLower}}Controller) Change{{$column.GoField}}(ctx context.Context,  req *{{$.table.ModuleName}}.{{$.table.ClassName}}StatusReq)(res *{{$.table.ModuleName}}.{{$.table.ClassName}}StatusRes, err error) {
+    res = &{{$.table.ModuleName}}.{{$.table.ClassName}}StatusRes{}
+	err = service.{{$.table.ClassName}}().Change{{$column.GoField}}(ctx, req)
+    return
+	   
+}
+{{end}}
+{{end}}
