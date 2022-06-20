@@ -2,7 +2,7 @@
 * @desc:错误处理
 * @url:www.ddsiot.cn
 * @Author: dwx
-* @Date:   2022/3/2 14:53
+* @Date:   2022/5/2 14:53
  */
 
 package liberr
@@ -13,7 +13,7 @@ import (
 	"github.com/gogf/gf/v2/frame/g"
 )
 
-func ErrIsNil(ctx context.Context, err error, msg ...string) {
+func ErrPrint(ctx context.Context, err error, msg ...string) {
 	if !g.IsNil(err) {
 		if len(msg) > 0 {
 			g.Log().Error(ctx, err.Error())
@@ -24,7 +24,7 @@ func ErrIsNil(ctx context.Context, err error, msg ...string) {
 	}
 }
 
-func ValueIsNil(value interface{}, msg string) {
+func NilErrPanic(value interface{}, msg string) {
 	if g.IsNil(value) {
 		panic(msg)
 	}

@@ -2,7 +2,7 @@
 * @desc:登录日志处理
 * @url:www.ddsiot.cn
 * @Author: dwx
-* @Date:   2022/3/8 11:42
+* @Date:   2022/5/8 11:42
  */
 
 package service
@@ -86,9 +86,9 @@ func (s *sysLoginLogImpl) List(ctx context.Context, req *system.LoginLogSearchRe
 	}
 	err = g.Try(func() {
 		res.Total, err = m.Count()
-		liberr.ErrIsNil(ctx, err, "获取日志失败")
+		liberr.ErrPrint(ctx, err, "获取日志失败")
 		err = m.Page(req.PageNum, req.PageSize).Order(order).Scan(&res.List)
-		liberr.ErrIsNil(ctx, err, "获取日志数据失败")
+		liberr.ErrPrint(ctx, err, "获取日志数据失败")
 	})
 	return
 }
@@ -96,7 +96,7 @@ func (s *sysLoginLogImpl) List(ctx context.Context, req *system.LoginLogSearchRe
 func (s *sysLoginLogImpl) DeleteLoginLogByIds(ctx context.Context, ids []int) (err error) {
 	err = g.Try(func() {
 		_, err = dao.SysLoginLog.Ctx(ctx).Delete("info_id in (?)", ids)
-		liberr.ErrIsNil(ctx, err, "删除失败")
+		liberr.ErrPrint(ctx, err, "删除失败")
 	})
 	return
 }
@@ -104,7 +104,7 @@ func (s *sysLoginLogImpl) DeleteLoginLogByIds(ctx context.Context, ids []int) (e
 func (s *sysLoginLogImpl) ClearLoginLog(ctx context.Context) (err error) {
 	err = g.Try(func() {
 		_, err = g.DB().Ctx(ctx).Exec(ctx, "truncate "+dao.SysLoginLog.Table())
-		liberr.ErrIsNil(ctx, err, "清除失败")
+		liberr.ErrPrint(ctx, err, "清除失败")
 	})
 	return
 }

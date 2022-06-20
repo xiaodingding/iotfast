@@ -69,13 +69,13 @@ func (s *deptImpl) GetFromCache(ctx context.Context) (list []*entity.SysDept, er
 		//从缓存获取
 		iList := cache.GetOrSetFuncLock(ctx, consts.CacheSysDept, func(ctx context.Context) (value interface{}, err error) {
 			err = dao.SysDept.Ctx(ctx).Scan(&list)
-			liberr.ErrIsNil(ctx, err, "获取部门列表失败")
+			liberr.ErrPrint(ctx, err, "获取部门列表失败")
 			value = list
 			return
 		}, 0, consts.CacheSysAuthTag)
 		if iList != nil {
 			err = gconv.Struct(iList, &list)
-			liberr.ErrIsNil(ctx, err)
+			liberr.ErrPrint(ctx, err)
 		}
 	})
 	return
@@ -94,7 +94,7 @@ func (s *deptImpl) Add(ctx context.Context, req *system.DeptAddReq) (err error) 
 			Status:    req.Status,
 			CreatedBy: Context().GetUserId(ctx),
 		})
-		liberr.ErrIsNil(ctx, err, "添加部门失败")
+		liberr.ErrPrint(ctx, err, "添加部门失败")
 		// 删除缓存
 		commonService.Cache().Remove(ctx, consts.CacheSysDept)
 	})
@@ -114,7 +114,7 @@ func (s *deptImpl) Edit(ctx context.Context, req *system.DeptEditReq) (err error
 			Status:    req.Status,
 			UpdatedBy: Context().GetUserId(ctx),
 		})
-		liberr.ErrIsNil(ctx, err, "修改部门失败")
+		liberr.ErrPrint(ctx, err, "修改部门失败")
 		// 删除缓存
 		commonService.Cache().Remove(ctx, consts.CacheSysDept)
 	})
@@ -125,7 +125,7 @@ func (s *deptImpl) Delete(ctx context.Context, id int64) (err error) {
 	err = g.Try(func() {
 		var list []*entity.SysDept
 		err = dao.SysDept.Ctx(ctx).Scan(&list)
-		liberr.ErrIsNil(ctx, err, "不存在部门信息")
+		liberr.ErrPrint(ctx, err, "不存在部门信息")
 		children := s.FindSonByParentId(list, id)
 		ids := make([]int64, 0, len(list))
 		for _, v := range children {
@@ -133,7 +133,7 @@ func (s *deptImpl) Delete(ctx context.Context, id int64) (err error) {
 		}
 		ids = append(ids, id)
 		_, err = dao.SysDept.Ctx(ctx).Where(dao.SysDept.Columns().DeptId+" in (?)", ids).Delete()
-		liberr.ErrIsNil(ctx, err, "删除部门失败")
+		liberr.ErrPrint(ctx, err, "删除部门失败")
 		// 删除缓存
 		commonService.Cache().Remove(ctx, consts.CacheSysDept)
 	})

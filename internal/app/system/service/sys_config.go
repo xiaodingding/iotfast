@@ -2,7 +2,7 @@
 * @desc:系统参数配置
 * @url:www.ddsiot.cn
 * @Author: dwx<dwxdyx@qq.com>
-* @Date:   2022/3/18 11:55
+* @Date:   2022/5/18 11:55
  */
 
 package service
@@ -60,7 +60,7 @@ func (s *configTmpl) List(ctx context.Context, req *system.ConfigSearchReq) (res
 			}
 		}
 		res.Total, err = m.Count()
-		liberr.ErrIsNil(ctx, err, "获取数据失败")
+		liberr.ErrPrint(ctx, err, "获取数据失败")
 		if req.PageNum == 0 {
 			req.PageNum = 1
 		}
@@ -69,7 +69,7 @@ func (s *configTmpl) List(ctx context.Context, req *system.ConfigSearchReq) (res
 			req.PageSize = systemConsts.PageSize
 		}
 		err = m.Page(req.PageNum, req.PageSize).Order("config_id asc").Scan(&res.List)
-		liberr.ErrIsNil(ctx, err, "获取数据失败")
+		liberr.ErrPrint(ctx, err, "获取数据失败")
 	})
 	return
 }
@@ -77,7 +77,7 @@ func (s *configTmpl) List(ctx context.Context, req *system.ConfigSearchReq) (res
 func (s *configTmpl) Add(ctx context.Context, req *system.ConfigAddReq, userId uint64) (err error) {
 	err = g.Try(func() {
 		err = s.CheckConfigKeyUnique(ctx, req.ConfigKey)
-		liberr.ErrIsNil(ctx, err)
+		liberr.ErrPrint(ctx, err)
 		_, err = dao.SysConfig.Ctx(ctx).Insert(do.SysConfig{
 			ConfigName:  req.ConfigName,
 			ConfigKey:   req.ConfigKey,
@@ -86,7 +86,7 @@ func (s *configTmpl) Add(ctx context.Context, req *system.ConfigAddReq, userId u
 			CreateBy:    userId,
 			Remark:      req.Remark,
 		})
-		liberr.ErrIsNil(ctx, err, "添加系统参数失败")
+		liberr.ErrPrint(ctx, err, "添加系统参数失败")
 		//清除缓存
 		commonService.Cache().RemoveByTag(ctx, consts.CacheSysConfigTag)
 	})
@@ -102,9 +102,9 @@ func (s *configTmpl) CheckConfigKeyUnique(ctx context.Context, configKey string,
 			m = m.Where(dao.SysConfig.Columns().ConfigId+" != ?", configId[0])
 		}
 		err = m.Scan(&data)
-		liberr.ErrIsNil(ctx, err, "校验失败")
+		liberr.ErrPrint(ctx, err, "校验失败")
 		if data != nil {
-			liberr.ErrIsNil(ctx, errors.New("参数键名重复"))
+			liberr.ErrPrint(ctx, errors.New("参数键名重复"))
 		}
 	})
 	return
@@ -115,7 +115,7 @@ func (s *configTmpl) Get(ctx context.Context, id int) (res *system.ConfigGetRes,
 	res = new(system.ConfigGetRes)
 	err = g.Try(func() {
 		err = dao.SysConfig.Ctx(ctx).WherePri(id).Scan(&res.Data)
-		liberr.ErrIsNil(ctx, err, "获取系统参数失败")
+		liberr.ErrPrint(ctx, err, "获取系统参数失败")
 	})
 	return
 }
@@ -124,7 +124,7 @@ func (s *configTmpl) Get(ctx context.Context, id int) (res *system.ConfigGetRes,
 func (s *configTmpl) Edit(ctx context.Context, req *system.ConfigEditReq, userId uint64) (err error) {
 	err = g.Try(func() {
 		err = s.CheckConfigKeyUnique(ctx, req.ConfigKey, req.ConfigId)
-		liberr.ErrIsNil(ctx, err)
+		liberr.ErrPrint(ctx, err)
 		_, err = dao.SysConfig.Ctx(ctx).WherePri(req.ConfigId).Update(do.SysConfig{
 			ConfigName:  req.ConfigName,
 			ConfigKey:   req.ConfigKey,
@@ -133,7 +133,7 @@ func (s *configTmpl) Edit(ctx context.Context, req *system.ConfigEditReq, userId
 			UpdateBy:    userId,
 			Remark:      req.Remark,
 		})
-		liberr.ErrIsNil(ctx, err, "修改系统参数失败")
+		liberr.ErrPrint(ctx, err, "修改系统参数失败")
 		//清除缓存
 		commonService.Cache().RemoveByTag(ctx, consts.CacheSysConfigTag)
 	})
@@ -144,7 +144,7 @@ func (s *configTmpl) Edit(ctx context.Context, req *system.ConfigEditReq, userId
 func (s *configTmpl) Delete(ctx context.Context, ids []int) (err error) {
 	err = g.Try(func() {
 		_, err = dao.SysConfig.Ctx(ctx).Delete(dao.SysConfig.Columns().ConfigId+" in (?)", ids)
-		liberr.ErrIsNil(ctx, err, "删除失败")
+		liberr.ErrPrint(ctx, err, "删除失败")
 		//清除缓存
 		commonService.Cache().RemoveByTag(ctx, consts.CacheSysConfigTag)
 	})

@@ -59,7 +59,7 @@ func (s *jobImpl) List(ctx context.Context, req *system.SysJobSearchReq) (total,
 	}
 	err = g.Try(func() {
 		total, err = m.Count()
-		liberr.ErrIsNil(ctx, err, "获取SysJob列表失败")
+		liberr.ErrPrint(ctx, err, "获取SysJob列表失败")
 		if err != nil {
 			g.Log().Error(ctx, err)
 			err = gerror.New("获取总行数失败")

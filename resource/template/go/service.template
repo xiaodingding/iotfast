@@ -127,7 +127,7 @@ func (s *{{$structName}}Impl) List(ctx context.Context,req *{{.table.ModuleName}
     err = g.Try(func() {
         total, err = m.Count()
         
-        liberr.ErrIsNil(ctx, err, "获取{{.table.ClassName}}列表失败")
+        liberr.ErrPrint(ctx, err, "获取{{.table.ClassName}}列表失败")
         
         if err != nil {
             g.Log().Error(ctx, err)

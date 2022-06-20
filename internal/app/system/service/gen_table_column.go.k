@@ -40,7 +40,7 @@ func SelectDbTableColumnsByName(ctx context.Context, tableName string) ([]*entit
 	sql += " and " + gdb.FormatSqlWithArgs(" table_name=? ", []interface{}{tableName}) + " order by ordinal_position ASC "
 	result, err := db.GetAll(ctx, sql)
 	if err != nil {
-		liberr.ErrIsNil(ctx, err)
+		liberr.ErrPrint(ctx, err)
 		return nil, gerror.New("查询列信息失败")
 	}
 	err = result.Structs(&entity)
@@ -96,7 +96,7 @@ func SelectGenTableColumnListByTableId(ctx context.Context, tableId int) ([]*ent
 	var list []*entity.GenTableColumn
 	result, err := dao.GenTableColumn.Ctx(ctx).Where(dao.GenTableColumn.Columns().TableId, tableId).Order(dao.GenTableColumn.Columns().Sort + " asc, " + dao.GenTableColumn.Columns().ColumnId + " asc").All()
 	if err != nil {
-		liberr.ErrIsNil(ctx, err, "获取字段信息出错")
+		liberr.ErrPrint(ctx, err, "获取字段信息出错")
 		return nil, gerror.New("获取字段信息出错")
 	}
 	err = result.Structs(&list)

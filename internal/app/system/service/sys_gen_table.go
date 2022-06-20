@@ -2,7 +2,7 @@
 * @desc:代码生成功能
 * @url:www.ddsiot.cn
 * @Author: dwx
-* @Date:   2022/3/8 11:42
+* @Date:   2022/5/8 11:42
  */
 
 package service
@@ -469,7 +469,7 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 		var genData g.MapStrStr
 		var extendData *model.SysGenTableEntityExtend
 		genData, extendData, err = s.GenData(ctx, id)
-		liberr.ErrIsNil(ctx, err, "生成代码失败")
+		liberr.ErrPrint(ctx, err, "生成代码失败")
 		packageName := gstr.SubStr(extendData.PackageName, gstr.Pos(extendData.PackageName, "/"))
 		businessName := gstr.CaseCamelLower(extendData.BusinessName)
 		for key, code := range genData {
@@ -479,40 +479,40 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 			case "goApi":
 				path := strings.Join([]string{curDir, goApiDir, "/" + extendData.ModuleName + "/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "controller":
 				path = strings.Join([]string{curDir, packageName, "/controller/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao":
 				path = strings.Join([]string{curDir, packageName, "/dao/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao_internal":
 				path = strings.Join([]string{curDir, packageName, "/dao/internal/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "model_do":
 				path = strings.Join([]string{curDir, packageName, "/model/do/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "model_entity":
 				path = strings.Join([]string{curDir, packageName, "/model/entity/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "router":
 				path = strings.Join([]string{curDir, packageName, "/router/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "service":
 				path = strings.Join([]string{curDir, packageName, "/service/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "sql":
 				path = strings.Join([]string{curDir, "/data/gen_sql/", packageName, "/", extendData.TableName, ".sql"}, "")
 				hasSql := gfile.Exists(path)
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 				if !hasSql {
 					//第一次生成则向数据库写入菜单数据
 					//err = s.writeDb(ctx, path)
@@ -529,7 +529,7 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 					path = strings.Join([]string{frontDir, "/src/views/plugins/", extendData.ModuleName, "/", businessName, "/index.vue"}, "")
 				}
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 
 			case "jsApi":
 				path = strings.Join([]string{frontDir, "/src/api/", extendData.ModuleName, "/", businessName, ".ts"}, "")
@@ -537,14 +537,14 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 					path = strings.Join([]string{frontDir, "/src/api/plugins/", extendData.ModuleName, "/", businessName, ".ts"}, "")
 				}
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			}
 			g.Log().Printf(ctx, "curDir:%s, packageName:%s, key:%s, path:%s", curDir, packageName, key, path)
 
 		}
 		//生成对应的模块路由
 		err = s.genModuleRouter(curDir, extendData.ModuleName, extendData.PackageName)
-		liberr.ErrIsNil(ctx, err, "生成模块路由失败")
+		liberr.ErrPrint(ctx, err, "生成模块路由失败")
 	}
 	return
 }
@@ -553,7 +553,7 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 func (s *sysGenTableImpl) BatchGenCode(ctx context.Context, tableIds []int64, r *ghttp.Request) (err error) {
 
 	if len(tableIds) < 1 {
-		liberr.ErrIsNil(ctx, err, "请选择要生成的表")
+		liberr.ErrPrint(ctx, err, "请选择要生成的表")
 		err = gerror.New("请选择要生成的表")
 		return err
 	}
@@ -567,7 +567,7 @@ func (s *sysGenTableImpl) BatchGenCode(ctx context.Context, tableIds []int64, r 
 	for _, id := range tableIds {
 		genCode, extendData, err = s.GenData(ctx, id)
 		if err != nil {
-			liberr.ErrIsNil(ctx, err, "生成代码失败")
+			liberr.ErrPrint(ctx, err, "生成代码失败")
 			err = gerror.New("生成代码失败")
 			return err
 		}
@@ -580,40 +580,40 @@ func (s *sysGenTableImpl) BatchGenCode(ctx context.Context, tableIds []int64, r 
 			case "goApi":
 				path := strings.Join([]string{dataFilePath, packageName, "/api/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "controller":
 				path := strings.Join([]string{dataFilePath, packageName, "/control/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao":
 				path := strings.Join([]string{dataFilePath, packageName, "/dao/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao_internal":
 				path := strings.Join([]string{dataFilePath, packageName, "/dao/internal/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "model_do":
 				path := strings.Join([]string{dataFilePath, packageName, "/model/do/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "model_entity":
 				path := strings.Join([]string{dataFilePath, packageName, "/model/entity/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "router":
 				path := strings.Join([]string{dataFilePath, packageName, "/router/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "service":
 				path := strings.Join([]string{dataFilePath, packageName, "/service/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "sql":
 				path := strings.Join([]string{dataFilePath, "/data/gen_sql/", packageName, "/", extendData.TableName, ".sql"}, "")
 				hasSql := gfile.Exists(path)
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 				if !hasSql {
 					//第一次生成则向数据库写入菜单数据
 					//err = s.writeDb(ctx, path)
@@ -630,14 +630,14 @@ func (s *sysGenTableImpl) BatchGenCode(ctx context.Context, tableIds []int64, r 
 					path = strings.Join([]string{dataFilePath, "/vue/plugins/", extendData.ModuleName, "/", businessName, "/list/index.vue"}, "")
 				}
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "jsApi":
 				path := strings.Join([]string{dataFilePath, "/vue/api/", extendData.ModuleName, "/", businessName, ".js"}, "")
 				if gstr.ContainsI(extendData.PackageName, "plugins") {
 					path = strings.Join([]string{dataFilePath, "/vue/api/plugins/", extendData.ModuleName, "/", businessName, ".js"}, "")
 				}
 				err = s.createFile(path, code, false)
-				liberr.ErrIsNil(ctx, err, "创建文件(%s)失败", path)
+				liberr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			}
 		}
 
@@ -683,7 +683,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 		return
 	}
 	if extendData == nil {
-		liberr.ErrIsNil(ctx, err, "表格数据不存在")
+		liberr.ErrPrint(ctx, err, "表格数据不存在")
 		err = gerror.New("表格数据不存在")
 		return
 	}
@@ -746,7 +746,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpDao, err = view.Parse(ctx, "go/dao.template", tplData); err == nil {
 		daoValue = tmpDao
 		daoValue, err = s.trimBreak(daoValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -756,7 +756,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpInternalDao, err = view.Parse(ctx, "go/dao_internal.template", tplData); err == nil {
 		daoInternalValue = tmpInternalDao
 		daoInternalValue, err = s.trimBreak(daoInternalValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -766,7 +766,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpModelDo, err = view.Parse(ctx, "go/model_do.template", tplData); err == nil {
 		modelDoValue = tmpModelDo
 		modelDoValue, err = s.trimBreak(modelDoValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -776,7 +776,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpModelEntity, err = view.Parse(ctx, "go/model_entity.template", tplData); err == nil {
 		modelEntityValue = tmpModelEntity
 		modelEntityValue, err = s.trimBreak(modelEntityValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -786,7 +786,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpController, err = view.Parse(ctx, "go/controller.template", tplData); err == nil {
 		controllerValue = tmpController
 		controllerValue, err = s.trimBreak(controllerValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -797,7 +797,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpgoApi, err = view.Parse(ctx, "go/api.template", tplData); err == nil {
 		goApiValue = tmpgoApi
 		goApiValue, err = s.trimBreak(goApiValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -808,7 +808,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpService, err = view.Parse(ctx, "go/service.template", tplData); err == nil {
 		serviceValue = tmpService
 		serviceValue, err = s.trimBreak(serviceValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -819,7 +819,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	// if tmpRouter, err = view.Parse(ctx, "go/router.template", tplData); err == nil {
 	// 	routerValue = tmpRouter
 	// 	routerValue, err = s.trimBreak(routerValue)
-	// 	liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+	// 	liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	// } else {
 	// 	return
 	// }
@@ -830,7 +830,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpSql, err = view.Parse(ctx, "sql/sql.template", tplData); err == nil {
 		sqlValue = tmpSql
 		sqlValue, err = s.trimBreak(sqlValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -841,7 +841,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpJsApi, err = view.Parse(ctx, "js/api.template", tplData); err == nil {
 		jsApiValue = tmpJsApi
 		jsApiValue, err = s.trimBreak(jsApiValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -857,7 +857,7 @@ func (s *sysGenTableImpl) GenData(ctx context.Context, tableId int64) (data g.Ma
 	if tmpVue, err = view.Parse(ctx, tmpFile, tplData); err == nil {
 		vueValue = tmpVue
 		vueValue, err = s.trimBreak(vueValue)
-		liberr.ErrIsNil(ctx, err, "删除文件多余行失败")
+		liberr.ErrPrint(ctx, err, "删除文件多余行失败")
 	} else {
 		return
 	}
@@ -896,7 +896,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 	var fi *os.File
 	fi, err = os.Open(path)
 	if err != nil {
-		liberr.ErrIsNil(ctx, err, "文件(%s)打开失败", path)
+		liberr.ErrPrint(ctx, err, "文件(%s)打开失败", path)
 		return
 	}
 	defer fi.Close()
@@ -908,7 +908,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 	var tx *gdb.TX
 	tx, err = g.DB().Begin(ctx)
 	if err != nil {
-		liberr.ErrIsNil(ctx, err, "事物初始化失败")
+		liberr.ErrPrint(ctx, err, "事物初始化失败")
 		return
 	}
 	for {
@@ -943,7 +943,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 				}
 				if gstr.ContainsI(str, "@parentId") {
 					id, err = res.LastInsertId()
-					liberr.ErrIsNil(ctx, err, "insert failed")
+					liberr.ErrPrint(ctx, err, "insert failed")
 				}
 			}
 			sqlStr = append(sqlStr, str)

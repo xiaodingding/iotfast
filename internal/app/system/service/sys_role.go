@@ -2,7 +2,7 @@
 * @desc:角色处理
 * @url:www.ddsiot.cn
 * @Author: dwx
-* @Date:   2022/3/9 10:31
+* @Date:   2022/5/9 10:31
  */
 
 package service
@@ -11,7 +11,7 @@ import (
 	"context"
 	"iotfast/api/v1/system"
 	commonService "iotfast/internal/app/common/service"
-	
+
 	"iotfast/internal/app/system/consts"
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model/do"
@@ -53,7 +53,7 @@ func (s *roleImpl) GetRoleListSearch(ctx context.Context, req *system.RoleListRe
 			model = model.Where("status", gconv.Int(req.Status))
 		}
 		res.Total, err = model.Count()
-		liberr.ErrIsNil(ctx, err, "获取角色数据失败")
+		liberr.ErrPrint(ctx, err, "获取角色数据失败")
 		if req.PageNum == 0 {
 			req.PageNum = 1
 		}
@@ -62,7 +62,7 @@ func (s *roleImpl) GetRoleListSearch(ctx context.Context, req *system.RoleListRe
 			req.PageSize = consts.PageSize
 		}
 		err = model.Page(res.CurrentPage, req.PageSize).Order("id asc").Scan(&res.List)
-		liberr.ErrIsNil(ctx, err, "获取数据失败")
+		liberr.ErrPrint(ctx, err, "获取数据失败")
 	})
 	return
 }
@@ -86,7 +86,7 @@ func (s *roleImpl) getRoleListFromDb(ctx context.Context) (value interface{}, er
 		err = dao.SysRole.Ctx(ctx).
 			Order(dao.SysRole.Columns().ListOrder + " asc," + dao.SysRole.Columns().Id + " asc").
 			Scan(&v)
-		liberr.ErrIsNil(ctx, err, "获取角色数据失败")
+		liberr.ErrPrint(ctx, err, "获取角色数据失败")
 		value = v
 	})
 	return
@@ -96,11 +96,11 @@ func (s *roleImpl) getRoleListFromDb(ctx context.Context) (value interface{}, er
 func (s *roleImpl) AddRoleRule(ctx context.Context, ruleIds []uint, roleId int64) (err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		ruleIdsStr := gconv.Strings(ruleIds)
 		for _, v := range ruleIdsStr {
 			_, err = enforcer.AddPolicy(gconv.String(roleId), v, "All")
-			liberr.ErrIsNil(ctx, err)
+			liberr.ErrPrint(ctx, err)
 		}
 	})
 	return
@@ -110,9 +110,9 @@ func (s *roleImpl) AddRoleRule(ctx context.Context, ruleIds []uint, roleId int64
 func (s *roleImpl) DelRoleRule(ctx context.Context, roleId int64) (err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		_, err = enforcer.RemoveFilteredPolicy(0, gconv.String(roleId))
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 	})
 	return
 }
@@ -121,10 +121,10 @@ func (s *roleImpl) AddRole(ctx context.Context, req *system.RoleAddReq) (err err
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		err = g.Try(func() {
 			roleId, e := dao.SysRole.Ctx(ctx).TX(tx).InsertAndGetId(req)
-			liberr.ErrIsNil(ctx, e, "添加角色失败")
+			liberr.ErrPrint(ctx, e, "添加角色失败")
 			//添加角色权限
 			e = s.AddRoleRule(ctx, req.MenuIds, roleId)
-			liberr.ErrIsNil(ctx, e)
+			liberr.ErrPrint(ctx, e)
 			//清除缓存
 			commonService.Cache().Remove(ctx, consts.CacheSysRole)
 		})
@@ -136,7 +136,7 @@ func (s *roleImpl) AddRole(ctx context.Context, req *system.RoleAddReq) (err err
 func (s *roleImpl) Get(ctx context.Context, id uint) (res *entity.SysRole, err error) {
 	err = g.Try(func() {
 		err = dao.SysRole.Ctx(ctx).WherePri(id).Scan(&res)
-		liberr.ErrIsNil(ctx, err, "获取角色信息失败")
+		liberr.ErrPrint(ctx, err, "获取角色信息失败")
 	})
 	return
 }
@@ -145,7 +145,7 @@ func (s *roleImpl) Get(ctx context.Context, id uint) (res *entity.SysRole, err e
 func (s *roleImpl) GetFilteredNamedPolicy(ctx context.Context, id uint) (gpSlice []int, err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		gp := enforcer.GetFilteredNamedPolicy("p", 0, gconv.String(id))
 		gpSlice = make([]int, len(gp))
 		for k, v := range gp {
@@ -165,13 +165,13 @@ func (s *roleImpl) EditRole(ctx context.Context, req *system.RoleEditReq) (err e
 				Name:      req.Name,
 				Remark:    req.Remark,
 			}).Update()
-			liberr.ErrIsNil(ctx, e, "修改角色失败")
+			liberr.ErrPrint(ctx, e, "修改角色失败")
 			//删除角色权限
 			e = s.DelRoleRule(ctx, req.Id)
-			liberr.ErrIsNil(ctx, e)
+			liberr.ErrPrint(ctx, e)
 			//添加角色权限
 			e = s.AddRoleRule(ctx, req.MenuIds, req.Id)
-			liberr.ErrIsNil(ctx, e)
+			liberr.ErrPrint(ctx, e)
 			//清除缓存
 			commonService.Cache().Remove(ctx, consts.CacheSysRole)
 		})
@@ -185,11 +185,11 @@ func (s *roleImpl) DeleteByIds(ctx context.Context, ids []int64) (err error) {
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		err = g.Try(func() {
 			_, err = dao.SysRole.Ctx(ctx).TX(tx).Where(dao.SysRole.Columns().Id+" in(?)", ids).Delete()
-			liberr.ErrIsNil(ctx, err, "删除角色失败")
+			liberr.ErrPrint(ctx, err, "删除角色失败")
 			//删除角色权限
 			for _, v := range ids {
 				err = s.DelRoleRule(ctx, v)
-				liberr.ErrIsNil(ctx, err)
+				liberr.ErrPrint(ctx, err)
 			}
 			//清除缓存
 			commonService.Cache().Remove(ctx, consts.CacheSysRole)

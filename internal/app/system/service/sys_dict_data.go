@@ -2,7 +2,7 @@
 * @desc:字典数据
 * @url:www.ddsiot.cn
 * @Author: dwx<dwxdyx@qq.com>
-* @Date:   2022/3/18 11:55
+* @Date:   2022/5/18 11:55
  */
 
 package service
@@ -10,9 +10,9 @@ package service
 import (
 	"context"
 	"iotfast/api/v1/system"
+	commonService "iotfast/internal/app/common/service"
 	"iotfast/internal/app/system/consts"
 	systemConsts "iotfast/internal/app/system/consts"
-	commonService "iotfast/internal/app/common/service"
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model"
 	"iotfast/internal/app/system/model/do"
@@ -54,13 +54,13 @@ func (s dictDataImpl) GetDictWithDataByType(ctx context.Context, req *system.Get
 			//获取类型数据
 			err = dao.SysDictType.Ctx(ctx).Where(dao.SysDictType.Columns().DictType, req.DictType).
 				Where(dao.SysDictType.Columns().Status, 1).Fields(model.DictTypeRes{}).Scan(&dict.Info)
-			liberr.ErrIsNil(ctx, err, "获取字典类型失败")
+			liberr.ErrPrint(ctx, err, "获取字典类型失败")
 			err = dao.SysDictData.Ctx(ctx).Fields(model.DictDataRes{}).
 				Where(dao.SysDictData.Columns().DictType, req.DictType).
 				Order(dao.SysDictData.Columns().DictSort + " asc," +
 					dao.SysDictData.Columns().DictCode + " asc").
 				Scan(&dict.Values)
-			liberr.ErrIsNil(ctx, err, "获取字典数据失败")
+			liberr.ErrPrint(ctx, err, "获取字典数据失败")
 		})
 		value = dict
 		return
@@ -100,7 +100,7 @@ func (s dictDataImpl) List(ctx context.Context, req *system.DictDataSearchReq) (
 				m = m.Where(dao.SysDictData.Columns().DictType+" = ?", req.DictType)
 			}
 			res.Total, err = m.Count()
-			liberr.ErrIsNil(ctx, err, "获取字典数据失败")
+			liberr.ErrPrint(ctx, err, "获取字典数据失败")
 			if req.PageNum == 0 {
 				req.PageNum = 1
 			}
@@ -111,7 +111,7 @@ func (s dictDataImpl) List(ctx context.Context, req *system.DictDataSearchReq) (
 		}
 		err = m.Page(req.PageNum, req.PageSize).Order(dao.SysDictData.Columns().DictSort + " asc," +
 			dao.SysDictData.Columns().DictCode + " asc").Scan(&res.List)
-		liberr.ErrIsNil(ctx, err, "获取字典数据失败")
+		liberr.ErrPrint(ctx, err, "获取字典数据失败")
 	})
 	return
 }
@@ -130,7 +130,7 @@ func (s *dictDataImpl) Add(ctx context.Context, req *system.DictDataAddReq, user
 			CreateBy:  userId,
 			Remark:    req.Remark,
 		})
-		liberr.ErrIsNil(ctx, err, "添加字典数据失败")
+		liberr.ErrPrint(ctx, err, "添加字典数据失败")
 		//清除缓存
 		commonService.Cache().RemoveByTag(ctx, consts.CacheSysDictTag)
 	})
@@ -142,7 +142,7 @@ func (s *dictDataImpl) Get(ctx context.Context, dictCode uint) (res *system.Dict
 	res = new(system.DictDataGetRes)
 	err = g.Try(func() {
 		err = dao.SysDictData.Ctx(ctx).WherePri(dictCode).Scan(&res.Dict)
-		liberr.ErrIsNil(ctx, err, "获取字典数据失败")
+		liberr.ErrPrint(ctx, err, "获取字典数据失败")
 	})
 	return
 }
@@ -162,7 +162,7 @@ func (s *dictDataImpl) Edit(ctx context.Context, req *system.DictDataEditReq, us
 			UpdateBy:  userId,
 			Remark:    req.Remark,
 		})
-		liberr.ErrIsNil(ctx, err, "修改字典数据失败")
+		liberr.ErrPrint(ctx, err, "修改字典数据失败")
 		//清除缓存
 		commonService.Cache().RemoveByTag(ctx, consts.CacheSysDictTag)
 	})
@@ -173,7 +173,7 @@ func (s *dictDataImpl) Edit(ctx context.Context, req *system.DictDataEditReq, us
 func (s *dictDataImpl) Delete(ctx context.Context, ids []int) (err error) {
 	err = g.Try(func() {
 		_, err = dao.SysDictData.Ctx(ctx).Where(dao.SysDictData.Columns().DictCode+" in(?)", ids).Delete()
-		liberr.ErrIsNil(ctx, err, "删除字典数据失败")
+		liberr.ErrPrint(ctx, err, "删除字典数据失败")
 		//清除缓存
 		commonService.Cache().RemoveByTag(ctx, consts.CacheSysDictTag)
 	})

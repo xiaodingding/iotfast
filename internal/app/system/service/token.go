@@ -2,7 +2,7 @@
 * @desc:后台token处理
 * @url:www.ddsiot.cn
 * @Author: dwx
-* @Date:   2022/3/8 17:10
+* @Date:   2022/5/8 17:10
  */
 
 package service
@@ -36,7 +36,7 @@ func GfToken() commonService.IGToken {
 		if gftService.gT == nil {
 			ctx := gctx.New()
 			err := g.Cfg().MustGet(ctx, "gfToken").Struct(&gftService.options)
-			liberr.ErrIsNil(ctx, err)
+			liberr.ErrPrint(ctx, err)
 			gftService.gT = commonService.GToken(gftService.options)
 		}
 	}

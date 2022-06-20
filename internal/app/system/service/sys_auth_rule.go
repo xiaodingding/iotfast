@@ -2,7 +2,7 @@
 * @desc:菜单处理
 * @url:www.ddsiot.cn
 * @Author: dwx
-* @Date:   2022/3/11 15:07
+* @Date:   2022/5/11 15:07
  */
 
 package service
@@ -57,7 +57,7 @@ func (s *ruleImpl) GetMenuListSearch(ctx context.Context, req *system.RuleSearch
 			m = m.Where("component like ?", "%"+req.Component+"%")
 		}
 		err = m.Fields(model.SysAuthRuleInfoRes{}).Order("weigh desc,id asc").Scan(&res)
-		liberr.ErrIsNil(ctx, err, "获取菜单失败")
+		liberr.ErrPrint(ctx, err, "获取菜单失败")
 	})
 	return
 }
@@ -84,7 +84,7 @@ func (s *ruleImpl) GetMenuList(ctx context.Context) (list []*model.SysAuthRuleIn
 	iList := cache.GetOrSetFuncLock(ctx, consts.CacheSysAuthMenu, s.getMenuListFromDb, 0, consts.CacheSysAuthTag)
 	if iList != nil {
 		err = gconv.Struct(iList, &list)
-		liberr.ErrIsNil(ctx, err)
+		liberr.ErrPrint(ctx, err)
 	}
 	return
 }
@@ -96,7 +96,7 @@ func (s *ruleImpl) getMenuListFromDb(ctx context.Context) (value interface{}, er
 		//从数据库获取
 		err = dao.SysAuthRule.Ctx(ctx).
 			Fields(model.SysAuthRuleInfoRes{}).Order("weigh desc,id asc").Scan(&v)
-		liberr.ErrIsNil(ctx, err, "获取菜单数据失败")
+		liberr.ErrPrint(ctx, err, "获取菜单数据失败")
 		value = v
 	})
 	return
@@ -146,9 +146,9 @@ func (s *ruleImpl) Add(ctx context.Context, req *system.RuleAddReq) (err error) 
 				LinkUrl:   req.LinkUrl,
 			}
 			ruleId, e := dao.SysAuthRule.Ctx(ctx).TX(tx).InsertAndGetId(data)
-			liberr.ErrIsNil(ctx, e, "添加菜单失败")
+			liberr.ErrPrint(ctx, e, "添加菜单失败")
 			e = s.BindRoleRule(ctx, ruleId, req.Roles)
-			liberr.ErrIsNil(ctx, e, "添加菜单失败")
+			liberr.ErrPrint(ctx, e, "添加菜单失败")
 		})
 		return err
 	})
@@ -177,10 +177,10 @@ func (s *ruleImpl) menuNameExists(ctx context.Context, name string, id uint) boo
 func (s *ruleImpl) BindRoleRule(ctx context.Context, ruleId interface{}, roleIds []uint) (err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		for _, roleId := range roleIds {
 			_, err = enforcer.AddPolicy(fmt.Sprintf("%d", roleId), fmt.Sprintf("%d", ruleId), "All")
-			liberr.ErrIsNil(ctx, err)
+			liberr.ErrPrint(ctx, err)
 		}
 	})
 	return
@@ -189,7 +189,7 @@ func (s *ruleImpl) BindRoleRule(ctx context.Context, ruleId interface{}, roleIds
 func (s *ruleImpl) Get(ctx context.Context, id uint) (rule *entity.SysAuthRule, err error) {
 	err = g.Try(func() {
 		err = dao.SysAuthRule.Ctx(ctx).WherePri(id).Scan(&rule)
-		liberr.ErrIsNil(ctx, err, "获取菜单失败")
+		liberr.ErrPrint(ctx, err, "获取菜单失败")
 	})
 	return
 }
@@ -197,7 +197,7 @@ func (s *ruleImpl) Get(ctx context.Context, id uint) (rule *entity.SysAuthRule, 
 func (s *ruleImpl) GetMenuRoles(ctx context.Context, id uint) (roleIds []uint, err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		policies := enforcer.GetFilteredNamedPolicy("p", 1, gconv.String(id))
 		for _, policy := range policies {
 			roleIds = append(roleIds, gconv.Uint(policy[0]))
@@ -234,9 +234,9 @@ func (s *ruleImpl) Update(ctx context.Context, req *system.RuleUpdateReq) (err e
 				LinkUrl:   req.LinkUrl,
 			}
 			_, e := dao.SysAuthRule.Ctx(ctx).TX(tx).WherePri(req.Id).Update(data)
-			liberr.ErrIsNil(ctx, e, "添加菜单失败")
+			liberr.ErrPrint(ctx, e, "添加菜单失败")
 			e = s.UpdateRoleRule(ctx, req.Id, req.Roles)
-			liberr.ErrIsNil(ctx, e, "添加菜单失败")
+			liberr.ErrPrint(ctx, e, "添加菜单失败")
 		})
 		return err
 	})
@@ -250,15 +250,15 @@ func (s *ruleImpl) Update(ctx context.Context, req *system.RuleUpdateReq) (err e
 func (s *ruleImpl) UpdateRoleRule(ctx context.Context, ruleId uint, roleIds []uint) (err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		//删除旧权限
 		_, e = enforcer.RemoveFilteredPolicy(1, gconv.String(ruleId))
-		liberr.ErrIsNil(ctx, e)
+		liberr.ErrPrint(ctx, e)
 		// 添加新权限
 		roleIdsStrArr := gconv.Strings(roleIds)
 		for _, v := range roleIdsStrArr {
 			_, e = enforcer.AddPolicy(v, gconv.String(ruleId), "All")
-			liberr.ErrIsNil(ctx, e)
+			liberr.ErrPrint(ctx, e)
 		}
 	})
 	return
@@ -299,13 +299,13 @@ func (s *ruleImpl) DeleteMenuByIds(ctx context.Context, ids []int) (err error) {
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		return g.Try(func() {
 			_, err = dao.SysAuthRule.Ctx(ctx).Where("id in (?)", ids).Delete()
-			liberr.ErrIsNil(ctx, err, "删除失败")
+			liberr.ErrPrint(ctx, err, "删除失败")
 			//删除权限
 			enforcer, err := CasbinEnforcer(ctx)
-			liberr.ErrIsNil(ctx, err)
+			liberr.ErrPrint(ctx, err)
 			for _, v := range ids {
 				_, err = enforcer.RemoveFilteredPolicy(1, gconv.String(v))
-				liberr.ErrIsNil(ctx, err)
+				liberr.ErrPrint(ctx, err)
 			}
 			// 删除相关缓存
 			commonService.Cache().Remove(ctx, consts.CacheSysAuthMenu)
