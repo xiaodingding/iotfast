@@ -1,4 +1,4 @@
-package libgtoken
+package libGtoken
 
 import (
 	"errors"
@@ -15,21 +15,21 @@ func (m *GToken) Middleware(group *ghttp.RouterGroup) error {
 
 	// 设置为Group模式
 	m.MiddlewareType = MiddlewareTypeGroup
-	g.Log().Info(m.ctx,"[GToken][params:" + m.String() + "]start... ")
+	g.Log().Info(m.ctx, "[GToken][params:"+m.String()+"]start... ")
 
 	// 缓存模式
 	if m.CacheMode > CacheModeRedis {
-		g.Log().Error(m.ctx,"[GToken]CacheMode set error")
+		g.Log().Error(m.ctx, "[GToken]CacheMode set error")
 		return errors.New("CacheMode set error")
 	}
 	// 登录
 	if m.LoginPath == "" || m.LoginBeforeFunc == nil {
-		g.Log().Error(m.ctx,"[GToken]LoginPath or LoginBeforeFunc not set")
+		g.Log().Error(m.ctx, "[GToken]LoginPath or LoginBeforeFunc not set")
 		return errors.New("LoginPath or LoginBeforeFunc not set")
 	}
 	// 登出
 	if m.LogoutPath == "" {
-		g.Log().Error(m.ctx,"[GToken]LogoutPath not set")
+		g.Log().Error(m.ctx, "[GToken]LogoutPath not set")
 		return errors.New("LogoutPath not set")
 	}
 
@@ -49,7 +49,7 @@ func (m *GToken) AuthMiddleware(group *ghttp.RouterGroup) bool {
 	m.MiddlewareType = MiddlewareTypeGroup
 	// 缓存模式
 	if m.CacheMode > CacheModeRedis {
-		g.Log().Error(m.ctx,"[GToken]CacheMode set error")
+		g.Log().Error(m.ctx, "[GToken]CacheMode set error")
 		return false
 	}
 	group.Middleware(m.authMiddleware)

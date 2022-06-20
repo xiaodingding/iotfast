@@ -1,0 +1,34 @@
+2022-06-20 11:14:01.517 [INFO] {c86103a5af35fa16c451fe44e073fd4e} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-20 11:14:01.518 [ERRO] {c86103a5af35fa16c451fe44e073fd4e} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    G:/OCM/private/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    G:/OCM/private/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    G:/OCM/private/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    G:/OCM/private/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    G:/OCM/private/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    G:/OCM/private/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    G:/OCM/private/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    G:/OCM/private/iotfast/main.go:12
+ 

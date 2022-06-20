@@ -1,4 +1,4 @@
-package libgtoken
+package libGtoken
 
 import (
 	"context"

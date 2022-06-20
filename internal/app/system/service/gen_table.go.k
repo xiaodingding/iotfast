@@ -7,7 +7,7 @@ import (
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model"
 	"iotfast/internal/app/system/model/entity"
-	"iotfast/library/liberr"
+	"iotfast/library/libErr"
 	"strings"
 
 	"github.com/gogf/gf/v2/database/gdb"
@@ -64,7 +64,7 @@ func (s *genTableImpl) GetDbTable(ctx context.Context, req *system.GenDbSearchRe
 	countSql := "select count(1) " + sql
 	res.Total, err = db.GetCount(ctx, countSql)
 	if err != nil {
-		liberr.ErrPrint(ctx, err, "读取总表数失败")
+		libErr.ErrPrint(ctx, err, "读取总表数失败")
 		err = gerror.New("读取总表数失败")
 		return
 	}
@@ -85,7 +85,7 @@ func (s *genTableImpl) GetDbTable(ctx context.Context, req *system.GenDbSearchRe
 		var result gdb.Result
 		result, err = db.GetAll(ctx, "select "+sql)
 		result.Structs(&res.List)
-		liberr.ErrPrint(ctx, err, "自动生成代码获取表数据失败")
+		libErr.ErrPrint(ctx, err, "自动生成代码获取表数据失败")
 	})
 
 	return
@@ -164,9 +164,9 @@ func (s *genTableImpl) TableList(ctx context.Context, req *system.GenTableSearch
 
 	err = g.Try(func() {
 		res.Total, err = m.Count()
-		liberr.ErrPrint(ctx, err, "自动生成代码获取表失败")
+		libErr.ErrPrint(ctx, err, "自动生成代码获取表失败")
 		err = m.Page(req.PageNum, req.PageSize).Order("id asc").Scan(&res.List)
-		liberr.ErrPrint(ctx, err, "自动生成代码获取表数据失败")
+		libErr.ErrPrint(ctx, err, "自动生成代码获取表数据失败")
 	})
 	return
 }
@@ -177,7 +177,7 @@ func (s *genTableImpl) TableDelete(ctx context.Context, ids []int) (err error) {
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		err = g.Try(func() {
 			_, err = dao.GenTable.Ctx(ctx).TX(tx).Where(dao.GenTable.Columns().TableId+" in(?)", ids).Delete()
-			liberr.ErrPrint(ctx, err, "删除表失败")
+			libErr.ErrPrint(ctx, err, "删除表失败")
 		})
 		return err
 	})
@@ -332,10 +332,10 @@ func (s *genTableImpl) Delete(ctx context.Context, ids []int) (err error) {
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		err = g.Try(func() {
 			_, err = dao.GenTable.Ctx(ctx).TX(tx).Where(dao.GenTable.Columns().TableId+" in(?)", ids).Delete()
-			liberr.ErrPrint(ctx, err, "删除表失败")
+			libErr.ErrPrint(ctx, err, "删除表失败")
 
 			_, err = dao.GenTableColumn.Ctx(ctx).TX(tx).Where(dao.GenTableColumn.Columns().TableId+" in(?)", ids).Delete()
-			liberr.ErrPrint(ctx, err, "删除表格字段数据失败")
+			libErr.ErrPrint(ctx, err, "删除表格字段数据失败")
 		})
 		return err
 	})
@@ -355,7 +355,7 @@ func (s *genTableImpl) Preview(ctx context.Context, tableId int) (data g.MapStrS
 func (s *genTableImpl) BatchGenCode(ctx context.Context, tableIds []int, r *ghttp.Request) (err error) {
 
 	if len(tableIds) < 1 {
-		liberr.ErrPrint(ctx, err, "请选择要生成的表")
+		libErr.ErrPrint(ctx, err, "请选择要生成的表")
 		err = gerror.New("请选择要生成的表")
 		return err
 	}
@@ -366,7 +366,7 @@ func (s *genTableImpl) BatchGenCode(ctx context.Context, tableIds []int, r *ghtt
 	for _, id := range tableIds {
 		data, entity, err := s.genCode(ctx, id)
 		if err != nil {
-			liberr.ErrPrint(ctx, err, "生成代码失败")
+			libErr.ErrPrint(ctx, err, "生成代码失败")
 			err = gerror.New("生成代码失败")
 			return err
 		}
@@ -376,49 +376,49 @@ func (s *genTableImpl) BatchGenCode(ctx context.Context, tableIds []int, r *ghtt
 			case "template/go/" + entity.BusinessName + "_controller.go.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/go/"+pathMap["controller"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/go/" + entity.BusinessName + "_service.go.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/go/"+pathMap["service"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/go/" + entity.BusinessName + "_model.go.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/go/"+pathMap["gfgenModel"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/go/" + entity.BusinessName + "_entity.go.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/go/"+pathMap["gfgenEntity"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/go/" + entity.BusinessName + ".go.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/go/"+pathMap["model"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/go/" + entity.BusinessName + "_route.go.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/go/路由说明.txt", val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/html/" + entity.BusinessName + "_api.js.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/vue/"+pathMap["api"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			case "template/html/" + entity.BusinessName + "_vue.js.vm":
 				err = gfile.PutContents(dataFilePath+"/gen/"+dataFileRange+"/vue/"+pathMap["vue"], val)
 				if err != nil {
-					liberr.ErrPrint(ctx, err, "创建临时文件失败")
+					libErr.ErrPrint(ctx, err, "创建临时文件失败")
 					return err
 				}
 			}
@@ -465,11 +465,11 @@ func (s *genTableImpl) getPath(entity *model.GenTableEntityExtend) g.MapStrStr {
 func (s *genTableImpl) genCode(ctx context.Context, tableId int) (data g.MapStrStr, entity *model.GenTableEntityExtend, err error) {
 	entity, err = SelectRecordById(ctx, tableId)
 	if err != nil {
-		liberr.ErrPrint(ctx, err, "获取表信息失败")
+		libErr.ErrPrint(ctx, err, "获取表信息失败")
 		return
 	}
 	if entity == nil {
-		liberr.ErrPrint(ctx, err, "表格数据不存在")
+		libErr.ErrPrint(ctx, err, "表格数据不存在")
 		err = gerror.New("表格数据不存在")
 		return
 	}
@@ -513,39 +513,39 @@ func (s *genTableImpl) genCode(ctx context.Context, tableId int) (data g.MapStrS
 	if tmpController, err = view.Parse(ctx, "template/go/"+entity.TplCategory+"/controller.template", g.Map{"table": entity}); err == nil {
 		controllerValue = tmpController
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 	var tmpService string
 	if tmpService, err = view.Parse(ctx, "template/go/"+entity.TplCategory+"/service.template", g.Map{"table": entity, "options": options}); err == nil {
 		serviceValue = tmpService
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 	var tmpModel string
 	if tmpModel, err = view.Parse(ctx, "template/go/"+entity.TplCategory+"/model.template", g.Map{"table": entity}); err == nil {
 		modelValue = tmpModel
 		modelValue, err = trimBreak(modelValue)
-		liberr.ErrPrint(ctx, err, "剔除多余的换行失败")
+		libErr.ErrPrint(ctx, err, "剔除多余的换行失败")
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 	var tmpJs string
 	if tmpJs, err = view.Parse(ctx, "template/html/js.template", g.Map{"table": entity}); err == nil {
 		apiJsValue = tmpJs
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 	var tmpVue string
 	if tmpVue, err = view.Parse(ctx, "template/html/vue_"+entity.TplCategory+".template", g.Map{"table": entity, "options": options}); err == nil {
 		vueValue = tmpVue
 		vueValue, err = trimBreak(vueValue)
-		liberr.ErrPrint(ctx, err, "剔除多余的换行失败")
+		libErr.ErrPrint(ctx, err, "剔除多余的换行失败")
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 
@@ -553,21 +553,21 @@ func (s *genTableImpl) genCode(ctx context.Context, tableId int) (data g.MapStrS
 	if tmpRouter, err = view.Parse(ctx, "template/go/common/route.template", g.Map{"table": entity}); err == nil {
 		routeValue = tmpRouter
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 	var tmpGfModel string
 	if tmpGfModel, err = view.Parse(ctx, "template/go/common/model.template", g.Map{"table": entity}); err == nil {
 		gfgenModelValue = tmpGfModel
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 	var tmpGfEntity string
 	if tmpGfEntity, err = view.Parse(ctx, "template/go/common/entity.template", g.Map{"table": entity}); err == nil {
 		gfgenEntityValue = tmpGfEntity
 	} else {
-		liberr.ErrPrint(ctx, err, "模板生成匹配失败")
+		libErr.ErrPrint(ctx, err, "模板生成匹配失败")
 		return
 	}
 
@@ -660,12 +660,12 @@ func SelectDbTableListByNames(ctx context.Context, tableNames []string) ([]*enti
 	var result []*entity.GenTable
 	res, err := db.GetAll(ctx, sql)
 	if err != nil {
-		liberr.ErrPrint(ctx, err, "获取表格信息失败")
+		libErr.ErrPrint(ctx, err, "获取表格信息失败")
 		return nil, gerror.New("获取表格信息失败")
 	}
 	err = res.Structs(&result)
 	if err != nil {
-		liberr.ErrPrint(ctx, err, "表格信息转换失败")
+		libErr.ErrPrint(ctx, err, "表格信息转换失败")
 		return nil, gerror.New("表格信息转换失败")
 	}
 	return result, err

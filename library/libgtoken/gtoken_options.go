@@ -1,4 +1,4 @@
-package libgtoken
+package libGtoken
 
 import (
 	"github.com/gogf/gf/v2/database/gredis"

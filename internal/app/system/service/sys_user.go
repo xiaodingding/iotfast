@@ -20,8 +20,8 @@ import (
 	"iotfast/internal/app/system/consts"
 	"iotfast/internal/app/system/model"
 	"iotfast/internal/app/system/model/entity"
+	"iotfast/library/libErr"
 	"iotfast/library/libUtils"
-	"iotfast/library/liberr"
 
 	"github.com/gogf/gf/v2/container/gset"
 	"github.com/gogf/gf/v2/database/gdb"
@@ -76,15 +76,15 @@ func (s *userImpl) NotCheckAuthAdminIds(ctx context.Context) *gset.Set {
 func (s *userImpl) GetAdminUserByUsernamePassword(ctx context.Context, req *system.UserLoginReq) (user *model.LoginUserRes, err error) {
 	err = g.Try(func() {
 		user, err = s.GetUserByUsername(ctx, req.Username)
-		liberr.ErrPrint(ctx, err)
-		liberr.NilErrPanic(user, "账号密码错误")
+		libErr.ErrPrint(ctx, err)
+		libErr.NilErrPanic(user, "账号密码错误")
 		//验证密码
 		if libUtils.EncryptPassword(req.Password, user.UserSalt) != user.UserPassword {
-			liberr.ErrPrint(ctx, gerror.New("账号密码错误"))
+			libErr.ErrPrint(ctx, gerror.New("账号密码错误"))
 		}
 		//账号状态
 		if user.UserStatus == 0 {
-			liberr.ErrPrint(ctx, gerror.New("账号已被冻结"))
+			libErr.ErrPrint(ctx, gerror.New("账号已被冻结"))
 		}
 	})
 	return
@@ -95,7 +95,7 @@ func (s *userImpl) GetUserByUsername(ctx context.Context, userName string) (user
 	err = g.Try(func() {
 		user = &model.LoginUserRes{}
 		err = dao.SysUser.Ctx(ctx).Fields(user).Where(dao.SysUser.Columns().UserName, userName).Scan(user)
-		liberr.ErrPrint(ctx, err, "账号密码错误")
+		libErr.ErrPrint(ctx, err, "账号密码错误")
 	})
 	return
 }
@@ -127,7 +127,7 @@ func (s *userImpl) UpdateLoginInfo(ctx context.Context, id uint64, ip string) (e
 			dao.SysUser.Columns().LastLoginIp:   ip,
 			dao.SysUser.Columns().LastLoginTime: gtime.Now(),
 		})
-		liberr.ErrPrint(ctx, err, "更新用户登录信息失败")
+		libErr.ErrPrint(ctx, err, "更新用户登录信息失败")
 	})
 	return
 }
@@ -147,9 +147,9 @@ func (s *userImpl) GetAdminRules(ctx context.Context, userId uint64) (menuList [
 		})
 		//获取用户菜单数据
 		allRoles, err := Role().GetRoleList(ctx)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		roles, err := s.GetAdminRole(ctx, userId, allRoles)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		name := make([]string, len(roles))
 		roleIds := make([]uint, len(roles))
 		for k, v := range roles {
@@ -161,12 +161,12 @@ func (s *userImpl) GetAdminRules(ctx context.Context, userId uint64) (menuList [
 			//超管获取所有菜单
 			permissions = []string{"*/*/*"}
 			menuList, err = s.GetAllMenus(ctx)
-			liberr.ErrPrint(ctx, err)
+			libErr.ErrPrint(ctx, err)
 		} else {
 			menuList, err = s.GetAdminMenusByRoleIds(ctx, roleIds)
-			liberr.ErrPrint(ctx, err)
+			libErr.ErrPrint(ctx, err)
 			permissions, err = s.GetPermissions(ctx, roleIds)
-			liberr.ErrPrint(ctx, err)
+			libErr.ErrPrint(ctx, err)
 		}
 	})
 	return
@@ -233,7 +233,7 @@ func (s *userImpl) GetAdminMenusByRoleIds(ctx context.Context, roleIds []uint) (
 	//获取角色对应的菜单id
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrPrint(ctx, e)
+		libErr.ErrPrint(ctx, e)
 		menuIds := map[int64]int64{}
 		for _, roleId := range roleIds {
 			//查询当前权限
@@ -245,7 +245,7 @@ func (s *userImpl) GetAdminMenusByRoleIds(ctx context.Context, roleIds []uint) (
 		}
 		//获取所有开启的菜单
 		allMenus, err := Rule().GetIsMenuList(ctx)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		menus = make([]*model.UserMenus, 0, len(allMenus))
 		for _, v := range allMenus {
 			if _, ok := menuIds[gconv.Int64(v.Id)]; gstr.Equal(v.Condition, "nocheck") || ok {
@@ -297,7 +297,7 @@ func (s *userImpl) GetPermissions(ctx context.Context, roleIds []uint) (userButt
 	err = g.Try(func() {
 		//获取角色对应的菜单id
 		enforcer, err := CasbinEnforcer(ctx)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		menuIds := map[int64]int64{}
 		for _, roleId := range roleIds {
 			//查询当前权限
@@ -309,7 +309,7 @@ func (s *userImpl) GetPermissions(ctx context.Context, roleIds []uint) (userButt
 		}
 		//获取所有开启的按钮
 		allButtons, err := Rule().GetIsButtonList(ctx)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		userButtons = make([]string, 0, len(allButtons))
 		for _, button := range allButtons {
 			if _, ok := menuIds[gconv.Int64(button.Id)]; gstr.Equal(button.Condition, "nocheck") || ok {
@@ -330,7 +330,7 @@ func (s *userImpl) List(ctx context.Context, req *system.UserSearchReq) (total i
 		}
 		if req.DeptId != "" {
 			deptIds, e := s.getSearchDeptIds(ctx, gconv.Int64(req.DeptId))
-			liberr.ErrPrint(ctx, e)
+			libErr.ErrPrint(ctx, e)
 			m = m.Where("dept_id in (?)", deptIds)
 		}
 		if req.Status != "" {
@@ -349,10 +349,10 @@ func (s *userImpl) List(ctx context.Context, req *system.UserSearchReq) (total i
 			req.PageNum = 1
 		}
 		total, err = m.Count()
-		liberr.ErrPrint(ctx, err, "获取用户数据失败")
+		libErr.ErrPrint(ctx, err, "获取用户数据失败")
 		err = m.FieldsEx(dao.SysUser.Columns().UserPassword, dao.SysUser.Columns().UserSalt).
 			Page(req.PageNum, req.PageSize).Order("id asc").Scan(&userList)
-		liberr.ErrPrint(ctx, err, "获取用户列表失败")
+		libErr.ErrPrint(ctx, err, "获取用户列表失败")
 	})
 	return
 }
@@ -361,9 +361,9 @@ func (s *userImpl) List(ctx context.Context, req *system.UserSearchReq) (total i
 func (s *userImpl) GetUsersRoleDept(ctx context.Context, userList []*entity.SysUser) (users []*model.SysUserRoleDeptRes, err error) {
 	err = g.Try(func() {
 		allRoles, e := Role().GetRoleList(ctx)
-		liberr.ErrPrint(ctx, e)
+		libErr.ErrPrint(ctx, e)
 		depts, e := Dept().GetFromCache(ctx)
-		liberr.ErrPrint(ctx, e)
+		libErr.ErrPrint(ctx, e)
 		users = make([]*model.SysUserRoleDeptRes, len(userList))
 		for k, u := range userList {
 			var dept *entity.SysDept
@@ -377,7 +377,7 @@ func (s *userImpl) GetUsersRoleDept(ctx context.Context, userList []*entity.SysU
 			}
 			users[k].Dept = dept
 			roles, e := s.GetAdminRole(ctx, u.Id, allRoles)
-			liberr.ErrPrint(ctx, e)
+			libErr.ErrPrint(ctx, e)
 			for _, r := range roles {
 				users[k].RoleInfo = append(users[k].RoleInfo, &model.SysUserRoleInfoRes{RoleId: r.Id, Name: r.Name})
 			}
@@ -389,7 +389,7 @@ func (s *userImpl) GetUsersRoleDept(ctx context.Context, userList []*entity.SysU
 func (s *userImpl) getSearchDeptIds(ctx context.Context, deptId int64) (deptIds []int64, err error) {
 	err = g.Try(func() {
 		deptAll, e := Dept().GetFromCache(ctx)
-		liberr.ErrPrint(ctx, e)
+		libErr.ErrPrint(ctx, e)
 		deptWithChildren := Dept().FindSonByParentId(deptAll, gconv.Int64(deptId))
 		deptIds = make([]int64, len(deptWithChildren))
 		for k, v := range deptWithChildren {
@@ -422,11 +422,11 @@ func (s *userImpl) Add(ctx context.Context, req *system.UserAddReq) (err error) 
 				Remark:       req.Remark,
 				IsAdmin:      req.IsAdmin,
 			})
-			liberr.ErrPrint(ctx, e, "添加用户失败")
+			libErr.ErrPrint(ctx, e, "添加用户失败")
 			e = s.addUserRole(ctx, req.RoleIds, userId)
-			liberr.ErrPrint(ctx, e, "设置用户权限失败")
+			libErr.ErrPrint(ctx, e, "设置用户权限失败")
 			e = s.AddUserPost(ctx, tx, req.PostIds, userId)
-			liberr.ErrPrint(ctx, e)
+			libErr.ErrPrint(ctx, e)
 		})
 		return err
 	})
@@ -450,12 +450,12 @@ func (s *userImpl) Edit(ctx context.Context, req *system.UserEditReq) (err error
 				Remark:       req.Remark,
 				IsAdmin:      req.IsAdmin,
 			})
-			liberr.ErrPrint(ctx, err, "修改用户信息失败")
+			libErr.ErrPrint(ctx, err, "修改用户信息失败")
 			//设置用户所属角色信息
 			err = s.EditUserRole(ctx, req.RoleIds, req.UserId)
-			liberr.ErrPrint(ctx, err, "设置用户权限失败")
+			libErr.ErrPrint(ctx, err, "设置用户权限失败")
 			err = s.AddUserPost(ctx, tx, req.PostIds, req.UserId)
-			liberr.ErrPrint(ctx, err)
+			libErr.ErrPrint(ctx, err)
 		})
 		return err
 	})
@@ -467,7 +467,7 @@ func (s *userImpl) AddUserPost(ctx context.Context, tx *gdb.TX, postIds []int64,
 	err = g.Try(func() {
 		//删除旧岗位信息
 		_, err = internal_dao.SysUserPost.Ctx(ctx).TX(tx).Where(internal_dao.SysUserPost.Columns().UserId, userId).Delete()
-		liberr.ErrPrint(ctx, err, "设置用户岗位失败")
+		libErr.ErrPrint(ctx, err, "设置用户岗位失败")
 		if len(postIds) == 0 {
 			return
 		}
@@ -480,7 +480,7 @@ func (s *userImpl) AddUserPost(ctx context.Context, tx *gdb.TX, postIds []int64,
 			})
 		}
 		_, err = internal_dao.SysUserPost.Ctx(ctx).TX(tx).Data(data).Insert()
-		liberr.ErrPrint(ctx, err, "设置用户岗位失败")
+		libErr.ErrPrint(ctx, err, "设置用户岗位失败")
 	})
 	return
 }
@@ -489,10 +489,10 @@ func (s *userImpl) AddUserPost(ctx context.Context, tx *gdb.TX, postIds []int64,
 func (s *userImpl) addUserRole(ctx context.Context, roleIds []int64, userId int64) (err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrPrint(ctx, e)
+		libErr.ErrPrint(ctx, e)
 		for _, v := range roleIds {
 			_, e = enforcer.AddGroupingPolicy(fmt.Sprintf("%s%d", s.CasBinUserPrefix, userId), gconv.String(v))
-			liberr.ErrPrint(ctx, e)
+			libErr.ErrPrint(ctx, e)
 		}
 	})
 	return
@@ -502,13 +502,13 @@ func (s *userImpl) addUserRole(ctx context.Context, roleIds []int64, userId int6
 func (s *userImpl) EditUserRole(ctx context.Context, roleIds []int64, userId int64) (err error) {
 	err = g.Try(func() {
 		enforcer, e := CasbinEnforcer(ctx)
-		liberr.ErrPrint(ctx, e)
+		libErr.ErrPrint(ctx, e)
 
 		//删除用户旧角色信息
 		enforcer.RemoveFilteredGroupingPolicy(0, fmt.Sprintf("%s%d", s.CasBinUserPrefix, userId))
 		for _, v := range roleIds {
 			_, err = enforcer.AddGroupingPolicy(fmt.Sprintf("%s%d", s.CasBinUserPrefix, userId), gconv.String(v))
-			liberr.ErrPrint(ctx, err)
+			libErr.ErrPrint(ctx, err)
 		}
 	})
 	return
@@ -527,15 +527,15 @@ func (s *userImpl) userNameOrMobileExists(ctx context.Context, userName, mobile 
 			dao.SysUser.Columns().Mobile,
 			mobile))
 		err := m.Limit(1).Scan(&user)
-		liberr.ErrPrint(ctx, err, "获取用户信息失败")
+		libErr.ErrPrint(ctx, err, "获取用户信息失败")
 		if user == nil {
 			return
 		}
 		if user.UserName == userName {
-			liberr.ErrPrint(ctx, gerror.New("用户名已存在"))
+			libErr.ErrPrint(ctx, gerror.New("用户名已存在"))
 		}
 		if user.Mobile == mobile {
-			liberr.ErrPrint(ctx, gerror.New("手机号已存在"))
+			libErr.ErrPrint(ctx, gerror.New("手机号已存在"))
 		}
 	})
 	return err
@@ -547,12 +547,12 @@ func (s *userImpl) GetEditUser(ctx context.Context, id uint64) (res *system.User
 	err = g.Try(func() {
 		//获取用户信息
 		res.User, err = s.GetUserInfoById(ctx, id)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		//获取已选择的角色信息
 		res.CheckedRoleIds, err = s.GetAdminRoleIds(ctx, id)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 		res.CheckedPosts, err = s.GetUserPostIds(ctx, id)
-		liberr.ErrPrint(ctx, err)
+		libErr.ErrPrint(ctx, err)
 	})
 	return
 }
@@ -568,7 +568,7 @@ func (s *userImpl) GetUserInfoById(ctx context.Context, id uint64, withPwd ...bo
 			err = dao.SysUser.Ctx(ctx).Where(dao.SysUser.Columns().Id, id).
 				FieldsEx(dao.SysUser.Columns().UserPassword, dao.SysUser.Columns().UserSalt).Scan(&user)
 		}
-		liberr.ErrPrint(ctx, err, "获取用户数据失败")
+		libErr.ErrPrint(ctx, err, "获取用户数据失败")
 	})
 	return
 }
@@ -578,7 +578,7 @@ func (s *userImpl) GetUserPostIds(ctx context.Context, userId uint64) (postIds [
 	err = g.Try(func() {
 		var list []*internal_entity.SysUserPost
 		err = internal_dao.SysUserPost.Ctx(ctx).Where(internal_dao.SysUserPost.Columns().UserId, userId).Scan(&list)
-		liberr.ErrPrint(ctx, err, "获取用户岗位信息失败")
+		libErr.ErrPrint(ctx, err, "获取用户岗位信息失败")
 		postIds = make([]int64, 0)
 		for _, entity := range list {
 			postIds = append(postIds, entity.PostId)
@@ -596,7 +596,7 @@ func (s *userImpl) ResetUserPwd(ctx context.Context, req *system.UserResetPwdReq
 			dao.SysUser.Columns().UserSalt:     salt,
 			dao.SysUser.Columns().UserPassword: password,
 		})
-		liberr.ErrPrint(ctx, err, "重置用户密码失败")
+		libErr.ErrPrint(ctx, err, "重置用户密码失败")
 	})
 	return
 }
@@ -604,7 +604,7 @@ func (s *userImpl) ResetUserPwd(ctx context.Context, req *system.UserResetPwdReq
 func (s *userImpl) ChangeUserStatus(ctx context.Context, req *system.UserStatusReq) (err error) {
 	err = g.Try(func() {
 		_, err = dao.SysUser.Ctx(ctx).WherePri(req.Id).Update(do.SysUser{UserStatus: req.UserStatus})
-		liberr.ErrPrint(ctx, err, "设置用户状态失败")
+		libErr.ErrPrint(ctx, err, "设置用户状态失败")
 	})
 	return
 }
@@ -614,16 +614,16 @@ func (s *userImpl) Delete(ctx context.Context, ids []int) (err error) {
 	err = g.DB().Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		err = g.Try(func() {
 			_, err = dao.SysUser.Ctx(ctx).TX(tx).Where(dao.SysUser.Columns().Id+" in(?)", ids).Delete()
-			liberr.ErrPrint(ctx, err, "删除用户失败")
+			libErr.ErrPrint(ctx, err, "删除用户失败")
 			//删除对应权限
 			enforcer, e := CasbinEnforcer(ctx)
-			liberr.ErrPrint(ctx, e)
+			libErr.ErrPrint(ctx, e)
 			for _, v := range ids {
 				enforcer.RemoveFilteredGroupingPolicy(0, fmt.Sprintf("%s%d", s.CasBinUserPrefix, v))
 			}
 			//删除用户对应的岗位
 			_, err = internal_dao.SysUserPost.Ctx(ctx).TX(tx).Delete(internal_dao.SysUserPost.Columns().UserId+" in (?)", ids)
-			liberr.ErrPrint(ctx, err, "删除用户的岗位失败")
+			libErr.ErrPrint(ctx, err, "删除用户的岗位失败")
 		})
 		return err
 	})

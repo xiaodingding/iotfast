@@ -11,7 +11,7 @@ import (
 	"context"
 	"iotfast/internal/app/common/consts"
 	"iotfast/internal/app/common/model"
-	gtoken "iotfast/library/libgtoken"
+	gtoken "iotfast/library/libGtoken"
 
 	"github.com/gogf/gf/v2/net/ghttp"
 )

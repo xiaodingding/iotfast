@@ -1,4 +1,4 @@
-package libgtoken
+package libGtoken
 
 import "github.com/golang-jwt/jwt"
 

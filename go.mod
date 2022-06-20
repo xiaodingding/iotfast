@@ -6,6 +6,7 @@ require (
 	github.com/BurntSushi/toml v1.0.0 // indirect
 	github.com/casbin/casbin/v2 v2.47.1
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
+	github.com/gogf/gf v1.16.9
 	github.com/gogf/gf/v2 v2.0.6
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/mattn/go-colorable v0.1.12 // indirect
@@ -15,6 +16,7 @@ require (
 	github.com/tklauser/go-sysconf v0.3.10 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	go.opentelemetry.io/otel/sdk v1.6.1 // indirect
+	golang.org/x/image v0.0.0-20220617043117-41969df76e82 // indirect
 	golang.org/x/sys v0.0.0-20220330033206-e17cdc41300f // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )

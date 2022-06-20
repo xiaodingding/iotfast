@@ -5,7 +5,7 @@
 * @Date:   2022/5/2 14:53
  */
 
-package liberr
+package libErr
 
 import (
 	"context"

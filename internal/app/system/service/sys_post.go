@@ -14,7 +14,7 @@ import (
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model/do"
 	"iotfast/internal/app/system/model/entity"
-	"iotfast/library/liberr"
+	"iotfast/library/libErr"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/util/gconv"
@@ -54,7 +54,7 @@ func (s *postImpl) List(ctx context.Context, req *system.PostSearchReq) (res *sy
 			}
 		}
 		res.Total, err = m.Count()
-		liberr.ErrPrint(ctx, err, "获取岗位失败")
+		libErr.ErrPrint(ctx, err, "获取岗位失败")
 		if req.PageNum == 0 {
 			req.PageNum = 1
 		}
@@ -63,7 +63,7 @@ func (s *postImpl) List(ctx context.Context, req *system.PostSearchReq) (res *sy
 		}
 		res.CurrentPage = req.PageNum
 		err = m.Page(req.PageNum, req.PageSize).Order("post_sort asc,post_id asc").Scan(&res.PostList)
-		liberr.ErrPrint(ctx, err, "获取岗位失败")
+		libErr.ErrPrint(ctx, err, "获取岗位失败")
 	})
 	return
 }
@@ -78,7 +78,7 @@ func (s *postImpl) Add(ctx context.Context, req *system.PostAddReq) (err error) 
 			Remark:    req.Remark,
 			CreatedBy: Context().GetUserId(ctx),
 		})
-		liberr.ErrPrint(ctx, err, "添加岗位失败")
+		libErr.ErrPrint(ctx, err, "添加岗位失败")
 	})
 	return
 }
@@ -93,7 +93,7 @@ func (s *postImpl) Edit(ctx context.Context, req *system.PostEditReq) (err error
 			Remark:    req.Remark,
 			UpdatedBy: Context().GetUserId(ctx),
 		})
-		liberr.ErrPrint(ctx, err, "修改岗位失败")
+		libErr.ErrPrint(ctx, err, "修改岗位失败")
 	})
 	return
 }
@@ -101,7 +101,7 @@ func (s *postImpl) Edit(ctx context.Context, req *system.PostEditReq) (err error
 func (s *postImpl) Delete(ctx context.Context, ids []int) (err error) {
 	err = g.Try(func() {
 		_, err = dao.SysPost.Ctx(ctx).Where(dao.SysPost.Columns().PostId+" in(?)", ids).Delete()
-		liberr.ErrPrint(ctx, err, "删除失败")
+		libErr.ErrPrint(ctx, err, "删除失败")
 	})
 	return
 }
@@ -111,7 +111,7 @@ func (s *postImpl) GetUsedPost(ctx context.Context) (list []*entity.SysPost, err
 	err = g.Try(func() {
 		err = dao.SysPost.Ctx(ctx).Where(dao.SysPost.Columns().Status, 1).
 			Order(dao.SysPost.Columns().PostSort + " ASC, " + dao.SysPost.Columns().PostId + " ASC ").Scan(&list)
-		liberr.ErrPrint(ctx, err, "获取岗位数据失败")
+		libErr.ErrPrint(ctx, err, "获取岗位数据失败")
 	})
 	return
 }

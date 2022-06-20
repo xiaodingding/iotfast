@@ -9,7 +9,7 @@ package service
 
 import (
 	"iotfast/internal/app/common/consts"
-	libcache "iotfast/library/libcache"
+	libCache "iotfast/library/libCache"
 	"sync"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -17,17 +17,17 @@ import (
 )
 
 type ICache interface {
-	libcache.IGCache
+	libCache.IGCache
 }
 
 type cacheImpl struct {
-	*libcache.GfCache
+	*libCache.GfCache
 	prefix string
 }
 
 var (
 	c              = cacheImpl{}
-	cacheContainer *libcache.GfCache
+	cacheContainer *libCache.GfCache
 	lock           = &sync.Mutex{}
 )
 
@@ -43,10 +43,10 @@ func Cache() ICache {
 		if cacheContainer == nil {
 			if model == consts.CacheModelRedis {
 				// redis
-				cacheContainer = libcache.NewRedis(prefix)
+				cacheContainer = libCache.NewRedis(prefix)
 			} else {
 				// memory
-				cacheContainer = libcache.New(prefix)
+				cacheContainer = libCache.New(prefix)
 			}
 		}
 		lock.Unlock()

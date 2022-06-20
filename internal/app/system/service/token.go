@@ -10,7 +10,7 @@ package service
 import (
 	"iotfast/internal/app/common/model"
 	commonService "iotfast/internal/app/common/service"
-	"iotfast/library/liberr"
+	"iotfast/library/libErr"
 	"sync"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -36,7 +36,7 @@ func GfToken() commonService.IGToken {
 		if gftService.gT == nil {
 			ctx := gctx.New()
 			err := g.Cfg().MustGet(ctx, "gfToken").Struct(&gftService.options)
-			liberr.ErrPrint(ctx, err)
+			libErr.ErrPrint(ctx, err)
 			gftService.gT = commonService.GToken(gftService.options)
 		}
 	}

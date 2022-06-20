@@ -13,7 +13,7 @@ import (
 	systemConsts "iotfast/internal/app/system/consts"
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model/entity"
-	"iotfast/library/liberr"
+	"iotfast/library/libErr"
 
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
@@ -59,7 +59,7 @@ func (s *jobImpl) List(ctx context.Context, req *system.SysJobSearchReq) (total,
 	}
 	err = g.Try(func() {
 		total, err = m.Count()
-		liberr.ErrPrint(ctx, err, "获取SysJob列表失败")
+		libErr.ErrPrint(ctx, err, "获取SysJob列表失败")
 		if err != nil {
 			g.Log().Error(ctx, err)
 			err = gerror.New("获取总行数失败")

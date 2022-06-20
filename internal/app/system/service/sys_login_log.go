@@ -13,7 +13,7 @@ import (
 	"iotfast/internal/app/system/consts"
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model"
-	"iotfast/library/liberr"
+	"iotfast/library/libErr"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/grpool"
@@ -86,9 +86,9 @@ func (s *sysLoginLogImpl) List(ctx context.Context, req *system.LoginLogSearchRe
 	}
 	err = g.Try(func() {
 		res.Total, err = m.Count()
-		liberr.ErrPrint(ctx, err, "获取日志失败")
+		libErr.ErrPrint(ctx, err, "获取日志失败")
 		err = m.Page(req.PageNum, req.PageSize).Order(order).Scan(&res.List)
-		liberr.ErrPrint(ctx, err, "获取日志数据失败")
+		libErr.ErrPrint(ctx, err, "获取日志数据失败")
 	})
 	return
 }
@@ -96,7 +96,7 @@ func (s *sysLoginLogImpl) List(ctx context.Context, req *system.LoginLogSearchRe
 func (s *sysLoginLogImpl) DeleteLoginLogByIds(ctx context.Context, ids []int) (err error) {
 	err = g.Try(func() {
 		_, err = dao.SysLoginLog.Ctx(ctx).Delete("info_id in (?)", ids)
-		liberr.ErrPrint(ctx, err, "删除失败")
+		libErr.ErrPrint(ctx, err, "删除失败")
 	})
 	return
 }
@@ -104,7 +104,7 @@ func (s *sysLoginLogImpl) DeleteLoginLogByIds(ctx context.Context, ids []int) (e
 func (s *sysLoginLogImpl) ClearLoginLog(ctx context.Context) (err error) {
 	err = g.Try(func() {
 		_, err = g.DB().Ctx(ctx).Exec(ctx, "truncate "+dao.SysLoginLog.Table())
-		liberr.ErrPrint(ctx, err, "清除失败")
+		libErr.ErrPrint(ctx, err, "清除失败")
 	})
 	return
 }

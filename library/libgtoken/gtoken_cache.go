@@ -1,4 +1,4 @@
-package libgtoken
+package libGtoken
 
 import (
 	"time"
@@ -13,7 +13,7 @@ import (
 func (m *GToken) setCache(cacheKey string, userCache g.Map) Resp {
 	switch m.CacheMode {
 	case CacheModeCache:
-		gcache.Set(m.ctx,cacheKey, userCache, gconv.Duration(m.Timeout)*time.Millisecond)
+		gcache.Set(m.ctx, cacheKey, userCache, gconv.Duration(m.Timeout)*time.Millisecond)
 	case CacheModeRedis:
 		cacheValueJson, err1 := gjson.Encode(userCache)
 		if err1 != nil {
@@ -37,7 +37,7 @@ func (m *GToken) getCache(cacheKey string) Resp {
 	var userCache g.Map
 	switch m.CacheMode {
 	case CacheModeCache:
-		userCacheValue, err := gcache.Get(m.ctx,cacheKey)
+		userCacheValue, err := gcache.Get(m.ctx, cacheKey)
 		if err != nil {
 			g.Log().Error(m.ctx, "[GToken]cache get error", err)
 			return Error("cache get error")
@@ -47,7 +47,7 @@ func (m *GToken) getCache(cacheKey string) Resp {
 		}
 		userCache = gconv.Map(userCacheValue)
 	case CacheModeRedis:
-		userCacheJson, err := g.Redis().Do(m.ctx,"GET", cacheKey)
+		userCacheJson, err := g.Redis().Do(m.ctx, "GET", cacheKey)
 		if err != nil {
 			g.Log().Error(m.ctx, "[GToken]cache get error", err)
 			return Error("cache get error")
@@ -72,13 +72,13 @@ func (m *GToken) getCache(cacheKey string) Resp {
 func (m *GToken) removeCache(cacheKey string) Resp {
 	switch m.CacheMode {
 	case CacheModeCache:
-		_, err := gcache.Remove(m.ctx,cacheKey)
+		_, err := gcache.Remove(m.ctx, cacheKey)
 		if err != nil {
 			g.Log().Error(m.ctx, err)
 		}
 	case CacheModeRedis:
 		var err error
-		_, err = g.Redis().Do(m.ctx,"DEL", cacheKey)
+		_, err = g.Redis().Do(m.ctx, "DEL", cacheKey)
 		if err != nil {
 			g.Log().Error(m.ctx, "[GToken]cache remove error", err)
 			return Error("cache remove error")
