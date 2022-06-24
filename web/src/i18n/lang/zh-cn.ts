@@ -14,7 +14,7 @@ export default {
 		limitsFrontEndBtn: '按钮权限',
 		limitsBackEnd: '后端控制',
 		limitsBackEndEndPage: '页面权限',
-		menu: '菜单嵌套',
+		menu: '功能演示',
 		menu1: '菜单1',
 		menu11: '菜单11',
 		menu12: '菜单12',

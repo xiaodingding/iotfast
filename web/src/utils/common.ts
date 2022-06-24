@@ -59,3 +59,83 @@ export function selectDictLabel(data:any[], value:string):string {
     })
     return actions.join('');
 }
+
+export function selectObjectLabel(data:any[], value:string):string {
+    let actions:any = "";
+    actions = data.find(item=>item.id==value);
+    if(actions)
+    {
+        return actions.name;
+    }else
+    {
+        return "null";
+    }
+
+}
+
+export function statusFormat(status:any){
+    if(!status)
+    {
+        return "离线";
+    }else
+    {
+        if (typeof status === 'string') 
+        {
+            status = parseInt(status)
+        }
+        switch(status)
+        {
+            case 0:
+                return "离线";
+            case 1:
+                return "在线";
+            case 2:
+                return "报警";
+            default:
+                return "未知状态";
+        }
+    }
+}
+
+
+// 日期格式化
+export function intTimeFormat(time:any, pattern:string) {
+	if (arguments.length === 0 || !time) {
+		return null
+	}
+	const format = pattern || '{y}-{m}-{d} {h}:{i}:{s}'
+	let date
+	if (typeof time === 'object') {
+		date = time
+	} else {
+		if ((typeof time === 'string') && (/^[0-9]+$/.test(time))) {
+			time = parseInt(time)
+		} else if (typeof time === 'string') {
+			time = time.replace(new RegExp(/-/gm), '/');
+		}
+		if ((typeof time === 'number') && (time.toString().length === 10)) {
+			time = time * 1000
+		}
+		date = new Date(time)
+	}
+    console.log(date, time);
+	const formatObj:any = {
+		y: date.getFullYear(),
+		m: date.getMonth() + 1,
+		d: date.getDate(),
+		h: date.getHours(),
+		i: date.getMinutes(),
+		s: date.getSeconds(),
+		a: date.getDay()
+	}
+	const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
+		let value = formatObj[key]
+		// Note: getDay() returns 0 on Sunday
+		if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value] }
+		if (result.length > 0 && value < 10) {
+			value = '0' + value
+		}
+		return value || 0
+	})
+	return time_str
+}

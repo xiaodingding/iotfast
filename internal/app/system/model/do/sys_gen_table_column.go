@@ -18,6 +18,7 @@ type SysGenTableColumn struct {
 	ColumnType            interface{} // 列类型
 	GoType                interface{} // Go类型
 	GoField               interface{} // Go字段名
+	VueType               interface{} // Vue类型
 	HtmlField             interface{} // html字段名
 	IsPk                  interface{} // 是否主键（1是）
 	IsIncrement           interface{} // 是否自增（1是）

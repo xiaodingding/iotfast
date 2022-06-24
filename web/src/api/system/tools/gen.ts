@@ -43,11 +43,11 @@ export function updateGenTable(data:any) {
 }
 
 // 导入表
-export function importTable(data:any) {
+export function importTable(data:string[]) {
   return request({
     url: '/api/v1/system/gen/tableImport',
     method: 'post',
-    params: data
+    params: { tables:  data}
   })
 }
 // 预览生成代码

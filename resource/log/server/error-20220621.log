@@ -1,0 +1,145 @@
+2022-06-21 22:03:07.169 {a8b08feaafa7fa1642e6cf258135660f} 200 "POST http localhost:8201 /api/v1/system/gen/tableImport?tables=device_info,device_kind,device_label,device_label_data,device_status,device_category_data,device_categoty,device_group HTTP/1.1" 0.148, ::1, "http://192.168.0.195:8888/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44", -1, "", ""
+Stack:
+1. 获取表格信息失败
+   1).  iotfast/internal/app/system/service.(*sysGenTableImpl).SelectDbTableListByNames
+    	G:/OCM/private/iotfast/internal/app/system/service/sys_gen_table.go:176
+   2).  iotfast/internal/app/system/controller.(*genTableController).ImportGenTable
+    	G:/OCM/private/iotfast/internal/app/system/controller/gen_table.go:49
+   3).  reflect.Value.call
+    	D:/Go/src/reflect/value.go:556
+   4).  reflect.Value.Call
+    	D:/Go/src/reflect/value.go:339
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   6).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   11). iotfast/internal/app/system/service.(*middlewareImpl).Auth
+    	G:/OCM/private/iotfast/internal/app/system/service/middleware.go:81
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   13). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   15). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   17). iotfast/internal/app/system/service.(*middlewareImpl).Ctx
+    	G:/OCM/private/iotfast/internal/app/system/service/middleware.go:54
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   19). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   21). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   23). iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	G:/OCM/private/iotfast/internal/app/common/service/middleware.go:29
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   25). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   27). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   28). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   29). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   30). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   31). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   32). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+ 
+2022-06-21 22:03:29.690 {b083932eb5a7fa1644e6cf25001ea2bb} 200 "POST http localhost:8201 /api/v1/system/gen/tableImport?tables=device_info,device_kind,device_label,device_label_data,device_status,device_category_data,device_categoty,device_group HTTP/1.1" 0.068, ::1, "http://192.168.0.195:8888/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44", -1, "", ""
+Stack:
+1. 获取表格信息失败
+   1).  iotfast/internal/app/system/service.(*sysGenTableImpl).SelectDbTableListByNames
+    	G:/OCM/private/iotfast/internal/app/system/service/sys_gen_table.go:176
+   2).  iotfast/internal/app/system/controller.(*genTableController).ImportGenTable
+    	G:/OCM/private/iotfast/internal/app/system/controller/gen_table.go:49
+   3).  reflect.Value.call
+    	D:/Go/src/reflect/value.go:556
+   4).  reflect.Value.Call
+    	D:/Go/src/reflect/value.go:339
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   6).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   11). iotfast/internal/app/system/service.(*middlewareImpl).Auth
+    	G:/OCM/private/iotfast/internal/app/system/service/middleware.go:81
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   13). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   15). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   17). iotfast/internal/app/system/service.(*middlewareImpl).Ctx
+    	G:/OCM/private/iotfast/internal/app/system/service/middleware.go:54
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   19). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   21). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   23). iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	G:/OCM/private/iotfast/internal/app/common/service/middleware.go:29
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   25). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   27). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   28). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   29). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   30). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   31). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   32). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/Administrator/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+ 
+2022-06-21 22:53:24.742 {b03f21606eaafa162be7cf257804e5b5} 200 "GET http localhost:8201 /api/v1/system/gen/preview?TableId=86 HTTP/1.1" 0.687, ::1, "http://192.168.0.195:8888/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44", -1, "", ""
+Stack:
+template: E:\src\iotfast\resource\template\vue\list-vue.template:178:62: executing "E:\\src\\iotfast\\resource\\template\\vue\\list-vue.template" at <$column.IsEdithandle>: can't evaluate field IsEdithandle in type *entity.SysGenTableColumn 
+2022-06-21 22:53:32.056 {78c06f3070aafa162de7cf25e2eecb4b} 200 "GET http localhost:8201 /api/v1/system/gen/preview?TableId=87 HTTP/1.1" 0.219, ::1, "http://192.168.0.195:8888/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44", -1, "", ""
+Stack:
+template: E:\src\iotfast\resource\template\vue\list-vue.template:178:62: executing "E:\\src\\iotfast\\resource\\template\\vue\\list-vue.template" at <$column.IsEdithandle>: can't evaluate field IsEdithandle in type *entity.SysGenTableColumn 
+2022-06-21 22:53:36.530 {8c6c033b71aafa162fe7cf259b18854d} 200 "GET http localhost:8201 /api/v1/system/gen/preview?TableId=87 HTTP/1.1" 0.220, ::1, "http://192.168.0.195:8888/", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44", -1, "", ""
+Stack:
+template: E:\src\iotfast\resource\template\vue\list-vue.template:178:62: executing "E:\\src\\iotfast\\resource\\template\\vue\\list-vue.template" at <$column.IsEdithandle>: can't evaluate field IsEdithandle in type *entity.SysGenTableColumn 

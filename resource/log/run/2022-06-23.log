@@ -1,0 +1,554 @@
+2022-06-23 07:35:46.162 [INFO] {50f406598415fb169bec3c79eee63d51} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-23 07:35:46.183 [ERRO] {50f406598415fb169bec3c79eee63d51} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-23 20:30:50.307 [INFO] {a4e108f0cf3ffb16943f604333565e1e} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-23 20:30:50.337 [ERRO] {a4e108f0cf3ffb16943f604333565e1e} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-23 20:31:05.165 {90b69265d33ffb16963f60435f1b52fb} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:31:24.482 {90a40ce5d73ffb16983f6043f9c210f8} req param:&{{} 2      {[] 1 10 }} 
+ 
+2022-06-23 20:31:29.771 {c0694420d93ffb169a3f604340ff9c40} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:31:37.308 {dc6483e1da3ffb169e3f6043c4365292} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:32:18.882 {a0438d8fe43ffb16a23f6043bf5ff1f6} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:32:28.445 {048583c9e63ffb16a43f604343adc179} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:32:30.820 {24d21957e73ffb16a63f604389fb2254} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:32:35.950 {80c2ea88e83ffb16a83f6043a0c419d5} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:32:58.004 {74ad66abed3ffb16ac3f6043db89fd7f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:33:38.895 {9036b530f73ffb16b03f6043b02ac155} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-23 20:42:20.995 [INFO] {a87a4ac07040fb16e7dac346ae63edc1} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-23 20:42:21.036 [ERRO] {a87a4ac07040fb16e7dac346ae63edc1} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-23 20:50:52.377 {70c957cfe740fb1601dbc346e49dd1d3} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:51:42.125 {e08f3d66f340fb1603dbc3462326c9fa} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:51:55.026 {90c23867f640fb160bdbc346e7551c3d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:59:15.273 {2844fbe75c41fb1651dbc3468e71cbb2} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:59:22.298 {00dca08a5e41fb1658dbc3468c3e2540} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:59:30.742 {08d6ca7f6041fb165ddbc3463ac53338} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:59:34.687 {a8e7206d6141fb1665dbc3469b6184be} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:59:39.549 {fcf5eb8e6241fb1669dbc346aa6e800d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 20:59:51.296 {903f1d4b6541fb1671dbc346be1f7ac4} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:00.227 {801f5a5f6741fb1676dbc34678c051c3} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:04.229 {8c7df64d6841fb167ddbc346b489dd26} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:17.447 {5451d5616b41fb1680dbc3461401dacf} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:25.767 {684cc5516d41fb1689dbc346bc99ef36} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:32.104 {f83175cb6e41fb168ddbc346dc17bc03} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:34.283 {e8a44e4d6f41fb1694dbc34692299601} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:47.434 {a45c315d7241fb169adbc346959403c9} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:49.957 {d8438ef37241fb169fdbc346df455d7d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:00:54.080 {3c895ce97341fb16a6dbc346719c7b3c} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:19.998 {089430f27941fb16abdbc3464f246fbf} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:36.923 {4c44f2e27d41fb16b1dbc34643a4a309} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:42.215 {e4816c1e7f41fb16b7dbc346b7eed181} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:42.913 {d8d7f8477f41fb16bedbc346ecfb580f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:45.456 {e4bd8cdf7f41fb16c4dbc3462e1a0d4f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:47.912 {7002f7718041fb16cadbc3469069b0dc} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:50.596 {e4f7ec118141fb16cfdbc346b5f760b6} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:01:56.500 {3c42bc718241fb16d6dbc3468c32af21} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:04:25.225 {14eb8b12a541fb16dbdbc346cb337543} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:05:15.114 {4c6715b0b041fb16e1dbc346b2b977ec} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:05:18.382 {6416f972b141fb16e7dbc346209418b8} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:05:27.190 {ecfcda7fb341fb16eddbc346f6dff0fc} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:05:35.712 {9c7ae67bb541fb16f3dbc3462d7c4d55} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:05:39.672 {58b4ea67b641fb16fadbc3462d608cb5} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:06:02.683 {3cc77ec3bb41fb16ffdbc346cd7c1e6e} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:06:14.682 {2c99b78ebe41fb1607dcc346a09337ef} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:06:15.675 {a484e1c9be41fb160bdcc346ef1e4932} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:06:36.641 {6c1f8eabc341fb1612dcc3469a636093} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:08.219 {f8dd08fed841fb1617dcc3465b5650cd} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:10.485 {54cc1d85d941fb161ddcc34666faeecd} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:12.346 {f8d1f0f3d941fb1624dcc346a0c23cc7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:13.366 {9c1ecd30da41fb162bdcc3469d0127bd} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:20.192 {304db3c7db41fb1630dcc3466696eec1} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:27.169 {08305267dd41fb1635dcc34613ae550b} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:38.733 {34b8d518e041fb163cdcc3463a6b5247} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:08:51.487 {c4cd0211e341fb1643dcc34673072033} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:10:08.770 {54e7570ff541fb1647dcc3465e60bd89} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:10:52.405 {d0ba4338ff41fb164fdcc3466f60a575} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:11:02.855 {24ca2da70142fb1653dcc3466cb94028} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:11:53.501 {88a4d2710d42fb165adcc3464da72b77} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:12:17.644 {901de9101342fb1661dcc346bebebdea} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:18:43.768 {b8b1aaf76c42fb1667dcc3468e114571} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:21:14.706 {84484b1c9042fb166bdcc346fff5d317} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:21:37.289 {d8354f5e9542fb1673dcc346f967be84} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:23:23.568 {980a151dae42fb1677dcc34647e4588e} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:23:24.871 {5cdec06aae42fb167ddcc346ca62cfa8} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:23:36.190 {d84aac0cb142fb1683dcc3461c7bd744} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:27:55.856 {38598d7bed42fb1689dcc346e44daa24} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:28:21.374 {908dad73f342fb168fdcc3467e522fd8} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:28:24.613 {f8cdb634f442fb1696dcc346ad335311} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:28:27.082 {e4fce9c7f442fb169bdcc346c197373a} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:28:30.046 {58098b78f542fb16a2dcc3463968ae98} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:28:53.181 {54657adbfa42fb16a9dcc346ed371638} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:29:42.420 {f0696b520643fb16aedcc3464071d465} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:31:48.884 {acc041c42343fb16b3dcc34651492717} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:32:15.870 {50d5c60c2a43fb16badcc34627a8fee7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:36:03.985 {8015e6105f43fb16c0dcc3465a30e84d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:36:23.567 {fc6dabb86343fb16c4dcc3465e173a1d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:36:43.580 {008164616843fb16ccdcc3468a617a3c} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:36:46.151 {c0a6b7fa6843fb16d0dcc346cd6eedb5} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:36:49.381 {44433fbb6943fb16d7dcc34691e06728} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:36:51.990 {407af1526a43fb16dddcc34645822665} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:37:47.458 {7031f6407743fb16e3dcc346a7c5e8e6} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:37:53.212 {a4aa21947843fb16ebdcc3467ae74f22} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:38:03.690 {742d6c087b43fb16f0dcc3460426ded7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:38:09.474 {24361d617c43fb16f4dcc3466048a8a3} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:38:14.868 {a43ebba27d43fb16fbdcc346366cdf38} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:39:25.440 {784124118e43fb1603ddc346bf0a1edf} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:39:35.736 {fc91bf769043fb1608ddc346cefcb1e3} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:39:54.783 {d4941be69443fb160dddc346f812d031} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:40:23.668 {94d3ca9f9b43fb1613ddc3468178ba7d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:40:34.396 {ecd02a1f9e43fb1619ddc346b672a051} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:40:42.066 {30305de89f43fb1621ddc34691ad7bb6} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:40:53.024 {d4708475a243fb1627ddc346b254adbb} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:42:04.046 {1412cdfeb243fb162cddc346b25fc162} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:43:48.785 {2c39a961cb43fb1633ddc3460f563716} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:47:08.118 {7882d1caf943fb1638ddc346a3c5f374} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:48:17.441 {ccdac8ee0944fb163dddc346a5c56805} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:48:34.695 {dc4fdcf20d44fb1643ddc3466b3ae73f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:48:47.703 {743c98fa1044fb1649ddc346eed4e9d5} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:48:59.698 {48c92ac31344fb164fddc346410c8c5b} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:49:14.970 {2408e0531744fb1655ddc346c3f99acc} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 21:49:52.719 {cc06cb1d2044fb165bddc346b843a697} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 22:49:29.382 [INFO] {608594df6047fb161d65277a75ad3917} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-23 22:49:29.423 [ERRO] {608594df6047fb161d65277a75ad3917} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-23 22:49:43.504 {dc3f52296447fb162365277a05477b2f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 22:49:43.723 [ERRO] {3c3449296447fb162165277a39b71a46} Error 1052: Column 'id' in field list is ambiguous, SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.id=device_info.id) ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceInfoImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_info.go:97
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceInfoImpl).List
+    E:/src/iotfast/internal/app/device/service/device_info.go:82
+5.  iotfast/internal/app/device/controller.(*deviceInfoController).List
+    E:/src/iotfast/internal/app/device/controller/device_info.go:36
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-23 23:03:32.742 [INFO] {e426c63b2548fb167abde3119e34f7e4} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-23 23:03:32.744 [ERRO] {e426c63b2548fb167abde3119e34f7e4} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-23 23:03:47.359 {d447eba22848fb167cbde3110f15da3a} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:03:47.531 [ERRO] {d447eba22848fb167bbde311056a1d1c} Error 1054: Unknown column 'device_info.status_id' in 'on clause', SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.status_id) ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceInfoImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_info.go:97
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceInfoImpl).List
+    E:/src/iotfast/internal/app/device/service/device_info.go:82
+5.  iotfast/internal/app/device/controller.(*deviceInfoController).List
+    E:/src/iotfast/internal/app/device/controller/device_info.go:36
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-23 23:05:01.334 [INFO] {ec8d2edc3948fb16717d09369b0831d9} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-23 23:05:01.336 [ERRO] {ec8d2edc3948fb16717d09369b0831d9} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-23 23:05:17.490 {2c6f149f3d48fb16737d0936bbd72e24} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:18:20.888 {54b3a1fdf348fb16767d0936fb4a71a3} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:19:32.661 {a4b45ebb0449fb167c7d0936efdd58f0} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:20:38.770 {ecf9cb1f1449fb16827d0936da72d548} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:21:08.273 {645b44fe1a49fb16887d09363f2dc7eb} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:21:21.366 {a8d8af0a1e49fb168d7d09360e48c51d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:21:33.411 {28c090d82049fb16937d09362a15a647} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:23:20.443 {a41a42c43949fb169b7d093627c924c2} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-23 23:52:23.146 {94e8af7ecf4afb169c7d0936585d764e} req param:&{{} 0      {[] 1 10 }} 
+ 

@@ -19,8 +19,8 @@ package {{.table.ModuleName}}
 
 import (
     commonApi "iotfast/api/v1/common"
-    //"{{.table.PackageName}}/model"
-    "{{.table.PackageName}}/model/entity"
+    //"{{.table.PackageName}}/{{.table.ModuleName}}/model"
+    "{{.table.PackageName}}/{{.table.ModuleName}}/model/entity"
     {{if $hasGTime}}
     "github.com/gogf/gf/v2/os/gtime"
     {{end}}
@@ -41,6 +41,8 @@ type {{.table.ClassName}}SearchReq struct {
     {{$column.GoField}}  {{if eq $column.GoType "Time"}}*gtime.Time{{else if or (eq $column.GoType "int") (eq $column.GoType "int64") (eq $column.GoType "uint") (eq $column.GoType "uint64")}}string{{else}}{{$column.GoType}}{{end}} `p:"{{$column.HtmlField}}"` //{{$column.ColumnComment}}
     {{end}}
     {{end}}
+    BeginTime    string `p:"beginTime"`    //开始时间
+	EndTime      string `p:"endTime"`      //结束时间
     commonApi.PageReq
 }
 

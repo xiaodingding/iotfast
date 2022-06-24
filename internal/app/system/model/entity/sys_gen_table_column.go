@@ -13,6 +13,7 @@ type SysGenTableColumn struct {
 	ColumnType            string `json:"columnType"            description:"列类型"`
 	GoType                string `json:"goType"                description:"Go类型"`
 	GoField               string `json:"goField"               description:"Go字段名"`
+	VueType               string `json:"vueType"               description:"Vue类型"`
 	HtmlField             string `json:"htmlField"             description:"html字段名"`
 	IsPk                  int    `json:"isPk"                  description:"是否主键（1是）"`
 	IsIncrement           int    `json:"isIncrement"           description:"是否自增（1是）"`

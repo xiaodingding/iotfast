@@ -16,7 +16,7 @@ import (
 	"iotfast/api/v1/system"
 	"unicode"
 
-	//comService "iotfast/internal/app/common/service"
+	comService "iotfast/internal/app/common/service"
 	systemConsts "iotfast/internal/app/system/consts"
 	"iotfast/internal/app/system/dao"
 	"iotfast/internal/app/system/model"
@@ -379,6 +379,7 @@ func (s *sysGenTableImpl) SaveEdit(ctx context.Context, req *system.GenTableEdit
 				if dbColumn != nil {
 					dbColumn.ColumnComment = column.ColumnComment
 					dbColumn.GoType = column.GoType
+					dbColumn.VueType = column.VueType
 					dbColumn.HtmlType = column.HtmlType
 					dbColumn.HtmlField = column.HtmlField
 					dbColumn.QueryType = column.QueryType
@@ -414,7 +415,7 @@ func (s *sysGenTableImpl) SaveEdit(ctx context.Context, req *system.GenTableEdit
 						dbColumn.LinkLabelId = ""
 						dbColumn.LinkLabelName = ""
 					}
-					_, err = tx.Model(dao.SysGenTableColumn.Table).Save(dbColumn)
+					_, err = tx.Model(dao.SysGenTableColumn.Table()).Save(dbColumn)
 					if err != nil {
 						tx.Rollback()
 						return
@@ -481,46 +482,46 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "controller":
-				path = strings.Join([]string{curDir, packageName, "/controller/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/controller/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao":
-				path = strings.Join([]string{curDir, packageName, "/dao/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/dao/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao_internal":
-				path = strings.Join([]string{curDir, packageName, "/dao/internal/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/dao/internal/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "model_do":
-				path = strings.Join([]string{curDir, packageName, "/model/do/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/model/do/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "model_entity":
-				path = strings.Join([]string{curDir, packageName, "/model/entity/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/model/entity/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, true)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "router":
-				path = strings.Join([]string{curDir, packageName, "/router/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/router/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "service":
-				path = strings.Join([]string{curDir, packageName, "/service/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/service/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "sql":
-				path = strings.Join([]string{curDir, "/data/gen_sql/", packageName, "/", extendData.TableName, ".sql"}, "")
+				path = strings.Join([]string{curDir, "/resource/data/gen_sql/", packageName, "/", extendData.TableName, ".sql"}, "")
 				hasSql := gfile.Exists(path)
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 				if !hasSql {
-					//第一次生成则向数据库写入菜单数据
-					//err = s.writeDb(ctx, path)
-					//if err != nil {
-					//	return
-					//}
-					//清除菜单缓存
-					//comService.Cache().Remove(ctx, systemConsts.CacheSysAuthMenu)
+					// 第一次生成则向数据库写入菜单数据
+					err = s.writeDb(ctx, path)
+					if err != nil {
+						return
+					}
+					// 清除菜单缓存
+					comService.Cache().Remove(ctx, systemConsts.CacheSysAuthMenu)
 				}
 
 			case "vue":
@@ -908,7 +909,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 	var tx *gdb.TX
 	tx, err = g.DB().Begin(ctx)
 	if err != nil {
-		libErr.ErrPrint(ctx, err, "事物初始化失败")
+		libErr.ErrPrint(ctx, err, "事务初始化失败")
 		return
 	}
 	for {
@@ -937,6 +938,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 			continue
 		}
 		if strings.HasSuffix(str, ";") {
+			
 			if gstr.ContainsI(str, "select") {
 				if gstr.ContainsI(str, "@now") {
 					continue
@@ -953,6 +955,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 			res, err = tx.Exec(sql)
 			if err != nil {
 				tx.Rollback()
+				g.Log().Error(ctx, err)
 				return
 			}
 			sqlStr = nil

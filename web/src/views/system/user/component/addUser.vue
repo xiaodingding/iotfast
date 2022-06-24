@@ -92,7 +92,7 @@
 import { reactive, toRefs, onMounted, defineComponent } from 'vue';
 
 // 定义接口来定义对象的类型
-interface DeptData {
+interface remark {
 	deptName: string;
 	createTime: string;
 	status: boolean;

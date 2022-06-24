@@ -79,7 +79,7 @@ gfcli:
   gen:
     dao:
       - link:            "mysql:root:root@tcp(192.168.0.45:3306)/iotfast"
-        tables:          ""
+        tables:          "sys_gen_table_column"
         removePrefix:    "gf_"
         descriptionTag:  true
         noModelComment:  true

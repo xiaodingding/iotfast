@@ -1,0 +1,1084 @@
+2022-06-23 07:45:01.711 [DEBU] {243b62b10516fb169fec3c796aececb0} [ 15 ms] [default] [rows:21 ] SHOW FULL COLUMNS FROM `sys_user` 
+2022-06-23 07:45:01.732 [DEBU] {243b62b10516fb169fec3c796aececb0} [ 19 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 07:45:01.746 [DEBU] {243b62b10516fb169fec3c796aececb0} [ 13 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_time`='2022-06-23 07:45:01',`last_login_ip`='::1',`updated_at`='2022-06-23 07:45:01' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-06-23 07:45:01.755 [DEBU] {243b62b10516fb169fec3c796aececb0} [  7 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `sys_role` 
+2022-06-23 07:45:01.760 [DEBU] {243b62b10516fb169fec3c796aececb0} [  3 ms] [default] [rows:6  ] SELECT `id`,`status`,`list_order`,`name`,`remark`,`data_scope`,`created_at`,`updated_at` FROM `sys_role` ORDER BY `list_order` asc,`id` asc 
+2022-06-23 07:45:01.771 [DEBU] {b89e7fb50516fb16a2ec3c79aa216802} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `casbin_rule` 
+2022-06-23 07:45:01.776 [DEBU] {8002f9b50516fb16a3ec3c79e6818371} [  4 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-06-23 07:45:01.783 [DEBU] {a05864b60516fb16a4ec3c795123c1c0} [  4 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-06-23 07:45:01.797 [DEBU] {243b62b10516fb169fec3c796aececb0} [ 11 ms] [default] [rows:25 ] SHOW FULL COLUMNS FROM `sys_auth_rule` 
+2022-06-23 07:45:01.805 [DEBU] {243b62b10516fb169fec3c796aececb0} [  8 ms] [default] [rows:71 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 07:45:01.881 [DEBU] {243b62b10516fb169fec3c796aececb0} [  7 ms] [default] [rows:10 ] SHOW FULL COLUMNS FROM `sys_login_log` 
+2022-06-23 07:45:01.894 [DEBU] {243b62b10516fb169fec3c796aececb0} [ 12 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`login_name`,`ipaddr`,`os`,`module`,`login_time`,`login_location`,`browser`,`status`,`msg`) VALUES('demo','::1','Windows 10','系统后台','2022-06-23 07:45:01','云南省 昆明市','Chrome',1,'登录成功')  
+2022-06-23 20:01:15.907 [DEBU] {d8893fc7323efb16a8ec3c7992bec13f} [106 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 20:01:15.955 [DEBU] {d8893fc7323efb16a8ec3c7992bec13f} [ 46 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-06-23 20:01:15',`updated_at`='2022-06-23 20:01:15' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-06-23 20:01:16.070 [DEBU] {d8893fc7323efb16a8ec3c7992bec13f} [ 16 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`os`,`msg`,`login_time`,`browser`,`status`,`module`,`login_location`,`login_name`,`ipaddr`) VALUES('Windows 10','登录成功','2022-06-23 20:01:16','Edge',1,'系统后台','云南省 昆明市','demo','::1')  
+2022-06-23 20:01:24.383 [DEBU] {d81e63c1343efb16adec3c79aed97175} [ 36 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-23 20:01:24.387 [DEBU] {d81e63c1343efb16adec3c79aed97175} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:01:24.405 [DEBU] {d81e63c1343efb16adec3c79aed97175} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:02:17.388 [DEBU] {d88ade1d413efb16aeec3c79ff9f9b8e} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:02:17.399 [DEBU] {d88ade1d413efb16aeec3c79ff9f9b8e} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:03:17.142 [DEBU] {48f877074f3efb16afec3c7995c106c1} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:03:17.160 [DEBU] {48f877074f3efb16afec3c7995c106c1} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:03:49.490 [DEBU] {acd1918f563efb16b0ec3c79f3eae3f5} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:03:49.494 [DEBU] {acd1918f563efb16b0ec3c79f3eae3f5} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:06:18.484 [DEBU] {00a84840793efb16b1ec3c790924532c} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:06:18.489 [DEBU] {00a84840793efb16b1ec3c790924532c} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:07:42.198 [DEBU] {9c7917be8c3efb16b3ec3c799432ccb5} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:07:42.205 [DEBU] {9c7917be8c3efb16b3ec3c799432ccb5} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:08:10.343 [DEBU] {8466a94b933efb16b5ec3c794e6b5971} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:08:10.348 [DEBU] {8466a94b933efb16b5ec3c794e6b5971} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:08:19.449 [DEBU] {d8063367953efb16b7ec3c79470ed87b} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:08:19.455 [DEBU] {d8063367953efb16b7ec3c79470ed87b} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:08:42.176 [DEBU] {44680db59a3efb16b9ec3c794657d4ac} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:08:42.184 [DEBU] {44680db59a3efb16b9ec3c794657d4ac} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:08:54.558 [DEBU] {cc9fa0969d3efb16bbec3c79c9a234d3} [ 12 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:08:54.565 [DEBU] {cc9fa0969d3efb16bbec3c79c9a234d3} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:09:37.896 [DEBU] {ccfef2ada73efb16bdec3c79c28ebfd2} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:09:37.909 [DEBU] {ccfef2ada73efb16bdec3c79c28ebfd2} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:10:14.855 [DEBU] {701a3b48b03efb16bfec3c79b62d4f28} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:10:14.886 [DEBU] {701a3b48b03efb16bfec3c79b62d4f28} [ 30 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:10:39.575 [DEBU] {3436570ab63efb16c1ec3c7930789fdc} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:10:39.590 [DEBU] {3436570ab63efb16c1ec3c7930789fdc} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:14:14.623 [DEBU] {9841621ce83efb16c3ec3c7909101a22} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:14:14.630 [DEBU] {9841621ce83efb16c3ec3c7909101a22} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:14:22.604 [DEBU] {b03c0df8e93efb16c5ec3c792f8e42d5} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:14:22.610 [DEBU] {b03c0df8e93efb16c5ec3c792f8e42d5} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:14:25.879 [DEBU] {d859e0b6ea3efb16c7ec3c79c1d3788f} [  6 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_label` 
+2022-06-23 20:14:25.886 [DEBU] {d859e0b6ea3efb16c7ec3c79c1d3788f} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-06-23 20:14:25.892 [DEBU] {d859e0b6ea3efb16c7ec3c79c1d3788f} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:14:28.789 [DEBU] {b89b8468eb3efb16c9ec3c79183f08ec} [  8 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-23 20:14:28.794 [DEBU] {b89b8468eb3efb16c9ec3c79183f08ec} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:14:28.806 [DEBU] {b89b8468eb3efb16c9ec3c79183f08ec} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:15:08.714 [DEBU] {8c429cb3f43efb16cbec3c796cf9a752} [ 18 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-06-23 20:15:08.721 [DEBU] {8c429cb3f43efb16cbec3c796cf9a752} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:15:10.110 [DEBU] {d8bcae07f53efb16cdec3c79cb776ba0} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:15:10.115 [DEBU] {d8bcae07f53efb16cdec3c79cb776ba0} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:15:14.424 [DEBU] {8ca5e708f63efb16cfec3c79379abcf5} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:15:14.433 [DEBU] {8ca5e708f63efb16cfec3c79379abcf5} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:15:19.829 [DEBU] {18271a4af73efb16d1ec3c79d124e861} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:15:19.835 [DEBU] {18271a4af73efb16d1ec3c79d124e861} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:15:25.837 [DEBU] {488029b0f83efb16d3ec3c79aa862bed} [ 19 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:15:25.844 [DEBU] {488029b0f83efb16d3ec3c79aa862bed} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:16:47.969 [DEBU] {a8eb20d00b3ffb16d5ec3c79092a4a9c} [ 11 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:16:47.975 [DEBU] {a8eb20d00b3ffb16d5ec3c79092a4a9c} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:16:59.573 [DEBU] {6c2e09840e3ffb16d7ec3c79f1c8d0b3} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:16:59.580 [DEBU] {6c2e09840e3ffb16d7ec3c79f1c8d0b3} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:17:05.893 [DEBU] {742dddfc0f3ffb16d9ec3c790e17c90f} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:17:05.901 [DEBU] {742dddfc0f3ffb16d9ec3c790e17c90f} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:17:15.840 [DEBU] {58d2c44d123ffb16dbec3c797b8a84c1} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:17:15.973 [DEBU] {58d2c44d123ffb16dbec3c797b8a84c1} [ 18 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:17:19.885 [DEBU] {e074b33d133ffb16ddec3c793972b724} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:17:19.895 [DEBU] {e074b33d133ffb16ddec3c793972b724} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:17:20.628 [DEBU] {30ec316b133ffb16dfec3c7982485c28} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:17:20.632 [DEBU] {30ec316b133ffb16dfec3c7982485c28} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:17:33.092 [DEBU] {0c461c52163ffb16e1ec3c79938f34bc} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:17:33.097 [DEBU] {0c461c52163ffb16e1ec3c79938f34bc} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:20:22.124 [DEBU] {048332ad3d3ffb16e3ec3c795e43dcf6} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:20:22.130 [DEBU] {048332ad3d3ffb16e3ec3c795e43dcf6} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:10.239 [DEBU] {644ee7d6563ffb16e5ec3c79607b8485} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:22:10.246 [DEBU] {644ee7d6563ffb16e5ec3c79607b8485} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:13.631 [DEBU] {c84c44a3573ffb16e7ec3c794dd3acd6} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:22:13.636 [DEBU] {c84c44a3573ffb16e7ec3c794dd3acd6} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:28.758 [DEBU] {68361d295b3ffb16e9ec3c79953978c0} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:22:28.765 [DEBU] {68361d295b3ffb16e9ec3c79953978c0} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:32.305 [DEBU] {fc3880fc5b3ffb16ebec3c79d36c34a3} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:22:32.311 [DEBU] {fc3880fc5b3ffb16ebec3c79d36c34a3} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:49.611 [DEBU] {2c159b03603ffb16edec3c7947bf1c42} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:22:49.616 [DEBU] {2c159b03603ffb16edec3c7947bf1c42} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:52.902 [DEBU] {1cb71bc8603ffb16efec3c799aec0f18} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:22:52.910 [DEBU] {1cb71bc8603ffb16efec3c799aec0f18} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:22:55.882 [DEBU] {8cf8d079613ffb16f1ec3c79b38d7ebb} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:22:55.888 [DEBU] {8cf8d079613ffb16f1ec3c79b38d7ebb} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:23:11.075 [DEBU] {247190fb643ffb16f3ec3c79b7d49ed8} [136 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:23:11.092 [DEBU] {247190fb643ffb16f3ec3c79b7d49ed8} [ 17 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:23:13.593 [DEBU] {ac4d7e99653ffb16f5ec3c7981446156} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:23:13.598 [DEBU] {ac4d7e99653ffb16f5ec3c7981446156} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:23:28.271 [DEBU] {f8b85804693ffb16f7ec3c796ac3bf54} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:23:28.277 [DEBU] {f8b85804693ffb16f7ec3c796ac3bf54} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:26:14.019 [DEBU] {f0ebdb938f3ffb16f9ec3c79dfd789d5} [127 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:26:14.030 [DEBU] {f0ebdb938f3ffb16f9ec3c79dfd789d5} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:26:54.769 [DEBU] {80e9a217993ffb16fbec3c790a28a7e0} [ 22 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:26:54.806 [DEBU] {80e9a217993ffb16fbec3c790a28a7e0} [ 33 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:27:21.365 [DEBU] {f8eb54499f3ffb16fdec3c79d8c0f7e6} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:27:21.374 [DEBU] {f8eb54499f3ffb16fdec3c79d8c0f7e6} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:31:05.187 [DEBU] {90b69265d33ffb16963f60435f1b52fb} [ 17 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-23 20:31:05.202 [DEBU] {90b69265d33ffb16963f60435f1b52fb} [ 12 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:31:05.252 [DEBU] {90b69265d33ffb16963f60435f1b52fb} [ 42 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:31:24.705 [DEBU] {90a40ce5d73ffb16983f6043f9c210f8} [153 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 2 
+2022-06-23 20:31:24.817 [DEBU] {90a40ce5d73ffb16983f6043f9c210f8} [ 78 ms] [default] [rows:0  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 2 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:31:29.801 [DEBU] {c0694420d93ffb169a3f604340ff9c40} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:31:29.842 [DEBU] {c0694420d93ffb169a3f604340ff9c40} [ 28 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:31:34.422 [DEBU] {502ff734da3ffb169c3f6043fec1334a} [ 10 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-23 20:31:34.427 [DEBU] {502ff734da3ffb169c3f6043fec1334a} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:31:34.435 [DEBU] {502ff734da3ffb169c3f6043fec1334a} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:31:37.323 [DEBU] {dc6483e1da3ffb169e3f6043c4365292} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:31:37.335 [DEBU] {dc6483e1da3ffb169e3f6043c4365292} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:32:18.742 [DEBU] {b45f8283e43ffb16a03f60437bd40235} [  7 ms] [default] [rows:1  ] INSERT INTO `device_kind`(`name`,`mark`,`created_at`,`time_out`,`updated_at`) VALUES('温度','temperature','2022-06-23 20:32:18',30,'2022-06-23 20:32:18')  
+2022-06-23 20:32:18.922 [DEBU] {a0438d8fe43ffb16a23f6043bf5ff1f6} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:32:18.937 [DEBU] {a0438d8fe43ffb16a23f6043bf5ff1f6} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:32:28.474 [DEBU] {048583c9e63ffb16a43f604343adc179} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:32:28.495 [DEBU] {048583c9e63ffb16a43f604343adc179} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:32:30.963 [DEBU] {24d21957e73ffb16a63f604389fb2254} [122 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:32:30.969 [DEBU] {24d21957e73ffb16a63f604389fb2254} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:32:35.968 [DEBU] {80c2ea88e83ffb16a83f6043a0c419d5} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:32:35.985 [DEBU] {80c2ea88e83ffb16a83f6043a0c419d5} [ 11 ms] [default] [rows:2  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:32:57.883 [DEBU] {782908a3ed3ffb16aa3f60432ade1ffb} [ 19 ms] [default] [rows:1  ] INSERT INTO `device_kind`(`mark`,`created_at`,`time_out`,`updated_at`,`name`) VALUES('humidity','2022-06-23 20:32:57',30,'2022-06-23 20:32:57','湿度')  
+2022-06-23 20:32:58.051 [DEBU] {74ad66abed3ffb16ac3f6043db89fd7f} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:32:58.083 [DEBU] {74ad66abed3ffb16ac3f6043db89fd7f} [ 30 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:33:36.999 [DEBU] {407268bff63ffb16ae3f604312447161} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:33:37.017 [DEBU] {407268bff63ffb16ae3f604312447161} [ 18 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:33:38.903 [DEBU] {9036b530f73ffb16b03f6043b02ac155} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` WHERE id = 1 
+2022-06-23 20:33:38.910 [DEBU] {9036b530f73ffb16b03f6043b02ac155} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:33:44.882 [DEBU] {707b3495f83ffb16b23f6043350e4c19} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:33:44.891 [DEBU] {707b3495f83ffb16b23f6043350e4c19} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:34:57.291 [DEBU] {980082700940fb16b43f6043a097bc09} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:34:57.297 [DEBU] {980082700940fb16b43f6043a097bc09} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:35:02.790 [DEBU] {2462cbb50a40fb16b63f6043ae22f842} [ 11 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-06-23 20:35:02.797 [DEBU] {2462cbb50a40fb16b63f6043ae22f842} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:35:02.859 [DEBU] {2462cbb50a40fb16b63f6043ae22f842} [ 27 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:35:08.254 [DEBU] {6c7d74fd0b40fb16b83f60432b2ad2a6} [ 24 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:35:08.263 [DEBU] {6c7d74fd0b40fb16b83f60432b2ad2a6} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:35:31.277 [DEBU] {bc7516591140fb16ba3f60433d79b853} [ 34 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:35:31.289 [DEBU] {bc7516591140fb16ba3f60433d79b853} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:35:39.051 [DEBU] {082e86291340fb16bc3f6043ae34e4ea} [ 17 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:35:39.065 [DEBU] {082e86291340fb16bc3f6043ae34e4ea} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:37:34.022 [DEBU] {4481afec2d40fb16be3f60430b1d5273} [ 44 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:37:34.147 [DEBU] {4481afec2d40fb16be3f60430b1d5273} [ 88 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:37:55.704 [DEBU] {38c838fb3240fb16c03f6043cbf0cc55} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:37:55.713 [DEBU] {38c838fb3240fb16c03f6043cbf0cc55} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:42:37.443 [DEBU] {c83589937440fb16e9dac346fb50fc80} [ 17 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-06-23 20:42:37.454 [DEBU] {c83589937440fb16e9dac346fb50fc80} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 2 
+2022-06-23 20:42:37.464 [DEBU] {c83589937440fb16e9dac346fb50fc80} [  9 ms] [default] [rows:0  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 2 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:42:42.037 [DEBU] {f870d3a57540fb16ebdac34665b4d362} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:42:42.047 [DEBU] {f870d3a57540fb16ebdac34665b4d362} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:44:07.870 [DEBU] {30be15a28940fb16eddac346f341cf99} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:44:07.877 [DEBU] {30be15a28940fb16eddac346f341cf99} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:48:41.545 [DEBU] {30ef0d57c940fb16efdac34609e91162} [ 63 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:48:41.551 [DEBU] {30ef0d57c940fb16efdac34609e91162} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:48:49.989 [DEBU] {3cb2bf51cb40fb16f1dac34697adc9b8} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:48:50.000 [DEBU] {3cb2bf51cb40fb16f1dac34697adc9b8} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:49:00.000 [DEBU] {28857ca6cd40fb16f3dac346b29f6cbb} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:49:00.010 [DEBU] {28857ca6cd40fb16f3dac346b29f6cbb} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:49:04.742 [DEBU] {b0791bc1ce40fb16f5dac3465ff580e2} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:49:04.749 [DEBU] {b0791bc1ce40fb16f5dac3465ff580e2} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:49:11.659 [DEBU] {4c14cd54d040fb16f7dac34630b2086a} [151 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:49:11.709 [DEBU] {4c14cd54d040fb16f7dac34630b2086a} [ 31 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:49:29.413 [DEBU] {e467b27fd440fb16f9dac346c03d474d} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:49:29.418 [DEBU] {e467b27fd440fb16f9dac346c03d474d} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:50:01.674 [DEBU] {506f8c02dc40fb16fbdac3464d16b7b1} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:50:01.690 [DEBU] {506f8c02dc40fb16fbdac3464d16b7b1} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:50:14.284 [DEBU] {8086e9f1de40fb16fddac34632be65ee} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` WHERE id = 1 
+2022-06-23 20:50:14.330 [DEBU] {8086e9f1de40fb16fddac34632be65ee} [ 23 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` WHERE id = 1 ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:50:15.424 [DEBU] {843e2a36df40fb16ffdac346bda91684} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:50:15.438 [DEBU] {843e2a36df40fb16ffdac346bda91684} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:50:52.394 [DEBU] {70c957cfe740fb1601dbc346e49dd1d3} [  6 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-23 20:50:52.401 [DEBU] {70c957cfe740fb1601dbc346e49dd1d3} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:50:52.405 [DEBU] {70c957cfe740fb1601dbc346e49dd1d3} [  3 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:42.131 [DEBU] {e08f3d66f340fb1603dbc3462326c9fa} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:51:42.136 [DEBU] {e08f3d66f340fb1603dbc3462326c9fa} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:49.039 [DEBU] {0ca95b01f540fb1605dbc346af554e2f} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-06-23 20:51:49.044 [DEBU] {0ca95b01f540fb1605dbc346af554e2f} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-06-23 20:51:49.048 [DEBU] {0ca95b01f540fb1605dbc346af554e2f} [  4 ms] [default] [rows:0  ] SELECT `id`,`device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:51.934 [DEBU] {98f881aef540fb1607dbc3465212a0a1} [  7 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_label` 
+2022-06-23 20:51:51.940 [DEBU] {98f881aef540fb1607dbc3465212a0a1} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-06-23 20:51:51.946 [DEBU] {98f881aef540fb1607dbc3465212a0a1} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:53.440 [DEBU] {584a2a08f640fb1609dbc3462f9adcf1} [  9 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-23 20:51:53.445 [DEBU] {584a2a08f640fb1609dbc3462f9adcf1} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:51:53.451 [DEBU] {584a2a08f640fb1609dbc3462f9adcf1} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:55.032 [DEBU] {90c23867f640fb160bdbc346e7551c3d} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:51:55.040 [DEBU] {90c23867f640fb160bdbc346e7551c3d} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:56.592 [DEBU] {2ca193c3f640fb160ddbc346c6edf019} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:51:56.601 [DEBU] {2ca193c3f640fb160ddbc346c6edf019} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:51:59.041 [DEBU] {304dc455f740fb160fdbc346bbd6fc7f} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:51:59.050 [DEBU] {304dc455f740fb160fdbc346bbd6fc7f} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:52:36.073 [DEBU] {986282f3ff40fb1611dbc34625ea8c83} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` WHERE `id`=1 LIMIT 1 
+2022-06-23 20:52:50.294 [DEBU] {3c0fe1400341fb1613dbc34630dabc43} [ 20 ms] [default] [rows:1  ] UPDATE `device_info` SET `name`='第一个温湿度',`pwd`='1',`kind`=1,`logo`='1',`monitor`=1,`location`=1,`updated_at`='2022-06-23 20:52:50',`group`=1,`sn`='1' WHERE `id`=1 
+2022-06-23 20:52:50.385 [DEBU] {20288a4a0341fb1615dbc346d4b4d0b9} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:52:50.392 [DEBU] {20288a4a0341fb1615dbc346d4b4d0b9} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:56:57.580 [DEBU] {c8c38dd83c41fb1618dbc3463a7e5c76} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:56:57.585 [DEBU] {c8c38dd83c41fb1618dbc3463a7e5c76} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:56:57.599 [DEBU] {10163ed93c41fb1619dbc3460ae19abf} [ 12 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:56:57.606 [DEBU] {10163ed93c41fb1619dbc3460ae19abf} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:01.775 [DEBU] {700ed4d03d41fb161ddbc346863f4d56} [ 34 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:01.802 [DEBU] {9041ccd03d41fb161cdbc346bb98f803} [ 62 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:01.803 [DEBU] {700ed4d03d41fb161ddbc346863f4d56} [ 23 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:01.850 [DEBU] {9041ccd03d41fb161cdbc346bb98f803} [ 47 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:06.264 [DEBU] {b4f10cde3e41fb161fdbc346ecd5fcc6} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:06.276 [DEBU] {b4f10cde3e41fb161fdbc346ecd5fcc6} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:06.282 [DEBU] {289125df3e41fb1621dbc346ecfa39e2} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:06.290 [DEBU] {289125df3e41fb1621dbc346ecfa39e2} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:10.379 [DEBU] {b01565d33f41fb1625dbc346080c0036} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:10.379 [DEBU] {b01565d33f41fb1624dbc346632d6d06} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:10.388 [DEBU] {b01565d33f41fb1624dbc346632d6d06} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:10.391 [DEBU] {b01565d33f41fb1625dbc346080c0036} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:14.201 [DEBU] {5c0f6db64041fb1629dbc346a5dc9289} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:14.186 [DEBU] {1cd564b64041fb1628dbc346bf463178} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:14.214 [DEBU] {5c0f6db64041fb1629dbc346a5dc9289} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:14.215 [DEBU] {1cd564b64041fb1628dbc346bf463178} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:28.340 [DEBU] {2c6f99014441fb162cdbc3467ecba8b3} [ 11 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:28.362 [DEBU] {2c6f99014441fb162cdbc3467ecba8b3} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:28.362 [DEBU] {78922e024441fb162ddbc34652ea1423} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:28.376 [DEBU] {78922e024441fb162ddbc34652ea1423} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:33.694 [DEBU] {988c15414541fb1630dbc346e2cc1f5c} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:33.709 [DEBU] {307dfa414541fb1631dbc346f41f79c9} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:33.712 [DEBU] {988c15414541fb1630dbc346e2cc1f5c} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:33.714 [DEBU] {307dfa414541fb1631dbc346f41f79c9} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:38.740 [DEBU] {8ca3cd6d4641fb1634dbc3469da36424} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:57:38.740 [DEBU] {200add6d4641fb1635dbc3465f484883} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:57:38.746 [DEBU] {8ca3cd6d4641fb1634dbc3469da36424} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:57:38.746 [DEBU] {200add6d4641fb1635dbc3465f484883} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:03.368 [DEBU] {30a7c5274c41fb1637dbc34641c66400} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:58:03.373 [DEBU] {30a7c5274c41fb1637dbc34641c66400} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:03.413 [DEBU] {745d33294c41fb1639dbc346f6ad8042} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:58:03.436 [DEBU] {745d33294c41fb1639dbc346f6ad8042} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:09.299 [DEBU] {64c04f8b4d41fb163cdbc346b81adbcf} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:58:09.306 [DEBU] {64c04f8b4d41fb163cdbc346b81adbcf} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:09.349 [DEBU] {d4a7838c4d41fb163ddbc346cd4d967b} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:58:09.358 [DEBU] {d4a7838c4d41fb163ddbc346cd4d967b} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:28.515 [DEBU] {0826a5045241fb163fdbc346c9f3817b} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:58:28.564 [DEBU] {0826a5045241fb163fdbc346c9f3817b} [ 48 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:28.821 [DEBU] {0066d8165241fb1641dbc346e2d8f390} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:58:28.831 [DEBU] {0066d8165241fb1641dbc346e2d8f390} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:38.481 [DEBU] {a8c8a4565441fb1644dbc3469259f471} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:58:38.481 [DEBU] {b812b4565441fb1645dbc3460a983ad6} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:58:38.487 [DEBU] {a8c8a4565441fb1644dbc3469259f471} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:38.491 [DEBU] {b812b4565441fb1645dbc3460a983ad6} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:52.618 [DEBU] {04b914a15741fb1648dbc346ec9054ac} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:58:52.619 [DEBU] {8c3236a15741fb1649dbc346c791f479} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:58:52.625 [DEBU] {04b914a15741fb1648dbc346ec9054ac} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:52.628 [DEBU] {8c3236a15741fb1649dbc346c791f479} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:56.439 [DEBU] {c4d016855841fb164cdbc3469c868b17} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:58:56.444 [DEBU] {c4d016855841fb164cdbc3469c868b17} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:58:56.463 [DEBU] {3c8e67865841fb164ddbc346077114c4} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:58:56.469 [DEBU] {3c8e67865841fb164ddbc346077114c4} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:15.227 [DEBU] {14dfeae45c41fb164fdbc34653420538} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:59:15.238 [DEBU] {14dfeae45c41fb164fdbc34653420538} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:15.295 [DEBU] {2844fbe75c41fb1651dbc3468e71cbb2} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:59:15.300 [DEBU] {2844fbe75c41fb1651dbc3468e71cbb2} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:15.335 [DEBU] {848b72eb5c41fb1653dbc3460d39d2be} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:59:15.341 [DEBU] {848b72eb5c41fb1653dbc3460d39d2be} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:22.259 [DEBU] {58eafb875e41fb1655dbc3465b13e9ed} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:59:22.266 [DEBU] {58eafb875e41fb1655dbc3465b13e9ed} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:22.306 [DEBU] {00dca08a5e41fb1658dbc3468c3e2540} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:59:22.308 [DEBU] {243fe78a5e41fb1659dbc346537e1acd} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:59:22.311 [DEBU] {00dca08a5e41fb1658dbc3468c3e2540} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:22.316 [DEBU] {243fe78a5e41fb1659dbc346537e1acd} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:30.668 [DEBU] {b093537d6041fb165bdbc346408b43f7} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:59:30.673 [DEBU] {b093537d6041fb165bdbc346408b43f7} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:30.721 [DEBU] {248b62806041fb165fdbc3460e500cc2} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:59:30.726 [DEBU] {248b62806041fb165fdbc3460e500cc2} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:30.747 [DEBU] {08d6ca7f6041fb165ddbc3463ac53338} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:59:30.752 [DEBU] {08d6ca7f6041fb165ddbc3463ac53338} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:34.691 [DEBU] {5caad26c6141fb1663dbc346ba0bf2ad} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:59:34.691 [DEBU] {3819196d6141fb1664dbc34605a44be9} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:59:34.694 [DEBU] {a8e7206d6141fb1665dbc3469b6184be} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:59:34.704 [DEBU] {a8e7206d6141fb1665dbc3469b6184be} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:34.706 [DEBU] {5caad26c6141fb1663dbc346ba0bf2ad} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:34.705 [DEBU] {3819196d6141fb1664dbc34605a44be9} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:39.556 [DEBU] {fcf5eb8e6241fb1669dbc346aa6e800d} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:59:39.557 [DEBU] {fcf5eb8e6241fb166adbc34660434d2c} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:59:39.567 [DEBU] {fcf5eb8e6241fb166adbc34660434d2c} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:39.577 [DEBU] {90252c906241fb166bdbc346c6934261} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:59:39.585 [DEBU] {fcf5eb8e6241fb1669dbc346aa6e800d} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:39.586 [DEBU] {90252c906241fb166bdbc346c6934261} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:51.300 [DEBU] {605f004b6541fb166fdbc3460187cd4e} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 20:59:51.301 [DEBU] {3ca10f4b6541fb1670dbc3462c6ffe97} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 20:59:51.303 [DEBU] {903f1d4b6541fb1671dbc346be1f7ac4} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 20:59:51.307 [DEBU] {3ca10f4b6541fb1670dbc3462c6ffe97} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:51.313 [DEBU] {605f004b6541fb166fdbc3460187cd4e} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 20:59:51.327 [DEBU] {903f1d4b6541fb1671dbc346be1f7ac4} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:00.224 [DEBU] {4071945e6741fb1674dbc346f537b262} [ 11 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:00.233 [DEBU] {4071945e6741fb1674dbc346f537b262} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:00.239 [DEBU] {801f5a5f6741fb1676dbc34678c051c3} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:00.244 [DEBU] {a057ca5f6741fb1677dbc346343a3d5e} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:00.247 [DEBU] {801f5a5f6741fb1676dbc34678c051c3} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:00.260 [DEBU] {a057ca5f6741fb1677dbc346343a3d5e} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:03.980 [DEBU] {bc549a3e6841fb1679dbc3464f9389ad} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:03.991 [DEBU] {bc549a3e6841fb1679dbc3464f9389ad} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:04.218 [DEBU] {908e50486841fb167cdbc3463192e2bc} [ 83 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:04.237 [DEBU] {908e50486841fb167cdbc3463192e2bc} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:04.247 [DEBU] {8c7df64d6841fb167ddbc346b489dd26} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:04.273 [DEBU] {8c7df64d6841fb167ddbc346b489dd26} [ 19 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:17.458 [DEBU] {5451d5616b41fb1680dbc3461401dacf} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:17.467 [DEBU] {807ce7616b41fb1681dbc34630a53599} [ 18 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:17.478 [DEBU] {807ce7616b41fb1681dbc34630a53599} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:17.475 [DEBU] {5451d5616b41fb1680dbc3461401dacf} [ 15 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:17.493 [DEBU] {1ce22e646b41fb1683dbc34678653664} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:17.499 [DEBU] {1ce22e646b41fb1683dbc34678653664} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:25.769 [DEBU] {6c1981516d41fb1687dbc346072612d1} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:25.776 [DEBU] {684cc5516d41fb1689dbc346bc99ef36} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:25.777 [DEBU] {684cc5516d41fb1688dbc34686a50e8a} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:25.777 [DEBU] {6c1981516d41fb1687dbc346072612d1} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:25.795 [DEBU] {684cc5516d41fb1688dbc34686a50e8a} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:25.798 [DEBU] {684cc5516d41fb1689dbc346bc99ef36} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:31.672 [DEBU] {bc2e64a86e41fb168bdbc346b76033a2} [155 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:31.796 [DEBU] {bc2e64a86e41fb168bdbc346b76033a2} [ 81 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:32.109 [DEBU] {f83175cb6e41fb168ddbc346dc17bc03} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:32.117 [DEBU] {f83175cb6e41fb168ddbc346dc17bc03} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:32.367 [DEBU] {80d9dbda6e41fb168fdbc3460bbffef4} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:32.377 [DEBU] {80d9dbda6e41fb168fdbc3460bbffef4} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:34.289 [DEBU] {e8a44e4d6f41fb1693dbc346cb6f1f32} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:34.290 [DEBU] {e8a44e4d6f41fb1694dbc34692299601} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:34.294 [DEBU] {e8a44e4d6f41fb1693dbc346cb6f1f32} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:34.297 [DEBU] {e8a44e4d6f41fb1694dbc34692299601} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:34.315 [DEBU] {4830f34e6f41fb1695dbc3466e3c34ba} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:34.323 [DEBU] {4830f34e6f41fb1695dbc3466e3c34ba} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:47.454 [DEBU] {a44ab75c7241fb1699dbc3466d158aa9} [ 28 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:47.459 [DEBU] {a45c315d7241fb169adbc346959403c9} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:47.462 [DEBU] {303f535e7241fb169bdbc34678dea3e6} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:47.471 [DEBU] {a44ab75c7241fb1699dbc3466d158aa9} [ 15 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:47.474 [DEBU] {a45c315d7241fb169adbc346959403c9} [ 13 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:47.481 [DEBU] {303f535e7241fb169bdbc34678dea3e6} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:49.961 [DEBU] {d8438ef37241fb169fdbc346df455d7d} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:49.965 [DEBU] {087a73f37241fb169edbc346b3befa1b} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:49.975 [DEBU] {d8438ef37241fb169fdbc346df455d7d} [ 10 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:49.981 [DEBU] {087a73f37241fb169edbc346b3befa1b} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:49.985 [DEBU] {107edef47241fb16a1dbc3466000f8d8} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:50.002 [DEBU] {107edef47241fb16a1dbc3466000f8d8} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:54.042 [DEBU] {70fb86e67341fb16a4dbc34626c4f452} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:00:54.050 [DEBU] {70fb86e67341fb16a4dbc34626c4f452} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:54.088 [DEBU] {84d180e97341fb16a7dbc34611cdeafe} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:00:54.089 [DEBU] {3c895ce97341fb16a6dbc346719c7b3c} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:00:54.095 [DEBU] {84d180e97341fb16a7dbc34611cdeafe} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:00:54.097 [DEBU] {3c895ce97341fb16a6dbc346719c7b3c} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:19.901 [DEBU] {d4e7d0eb7941fb16a9dbc3460d2cd742} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:19.909 [DEBU] {d4e7d0eb7941fb16a9dbc3460d2cd742} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:20.033 [DEBU] {089430f27941fb16abdbc3464f246fbf} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:20.065 [DEBU] {089430f27941fb16abdbc3464f246fbf} [ 30 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:20.142 [DEBU] {c44376fa7941fb16addbc346e2dec822} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:20.150 [DEBU] {c44376fa7941fb16addbc346e2dec822} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:36.908 [DEBU] {5cffd7e17d41fb16afdbc346e2f81f13} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:36.913 [DEBU] {5cffd7e17d41fb16afdbc346e2f81f13} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:36.929 [DEBU] {4c44f2e27d41fb16b1dbc34643a4a309} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:36.935 [DEBU] {4c44f2e27d41fb16b1dbc34643a4a309} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:36.942 [DEBU] {9476d1e37d41fb16b3dbc34631fc161c} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:36.953 [DEBU] {9476d1e37d41fb16b3dbc34631fc161c} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:42.215 [DEBU] {90af0b1e7f41fb16b6dbc346d809ba8b} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:42.224 [DEBU] {90af0b1e7f41fb16b6dbc346d809ba8b} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:42.226 [DEBU] {e4816c1e7f41fb16b7dbc346b7eed181} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:42.245 [DEBU] {009ae11f7f41fb16b9dbc34677d037e4} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:42.250 [DEBU] {009ae11f7f41fb16b9dbc34677d037e4} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:42.306 [DEBU] {e4816c1e7f41fb16b7dbc346b7eed181} [ 12 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:42.918 [DEBU] {ac1786477f41fb16bddbc346c797a8fe} [ 13 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:42.925 [DEBU] {d8d7f8477f41fb16bedbc346ecfb580f} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:42.927 [DEBU] {2cf761487f41fb16bfdbc346d4be0b1c} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:42.927 [DEBU] {ac1786477f41fb16bddbc346c797a8fe} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:42.942 [DEBU] {d8d7f8477f41fb16bedbc346ecfb580f} [ 17 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:42.944 [DEBU] {2cf761487f41fb16bfdbc346d4be0b1c} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:45.445 [DEBU] {28a260de7f41fb16c1dbc3467653c3f2} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:45.456 [DEBU] {28a260de7f41fb16c1dbc3467653c3f2} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:45.463 [DEBU] {e4bd8cdf7f41fb16c4dbc3462e1a0d4f} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:45.469 [DEBU] {e4bd8cdf7f41fb16c4dbc3462e1a0d4f} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:45.498 [DEBU] {88b4d6e17f41fb16c5dbc346c977b2db} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:45.545 [DEBU] {88b4d6e17f41fb16c5dbc346c977b2db} [ 46 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:47.913 [DEBU] {e4bca0718041fb16c9dbc346ed87b281} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:47.917 [DEBU] {7002f7718041fb16cadbc3469069b0dc} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:47.927 [DEBU] {e4bca0718041fb16c9dbc346ed87b281} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:47.932 [DEBU] {7002f7718041fb16cadbc3469069b0dc} [ 15 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:47.929 [DEBU] {7002f7718041fb16cbdbc346bc2d68ac} [ 17 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:47.951 [DEBU] {7002f7718041fb16cbdbc346bc2d68ac} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:50.603 [DEBU] {8808fc118141fb16d1dbc34607dda024} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:50.603 [DEBU] {8808fc118141fb16d0dbc34600a6773b} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:50.607 [DEBU] {e4f7ec118141fb16cfdbc346b5f760b6} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:50.613 [DEBU] {8808fc118141fb16d0dbc34600a6773b} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:50.613 [DEBU] {8808fc118141fb16d1dbc34607dda024} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:50.616 [DEBU] {e4f7ec118141fb16cfdbc346b5f760b6} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:56.504 [DEBU] {b0ff26718241fb16d5dbc346ad95a5df} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:01:56.508 [DEBU] {684cf9718241fb16d7dbc3464efaa44f} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:01:56.509 [DEBU] {3c42bc718241fb16d6dbc3468c32af21} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:01:56.511 [DEBU] {b0ff26718241fb16d5dbc346ad95a5df} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:56.518 [DEBU] {684cf9718241fb16d7dbc3464efaa44f} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:01:56.522 [DEBU] {3c42bc718241fb16d6dbc3468c32af21} [ 12 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:04:25.589 [DEBU] {14eb8b12a541fb16dbdbc346cb337543} [196 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:04:25.596 [DEBU] {ec641a19a541fb16dddbc34690916cdf} [261 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:04:25.596 [DEBU] {8c770d19a541fb16dcdbc346bdcb9a54} [262 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:04:25.723 [DEBU] {14eb8b12a541fb16dbdbc346cb337543} [ 87 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:04:25.778 [DEBU] {ec641a19a541fb16dddbc34690916cdf} [ 99 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:04:25.785 [DEBU] {8c770d19a541fb16dcdbc346bdcb9a54} [ 65 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:15.168 [DEBU] {4c6715b0b041fb16e1dbc346b2b977ec} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:05:15.169 [DEBU] {dc2901b3b041fb16e2dbc3466742c6e5} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:05:15.173 [DEBU] {406610b3b041fb16e3dbc3463295ed47} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:05:15.177 [DEBU] {dc2901b3b041fb16e2dbc3466742c6e5} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:15.177 [DEBU] {4c6715b0b041fb16e1dbc346b2b977ec} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:15.199 [DEBU] {406610b3b041fb16e3dbc3463295ed47} [ 24 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:18.480 [DEBU] {38050473b141fb16e8dbc346a9a227c9} [ 97 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:05:18.494 [DEBU] {6416f972b141fb16e7dbc346209418b8} [ 61 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:05:18.560 [DEBU] {0076e57bb141fb16e9dbc34677673af1} [ 28 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:05:18.566 [DEBU] {38050473b141fb16e8dbc346a9a227c9} [ 73 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:18.570 [DEBU] {6416f972b141fb16e7dbc346209418b8} [ 34 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:18.611 [DEBU] {0076e57bb141fb16e9dbc34677673af1} [ 43 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:27.252 [DEBU] {ecfcda7fb341fb16eedbc346080d223e} [ 64 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:05:27.292 [DEBU] {ecfcda7fb341fb16eddbc346f6dff0fc} [ 81 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:05:27.313 [DEBU] {6cba0383b341fb16efdbc346136c7821} [ 71 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:05:27.374 [DEBU] {ecfcda7fb341fb16eedbc346080d223e} [101 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:27.377 [DEBU] {ecfcda7fb341fb16eddbc346f6dff0fc} [ 65 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:27.411 [DEBU] {6cba0383b341fb16efdbc346136c7821} [ 51 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:35.859 [DEBU] {78bcf57bb541fb16f4dbc346b673408f} [146 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:05:35.905 [DEBU] {9c7ae67bb541fb16f3dbc3462d7c4d55} [138 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:05:35.982 [DEBU] {78bcf57bb541fb16f4dbc346b673408f} [ 76 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:35.991 [DEBU] {88ba5487b541fb16f5dbc34609b3d192} [ 87 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:05:36.045 [DEBU] {9c7ae67bb541fb16f3dbc3462d7c4d55} [100 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:36.148 [DEBU] {88ba5487b541fb16f5dbc34609b3d192} [ 99 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:39.719 [DEBU] {106bdb67b641fb16f9dbc346fbebee6e} [ 48 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:05:39.723 [DEBU] {58b4ea67b641fb16fadbc3462d608cb5} [ 41 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:05:39.764 [DEBU] {58b4ea67b641fb16fadbc3462d608cb5} [ 39 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:39.767 [DEBU] {106bdb67b641fb16f9dbc346fbebee6e} [ 45 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:05:39.783 [DEBU] {00bc586db641fb16fbdbc34608a027bf} [ 20 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:05:39.823 [DEBU] {00bc586db641fb16fbdbc34608a027bf} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:02.713 [DEBU] {3cc77ec3bb41fb1600dcc34616b4c768} [ 30 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:06:02.714 [DEBU] {3cc77ec3bb41fb16ffdbc346cd7c1e6e} [ 24 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:06:02.726 [DEBU] {10372ac5bb41fb1601dcc3467a7d8ee2} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:06:02.731 [DEBU] {3cc77ec3bb41fb1600dcc34616b4c768} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:02.745 [DEBU] {3cc77ec3bb41fb16ffdbc346cd7c1e6e} [ 18 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:02.749 [DEBU] {10372ac5bb41fb1601dcc3467a7d8ee2} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:14.685 [DEBU] {848afc8cbe41fb1606dcc346f7b1b461} [ 31 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:06:14.687 [DEBU] {848afc8cbe41fb1605dcc346edf02f1a} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:06:14.795 [DEBU] {2c99b78ebe41fb1607dcc346a09337ef} [ 73 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:06:14.838 [DEBU] {848afc8cbe41fb1606dcc346f7b1b461} [102 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:14.873 [DEBU] {848afc8cbe41fb1605dcc346edf02f1a} [123 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:15.026 [DEBU] {2c99b78ebe41fb1607dcc346a09337ef} [160 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:15.763 [DEBU] {a41331cdbe41fb160cdcc3466da04c59} [ 33 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:06:15.766 [DEBU] {cc5940cdbe41fb160ddcc346af8a3905} [ 35 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:06:15.766 [DEBU] {a484e1c9be41fb160bdcc346ef1e4932} [ 28 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:06:15.778 [DEBU] {a41331cdbe41fb160cdcc3466da04c59} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:15.794 [DEBU] {cc5940cdbe41fb160ddcc346af8a3905} [ 22 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:15.809 [DEBU] {a484e1c9be41fb160bdcc346ef1e4932} [ 33 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:36.646 [DEBU] {64f76dabc341fb1611dcc346fbcbbe66} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:06:36.647 [DEBU] {6c1f8eabc341fb1612dcc3469a636093} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:06:36.647 [DEBU] {6c3c9eabc341fb1613dcc346c30d95bc} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:06:36.654 [DEBU] {64f76dabc341fb1611dcc346fbcbbe66} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:36.655 [DEBU] {6c1f8eabc341fb1612dcc3469a636093} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:06:36.662 [DEBU] {6c3c9eabc341fb1613dcc346c30d95bc} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:08.294 [DEBU] {f8dd08fed841fb1618dcc3469067bc9f} [ 74 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:08.310 [DEBU] {f8dd08fed841fb1617dcc3465b5650cd} [ 64 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:08.359 [DEBU] {8c14c300d941fb1619dcc3465a9f0733} [ 92 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:08.410 [DEBU] {f8dd08fed841fb1618dcc3469067bc9f} [110 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:08.461 [DEBU] {f8dd08fed841fb1617dcc3465b5650cd} [101 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:08.478 [DEBU] {8c14c300d941fb1619dcc3465a9f0733} [ 67 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:10.582 [DEBU] {f80e2d85d941fb161edcc346051970c9} [ 96 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:10.680 [DEBU] {54cc1d85d941fb161ddcc34666faeecd} [185 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:10.693 [DEBU] {68f6ac8ad941fb161fdcc346293880fa} [112 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:10.704 [DEBU] {f80e2d85d941fb161edcc346051970c9} [ 41 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:10.762 [DEBU] {54cc1d85d941fb161ddcc34666faeecd} [ 65 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:10.762 [DEBU] {68f6ac8ad941fb161fdcc346293880fa} [ 57 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:12.369 [DEBU] {148f62efd941fb1623dcc3469b425d53} [101 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:12.417 [DEBU] {f8d1f0f3d941fb1624dcc346a0c23cc7} [ 35 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:12.449 [DEBU] {b09456f5d941fb1625dcc3461dc97879} [ 81 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:12.467 [DEBU] {148f62efd941fb1623dcc3469b425d53} [ 60 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:12.474 [DEBU] {f8d1f0f3d941fb1624dcc346a0c23cc7} [ 24 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:12.480 [DEBU] {b09456f5d941fb1625dcc3461dc97879} [ 14 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:13.375 [DEBU] {f004642dda41fb162adcc34641c09484} [ 67 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:13.376 [DEBU] {2085452dda41fb1629dcc346c0b749a2} [ 69 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:13.449 [DEBU] {9c1ecd30da41fb162bdcc3469d0127bd} [ 77 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:13.452 [DEBU] {f004642dda41fb162adcc34641c09484} [ 49 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:13.454 [DEBU] {2085452dda41fb1629dcc346c0b749a2} [ 29 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:13.502 [DEBU] {9c1ecd30da41fb162bdcc3469d0127bd} [ 51 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:20.129 [DEBU] {b01c66c0db41fb162fdcc3467a2ade0d} [ 59 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:20.223 [DEBU] {b01c66c0db41fb162fdcc3467a2ade0d} [ 53 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:20.226 [DEBU] {304db3c7db41fb1631dcc34648ce49b5} [ 33 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:20.226 [DEBU] {304db3c7db41fb1630dcc3466696eec1} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:20.250 [DEBU] {304db3c7db41fb1631dcc34648ce49b5} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:20.253 [DEBU] {304db3c7db41fb1630dcc3466696eec1} [ 19 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:27.219 [DEBU] {08305267dd41fb1635dcc34613ae550b} [ 44 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:27.219 [DEBU] {08305267dd41fb1636dcc346c8cd62c9} [ 54 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:27.221 [DEBU] {2033436add41fb1637dcc346d1a73e86} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:27.241 [DEBU] {08305267dd41fb1635dcc34613ae550b} [ 13 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:27.254 [DEBU] {08305267dd41fb1636dcc346c8cd62c9} [ 21 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:27.275 [DEBU] {2033436add41fb1637dcc346d1a73e86} [ 37 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:38.740 [DEBU] {306cc618e041fb163bdcc346bb072cdc} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:38.742 [DEBU] {34b8d518e041fb163cdcc3463a6b5247} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:38.745 [DEBU] {74fae418e041fb163ddcc34669348cba} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:38.747 [DEBU] {306cc618e041fb163bdcc346bb072cdc} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:38.751 [DEBU] {34b8d518e041fb163cdcc3463a6b5247} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:38.757 [DEBU] {74fae418e041fb163ddcc34669348cba} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:51.495 [DEBU] {0c4ae410e341fb1641dcc346e660f5d2} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:08:51.495 [DEBU] {bc8af310e341fb1642dcc34650f471a4} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:08:51.495 [DEBU] {c4cd0211e341fb1643dcc34673072033} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:08:51.515 [DEBU] {0c4ae410e341fb1641dcc346e660f5d2} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:51.518 [DEBU] {bc8af310e341fb1642dcc34650f471a4} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:08:51.521 [DEBU] {c4cd0211e341fb1643dcc34673072033} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:10:08.776 [DEBU] {4825670ff541fb1648dcc3460354102d} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:10:08.776 [DEBU] {54e7570ff541fb1647dcc3465e60bd89} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:10:08.779 [DEBU] {4825670ff541fb1649dcc346c89e6b5a} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:10:08.782 [DEBU] {4825670ff541fb1648dcc3460354102d} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:10:08.787 [DEBU] {54e7570ff541fb1647dcc3465e60bd89} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:10:08.788 [DEBU] {4825670ff541fb1649dcc346c89e6b5a} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:10:52.409 [DEBU] {085db037ff41fb164edcc346e309ecf4} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:10:52.410 [DEBU] {3cd49137ff41fb164ddcc346dd374bd7} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:10:52.414 [DEBU] {d0ba4338ff41fb164fdcc3466f60a575} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:10:52.464 [DEBU] {085db037ff41fb164edcc346e309ecf4} [ 54 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:10:52.469 [DEBU] {3cd49137ff41fb164ddcc346dd374bd7} [ 56 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:10:52.483 [DEBU] {d0ba4338ff41fb164fdcc3466f60a575} [ 66 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:11:02.877 [DEBU] {282131a80142fb1654dcc3467b8ad742} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:11:02.880 [DEBU] {a42c3ba80142fb1655dcc34621a17dc7} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:11:02.890 [DEBU] {24ca2da70142fb1653dcc3466cb94028} [ 17 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:11:02.899 [DEBU] {282131a80142fb1654dcc3467b8ad742} [ 17 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:11:02.900 [DEBU] {a42c3ba80142fb1655dcc34621a17dc7} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:11:02.906 [DEBU] {24ca2da70142fb1653dcc3466cb94028} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:11:53.471 [DEBU] {4450186f0d42fb1657dcc3467721055f} [ 17 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:11:53.484 [DEBU] {4450186f0d42fb1657dcc3467721055f} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:11:53.507 [DEBU] {b82df1710d42fb165bdcc346079ff2fe} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:11:53.509 [DEBU] {88a4d2710d42fb165adcc3464da72b77} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:11:53.513 [DEBU] {b82df1710d42fb165bdcc346079ff2fe} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:11:53.514 [DEBU] {88a4d2710d42fb165adcc3464da72b77} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:12:17.713 [DEBU] {8c0713061342fb165fdcc346f202482c} [250 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:12:17.713 [DEBU] {884c22061342fb1660dcc34633665be7} [250 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:12:17.764 [DEBU] {901de9101342fb1661dcc346bebebdea} [ 51 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:12:17.785 [DEBU] {8c0713061342fb165fdcc346f202482c} [ 63 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:12:17.792 [DEBU] {901de9101342fb1661dcc346bebebdea} [ 14 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:12:17.792 [DEBU] {884c22061342fb1660dcc34633665be7} [ 56 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:18:43.828 [DEBU] {a4709bf76c42fb1666dcc346a5ae6ff2} [ 61 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:18:43.833 [DEBU] {002e8cf76c42fb1665dcc3465433aedc} [ 67 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:18:43.837 [DEBU] {b8b1aaf76c42fb1667dcc3468e114571} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:18:43.851 [DEBU] {a4709bf76c42fb1666dcc346a5ae6ff2} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:18:43.851 [DEBU] {002e8cf76c42fb1665dcc3465433aedc} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:18:43.885 [DEBU] {b8b1aaf76c42fb1667dcc3468e114571} [ 44 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:21:14.425 [DEBU] {a0dbfe099042fb1669dcc34638006a2e} [ 26 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:21:14.438 [DEBU] {a0dbfe099042fb1669dcc34638006a2e} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:21:14.713 [DEBU] {84484b1c9042fb166bdcc346fff5d317} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:21:14.764 [DEBU] {84484b1c9042fb166bdcc346fff5d317} [ 44 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:21:14.838 [DEBU] {bc39b1239042fb166ddcc34678c24147} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:21:14.914 [DEBU] {bc39b1239042fb166ddcc34678c24147} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:21:37.294 [DEBU] {d8354f5e9542fb1673dcc346f967be84} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:21:37.294 [DEBU] {d8354f5e9542fb1672dcc34621ffa655} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:21:37.294 [DEBU] {2854455e9542fb1671dcc3460bc8971e} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:21:37.300 [DEBU] {2854455e9542fb1671dcc3460bc8971e} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:21:37.343 [DEBU] {d8354f5e9542fb1672dcc34621ffa655} [ 47 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:21:37.369 [DEBU] {d8354f5e9542fb1673dcc346f967be84} [ 74 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:23.736 [DEBU] {0845241dae42fb1678dcc3460f1d8b16} [167 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:23:23.787 [DEBU] {980a151dae42fb1677dcc34647e4588e} [126 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:23:23.805 [DEBU] {b83dbe25ae42fb1679dcc3468880eeea} [ 92 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:23:23.815 [DEBU] {0845241dae42fb1678dcc3460f1d8b16} [ 53 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:23.860 [DEBU] {980a151dae42fb1677dcc34647e4588e} [ 51 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:23.873 [DEBU] {b83dbe25ae42fb1679dcc3468880eeea} [ 25 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:24.898 [DEBU] {14ffdc6bae42fb167edcc346c72ead16} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:23:24.903 [DEBU] {1014266cae42fb167fdcc3462e709b0f} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:23:24.907 [DEBU] {14ffdc6bae42fb167edcc346c72ead16} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:24.910 [DEBU] {1014266cae42fb167fdcc3462e709b0f} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:24.959 [DEBU] {5cdec06aae42fb167ddcc346ca62cfa8} [ 72 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:23:25.013 [DEBU] {5cdec06aae42fb167ddcc346ca62cfa8} [  3 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:36.234 [DEBU] {f8f1290eb142fb1684dcc346c6138c8b} [ 30 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:23:36.250 [DEBU] {506c480eb142fb1685dcc3464c49bc15} [ 44 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:23:36.252 [DEBU] {d84aac0cb142fb1683dcc3461c7bd744} [ 46 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:23:36.260 [DEBU] {f8f1290eb142fb1684dcc346c6138c8b} [ 20 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:36.274 [DEBU] {506c480eb142fb1685dcc3464c49bc15} [ 22 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:23:36.320 [DEBU] {d84aac0cb142fb1683dcc3461c7bd744} [ 48 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:27:55.890 [DEBU] {38598d7bed42fb1689dcc346e44daa24} [ 18 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:27:55.891 [DEBU] {38598d7bed42fb168adcc3461e9e2051} [ 29 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:27:55.891 [DEBU] {80e3237ced42fb168bdcc3462027010a} [ 30 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:27:55.907 [DEBU] {80e3237ced42fb168bdcc3462027010a} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:27:55.910 [DEBU] {38598d7bed42fb168adcc3461e9e2051} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:27:55.912 [DEBU] {38598d7bed42fb1689dcc346e44daa24} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:21.179 [DEBU] {a047d766f342fb168ddcc346ee46bce5} [ 21 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:28:21.185 [DEBU] {a047d766f342fb168ddcc346ee46bce5} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:21.379 [DEBU] {908dad73f342fb168fdcc3467e522fd8} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:28:21.395 [DEBU] {908dad73f342fb168fdcc3467e522fd8} [ 15 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:21.483 [DEBU] {1064c479f342fb1691dcc3460d3736d6} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:28:21.488 [DEBU] {1064c479f342fb1691dcc3460d3736d6} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:24.627 [DEBU] {fc56a734f442fb1695dcc3466006bee0} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:28:24.631 [DEBU] {f8cdb634f442fb1696dcc346ad335311} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:28:24.633 [DEBU] {a85c4f35f442fb1697dcc34695be224e} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:28:24.640 [DEBU] {fc56a734f442fb1695dcc3466006bee0} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:24.652 [DEBU] {a85c4f35f442fb1697dcc34695be224e} [ 16 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:24.645 [DEBU] {f8cdb634f442fb1696dcc346ad335311} [ 13 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:27.088 [DEBU] {e4fce9c7f442fb169bdcc346c197373a} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:28:27.096 [DEBU] {fc4e7ac8f442fb169cdcc346ad158351} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:28:27.100 [DEBU] {e4fce9c7f442fb169bdcc346c197373a} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:27.102 [DEBU] {380b8cc8f442fb169ddcc3467e626dda} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:28:27.107 [DEBU] {fc4e7ac8f442fb169cdcc346ad158351} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:27.114 [DEBU] {380b8cc8f442fb169ddcc3467e626dda} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:30.029 [DEBU] {5cd35977f542fb16a0dcc346ca481df6} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:28:30.035 [DEBU] {5cd35977f542fb16a0dcc346ca481df6} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:30.059 [DEBU] {58098b78f542fb16a2dcc3463968ae98} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:28:30.066 [DEBU] {c06d7779f542fb16a3dcc34600336d78} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:28:30.067 [DEBU] {58098b78f542fb16a2dcc3463968ae98} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:30.073 [DEBU] {c06d7779f542fb16a3dcc34600336d78} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:53.177 [DEBU] {68e6e0dafa42fb16a7dcc346673014e1} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:28:53.185 [DEBU] {54657adbfa42fb16a8dcc346b4aac225} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:28:53.185 [DEBU] {68e6e0dafa42fb16a7dcc346673014e1} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:53.189 [DEBU] {54657adbfa42fb16a9dcc346ed371638} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:28:53.194 [DEBU] {54657adbfa42fb16a8dcc346b4aac225} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:28:53.196 [DEBU] {54657adbfa42fb16a9dcc346ed371638} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:29:42.432 [DEBU] {bcef64520643fb16addcc346a4823634} [ 12 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:29:42.436 [DEBU] {f0696b520643fb16aedcc3464071d465} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:29:42.436 [DEBU] {2c3073520643fb16afdcc346542a5000} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:29:42.438 [DEBU] {bcef64520643fb16addcc346a4823634} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:29:42.446 [DEBU] {2c3073520643fb16afdcc346542a5000} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:29:42.446 [DEBU] {f0696b520643fb16aedcc3464071d465} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:31:48.920 [DEBU] {5c9477c42343fb16b4dcc34625ecc700} [ 33 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:31:48.921 [DEBU] {acc041c42343fb16b3dcc34651492717} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:31:48.937 [DEBU] {c4b857c62343fb16b5dcc346967cda98} [ 18 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:31:48.937 [DEBU] {acc041c42343fb16b3dcc34651492717} [ 10 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:31:48.949 [DEBU] {c4b857c62343fb16b5dcc346967cda98} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:31:49.089 [DEBU] {5c9477c42343fb16b4dcc34625ecc700} [167 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:32:15.907 [DEBU] {50d5c60c2a43fb16badcc34627a8fee7} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:32:15.912 [DEBU] {14a3b70c2a43fb16b9dcc34625facd5d} [ 42 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:32:15.915 [DEBU] {b069760e2a43fb16bbdcc346b4aec25e} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:32:15.919 [DEBU] {50d5c60c2a43fb16badcc34627a8fee7} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:32:15.925 [DEBU] {b069760e2a43fb16bbdcc346b4aec25e} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:32:15.920 [DEBU] {14a3b70c2a43fb16b9dcc34625facd5d} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:04.160 [DEBU] {8015e6105f43fb16c0dcc3465a30e84d} [111 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:36:04.160 [DEBU] {8015e6105f43fb16c1dcc346dbfe1e19} [103 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:36:04.160 [DEBU] {3cdace105f43fb16bfdcc3464a4a3dad} [111 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:36:04.181 [DEBU] {8015e6105f43fb16c0dcc3465a30e84d} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:04.183 [DEBU] {8015e6105f43fb16c1dcc346dbfe1e19} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:04.189 [DEBU] {3cdace105f43fb16bfdcc3464a4a3dad} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:23.574 [DEBU] {fc6dabb86343fb16c4dcc3465e173a1d} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:36:23.584 [DEBU] {fc6dabb86343fb16c4dcc3465e173a1d} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:23.593 [DEBU] {f8b5c0b96343fb16c7dcc346b19dbe52} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:36:23.601 [DEBU] {f8b5c0b96343fb16c7dcc346b19dbe52} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:23.836 [DEBU] {947cc3b86343fb16c5dcc3468a4e5083} [267 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:36:23.841 [DEBU] {947cc3b86343fb16c5dcc3468a4e5083} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:43.554 [DEBU] {d4cabb5f6843fb16c9dcc3463f3c432d} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:36:43.559 [DEBU] {d4cabb5f6843fb16c9dcc3463f3c432d} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:43.587 [DEBU] {008164616843fb16ccdcc3468a617a3c} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:36:43.595 [DEBU] {e05ad2616843fb16cddcc3466c2e68a3} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:36:43.596 [DEBU] {008164616843fb16ccdcc3468a617a3c} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:43.604 [DEBU] {e05ad2616843fb16cddcc3466c2e68a3} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:46.158 [DEBU] {c0a6b7fa6843fb16d0dcc346cd6eedb5} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:36:46.168 [DEBU] {40d8cefa6843fb16d1dcc34660a400f5} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:36:46.172 [DEBU] {c0a6b7fa6843fb16d0dcc346cd6eedb5} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:46.191 [DEBU] {40d8cefa6843fb16d1dcc34660a400f5} [ 22 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:46.360 [DEBU] {3871af066943fb16d3dcc346231363c6} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:36:46.366 [DEBU] {3871af066943fb16d3dcc346231363c6} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:49.370 [DEBU] {a8863eba6943fb16d6dcc346f0794ec3} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:36:49.380 [DEBU] {a8863eba6943fb16d6dcc346f0794ec3} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:49.402 [DEBU] {44433fbb6943fb16d7dcc34691e06728} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:36:49.407 [DEBU] {44433fbb6943fb16d7dcc34691e06728} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:49.430 [DEBU] {30b6e7bd6943fb16d9dcc34644003121} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:36:49.437 [DEBU] {30b6e7bd6943fb16d9dcc34644003121} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:52.034 [DEBU] {407af1526a43fb16dddcc34645822665} [ 20 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:36:52.282 [DEBU] {407af1526a43fb16dddcc34645822665} [203 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:52.307 [DEBU] {7471195a6a43fb16dfdcc346f71befea} [129 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:36:52.306 [DEBU] {2857f8546a43fb16dedcc3464aa53f79} [128 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:36:52.318 [DEBU] {7471195a6a43fb16dfdcc346f71befea} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:36:52.340 [DEBU] {2857f8546a43fb16dedcc3464aa53f79} [ 29 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:37:47.252 [DEBU] {00d542347743fb16e1dcc346bb019eec} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:37:47.258 [DEBU] {00d542347743fb16e1dcc346bb019eec} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:37:47.464 [DEBU] {7031f6407743fb16e3dcc346a7c5e8e6} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:37:47.477 [DEBU] {7031f6407743fb16e3dcc346a7c5e8e6} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:37:47.567 [DEBU] {ac5c29477743fb16e5dcc346bc08555e} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:37:47.571 [DEBU] {ac5c29477743fb16e5dcc346bc08555e} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:37:53.181 [DEBU] {7c7b0a947843fb16e9dcc34677ca23a5} [ 33 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:37:53.181 [DEBU] {343e12947843fb16eadcc346fa766315} [ 32 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:37:53.193 [DEBU] {7c7b0a947843fb16e9dcc34677ca23a5} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:37:53.204 [DEBU] {343e12947843fb16eadcc346fa766315} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:37:53.218 [DEBU] {a4aa21947843fb16ebdcc3467ae74f22} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:37:53.248 [DEBU] {a4aa21947843fb16ebdcc3467ae74f22} [ 29 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:03.695 [DEBU] {4ce75c087b43fb16efdcc346d3f5dfd5} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:38:03.700 [DEBU] {742d6c087b43fb16f0dcc3460426ded7} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:38:03.700 [DEBU] {70727b087b43fb16f1dcc3469bf21de2} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:38:03.704 [DEBU] {4ce75c087b43fb16efdcc346d3f5dfd5} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:03.705 [DEBU] {742d6c087b43fb16f0dcc3460426ded7} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:03.712 [DEBU] {70727b087b43fb16f1dcc3469bf21de2} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:09.479 [DEBU] {24361d617c43fb16f4dcc3466048a8a3} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:38:09.592 [DEBU] {24361d617c43fb16f4dcc3466048a8a3} [112 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:09.598 [DEBU] {f8959c677c43fb16f7dcc346d64d41cc} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:38:09.600 [DEBU] {84e24c667c43fb16f5dcc346c4989592} [ 40 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:38:09.609 [DEBU] {f8959c677c43fb16f7dcc346d64d41cc} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:09.611 [DEBU] {84e24c667c43fb16f5dcc346c4989592} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:14.877 [DEBU] {a43ebba27d43fb16fadcc3462329097b} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:38:14.877 [DEBU] {a43ebba27d43fb16fbdcc346366cdf38} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:38:14.887 [DEBU] {a43ebba27d43fb16fadcc3462329097b} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:14.894 [DEBU] {a43ebba27d43fb16fbdcc346366cdf38} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:38:14.896 [DEBU] {7c4ed2a37d43fb16fddcc3460528558b} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:38:14.907 [DEBU] {7c4ed2a37d43fb16fddcc3460528558b} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:25.436 [DEBU] {c8b187108e43fb1601ddc34686216a32} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:39:25.437 [DEBU] {5ce79a108e43fb1602ddc3461846f4a8} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:39:25.441 [DEBU] {c8b187108e43fb1601ddc34686216a32} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:25.448 [DEBU] {5ce79a108e43fb1602ddc3461846f4a8} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:25.453 [DEBU] {784124118e43fb1603ddc346bf0a1edf} [ 12 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:39:25.460 [DEBU] {784124118e43fb1603ddc346bf0a1edf} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:35.772 [DEBU] {5c0aa1769043fb1607ddc3466d3575bc} [ 39 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:39:35.775 [DEBU] {fc91bf769043fb1608ddc346cefcb1e3} [ 17 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:39:35.786 [DEBU] {18430f789043fb1609ddc346dfe44c82} [ 28 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:39:35.793 [DEBU] {fc91bf769043fb1608ddc346cefcb1e3} [ 16 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:35.793 [DEBU] {5c0aa1769043fb1607ddc3466d3575bc} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:35.813 [DEBU] {18430f789043fb1609ddc346dfe44c82} [ 23 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:55.057 [DEBU] {9cd12ae69443fb160eddc346f85d53b6} [272 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:39:55.118 [DEBU] {d4941be69443fb160dddc346f812d031} [267 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:39:55.157 [DEBU] {9cd12ae69443fb160eddc346f85d53b6} [ 35 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:55.167 [DEBU] {d4941be69443fb160dddc346f812d031} [ 10 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:39:55.153 [DEBU] {80025bf69443fb160fddc3464dda84a8} [ 97 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:39:55.223 [DEBU] {80025bf69443fb160fddc3464dda84a8} [ 38 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:23.673 [DEBU] {94d3ca9f9b43fb1613ddc3468178ba7d} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:40:23.673 [DEBU] {94d3ca9f9b43fb1612ddc346ba086e3d} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:40:23.679 [DEBU] {94d3ca9f9b43fb1612ddc346ba086e3d} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:23.679 [DEBU] {94d3ca9f9b43fb1613ddc3468178ba7d} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:23.831 [DEBU] {c8763fa99b43fb1615ddc3461089e3f7} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:40:23.837 [DEBU] {c8763fa99b43fb1615ddc3461089e3f7} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:34.362 [DEBU] {b8ade31c9e43fb1617ddc3463fd8f603} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:40:34.366 [DEBU] {b8ade31c9e43fb1617ddc3463fd8f603} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:34.403 [DEBU] {ecd02a1f9e43fb1619ddc346b672a051} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:40:34.415 [DEBU] {ecd02a1f9e43fb1619ddc346b672a051} [ 10 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:34.488 [DEBU] {f4536d249e43fb161bddc346bc0e4362} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:40:34.560 [DEBU] {f4536d249e43fb161bddc346bc0e4362} [ 68 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:42.096 [DEBU] {c813fbe79f43fb1620ddc346190d7e59} [ 37 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:40:42.106 [DEBU] {f49cdce79f43fb161fddc3468f015613} [ 48 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:40:42.108 [DEBU] {30305de89f43fb1621ddc34691ad7bb6} [ 25 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:40:42.117 [DEBU] {c813fbe79f43fb1620ddc346190d7e59} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:42.120 [DEBU] {f49cdce79f43fb161fddc3468f015613} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:42.407 [DEBU] {30305de89f43fb1621ddc34691ad7bb6} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:53.062 [DEBU] {30f8ec6fa243fb1625ddc34606f4249b} [132 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:40:53.066 [DEBU] {40ba1a70a243fb1626ddc3464b097e03} [133 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:40:53.094 [DEBU] {d4708475a243fb1627ddc346b254adbb} [ 33 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:40:53.134 [DEBU] {30f8ec6fa243fb1625ddc34606f4249b} [ 56 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:53.145 [DEBU] {40ba1a70a243fb1626ddc3464b097e03} [ 53 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:40:53.150 [DEBU] {d4708475a243fb1627ddc346b254adbb} [ 24 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:42:04.055 [DEBU] {1412cdfeb243fb162dddc34616226a62} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:42:04.060 [DEBU] {a8bc43feb243fb162bddc34617aa38f0} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:42:04.068 [DEBU] {1412cdfeb243fb162cddc346b25fc162} [ 18 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:42:04.094 [DEBU] {1412cdfeb243fb162dddc34616226a62} [ 28 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:42:04.101 [DEBU] {1412cdfeb243fb162cddc346b25fc162} [ 17 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:42:04.099 [DEBU] {a8bc43feb243fb162bddc34617aa38f0} [ 32 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:43:48.788 [DEBU] {d0ea9961cb43fb1632ddc34647f10a75} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:43:48.795 [DEBU] {d0ea9961cb43fb1632ddc34647f10a75} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:43:48.812 [DEBU] {2c39a961cb43fb1633ddc3460f563716} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:43:48.819 [DEBU] {2c39a961cb43fb1633ddc3460f563716} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:43:49.112 [DEBU] {e86e7b61cb43fb1631ddc346998d7e7c} [330 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:43:49.116 [DEBU] {e86e7b61cb43fb1631ddc346998d7e7c} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:47:08.142 [DEBU] {381f6acbf943fb1639ddc346312b24f0} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:47:08.149 [DEBU] {381f6acbf943fb1639ddc346312b24f0} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:47:08.155 [DEBU] {7882d1caf943fb1637ddc3464494f55a} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:47:08.160 [DEBU] {7882d1caf943fb1638ddc346a3c5f374} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:47:08.164 [DEBU] {7882d1caf943fb1637ddc3464494f55a} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:47:08.181 [DEBU] {7882d1caf943fb1638ddc346a3c5f374} [ 19 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:17.451 [DEBU] {ccdac8ee0944fb163dddc346a5c56805} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:48:17.452 [DEBU] {182415ef0944fb163fddc346167be006} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:48:17.453 [DEBU] {d062e7ee0944fb163eddc3460e528a10} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:48:17.462 [DEBU] {182415ef0944fb163fddc346167be006} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:17.464 [DEBU] {ccdac8ee0944fb163dddc346a5c56805} [ 11 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:17.468 [DEBU] {d062e7ee0944fb163eddc3460e528a10} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:34.698 [DEBU] {c473ccf10d44fb1642ddc346a44a14aa} [ 26 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:48:34.708 [DEBU] {dc4fdcf20d44fb1643ddc3466b3ae73f} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:48:34.720 [DEBU] {c473ccf10d44fb1642ddc346a44a14aa} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:34.724 [DEBU] {dc4fdcf20d44fb1643ddc3466b3ae73f} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:34.763 [DEBU] {dc9104f70d44fb1645ddc3464ae29e3a} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:48:34.769 [DEBU] {dc9104f70d44fb1645ddc3464ae29e3a} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:47.746 [DEBU] {c0736afa1044fb1648ddc3460e41c218} [ 45 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:48:47.747 [DEBU] {743c98fa1044fb1649ddc346eed4e9d5} [ 43 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:48:47.751 [DEBU] {c0736afa1044fb1648ddc3460e41c218} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:47.753 [DEBU] {b84eaefc1044fb164bddc3462a13b095} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:48:47.756 [DEBU] {743c98fa1044fb1649ddc346eed4e9d5} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:47.766 [DEBU] {b84eaefc1044fb164bddc3462a13b095} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:59.682 [DEBU] {706241c31344fb1650ddc346c0d1b04b} [ 23 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:48:59.724 [DEBU] {706241c31344fb1650ddc346c0d1b04b} [ 26 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:59.725 [DEBU] {0075f6c51344fb1651ddc346cf2e6d68} [ 20 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:48:59.724 [DEBU] {48c92ac31344fb164fddc346410c8c5b} [ 20 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:48:59.734 [DEBU] {48c92ac31344fb164fddc346410c8c5b} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:48:59.789 [DEBU] {0075f6c51344fb1651ddc346cf2e6d68} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:49:14.852 [DEBU] {bc6e5c4c1744fb1653ddc3461925fad1} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:49:14.865 [DEBU] {bc6e5c4c1744fb1653ddc3461925fad1} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:49:14.977 [DEBU] {2408e0531744fb1655ddc346c3f99acc} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:49:15.019 [DEBU] {2408e0531744fb1655ddc346c3f99acc} [ 41 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:49:15.356 [DEBU] {446c956a1744fb1657ddc3465f0fb0e1} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:49:15.370 [DEBU] {446c956a1744fb1657ddc3465f0fb0e1} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:49:52.556 [DEBU] {4c01d8132044fb1659ddc346a4cb61a1} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 21:49:52.571 [DEBU] {4c01d8132044fb1659ddc346a4cb61a1} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:49:52.763 [DEBU] {cc06cb1d2044fb165bddc346b843a697} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 21:49:52.774 [DEBU] {cc06cb1d2044fb165bddc346b843a697} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 21:49:52.809 [DEBU] {90d8f8222044fb165dddc346f7553734} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 21:49:52.814 [DEBU] {90d8f8222044fb165dddc346f7553734} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 22:49:43.546 [DEBU] {dc3f52296447fb162265277a73d75cea} [ 41 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-06-23 22:49:43.621 [DEBU] {3c3449296447fb162165277a39b71a46} [ 34 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-23 22:49:43.623 [DEBU] {dc3f52296447fb162265277a73d75cea} [ 36 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 22:49:43.657 [DEBU] {3c3449296447fb162165277a39b71a46} [ 31 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 22:49:43.664 [DEBU] {dc3f52296447fb162365277a05477b2f} [ 32 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-23 22:49:43.672 [DEBU] {3c3449296447fb162165277a39b71a46} [  6 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-06-23 22:49:43.676 [DEBU] {dc3f52296447fb162365277a05477b2f} [ 11 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 22:49:43.676 [DEBU] {dc3f52296447fb162265277a73d75cea} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 22:49:43.687 [ERRO] {3c3449296447fb162165277a39b71a46} [  9 ms] [default] [rows:0  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.id=device_info.id) ORDER BY `id` asc LIMIT 0,10
+Error: Error 1052: Column 'id' in field list is ambiguous 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. iotfast/internal/app/device/service.(*deviceInfoImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_info.go:95
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. iotfast/internal/app/device/service.(*deviceInfoImpl).List
+    E:/src/iotfast/internal/app/device/service/device_info.go:82
+15. iotfast/internal/app/device/controller.(*deviceInfoController).List
+    E:/src/iotfast/internal/app/device/controller/device_info.go:36
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-23 22:49:43.689 [DEBU] {dc3f52296447fb162365277a05477b2f} [ 11 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:03:47.370 [DEBU] {d447eba22848fb167bbde311056a1d1c} [ 11 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-23 23:03:47.419 [DEBU] {d447eba22848fb167cbde3110f15da3a} [ 28 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-23 23:03:47.432 [DEBU] {d447eba22848fb167bbde311056a1d1c} [ 42 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:03:47.435 [DEBU] {d447eba22848fb167cbde3110f15da3a} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:03:47.478 [DEBU] {d43f2fa32848fb167dbde311e53e8424} [ 50 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-06-23 23:03:47.505 [DEBU] {d43f2fa32848fb167dbde311e53e8424} [ 26 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:03:47.507 [DEBU] {d447eba22848fb167bbde311056a1d1c} [ 27 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-06-23 23:03:47.514 [ERRO] {d447eba22848fb167bbde311056a1d1c} [  5 ms] [default] [rows:0  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.status_id) ORDER BY `id` asc LIMIT 0,10
+Error: Error 1054: Unknown column 'device_info.status_id' in 'on clause' 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. iotfast/internal/app/device/service.(*deviceInfoImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_info.go:95
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. iotfast/internal/app/device/service.(*deviceInfoImpl).List
+    E:/src/iotfast/internal/app/device/service/device_info.go:82
+15. iotfast/internal/app/device/controller.(*deviceInfoController).List
+    E:/src/iotfast/internal/app/device/controller/device_info.go:36
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-23 23:03:47.534 [DEBU] {d447eba22848fb167cbde3110f15da3a} [ 26 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:03:47.532 [DEBU] {d43f2fa32848fb167dbde311e53e8424} [ 23 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:05:17.470 [DEBU] {2083819d3d48fb16727d093668ff1d57} [  7 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-06-23 23:05:17.477 [DEBU] {2083819d3d48fb16727d093668ff1d57} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:05:17.498 [DEBU] {2083819d3d48fb16727d093668ff1d57} [ 19 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:05:17.506 [DEBU] {2c6f149f3d48fb16737d0936bbd72e24} [ 13 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-23 23:05:17.522 [DEBU] {2c6f149f3d48fb16737d0936bbd72e24} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:05:17.552 [DEBU] {e85c37a03d48fb16747d0936ca4fa911} [ 39 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-23 23:05:17.568 [DEBU] {e85c37a03d48fb16747d0936ca4fa911} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:05:17.572 [DEBU] {2c6f149f3d48fb16737d0936bbd72e24} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:05:17.594 [DEBU] {e85c37a03d48fb16747d0936ca4fa911} [ 26 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-06-23 23:05:17.749 [DEBU] {e85c37a03d48fb16747d0936ca4fa911} [ 60 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:18:20.936 [DEBU] {54b3a1fdf348fb16777d09363663c5c6} [ 32 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:18:20.936 [DEBU] {54b3a1fdf348fb16767d0936fb4a71a3} [ 26 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:18:20.936 [DEBU] {54b3a1fdf348fb16757d09366c8a89b1} [ 32 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:18:20.949 [DEBU] {54b3a1fdf348fb16757d09366c8a89b1} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:18:20.952 [DEBU] {54b3a1fdf348fb16767d0936fb4a71a3} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:18:20.953 [DEBU] {54b3a1fdf348fb16777d09363663c5c6} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:19:32.667 [DEBU] {a4b45ebb0449fb167c7d0936efdd58f0} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:19:32.670 [DEBU] {446f4fbb0449fb167b7d09361319af10} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:19:32.667 [DEBU] {a4b45ebb0449fb167d7d0936b2d39072} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:19:32.675 [DEBU] {a4b45ebb0449fb167c7d0936efdd58f0} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:19:32.677 [DEBU] {446f4fbb0449fb167b7d09361319af10} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:19:32.678 [DEBU] {a4b45ebb0449fb167d7d0936b2d39072} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:20:38.786 [DEBU] {843755201449fb16837d0936c87a4f65} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:20:38.787 [DEBU] {c067ad1f1449fb16817d0936d54a1b3f} [ 18 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:20:38.796 [DEBU] {ecf9cb1f1449fb16827d0936da72d548} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:20:38.810 [DEBU] {843755201449fb16837d0936c87a4f65} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:20:38.811 [DEBU] {ecf9cb1f1449fb16827d0936da72d548} [  6 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:20:38.816 [DEBU] {c067ad1f1449fb16817d0936d54a1b3f} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:08.303 [DEBU] {645b44fe1a49fb16887d09363f2dc7eb} [ 23 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:21:08.303 [DEBU] {589016fe1a49fb16877d0936a7defe85} [ 31 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:21:08.305 [DEBU] {645b44fe1a49fb16897d093603889213} [ 26 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:21:08.310 [DEBU] {589016fe1a49fb16877d0936a7defe85} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:08.315 [DEBU] {645b44fe1a49fb16897d093603889213} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:08.385 [DEBU] {645b44fe1a49fb16887d09363f2dc7eb} [ 81 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:21.312 [DEBU] {00be02071e49fb168b7d0936853ee46a} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:21:21.322 [DEBU] {00be02071e49fb168b7d0936853ee46a} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:21.377 [DEBU] {a8d8af0a1e49fb168d7d09360e48c51d} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:21:21.403 [DEBU] {a8d8af0a1e49fb168d7d09360e48c51d} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:21.411 [DEBU] {d8a0f60c1e49fb168f7d0936121f10d4} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:21:21.417 [DEBU] {d8a0f60c1e49fb168f7d0936121f10d4} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:33.582 [DEBU] {b48198d82049fb16947d0936e55bd6a2} [171 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:21:33.698 [DEBU] {28c090d82049fb16937d09362a15a647} [209 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:21:33.703 [DEBU] {b48198d82049fb16947d0936e55bd6a2} [ 46 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:33.713 [DEBU] {e05a3fe12049fb16957d09369ee2423d} [157 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:21:33.736 [DEBU] {28c090d82049fb16937d09362a15a647} [ 35 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:21:33.767 [DEBU] {e05a3fe12049fb16957d09369ee2423d} [ 29 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:23:20.448 [DEBU] {443933c43949fb169a7d0936a56f4fa9} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:23:20.449 [DEBU] {443933c43949fb16997d09365b8d7350} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:23:20.709 [DEBU] {443933c43949fb16997d09365b8d7350} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:23:20.709 [DEBU] {443933c43949fb169a7d0936a56f4fa9} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:23:20.727 [DEBU] {a41a42c43949fb169b7d093627c924c2} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:23:20.737 [DEBU] {a41a42c43949fb169b7d093627c924c2} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:52:23.161 [DEBU] {94e8af7ecf4afb169e7d09367d9e2bd7} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-23 23:52:23.161 [DEBU] {94e8af7ecf4afb169d7d0936bbcfa451} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-23 23:52:23.655 [DEBU] {94e8af7ecf4afb169c7d0936585d764e} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-23 23:52:23.697 [DEBU] {94e8af7ecf4afb169e7d09367d9e2bd7} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:52:23.700 [DEBU] {94e8af7ecf4afb169c7d0936585d764e} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:52:23.712 [DEBU] {94e8af7ecf4afb169d7d0936bbcfa451} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-23 23:52:47.026 [DEBU] {acd11503d54afb16a27d09362e3b44cd} [ 25 ms] [default] [rows:25 ] SHOW FULL COLUMNS FROM `sys_auth_rule` 
+2022-06-23 23:52:47.036 [DEBU] {acd11503d54afb16a27d09362e3b44cd} [  9 ms] [default] [rows:71 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:52:47.183 [DEBU] {acd11503d54afb16a27d09362e3b44cd} [ 12 ms] [default] [rows:9  ] SHOW FULL COLUMNS FROM `sys_dict_type` 
+2022-06-23 23:52:47.191 [DEBU] {bc8b0a03d54afb16a17d09368c677b7b} [  7 ms] [default] [rows:71 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:52:47.192 [DEBU] {acd11503d54afb16a27d09362e3b44cd} [  8 ms] [default] [rows:1  ] SELECT `dict_name`,`remark` FROM `sys_dict_type` WHERE (`dict_type`='sys_show_hide') AND (`status`=1) LIMIT 1 
+2022-06-23 23:52:47.202 [DEBU] {acd11503d54afb16a27d09362e3b44cd} [  9 ms] [default] [rows:14 ] SHOW FULL COLUMNS FROM `sys_dict_data` 
+2022-06-23 23:52:47.226 [DEBU] {acd11503d54afb16a27d09362e3b44cd} [ 22 ms] [default] [rows:2  ] SELECT `dict_value`,`dict_label`,`is_default`,`remark` FROM `sys_dict_data` WHERE `dict_type`='sys_show_hide' ORDER BY `dict_sort` asc,`dict_code` asc 
+2022-06-23 23:52:58.943 [DEBU] {84fbb3d8d74afb16a77d09369fb2ca13} [  8 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `sys_role` 
+2022-06-23 23:52:58.947 [DEBU] {84fbb3d8d74afb16a77d09369fb2ca13} [  4 ms] [default] [rows:6  ] SELECT `id`,`status`,`list_order`,`name`,`remark`,`data_scope`,`created_at`,`updated_at` FROM `sys_role` ORDER BY `list_order` asc,`id` asc 
+2022-06-23 23:53:52.860 [DEBU] {e0ce6a68e44afb16ae7d093612716c60} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `casbin_rule` 
+2022-06-23 23:53:52.865 [DEBU] {d46be368e44afb16af7d0936335dc655} [  4 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-06-23 23:53:52.914 [DEBU] {acd3156ae44afb16b07d093639ee6feb} [ 33 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-06-23 23:54:07.925 [DEBU] {98aedfe9e74afb16b37d0936607a40ee} [ 14 ms] [default] [rows:21 ] SHOW FULL COLUMNS FROM `sys_user` 
+2022-06-23 23:54:07.940 [DEBU] {98aedfe9e74afb16b37d0936607a40ee} [ 10 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:54:07.953 [DEBU] {98aedfe9e74afb16b37d0936607a40ee} [ 11 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-06-23 23:54:07',`updated_at`='2022-06-23 23:54:07' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-06-23 23:54:08.432 [DEBU] {98aedfe9e74afb16b37d0936607a40ee} [  8 ms] [default] [rows:10 ] SHOW FULL COLUMNS FROM `sys_login_log` 
+2022-06-23 23:54:08.478 [DEBU] {98aedfe9e74afb16b37d0936607a40ee} [ 19 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`ipaddr`,`browser`,`os`,`login_name`,`status`,`login_time`,`login_location`,`module`,`msg`) VALUES('::1','Edge','Windows 10','demo',1,'2022-06-23 23:54:08','云南省 昆明市','系统后台','登录成功')  
+2022-06-23 23:54:09.445 [DEBU] {ac2ec344e84afb16b97d0936ff7a2cee} [ 10 ms] [default] [rows:71 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:55:32.964 [DEBU] {0c3f9bb6fb4afb16c77d093615257ec9} [  9 ms] [default] [rows:0  ] SELECT `id` FROM `sys_auth_rule` WHERE (name='api/v1') AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:55:32.975 [DEBU] {0c3f9bb6fb4afb16c77d093615257ec9} [  8 ms] [default] [rows:0  ] [txid:1] BEGIN 
+2022-06-23 23:55:32.979 [DEBU] {0c3f9bb6fb4afb16c77d093615257ec9} [  3 ms] [default] [rows:1  ] [txid:1] INSERT INTO `sys_auth_rule`(`redirect`,`component`,`is_link`,`is_iframe`,`is_affix`,`is_hide`,`is_cached`,`menu_type`,`path`,`pid`,`weigh`,`name`,`link_url`,`created_at`,`title`,`remark`,`icon`,`condition`,`updated_at`) VALUES('','/api/v1',0,0,0,1,1,1,'api/v1',42,0,'api/v1','','2022-06-23 23:55:32','设备数据','','','','2022-06-23 23:55:32')  
+2022-06-23 23:55:32.983 [DEBU] {0c3f9bb6fb4afb16c77d093615257ec9} [  3 ms] [default] [rows:0  ] [txid:1] COMMIT 
+2022-06-23 23:55:33.296 [DEBU] {f030e1c2fb4afb16cb7d0936d7bbf0e6} [136 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:55:33.302 [DEBU] {ac985dc8fb4afb16ce7d0936dc33da75} [ 43 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:55:54.506 [DEBU] {6ca9efba004bfb16d17d0936979d7e5c} [  7 ms] [default] [rows:1  ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`path`,`component`,`is_link`,`module_type`,`model_id`,`is_iframe`,`is_cached`,`redirect`,`is_affix`,`link_url`,`created_at`,`updated_at` FROM `sys_auth_rule` WHERE (`id`=109) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:56:13.759 [DEBU] {c4dd8435054bfb16d67d093661adf487} [ 14 ms] [default] [rows:1  ] SELECT `id` FROM `sys_auth_rule` WHERE ((name='api/v1/device/deviceInfo/get') AND (id!=109)) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:56:33.761 [DEBU] {64cbbcde094bfb16d87d0936c032d8d5} [  8 ms] [default] [rows:0  ] SELECT `id` FROM `sys_auth_rule` WHERE ((name='api/v1/device/deviceData/get') AND (id!=109)) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:56:33.765 [DEBU] {64cbbcde094bfb16d87d0936c032d8d5} [  3 ms] [default] [rows:0  ] [txid:2] BEGIN 
+2022-06-23 23:56:33.769 [DEBU] {64cbbcde094bfb16d87d0936c032d8d5} [  3 ms] [default] [rows:1  ] [txid:2] UPDATE `sys_auth_rule` SET `is_hide`=1,`is_iframe`=0,`component`='/api/v1',`path`='api/v1',`is_affix`=0,`updated_at`='2022-06-23 23:56:33',`pid`=43,`is_link`=0,`redirect`='',`icon`='',`remark`='',`link_url`='',`name`='api/v1/device/deviceData/get',`weigh`=0,`menu_type`=1,`is_cached`=1,`title`='设备数据',`condition`='' WHERE (`id`=109) AND `deleted_at` IS NULL 
+2022-06-23 23:56:33.809 [DEBU] {d4c0d864e44afb16ac7d0936019af58d} [  8 ms] [default] [rows:0  ] DELETE FROM `casbin_rule` WHERE (ptype = 'p') AND (v1 = '109') 
+2022-06-23 23:56:33.813 [DEBU] {64cbbcde094bfb16d87d0936c032d8d5} [  2 ms] [default] [rows:0  ] [txid:2] COMMIT 
+2022-06-23 23:56:34.036 [DEBU] {accd55ec094bfb16dc7d093610143bd6} [ 23 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:56:34.049 [DEBU] {4c73c7ee094bfb16df7d09365a960b67} [ 27 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:56:56.085 [DEBU] {04b61d110f4bfb16e57d0936650d100b} [  9 ms] [default] [rows:1  ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`path`,`component`,`is_link`,`module_type`,`model_id`,`is_iframe`,`is_cached`,`redirect`,`is_affix`,`link_url`,`created_at`,`updated_at` FROM `sys_auth_rule` WHERE (`id`=109) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:57:33.219 [DEBU] {783acdb5174bfb16e77d0936e84d6a39} [  8 ms] [default] [rows:0  ] SELECT `id` FROM `sys_auth_rule` WHERE ((name='api/v1/device/deviceData/get') AND (id!=109)) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:57:33.228 [DEBU] {783acdb5174bfb16e77d0936e84d6a39} [  6 ms] [default] [rows:0  ] [txid:3] BEGIN 
+2022-06-23 23:57:33.232 [DEBU] {783acdb5174bfb16e77d0936e84d6a39} [  4 ms] [default] [rows:1  ] [txid:3] UPDATE `sys_auth_rule` SET `is_iframe`=0,`remark`='',`component`='/api/v1',`is_affix`=0,`title`='设备详细信息',`name`='api/v1/device/deviceData/get',`condition`='',`is_link`=0,`menu_type`=1,`updated_at`='2022-06-23 23:57:33',`weigh`=0,`pid`=43,`is_cached`=1,`path`='api/v1',`icon`='',`is_hide`=1,`redirect`='',`link_url`='' WHERE (`id`=109) AND `deleted_at` IS NULL 
+2022-06-23 23:57:33.242 [DEBU] {d4c0d864e44afb16ac7d0936019af58d} [  5 ms] [default] [rows:0  ] DELETE FROM `casbin_rule` WHERE (ptype = 'p') AND (v1 = '109') 
+2022-06-23 23:57:33.245 [DEBU] {783acdb5174bfb16e77d0936e84d6a39} [  2 ms] [default] [rows:0  ] [txid:3] COMMIT 
+2022-06-23 23:57:33.411 [DEBU] {2ca455bf174bfb16eb7d093696e42a6d} [ 56 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:57:33.454 [DEBU] {08c55dbf174bfb16ed7d09368c094c7b} [ 98 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:57:48.768 [DEBU] {984649551b4bfb16f17d0936d39bf79f} [ 12 ms] [default] [rows:1  ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`path`,`component`,`is_link`,`module_type`,`model_id`,`is_iframe`,`is_cached`,`redirect`,`is_affix`,`link_url`,`created_at`,`updated_at` FROM `sys_auth_rule` WHERE (`id`=109) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:57:59.013 [DEBU] {8ced2ab81d4bfb16f67d0936ff7bae38} [  8 ms] [default] [rows:0  ] SELECT `id` FROM `sys_auth_rule` WHERE ((name='api/v1/device/deviceData/get') AND (id!=109)) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:57:59.019 [DEBU] {8ced2ab81d4bfb16f67d0936ff7bae38} [  5 ms] [default] [rows:0  ] [txid:4] BEGIN 
+2022-06-23 23:57:59.026 [DEBU] {8ced2ab81d4bfb16f67d0936ff7bae38} [  3 ms] [default] [rows:1  ] [txid:4] UPDATE `sys_auth_rule` SET `updated_at`='2022-06-23 23:57:59',`path`='api/v1',`weigh`=0,`name`='api/v1/device/deviceData/get',`condition`='',`is_affix`=0,`redirect`='',`is_hide`=1,`is_link`=0,`is_iframe`=0,`title`='设备详细信息',`pid`=43,`menu_type`=1,`component`='device/info/detail',`icon`='',`is_cached`=1,`link_url`='',`remark`='' WHERE (`id`=109) AND `deleted_at` IS NULL 
+2022-06-23 23:57:59.036 [DEBU] {d4c0d864e44afb16ac7d0936019af58d} [  9 ms] [default] [rows:0  ] DELETE FROM `casbin_rule` WHERE (ptype = 'p') AND (v1 = '109') 
+2022-06-23 23:57:59.041 [DEBU] {8ced2ab81d4bfb16f67d0936ff7bae38} [  4 ms] [default] [rows:0  ] [txid:4] COMMIT 
+2022-06-23 23:57:59.213 [DEBU] {fc2696c11d4bfb16fb7d0936c9b2c822} [ 43 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:57:59.251 [DEBU] {fc2696c11d4bfb16fa7d0936fff87e0b} [ 88 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:58:18.242 [DEBU] {a8225132224bfb16077e0936e09fd5c9} [  9 ms] [default] [rows:1  ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`path`,`component`,`is_link`,`module_type`,`model_id`,`is_iframe`,`is_cached`,`redirect`,`is_affix`,`link_url`,`created_at`,`updated_at` FROM `sys_auth_rule` WHERE (`id`=109) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:58:27.026 [DEBU] {ac1ed53d244bfb16097e093676d29f04} [  6 ms] [default] [rows:0  ] SELECT `id` FROM `sys_auth_rule` WHERE ((name='api/v1/device/deviceData/get') AND (id!=109)) AND `deleted_at` IS NULL LIMIT 1 
+2022-06-23 23:58:27.032 [DEBU] {ac1ed53d244bfb16097e093676d29f04} [  6 ms] [default] [rows:0  ] [txid:5] BEGIN 
+2022-06-23 23:58:27.037 [DEBU] {ac1ed53d244bfb16097e093676d29f04} [  2 ms] [default] [rows:1  ] [txid:5] UPDATE `sys_auth_rule` SET `is_link`=0,`condition`='',`is_iframe`=0,`component`='device/info/detail',`title`='设备详细信息',`path`='/device/deviceInfo/detail',`menu_type`=1,`is_affix`=0,`name`='api/v1/device/deviceData/get',`is_hide`=1,`pid`=43,`remark`='',`weigh`=0,`updated_at`='2022-06-23 23:58:27',`redirect`='',`icon`='',`is_cached`=1,`link_url`='' WHERE (`id`=109) AND `deleted_at` IS NULL 
+2022-06-23 23:58:27.049 [DEBU] {d4c0d864e44afb16ac7d0936019af58d} [  6 ms] [default] [rows:0  ] DELETE FROM `casbin_rule` WHERE (ptype = 'p') AND (v1 = '109') 
+2022-06-23 23:58:27.054 [DEBU] {ac1ed53d244bfb16097e093676d29f04} [  4 ms] [default] [rows:0  ] [txid:5] COMMIT 
+2022-06-23 23:58:27.201 [DEBU] {7032a847244bfb160e7e0936e2bfca5f} [ 19 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:58:27.208 [DEBU] {7032a847244bfb160d7e09363b8d6e3a} [ 26 ms] [default] [rows:72 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-23 23:58:30.391 [DEBU] {1c7e2d06254bfb16137e0936f29cace5} [ 12 ms] [default] [rows:1  ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`path`,`component`,`is_link`,`module_type`,`model_id`,`is_iframe`,`is_cached`,`redirect`,`is_affix`,`link_url`,`created_at`,`updated_at` FROM `sys_auth_rule` WHERE (`id`=109) AND `deleted_at` IS NULL LIMIT 1 

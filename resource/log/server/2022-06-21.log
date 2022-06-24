@@ -1,0 +1,366 @@
+2022-06-21 21:51:38.282 [INFO] swagger ui is serving at address: http://127.0.0.1:8201/swagger/ 
+2022-06-21 21:51:38.316 [INFO] openapi specification is serving at address: http://127.0.0.1:8201/api.json 
+2022-06-21 21:51:38.323 [INFO] pid[16732]: http server started listening on [:8201] 
+
+  ADDRESS | METHOD |                ROUTE                 |                                   HANDLER                                   |             MIDDLEWARE              
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | ALL    | /*                                   | github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing             | GLOBAL MIDDLEWARE                   
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | ALL    | /api.json                            | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                       |                                     
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/demo/demo                    | iotfast/internal/app/demo/controller.(*cDemo).Demo                          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/pub/captcha/get              | iotfast/internal/app/common/controller.(*captchaController).Get             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/config/add            | iotfast/internal/app/system/controller.(*configController).Add              | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/config/delete         | iotfast/internal/app/system/controller.(*configController).Delete           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/config/edit           | iotfast/internal/app/system/controller.(*configController).Edit             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/config/get            | iotfast/internal/app/system/controller.(*configController).Get              | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/config/list           | iotfast/internal/app/system/controller.(*configController).List             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/dbInit/createDb       | iotfast/internal/app/system/controller.(*sysDbInitController).CreateDb      | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dbInit/getEnvInfo     | iotfast/internal/app/system/controller.(*sysDbInitController).GetEnvInfo    | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dbInit/isInit         | iotfast/internal/app/system/controller.(*sysDbInitController).IsInit        | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/dept/add              | iotfast/internal/app/system/controller.(*sysDeptController).Add             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/dept/delete           | iotfast/internal/app/system/controller.(*sysDeptController).Delete          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/dept/edit             | iotfast/internal/app/system/controller.(*sysDeptController).Edit            | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dept/list             | iotfast/internal/app/system/controller.(*sysDeptController).List            | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dept/treeSelect       | iotfast/internal/app/system/controller.(*sysDeptController).TreeSelect      | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/dict/data/add         | iotfast/internal/app/system/controller.(*dictDataController).Add            | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/dict/data/delete      | iotfast/internal/app/system/controller.(*dictDataController).Delete         | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/dict/data/edit        | iotfast/internal/app/system/controller.(*dictDataController).Edit           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dict/data/get         | iotfast/internal/app/system/controller.(*dictDataController).Get            | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dict/data/getDictData | iotfast/internal/app/system/controller.(*dictDataController).GetDictData    | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dict/data/list        | iotfast/internal/app/system/controller.(*dictDataController).List           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/dict/type/add         | iotfast/internal/app/system/controller.(*SysDictTypeController).Add         | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/dict/type/delete      | iotfast/internal/app/system/controller.(*SysDictTypeController).Delete      | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/dict/type/edit        | iotfast/internal/app/system/controller.(*SysDictTypeController).Edit        | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dict/type/get         | iotfast/internal/app/system/controller.(*SysDictTypeController).Get         | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/dict/type/list        | iotfast/internal/app/system/controller.(*SysDictTypeController).List        | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/gen/columnList        | iotfast/internal/app/system/controller.(*genTableController).ColumnList     | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/gen/delete            | iotfast/internal/app/system/controller.(*genTableController).Delete         | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/gen/downGenCode       | iotfast/internal/app/system/controller.(*genTableController).DownGenCode    | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/gen/edit              | iotfast/internal/app/system/controller.(*genTableController).Edit           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/gen/genCode           | iotfast/internal/app/system/controller.(*genTableController).GenCode        | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/gen/getDbTable        | iotfast/internal/app/system/controller.(*genTableController).GetDbTable     | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/gen/preview           | iotfast/internal/app/system/controller.(*genTableController).Preview        | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/gen/relationTable     | iotfast/internal/app/system/controller.(*genTableController).RelationTable  | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/gen/tableImport       | iotfast/internal/app/system/controller.(*genTableController).ImportGenTable | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/gen/tableList         | iotfast/internal/app/system/controller.(*genTableController).TableList      | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/job/add               | iotfast/internal/app/system/controller.(*sysJobController).Add              | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/job/delete            | iotfast/internal/app/system/controller.(*sysJobController).Delete           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/job/edit              | iotfast/internal/app/system/controller.(*sysJobController).Edit             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/job/get               | iotfast/internal/app/system/controller.(*sysJobController).Get              | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/job/list              | iotfast/internal/app/system/controller.(*sysJobController).List             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/job/status            | iotfast/internal/app/system/controller.(*sysJobController).ChangeStatus     | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/login                 | iotfast/internal/app/system/controller.(*loginController).Login             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/loginLog/clear        | iotfast/internal/app/system/controller.(*loginLogController).Clear          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/loginLog/delete       | iotfast/internal/app/system/controller.(*loginLogController).Delete         | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/loginLog/list         | iotfast/internal/app/system/controller.(*loginLogController).List           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/loginOut              | iotfast/internal/app/system/controller.(*loginController).LoginOut          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/menu/add              | iotfast/internal/app/system/controller.(*menuController).Add                | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/menu/delete           | iotfast/internal/app/system/controller.(*menuController).Delete             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/menu/get              | iotfast/internal/app/system/controller.(*menuController).Get                | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/menu/getParams        | iotfast/internal/app/system/controller.(*menuController).GetAddParams       | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/menu/list             | iotfast/internal/app/system/controller.(*menuController).List               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/menu/update           | iotfast/internal/app/system/controller.(*menuController).Update             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/monitor/server        | iotfast/internal/app/system/controller.(*sysMonitorController).List         | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/post/add              | iotfast/internal/app/system/controller.(*postController).Add                | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/post/delete           | iotfast/internal/app/system/controller.(*postController).Delete             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/post/edit             | iotfast/internal/app/system/controller.(*postController).Edit               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/post/list             | iotfast/internal/app/system/controller.(*postController).List               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/role/add              | iotfast/internal/app/system/controller.(*roleController).Add                | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/role/delete           | iotfast/internal/app/system/controller.(*roleController).Delete             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/role/edit             | iotfast/internal/app/system/controller.(*roleController).Edit               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/role/get              | iotfast/internal/app/system/controller.(*roleController).Get                | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/role/getParams        | iotfast/internal/app/system/controller.(*roleController).GetParams          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/role/list             | iotfast/internal/app/system/controller.(*roleController).List               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | POST   | /api/v1/system/user/add              | iotfast/internal/app/system/controller.(*userController).Add                | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | DELETE | /api/v1/system/user/delete           | iotfast/internal/app/system/controller.(*userController).Delete             | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/user/edit             | iotfast/internal/app/system/controller.(*userController).Edit               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/user/getEdit          | iotfast/internal/app/system/controller.(*userController).GetEditUser        | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/user/getUserMenus     | iotfast/internal/app/system/controller.(*userController).GetUserMenus       | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/user/list             | iotfast/internal/app/system/controller.(*userController).List               | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /api/v1/system/user/params           | iotfast/internal/app/system/controller.(*userController).GetParams          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/user/resetPwd         | iotfast/internal/app/system/controller.(*userController).ResetPwd           | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | PUT    | /api/v1/system/user/setStatus        | iotfast/internal/app/system/controller.(*userController).SetStatus          | ghttp.MiddlewareHandlerResponse     
+          |        |                                      |                                                                             | service.IMiddleware.MiddlewareCORS  
+          |        |                                      |                                                                             | service.IMiddleware.Ctx             
+          |        |                                      |                                                                             | service.IMiddleware.Auth            
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | GET    | /swagger                             | iotfast/internal/cmd.glob..func1.1.1                                        |                                     
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+  :8201   | ALL    | /swagger/*                           | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                         | HOOK_BEFORE_SERVE                   
+----------|--------|--------------------------------------|-----------------------------------------------------------------------------|-------------------------------------
+ 

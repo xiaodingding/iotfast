@@ -121,11 +121,7 @@
   {{if eq $column.IsPk "1"}}
   <el-table-column label="{{$column.ColumnComment| TrimSpecial}}" align="center" prop="{{$column.HtmlField}}" />
   {{else if and (eq $column.IsList "1") (eq $column.HtmlType "datetime")}}
-  <el-table-column label="{{$column.ColumnComment| TrimSpecial}}" align="center" prop="{{$column.HtmlField}}" width="180">
-    <template  #default="scope">
-        <span>{{VueTag "{{"}} parseTime(scope.row.{{$column.HtmlField}}, '{y}-{m}-{d}') {{VueTag "}}"}}</span>
-    </template>
-  </el-table-column>
+  <el-table-column label="{{$column.ColumnComment| TrimSpecial}}" align="center" prop="{{$column.HtmlField}}" width="180"/>
   {{else if and (eq $column.IsList "1") (HasSuffix $column.ColumnName "status")}}
   <el-table-column label="{{$column.ColumnComment| TrimSpecial}}" align="center">
     <template  #default="scope">
@@ -175,7 +171,7 @@
         <el-form :model="ruleForm" ref="formRef" :rules="rules" size="default" label-width="120px">
             {{range $index, $column := .table.Columns}}
             {{if and (eq $column.IsInsert "1") (ne $column.IsPk "1")}}
-            {{if and (eq $column.HtmlType "input") (eq $column.IsEdithandle "1")}}
+            {{if and (eq $column.HtmlType "input") (eq $column.IsEdit "1")}}
             <el-form-item label="{{$column.ColumnComment| TrimSpecial}}" prop="{{$column.HtmlField}}">
                 <el-input v-model="ruleForm.{{$column.HtmlField}}" placeholder="请输入{{$column.ColumnComment}}" />
             </el-form-item>
@@ -377,10 +373,10 @@ export default defineComponent({
     {{if ne $column.LinkTableName ""}}
     //关联{{$column.LinkTableName}}表选项
     const get{{$column.LinkTableClass}}Items =() =>{
-      getItems(list{{$column.LinkTableClass}}, {pageSize:10000}).then(res => {
+      getItems(list{{$column.LinkTableClass}}, {pageSize:10000}).then((res:any) => {
         {{$column.HtmlField}}Options = setItems(res, '{{$column.LinkLabelId}}', '{{$column.LinkLabelName}}')
       })
-    },
+    };
     {{else if and (HasSuffix $column.ColumnName "status") (eq $column.IsList "1")}}
     // {{$column.ColumnComment}}修改
     const handle{{$column.HtmlField}}Change =(row:any) =>{
@@ -412,7 +408,7 @@ export default defineComponent({
     {{if ne $column.DictType ""}}
     {{if eq $column.HtmlType "checkbox"}}
     // {{$column.ColumnComment}}字典翻译
-    {{$column.HtmlField}}Format(row, column) {
+    {{$column.HtmlField}}Format = (row:any, column:any) =>{
       let {{$column.HtmlField}} = row.{{$column.HtmlField}}.split(",")
       let data = [];
       {{$column.HtmlField}}.map(item=>{
@@ -500,8 +496,8 @@ export default defineComponent({
     };
     /** 提交按钮 */
     const submitForm = () => {
-      const formWrap = unref(formRef) as any;
-      proxy.$refs.ruleForm.validate((valid: boolean) => {
+      //const formWrap = unref(formRef) as any;
+      proxy.$refs.formRef.validate((valid: boolean) => {
         if (valid) {
           if (state.ruleForm.{{.table.PkColumn.HtmlField}} != undefined) {
             update{{.table.ClassName}}(state.ruleForm).then((res:any)=>{
@@ -546,6 +542,7 @@ export default defineComponent({
         handleGetList();
     });
     return {
+            formRef,
               {{range $index, $column := .table.Columns}}
               {{if ne $column.LinkTableName ""}}
                 get{{$column.LinkTableClass}}Items,

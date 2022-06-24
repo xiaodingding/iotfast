@@ -26,6 +26,7 @@ type SysGenTableColumnColumns struct {
 	ColumnType            string // 列类型
 	GoType                string // Go类型
 	GoField               string // Go字段名
+	VueType               string // Vue类型
 	HtmlField             string // html字段名
 	IsPk                  string // 是否主键（1是）
 	IsIncrement           string // 是否自增（1是）
@@ -69,6 +70,7 @@ var sysGenTableColumnColumns = SysGenTableColumnColumns{
 	ColumnType:            "column_type",
 	GoType:                "go_type",
 	GoField:               "go_field",
+	VueType:               "vue_type",
 	HtmlField:             "html_field",
 	IsPk:                  "is_pk",
 	IsIncrement:           "is_increment",

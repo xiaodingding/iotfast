@@ -36,14 +36,14 @@
       <pagination
         v-show="total>0"
         :total="total"
-        :page.sync="queryParams.pageNum"
-        :limit.sync="queryParams.pageSize"
+        v-model:page="queryParams.pageNum"
+        v-model:limit="queryParams.pageSize"
         @pagination="getList"
       />
     </el-row>
     <div slot="footer" class="dialog-footer">
       <el-button type="primary" @click="handleImportTable">确 定</el-button>
-      <el-button @click="loading = false">取 消</el-button>
+      <el-button @click="onCancel">取 消</el-button>
     </div>
   </el-dialog>
 </template>
@@ -54,10 +54,9 @@ import { defineComponent, reactive, toRefs } from 'vue';
 import { importTable, listDbTable } from "/@/api/system/tools/gen";
 
 interface ImportTableState {
-  loading:boolean;
   isShowDialog:boolean;
   // 选中数组值
-  tables: any[],
+  tables: string[],
   // 总条数
   total: number,
   // 表数据
@@ -75,7 +74,6 @@ export default defineComponent({
 	setup(props, { emit }) {
   
 		const state = reactive<ImportTableState>({
-      loading:false,
       isShowDialog:false,
 		// 选中数组值
       tables: [],
@@ -99,7 +97,7 @@ export default defineComponent({
     };
     // 多选框选中数据
    const handleSelectionChange = (selection:any)=> {
-     console.log(selection);
+     //console.log(selection);
      state.tables = selection.map(item => item.tableName);
     };
     // 查询表数据
@@ -120,6 +118,7 @@ export default defineComponent({
     const resetQuery= () => {
      
     };
+
     /** 导入按钮操作 */
    const handleImportTable= () => {
       if(state.tables.length==0){
@@ -127,7 +126,7 @@ export default defineComponent({
           return
         }
 
-          importTable({ tables: state.tables.join(",") }).then((res:any)=>{
+          importTable(state.tables).then((res:any)=>{
             ElMessage.success(res.msg);
           if (res.code === 0) {
             state.isShowDialog = false;
@@ -138,10 +137,9 @@ export default defineComponent({
 
 		// 打开弹窗
 		const openDialog = (row?: any) => {
-      resetForm();
-		  getList();
+            resetForm();
+		    getList();
 			state.isShowDialog = true;
-
 		};
 		// 关闭弹窗
 		const closeDialog = () => {

@@ -365,7 +365,7 @@ export default defineComponent({
         handleGetList();
     });
     return {              
-                handlestatusChange,              
+            handlestatusChange,              
             handleGetList,
             handleCancel,
             handleReset,

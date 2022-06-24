@@ -1,7 +1,7 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao操作代码，无需手动修改，重新生成不会自动覆盖.
 // 生成日期：{{.table.CreateTime}}
-// 生成路径: {{.table.PackageName}}/dao/{{.table.TableName}}.go
+// 生成路径: {{.table.PackageName}}/{{.table.ModuleName}}/dao/{{.table.TableName}}.go
 // 生成人：{{.table.FunctionAuthor}}
 // ==========================================================================
 ////
@@ -15,7 +15,7 @@ package dao
 {{end}}
 
 import (
-    "{{.table.PackageName}}/dao/internal"
+    "{{.table.PackageName}}/{{.table.ModuleName}}/dao/internal"
     {{if $hasGTime}}
    // "github.com/gogf/gf/v2/os/gtime"
     {{end}}

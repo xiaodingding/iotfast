@@ -15,15 +15,15 @@ import (
     "iotfast/api/v1/{{.table.ModuleName}}"
     systemConsts "iotfast/internal/app/system/consts"
     commonService "iotfast/internal/app/common/service"
-	"{{.table.PackageName}}/dao"
-	"{{.table.PackageName}}/model"
-    "{{.table.PackageName}}/model/do"
-    "{{.table.PackageName}}/model/entity"
+	"{{.table.PackageName}}/{{.table.ModuleName}}/dao"
+	"{{.table.PackageName}}/{{.table.ModuleName}}/model"
+    "{{.table.PackageName}}/{{.table.ModuleName}}/model/do"
+    "{{.table.PackageName}}/{{.table.ModuleName}}/model/entity"
 	{{if eq .table.TplCategory "tree"}}
 
     {{end}}
     "iotfast/library/libUtils"
-    "iotfast/library/liberr"
+    "iotfast/library/libErr"
     "github.com/gogf/gf/v2/container/gset"
     "github.com/gogf/gf/v2/database/gdb"
     "github.com/gogf/gf/v2/errors/gerror"
@@ -127,7 +127,7 @@ func (s *{{$structName}}Impl) List(ctx context.Context,req *{{.table.ModuleName}
     err = g.Try(func() {
         total, err = m.Count()
         
-        liberr.ErrPrint(ctx, err, "获取{{.table.ClassName}}列表失败")
+        libErr.ErrPrint(ctx, err, "获取{{.table.ClassName}}列表失败")
         
         if err != nil {
             g.Log().Error(ctx, err)

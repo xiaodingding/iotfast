@@ -20,6 +20,8 @@ func BindController(group *ghttp.RouterGroup) {
 		BindDemoController(group)
 		// 绑定公共路由
 		BindSystemController(group)
+
+		BindDeviceController(group)
 	})
 
 }

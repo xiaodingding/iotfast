@@ -31,8 +31,8 @@ import (
     {{if $libTag}}
     "iotfast/library"
     {{end}}
-    "{{.table.PackageName}}/dao"
-    "{{.table.PackageName}}/service"
+    "{{.table.PackageName}}/{{.table.ModuleName}}/dao"
+    "{{.table.PackageName}}/{{.table.ModuleName}}/service"
     "github.com/gogf/gf/frame/g"
     "github.com/gogf/gf/net/ghttp"
     "github.com/gogf/gf/util/gvalid"
@@ -79,7 +79,7 @@ func (c *{{.table.ClassName| CaseCamelLower}}Controller) Add(ctx context.Context
 // Get 获取
 func (c *{{.table.ClassName| CaseCamelLower}}Controller) Get(ctx context.Context,  req *{{.table.ModuleName}}.{{.table.ClassName}}GetReq) (res *{{.table.ModuleName}}.{{.table.ClassName}}GetRes, err error) {
 	res = &{{.table.ModuleName}}.{{.table.ClassName}}GetRes{}
-    res.{{.table.ClassName}}, err = service.{{.table.ClassName}}().Get(ctx, int64(req.Id))
+    res.{{.table.ClassName}}, err = service.{{.table.ClassName}}().Get(ctx, req.Id)
     return
 }
 

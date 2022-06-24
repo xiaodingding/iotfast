@@ -54,7 +54,7 @@
                 </el-button>
             </el-col>
             <el-col :span="1.5">
-                <el-button type="danger" size="mini" @click="handleDelete">
+                <el-button type="danger" size="mini" @click="handleDelete(null)">
                     <el-icon>
                         <ele-Delete />
                     </el-icon>删除
@@ -86,8 +86,12 @@
                 </template>
             </el-table-column>
         </el-table>
-        <pagination v-show="tableData.total > 0" :total="tableData.total" :page.sync="tableData.param.pageNum"
-            :limit.sync="tableData.param.pageSize" @pagination="tableList" />
+        <pagination 
+            v-show="tableData.total > 0" 
+            :total="tableData.total"
+            v-model:page="tableData.param.pageNum"
+            v-model:limit="tableData.param.pageSize"
+            @pagination="tableList" />
         <!-- 预览界面 -->
         <el-dialog :title="preview.title" v-model="preview.open" width="80%" top="5vh" append-to-body
             :close-on-click-modal="false">
@@ -202,14 +206,14 @@ export default defineComponent({
         /** 生成代码操作 */
         const handleGenTable = (row: any) => {
             const tableIds = row.tableId || state.ids;
-            console.log("tableIds:", tableIds);
+           // console.log("tableIds:", tableIds);
             ElMessageBox.confirm('是否确认要生成对应的代码文件，部分数据将被覆盖? 生成后请重启前后端服务。', "警告", {
                 confirmButtonText: "确定",
                 cancelButtonText: "取消",
                 type: "warning"
             }).then(() => {
                 batchGenCode(tableIds).then(() => {
-                    ElMessage.success('生成成功');
+                                ElMessage.success('生成成功');
                 })
             }
             ).catch(() => { });
@@ -231,12 +235,14 @@ export default defineComponent({
                 state.preview.data = res.data.code;
                 state.preview.open = true;
             });
-            console.log("row:", row, "open:", state.preview.open);
+           // console.log("row:", row, "open:", state.preview.open);
         };
         // 多选框选中数据
         const handleSelectionChange = (selection: any) => {
-            // this.ids = selection.map(item => item.tableId);
-            // this.tableNames = selection.map(item => item.tableName);
+            //  console.log(selection);
+             state.ids = selection.map(item => item.tableId);
+             state.tableNames = selection.map(item => item.tableName);
+            //  console.log( state.ids, selection);
             // this.single = selection.length != 1;
             // this.multiple = !selection.length;
         };
@@ -251,14 +257,20 @@ export default defineComponent({
         };
         /** 删除按钮操作 */
         const handleDelete = (row: any) => {
-            let tableIds:number[] = [] ;
+            let tableIds:number[] = [];
             if(row)
             {
                 tableIds = [row.tableId];
             }else{
                 tableIds = state.ids;
             }
-            //console.log('handleDelete:', tableIds);
+
+           // console.log(row, tableIds, state.ids);
+            if(tableIds.length===0 ){
+                ElMessage.error("请选择要删除的表格");
+                return;
+            }
+    
             ElMessageBox.confirm('是否确认删除表编号为"' + tableIds + '"的数据项?', "警告", {
                 confirmButtonText: "确定",
                 cancelButtonText: "取消",
