@@ -25,6 +25,7 @@ import (
 type IDeviceCategoty interface {
 	List(ctx context.Context, req *device.DeviceCategotySearchReq) (total, page int, list []*entity.DeviceCategoty, err error)
 	Get(ctx context.Context, id int) (info *entity.DeviceCategoty, err error)
+	KindGet(ctx context.Context, kindId int) (list []*entity.DeviceCategoty, err error)
 	Add(ctx context.Context, req *device.DeviceCategotyAddReq) (err error)
 	Edit(ctx context.Context, req *device.DeviceCategotyEditReq) error
 	DeleteByIds(ctx context.Context, ids []int) (err error)
@@ -47,7 +48,7 @@ func (s *deviceCategotyImpl) List(ctx context.Context, req *device.DeviceCategot
 		req.PageSize = systemConsts.PageSize
 	}
 	m := dao.DeviceCategoty.Ctx(ctx)
-	if req.KindId != "" {
+	if req.KindId != 0 {
 		m = m.Where(dao.DeviceCategoty.Columns().KindId+" = ?", req.KindId)
 	}
 	if req.Name != "" {
@@ -84,6 +85,23 @@ func (s *deviceCategotyImpl) List(ctx context.Context, req *device.DeviceCategot
 			order = req.OrderBy
 		}
 		err = m.Page(page, req.PageSize).Order(order).Scan(&list)
+		if err != nil {
+			g.Log().Error(ctx, err)
+			err = gerror.New("获取数据失败")
+		}
+	})
+	return
+}
+
+func (s *deviceCategotyImpl) KindGet(ctx context.Context, kindId int) (list []*entity.DeviceCategoty, err error) {
+	m := dao.DeviceCategoty.Ctx(ctx)
+	if kindId != 0 {
+		m = m.Where(dao.DeviceCategoty.Columns().KindId+" = ?", kindId)
+	}
+
+	err = g.Try(func() {
+		order := "id asc"
+		err = m.Order(order).Scan(&list)
 		if err != nil {
 			g.Log().Error(ctx, err)
 			err = gerror.New("获取数据失败")

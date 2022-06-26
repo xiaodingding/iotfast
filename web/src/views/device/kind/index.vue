@@ -69,6 +69,8 @@
             <el-table-column label="创建时间" align="center" prop="createdAt" width="180"/>
             <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
                 <template #default="scope">
+                    <el-button type="text" class="no_padding" size="small" @click="handleDetail(scope.row)">查看
+                    </el-button>
                     <el-button type="text" class="no_padding" size="small" @click="handleUpdate(scope.row)">修改
                     </el-button>
                     <el-button type="text" class="no_padding" size="small" @click="handleDelete(scope.row)">删除
@@ -233,6 +235,10 @@ export default defineComponent({
             state.open = true;
             state.title = '添加设备种类';
         };
+        const handleDetail= (row:any)=> {
+            router.push('/device/deviceCategoty/list?kindId=' + row.id);
+        };
+
         /** 修改按钮操作 */
         const handleUpdate = (row: any) => {
             handleReset();
@@ -309,6 +315,7 @@ export default defineComponent({
             resetQuery,
             handleSelectionChange,
             handleAdd,
+            handleDetail,
             handleUpdate,
             submitForm,
             handleDelete,

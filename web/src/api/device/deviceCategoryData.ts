@@ -17,6 +17,23 @@ export function getDeviceCategoryData(id:number) {
     }
   })
 }
+
+export function getDeviceCategoryRecent(query:Object) {
+    return request({
+      url: '/api/v1/device/deviceCategoryData/recent',
+      method: 'get',
+      params: query
+    })
+  }
+
+export function getDeviceCategoryHistory(query:Object) {
+    return request({
+      url: '/api/v1/device/deviceCategoryData/history',
+      method: 'get',
+      params: query
+    })
+  }
+
 // 新增设备类别数据
 export function addDeviceCategoryData(data:Object) {
   return request({

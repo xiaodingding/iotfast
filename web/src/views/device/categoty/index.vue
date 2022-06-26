@@ -13,7 +13,10 @@
                     </el-form-item>
                     <el-form-item label="数据类型" prop="dataType">
                         <el-select v-model="queryParams.dataType" placeholder="请选择数据类型" clearable>
-                            <el-option label="请选择字典生成" value="" />
+                            <el-option v-for="dict in data_type_dict"
+                                :key="dict.value"
+                                :label="dict.label"
+                                :value="dict.value"/>
                         </el-select>
                     </el-form-item>
                     <el-form-item>
@@ -64,11 +67,9 @@
         <el-table v-loading="loading" :data="deviceCategotyList" @selection-change="handleSelectionChange"
             style="width: 100%">
             <el-table-column type="selection" width="55" align="center" />
-            <el-table-column label="主键" align="center" prop="id" />
-            <el-table-column label="数据模板的主键" align="center" prop="kindId" />
             <el-table-column label="数据名称" align="center" prop="name" />
             <el-table-column label="数据标识" align="center" prop="mark" />
-            <el-table-column label="数据类型" align="center" prop="dataType" />
+            <el-table-column label="数据类型" align="center" prop="dataType" :formatter="dataTypeFormat"/>
             <el-table-column label="数据单位" align="center" prop="unit" />
             <el-table-column label="变比系数" align="center" prop="ratio" />
             <el-table-column label="格式化显示" align="center" prop="format" />
@@ -91,9 +92,6 @@
                 <div> {{ title }}</div>
             </template>
             <el-form :model="ruleForm" ref="formRef" :rules="rules" size="default" label-width="120px">
-                <el-form-item label="数据模板的主键" prop="kindId">
-                    <el-input v-model="ruleForm.kindId" placeholder="请输入数据模板的主键" />
-                </el-form-item>
                 <el-form-item label="数据名称" prop="name">
                     <el-input v-model="ruleForm.name" placeholder="请输入数据名称" />
                 </el-form-item>
@@ -102,7 +100,10 @@
                 </el-form-item>
                 <el-form-item label="数据类型" prop="dataType">
                     <el-select v-model="ruleForm.dataType" placeholder="请选择数据类型">
-                        <el-option label="请选择字典生成" value="" />
+                        <el-option v-for="dict in data_type_dict"
+                            :key="dict.value"
+                            :label="dict.label"
+                            :value="dict.value"/>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="数据单位" prop="unit">
@@ -140,6 +141,9 @@ import {
     addDeviceCategoty,
     updateDeviceCategoty,
 } from "/@/api/device/deviceCategoty";
+import { useRouter } from 'vue-router';
+import { selectDictLabel } from "/@/utils/common";
+import { getDataList } from "/@/api/system/dict/data";
 interface DeviceCategotyDataState {
     ids: number[];
     loading: boolean;
@@ -152,9 +156,11 @@ interface DeviceCategotyDataState {
     total: number;
     // 设备类别表格数据
     deviceCategotyList: any[],
+    kindInfo:any;
     title: string;
     open: boolean;
     ruleForm: any;
+    data_type_dict:any;
     queryParams: {
         pageNum: number;
         pageSize: number;
@@ -175,6 +181,8 @@ export default defineComponent({
     setup() {
         const { proxy } = <any>getCurrentInstance();
         const formRef = ref<HTMLElement | null>(null);
+        const router = useRouter();
+        //const {}
         const state = reactive<DeviceCategotyDataState>({
             // 遮罩层
             loading: true,
@@ -186,8 +194,10 @@ export default defineComponent({
             multiple: true,
             // 总条数
             total: 0,
+            data_type_dict:{},
             // 设备类别表格数据
             deviceCategotyList: [],
+            kindInfo:{},
             // 弹出层标题
             title: "",
             // 是否显示弹出层
@@ -217,13 +227,35 @@ export default defineComponent({
         /** 查询设备类别列表 */
         const handleGetList = () => {
             state.loading = true;
+
+            getDataList({"dictType":"data_type"}).then((res: any) => {
+                let dict:any = res.data.list;
+                if(dict)
+                {
+                   state.data_type_dict = dict.map((p:any) =>  ({ label: p.dictLabel, value: p.dictValue, isDefault: p.isDefault }));
+                }
+             });
+
             listDeviceCategoty(state.queryParams).then((res: any) => {
                 state.deviceCategotyList = res.data.list;
+                state.kindInfo = res.data.kind;
                 state.total = res.data.total;
                 state.loading = false;
             });
+
+            if(state.kindInfo ==  undefined || state.kindInfo.length <= 0 )
+            {
+                ElMessageBox.alert('产品模板不存在', '提示', {});
+                //router.push('/device/deviceKind/list');
+                //proxy.mittBus.emit('onCurrentContextmenuClick', Object.assign({}, { contextMenuClickId: 1, ...router }));
+            }
         };
-        // 取消按钮
+
+         const dataTypeFormat=(row:any) => {
+            return selectDictLabel(state.data_type_dict, row.dataType);
+            };
+
+        // 取消按钮dataType
         const handleCancel = () => {
             state.open = false;
             handleReset();
@@ -231,8 +263,7 @@ export default defineComponent({
         // 表单重置
         const handleReset = () => {
             state.ruleForm = {
-                id: undefined,
-                kindId: undefined,
+                kindId:state.kindInfo.id,
                 name: undefined,
                 mark: undefined,
                 dataType: undefined,
@@ -282,10 +313,11 @@ export default defineComponent({
         };
         /** 提交按钮 */
         const submitForm = () => {
-            const formWrap = unref(formRef) as any;
+            //const formWrap = unref(formRef) as any;
             proxy.$refs.formRef.validate((valid: boolean) => {
                 if (valid) {
                     if (state.ruleForm.id != undefined) {
+                        state.ruleForm.kindId = state.kindInfo.id;
                         updateDeviceCategoty(state.ruleForm).then((res: any) => {
                             if (res.code === 0) {
                                 ElMessage.success("修改成功");
@@ -296,6 +328,7 @@ export default defineComponent({
                             }
                         });
                     } else {
+                        state.ruleForm.kindId = state.kindInfo.id;
                         addDeviceCategoty(state.ruleForm).then((res: any) => {
                             if (res.code === 0) {
                                 ElMessage.success("新增成功");
@@ -325,10 +358,23 @@ export default defineComponent({
         };
         // 页面加载时
         onMounted(() => {
-            handleGetList();
+            state.queryParams.kindId = router.currentRoute.value.query["kindId"];
+            if(state.queryParams.kindId ==  undefined || state.queryParams.kindId.length <= 0 ||state.queryParams.kindId < 1)
+            {
+                ElMessageBox.alert('参数错误！', '提示', {});
+               // router.push('/device/deviceKind/list');
+               // proxy.mittBus.emit('onCurrentContextmenuClick', Object.assign({}, { contextMenuClickId: 1, ...router }));
+            }else
+            {
+                handleGetList();
+            }
+            
         });
         return {
+            router,
             formRef,
+            //data_type_dict,
+            dataTypeFormat,
             handleGetList,
             handleCancel,
             handleReset,

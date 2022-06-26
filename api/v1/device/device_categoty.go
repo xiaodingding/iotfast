@@ -20,7 +20,7 @@ import (
 // DeviceCategotySearchReq 分页请求参数
 type DeviceCategotySearchReq struct {
 	g.Meta    `path:"/deviceCategoty/list" tags:"设备类别" method:"get" summary:"设备类别列表"`
-	KindId    string `p:"kindId"`    //数据模板的主键
+	KindId    int    `p:"kindId"`    //数据模板的主键
 	Name      string `p:"name"`      //数据名称
 	Mark      string `p:"mark"`      //数据标识
 	DataType  string `p:"dataType"`  //数据类型
@@ -36,6 +36,7 @@ type DeviceCategotySearchRes struct {
 	g.Meta `mime:"application/json"`
 	commonApi.ListRes
 	List []*entity.DeviceCategoty `json:"list"`
+	Kind *entity.DeviceKind       `json:"kind"`
 }
 type DeviceCategotyGetReq struct {
 	g.Meta `path:"/deviceCategoty/get" tags:"设备类别" method:"get" summary:"获取设备类别数据"`

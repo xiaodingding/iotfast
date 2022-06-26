@@ -10,6 +10,7 @@ package controller
 import (
 	"context"
 	"iotfast/api/v1/device"
+	"iotfast/internal/app/device/dao"
 	"iotfast/internal/app/device/service"
 	systemConsts "iotfast/internal/app/system/consts"
 )
@@ -34,6 +35,22 @@ func (c *deviceCategoryDataController) List(ctx context.Context, req *device.Dev
 	}
 	res.CurrentPage = req.PageNum
 	res.Total, _, res.List, err = service.DeviceCategoryData().List(ctx, req)
+	return
+}
+
+// Recent 列表
+func (c *deviceCategoryDataController) Recent(ctx context.Context, req *device.DeviceCategoryDataRecentReq) (res *device.DeviceCategoryDataRecentRes, err error) {
+	res = &device.DeviceCategoryDataRecentRes{}
+	
+	res.Total, res.Data, err = service.DeviceCategoryData().Recent(ctx, req, dao.DeviceCategoryData.Columns().DataInt)
+	return
+}
+
+// History 列表
+func (c *deviceCategoryDataController) History(ctx context.Context, req *device.DeviceCategoryDataHistoryReq) (res *device.DeviceCategoryDataHistoryRes, err error) {
+	res = &device.DeviceCategoryDataHistoryRes{}
+
+	res.Total, res.Data, err = service.DeviceCategoryData().History(ctx, req, dao.DeviceCategoryData.Columns().DataInt)
 	return
 }
 

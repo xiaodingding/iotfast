@@ -34,6 +34,7 @@ func (c *deviceCategotyController) List(ctx context.Context, req *device.DeviceC
 	}
 	res.CurrentPage = req.PageNum
 	res.Total, _, res.List, err = service.DeviceCategoty().List(ctx, req)
+	res.Kind, err = service.DeviceKind().Get(ctx, req.KindId)
 	return
 }
 

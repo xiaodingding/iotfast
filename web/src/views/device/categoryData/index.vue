@@ -265,7 +265,7 @@ export default defineComponent({
     };
     /** 提交按钮 */
     const submitForm = () => {
-      const formWrap = unref(formRef) as any;
+      //const formWrap = unref(formRef) as any;
       proxy.$refs.formRef.validate((valid: boolean) => {
         if (valid) {
           if (state.ruleForm.id != undefined) {

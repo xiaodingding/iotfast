@@ -78,3 +78,2223 @@ Stack:
  
 2022-06-24 00:19:33.479 {74a4df1c4b4cfb16a6735615e013dc15} req param:&{{} 0      {[] 1 10 }} 
  
+2022-06-24 17:04:45.653 [INFO] {c4118ba22583fb16b6297e34a12e3ba2} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 17:04:45.655 [ERRO] {c4118ba22583fb16b6297e34a12e3ba2} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 17:30:29.321 {38d1180a8d84fb16e8297e343d38db51} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 17:49:43.350 [INFO] {c4a1dcbd9985fb16de23a513bd5059de} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 17:49:43.365 [ERRO] {c4a1dcbd9985fb16de23a513bd5059de} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 17:50:11.328 {e41e6541a085fb16e523a5134e2c6634} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 17:50:39.869 {7009a7e6a685fb16e923a513ab27b8ef} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:05:06.600 [INFO] {c48dd2b37086fb16c1170c2fe1012315} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 18:05:06.612 [ERRO] {c48dd2b37086fb16c1170c2fe1012315} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 18:05:24.466 {18d9b0dc7486fb16c2170c2f6bd17347} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:06:10.128 {c887707c7f86fb16cb170c2f73b356f0} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:07:03.093 {900847d38b86fb16d1170c2f185f2ba7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:07:05.925 {103e857a8c86fb16d2170c2f2a7998a9} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:08:43.365 {907b9423a386fb16d3170c2f31f6c08e} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:09:44.990 {f0e42885b186fb16d4170c2f8bed5c12} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:11:28.357 {c45c5496c986fb16d6170c2f1cb6918f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:11:33.916 {343c5cdeca86fb16d8170c2f37a40c1f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 18:11:58.629 {68d5cba0d086fb16dc170c2fe1c41256} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 20:53:03.943 {e8078f029b8ffb16de170c2f6b3dc508} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 20:53:09.672 {d8299e589c8ffb16e0170c2fde8a290e} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:00:44.633 [INFO] {c40a8c470690fb16f855760d6ee65208} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 21:00:44.635 [ERRO] {c40a8c470690fb16f855760d6ee65208} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 21:01:02.553 {648398730a90fb16fa55760d13f80506} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:01:06.711 {4036f4690b90fb16fc55760de1319919} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:02:00.915 {58b4e4081890fb16fe55760d59f4b977} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:02:17.798 {649fb9f71b90fb160056760dda5c9e20} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:02:18.882 {34521e381c90fb160256760d405fbedc} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:04:15.644 {a4efa2673790fb160456760dd1c83e0e} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:04:24.429 {cca395733990fb160656760de9c92505} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:11:05.325 {04057aca9690fb160856760d46045105} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:17:55.814 {982eb95ef690fb160a56760dc8eb01d4} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:19:11.413 {04f5bcf80791fb160c56760d4a5acba9} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:19:16.930 {1864a4410991fb160e56760dfe538ee0} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:19:30.727 {e87e02780c91fb161056760da8c6462a} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:19:46.228 {c091e6131091fb161256760de8eede73} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:20:37.437 {a0b030001c91fb161456760d8b6540e0} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:21:01.446 {507d3f972191fb161656760d09c791a1} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:21:07.956 {c874361b2391fb161856760d7c1766ce} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:21:10.927 {fc17cec92391fb161a56760dee7f6a95} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:22:21.570 {40f7ee3d3491fb162056760d305dc891} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:24:38.759 {7c3b652c5491fb162256760dd2542b1f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:25:04.045 {f8550b125a91fb162456760dfaad37a7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:25:31.852 {44d1c38b6091fb162656760d6792d40a} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:25:40.661 {ac23d2986291fb162856760dffd5cc63} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:25:53.839 {f4cd16aa6591fb162a56760d0d4bb01f} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:25:56.189 {f07d9a296691fb162c56760d412e3bd7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:25:57.166 {ac835a706691fb162e56760dbcccc726} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:26:13.447 {347aa6386a91fb163056760db0d92482} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:26:48.304 [INFO] {1c2595597291fb16a5d27b605a17a481} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 21:26:48.305 [ERRO] {1c2595597291fb16a5d27b605a17a481} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 21:27:18.692 [INFO] {70efde6c7991fb16e5c5a55a9d299c0d} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 21:27:18.694 [ERRO] {70efde6c7991fb16e5c5a55a9d299c0d} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 21:27:42.478 {f040a6f67e91fb16ecc5a55aa8fb0ad4} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:27:57.715 {8450d2828291fb16efc5a55a3df34c62} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:29:11.776 {903032c19391fb16f5c5a55a46eb81dc} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:32:06.747 {fc1a3c7ebc91fb1607c6a55a878dd7f1} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:32:13.378 {d0d57509be91fb160bc6a55ae009017b} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-24 21:32:15.568 {bc6b028cbe91fb1610c6a55ab0f5b7ae} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 21:33:00.740 {dc977210c991fb1615c6a55ac7abda83} req param:&{{} 1      {[] 1 10 }} 
+ 
+2022-06-24 21:33:04.225 {f4ab3ee0c991fb1619c6a55a4bcfb357} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:21:28.957 {e4eec92f6e94fb16abc6a55a7b0bd5f5} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:21:54.151 {7c606e0d7494fb16acc6a55a925004d7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:22:29.380 [INFO] {ecf43c417c94fb16ff60cc37aa9e45e0} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 22:22:29.381 [ERRO] {ecf43c417c94fb16ff60cc37aa9e45e0} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 22:24:54.820 {08e82e1e9e94fb160d61cc37eec9ae10} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:36:01.762 {c814ef663995fb161461cc376f9f9591} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:36:10.127 {c0bc91593b95fb161661cc370fd2989b} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:36:53.773 [INFO] {20a911834595fb1631fda01b7c1c4e05} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 22:36:53.774 [ERRO] {20a911834595fb1631fda01b7c1c4e05} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 22:37:26.399 {6c50b51b4d95fb1642fda01b3e718f72} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:42:47.078 {449ca6c59795fb1658fda01b2d7c234c} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 22:50:59.242 {d82ae85c0a96fb167dfda01b4732b3f7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 23:01:18.119 {1467ea749a96fb16f1fda01b8d76a8c5} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 23:40:44.387 [INFO] {2c647565c198fb160dc60f388d7e8c0e} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 23:40:44.388 [ERRO] {2c647565c198fb160dc60f388d7e8c0e} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 23:51:35.927 [ERRO] {f4550e115999fb1639c60f38e66a8205} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:51:35.927 [ERRO] {d05a81125999fb163bc60f38070a8774} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:52:28.981 [ERRO] {b4e98d726599fb1640c60f383d41041a} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:52:29.150 [ERRO] {58af927c6599fb1641c60f38682eab20} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:52:55.103 [ERRO] {b44283876b99fb1646c60f382807b5b4} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:52:55.121 [ERRO] {c49e89886b99fb1647c60f388d41eb35} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:52:56.609 [ERRO] {108c3de16b99fb164cc60f386f18b1d6} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:52:56.638 [ERRO] {9013f8e26b99fb164dc60f38fc1a3844} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:30.196 [ERRO] {440345b37399fb1652c60f38561fa646} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:30.197 [ERRO] {440345b37399fb1653c60f388b25b763} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:33.369 [ERRO] {800d5a707499fb1657c60f382e53fd0a} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:33.395 [ERRO] {dcc4f4717499fb1659c60f38d73e04f0} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:35.183 [ERRO] {48186bdc7499fb165dc60f382d5a44bd} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:35.258 [ERRO] {b092e8e07499fb165fc60f38ca6b0fb8} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:55.951 [ERRO] {58e049b27999fb1664c60f382bc1e0e5} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:53:55.966 [ERRO] {b0b43ab37999fb1665c60f38be724750} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:30.153 [ERRO] {149be8a88199fb1669c60f38ef1d8c56} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:30.259 [ERRO] {349a31af8199fb166bc60f383e202ced} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:39.394 [ERRO] {c4edbccf8399fb1670c60f386e39a04e} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:39.402 [ERRO] {84f936d08399fb1671c60f38cc667dba} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:40.672 [ERRO] {8c20e91b8499fb1675c60f38b14988ed} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:40.715 [ERRO] {d4e9751e8499fb1677c60f3848c305b3} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:43.567 [ERRO] {2c887ac88499fb167cc60f388c9d81f2} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:54:43.575 [ERRO] {489addc88499fb167dc60f38097db763} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:55:06.104 {982560068a99fb1682c60f3840beeda2} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-06-24 23:55:09.496 [ERRO] {2ceaf4d18a99fb1688c60f38b33f9bbd} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:55:09.498 [ERRO] {4cfb13d28a99fb1689c60f380fca521d} element of parameter "pointer" for function Scan should type of struct/*struct/[]struct/[]*struct 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:58:23.511 [INFO] {c4c635feb799fb1615182e26f51dffd9} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-24 23:58:23.582 [ERRO] {c4c635feb799fb1615182e26f51dffd9} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:50
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:49
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:68
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:12
+ 
+2022-06-24 23:58:37.577 [ERRO] {88e5c442bb99fb161b182e26c090b6b6} reflect.MakeSlice of non-slice type 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-06-24 23:58:37.577 [ERRO] {18149842bb99fb161a182e2601203047} reflect.MakeSlice of non-slice type 
+Stack:
+1.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent.func1
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:125
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  iotfast/internal/app/device/service.(*deviceCategoryDataImpl).Recent
+    E:/src/iotfast/internal/app/device/service/device_category_data.go:113
+5.  iotfast/internal/app/device/controller.(*deviceCategoryDataController).Recent
+    E:/src/iotfast/internal/app/device/controller/device_category_data.go:52
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 

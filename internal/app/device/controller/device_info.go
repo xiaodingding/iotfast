@@ -46,7 +46,9 @@ func (c *deviceInfoController) Add(ctx context.Context, req *device.DeviceInfoAd
 // Get 获取
 func (c *deviceInfoController) Get(ctx context.Context, req *device.DeviceInfoGetReq) (res *device.DeviceInfoGetRes, err error) {
 	res = &device.DeviceInfoGetRes{}
-	res.DeviceInfoExtern, err = service.DeviceInfo().Get(ctx, req.Id)
+	res.Info, err = service.DeviceInfo().Get(ctx, req.Id)
+	res.Kind, err = service.DeviceKind().Get(ctx, res.Info.Kind)
+	res.CategoryList, err = service.DeviceCategoty().KindGet(ctx, res.Info.Kind)
 	return
 }
 

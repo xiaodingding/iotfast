@@ -11,6 +11,7 @@ import (
 	commonApi "iotfast/api/v1/common"
 	//"iotfast/internal/app/model"
 	"iotfast/internal/app/device/model"
+	"iotfast/internal/app/device/model/entity"
 
 	"github.com/gogf/gf/v2/frame/g"
 )
@@ -44,8 +45,10 @@ type DeviceInfoGetReq struct {
 	Id     int `p:"id"`
 }
 type DeviceInfoGetRes struct {
-	g.Meta `mime:"application/json"`
-	*model.DeviceInfoExtern
+	g.Meta       `mime:"application/json"`
+	Info         *model.DeviceInfoExtern  `json:"info"`
+	Kind         *entity.DeviceKind       `json:"kind"`
+	CategoryList []*entity.DeviceCategoty `json:"categoryList"`
 }
 
 // DeviceInfoAddReq 添加操作请求参数

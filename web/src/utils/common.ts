@@ -60,6 +60,18 @@ export function selectDictLabel(data:any[], value:string):string {
     return actions.join('');
 }
 
+
+export function selectDictKeyLabel(data:any[], key:string):string {
+    let actions:string[]=[]
+    data.map((item) => {
+        if (item.kay == key) {
+            actions.push(item.label);
+            return false;
+        }
+    })
+    return actions.join('');
+}
+
 export function selectObjectLabel(data:any[], value:string):string {
     let actions:any = "";
     actions = data.find(item=>item.id==value);
