@@ -8,3 +8,9 @@
 
 # 系统架构
 ![avatar](manifest/image/soft_arch.png)
+
+# 系统架构
+![avatar](manifest/image/soft_arch.png)
+
+# WEB服务架构
+![avatar](manifest/image/web_arch.png)
