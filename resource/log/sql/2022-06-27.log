@@ -1,0 +1,31 @@
+2022-06-27 22:42:40.686 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [ 51 ms] [default] [rows:21 ] SHOW FULL COLUMNS FROM `sys_user` 
+2022-06-27 22:42:40.697 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [  9 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-06-27 22:42:40.727 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [ 28 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-06-27 22:42:40',`updated_at`='2022-06-27 22:42:40' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-06-27 22:42:40.744 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [ 15 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `sys_role` 
+2022-06-27 22:42:40.751 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [  5 ms] [default] [rows:6  ] SELECT `id`,`status`,`list_order`,`name`,`remark`,`data_scope`,`created_at`,`updated_at` FROM `sys_role` ORDER BY `list_order` asc,`id` asc 
+2022-06-27 22:42:40.761 [DEBU] {d86fa1005481fc16200af1094e71dc74} [  9 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `casbin_rule` 
+2022-06-27 22:42:40.766 [DEBU] {d87c20015481fc16210af109695f390d} [  5 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-06-27 22:42:40.773 [DEBU] {68bf8e015481fc16220af1098c3ac28b} [  5 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-06-27 22:42:40.793 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [ 18 ms] [default] [rows:25 ] SHOW FULL COLUMNS FROM `sys_auth_rule` 
+2022-06-27 22:42:40.801 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [  7 ms] [default] [rows:73 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-06-27 22:42:40.876 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [ 17 ms] [default] [rows:10 ] SHOW FULL COLUMNS FROM `sys_login_log` 
+2022-06-27 22:42:40.883 [DEBU] {7c3f85f95381fc161d0af1098f7c3566} [  6 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`msg`,`login_name`,`login_time`,`browser`,`os`,`module`,`ipaddr`,`login_location`,`status`) VALUES('登录成功','demo','2022-06-27 22:42:40','Edge','Windows 10','系统后台','::1','云南省 昆明市',1)  
+2022-06-27 22:42:49.414 [DEBU] {4cb712045681fc16290af109fb9f3105} [ 13 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-06-27 22:42:49.418 [DEBU] {4cb712045681fc16290af109fb9f3105} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-06-27 22:42:49.422 [DEBU] {e8cd0a045681fc16280af109eeee56e9} [  8 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-06-27 22:42:49.429 [DEBU] {e8cd0a045681fc16280af109eeee56e9} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-06-27 22:42:49.430 [DEBU] {4cb712045681fc16290af109fb9f3105} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-06-27 22:42:49.433 [DEBU] {54a206045681fc16270af10960173360} [ 10 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-06-27 22:42:49.448 [DEBU] {54a206045681fc16270af10960173360} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-06-27 22:42:49.450 [DEBU] {e8cd0a045681fc16280af109eeee56e9} [ 16 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-06-27 22:42:49.460 [DEBU] {e8cd0a045681fc16280af109eeee56e9} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-06-27 22:42:49.461 [DEBU] {54a206045681fc16270af10960173360} [  9 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-06-27 22:42:58.181 [DEBU] {5867f90e5881fc162b0af109d678c938} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-06-27 22:42:58.187 [DEBU] {5867f90e5881fc162b0af109d678c938} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-06-27 22:42:58.198 [DEBU] {5867f90e5881fc162b0af109d678c938} [ 10 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-06-27 22:42:58.203 [DEBU] {5867f90e5881fc162b0af109d678c938} [  5 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-06-27 22:42:58.235 [DEBU] {701e63125881fc162e0af109799dd0bd} [  4 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=1 and device_id=1 
+2022-06-27 22:42:58.237 [DEBU] {bcec6b125881fc162f0af1090ac616da} [  6 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=2 and device_id=1 
+2022-06-27 22:42:58.241 [DEBU] {701e63125881fc162e0af109799dd0bd} [  6 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=1 and device_id=1 order by id asc limit  0,10 
+2022-06-27 22:42:58.242 [DEBU] {bcec6b125881fc162f0af1090ac616da} [  5 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=2 and device_id=1 order by id asc limit  0,10 
+2022-06-27 22:46:06.188 [DEBU] {040df7d48381fc16300af109d333a1cc} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` WHERE sn='1' and pwd='1' LIMIT 1 

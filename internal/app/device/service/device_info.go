@@ -27,6 +27,7 @@ type IDeviceInfo interface {
 	Get(ctx context.Context, id int) (info *model.DeviceInfoExtern, err error)
 	Add(ctx context.Context, req *device.DeviceInfoAddReq) (err error)
 	Edit(ctx context.Context, req *device.DeviceInfoEditReq) error
+	Auth(ctx context.Context, sn, pwd string) (status bool, err error)
 	DeleteByIds(ctx context.Context, ids []int) (err error)
 }
 type deviceInfoImpl struct {
@@ -150,6 +151,21 @@ func (s *deviceInfoImpl) List(ctx context.Context, req *device.DeviceInfoSearchR
 	return
 }
 
+func (s *deviceInfoImpl) Auth(ctx context.Context, sn, pwd string) (status bool, err error) {
+	var deviceInfo *model.DeviceInfoExtern
+	err = dao.DeviceInfo.Ctx(ctx).Where("sn=? and pwd=?", sn, pwd).Scan(&deviceInfo)
+	if err != nil {
+		g.Log().Error(ctx, err)
+		return
+	}
+
+	if deviceInfo == nil || deviceInfo.Id < 1 {
+		return false, gerror.New("设备SN或密码错误")
+	}
+
+	return true, nil
+}
+
 // Get 通过id获取
 func (s *deviceInfoImpl) Get(ctx context.Context, id int) (info *model.DeviceInfoExtern, err error) {
 	if id == 0 {
@@ -159,9 +175,11 @@ func (s *deviceInfoImpl) Get(ctx context.Context, id int) (info *model.DeviceInf
 	err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().Id+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Id, id).Scan(&info)
 	if err != nil {
 		g.Log().Error(ctx, err)
+		return
 	}
 	if info == nil || err != nil {
 		err = gerror.New("获取信息失败")
+		return
 	}
 	return
 }

@@ -1138,6 +1138,7 @@ func (srv *server) initPluginHooks() error {
 		onWillPublishedWrappers    []OnWillPublishedWrapper
 	)
 	for _, v := range srv.config.PluginOrder {
+		fmt.Printf("v:%v, srv.config:%v\n", v, srv.config)
 		plg, err := plugins[v](srv.config)
 		if err != nil {
 			return err

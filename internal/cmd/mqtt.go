@@ -19,6 +19,15 @@ import (
 	"iotfast/server/mqtt/config"
 	"iotfast/server/mqtt/pkg/pidfile"
 	"iotfast/server/mqtt/server"
+
+	_ "iotfast/server/mqtt/persistence"
+	_ "iotfast/server/mqtt/plugin/prometheus"
+	_ "iotfast/server/mqtt/topicalias/fifo"
+	// 在这里import所有的插件（为了调用对应的init方法）
+	//  _ "iotfast/server/mqtt/plugin/admin"
+	//  _ "iotfast/server/mqtt/plugin/auth"
+	//  _ "iotfast/server/mqtt/plugin/prometheus"
+	// _ "path/to/your/plugin"
 )
 
 var (

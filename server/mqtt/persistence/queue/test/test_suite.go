@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	import gmqtt  "iotfast/server/mqtt"
+	gmqtt "iotfast/server/mqtt"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

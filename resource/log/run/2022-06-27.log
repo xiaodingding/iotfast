@@ -1,0 +1,50 @@
+2022-06-27 22:39:26.735 [INFO] {34e542d42681fc1685d8d31199a15272} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-27 22:39:26.737 [ERRO] {34e542d42681fc1685d8d31199a15272} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:58
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:57
+ 
+2022-06-27 22:40:39.769 [INFO] {50ce6cd53781fc16180af10974ee201c} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-06-27 22:40:39.771 [ERRO] {50ce6cd53781fc16180af10974ee201c} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  iotfast/internal/route.BindSystemController.func1
+    E:/src/iotfast/internal/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  iotfast/internal/route.BindSystemController
+    E:/src/iotfast/internal/route/system_router.go:19
+5.  iotfast/internal/route.BindController.func1
+    E:/src/iotfast/internal/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  iotfast/internal/route.BindController
+    E:/src/iotfast/internal/route/router.go:15
+8.  iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:58
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:57
+ 
+2022-06-27 22:42:49.400 {54a206045681fc16270af10960173360} req param:&{{} 0      {[] 1 10 }} 
+ 
