@@ -9,6 +9,8 @@ package libErr
 
 import (
 	"context"
+	"fmt"
+	"os"
 
 	"github.com/gogf/gf/v2/frame/g"
 )
@@ -27,5 +29,16 @@ func ErrPrint(ctx context.Context, err error, msg ...string) {
 func NilErrPanic(value interface{}, msg string) {
 	if g.IsNil(value) {
 		panic(msg)
+	}
+}
+
+func ErrExit(err error, msg ...string) {
+	if !g.IsNil(err) {
+		if len(msg) > 0 {
+			fmt.Fprint(os.Stderr, err, msg)
+			os.Exit(1)
+		} else {
+			os.Exit(1)
+		}
 	}
 }

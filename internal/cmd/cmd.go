@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"iotfast/internal/consts"
 	router "iotfast/internal/route"
 
@@ -40,11 +41,18 @@ const (
 )
 
 var (
-	Main = gcmd.Command{
-		Name:  "main",
-		Usage: "main",
-		Brief: "start http server",
+	Main = &gcmd.Command{
+		Name:        "main",
+		Brief:       "start http server",
+		Description: "this is the command entry for starting your process",
+	}
+
+	Http = &gcmd.Command{
+		Name:        "http",
+		Brief:       "start http server",
+		Description: "this is the command entry for starting your http server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
+			fmt.Println("start http server")
 			s := g.Server()
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				router.BindController(group)
@@ -55,6 +63,28 @@ var (
 			enhanceOpenAPIDoc(s)
 			s.Run()
 			return nil
+		},
+	}
+	Mqtt = &gcmd.Command{
+		Name:        "mqtt",
+		Brief:       "start mqtt server",
+		Description: "this is the command entry for starting your mqtt server",
+		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
+			fmt.Println("start mqtt server")
+			SetConfigPath("E:/src/iotfast/manifest/config/default_config.yml")
+			NewSimpleCmd()
+			return
+		},
+	}
+	All = &gcmd.Command{
+		Name:        "all",
+		Brief:       "start all server",
+		Description: "this is the command entry for starting all server",
+		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
+			fmt.Println("start all server")
+			go Http.Func(ctx, parser)
+			go Mqtt.Func(ctx, parser)
+			return
 		},
 	}
 )

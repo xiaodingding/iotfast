@@ -5,7 +5,7 @@
 package session
 
 import (
-	import gmqtt  "iotfast/server/mqtt"
+	gmqtt  "iotfast/server/mqtt"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

@@ -9,5 +9,12 @@ import (
 )
 
 func main() {
+	// cmd.Main.Run(gctx.New())
+
+	err := cmd.Main.AddCommand(cmd.Http, cmd.Mqtt, cmd.All)
+	if err != nil {
+		panic(err)
+	}
 	cmd.Main.Run(gctx.New())
+
 }

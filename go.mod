@@ -24,6 +24,7 @@ require (
 	github.com/prometheus/client_golang v1.12.2 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/spf13/cobra v1.5.0
 	github.com/stretchr/testify v1.7.1
 	github.com/tklauser/go-sysconf v0.3.10 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
