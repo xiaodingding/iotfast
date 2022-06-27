@@ -22,6 +22,8 @@ func BindController(group *ghttp.RouterGroup) {
 		BindSystemController(group)
 
 		BindDeviceController(group)
+
+		BindMqttController(group)
 	})
 
 }
