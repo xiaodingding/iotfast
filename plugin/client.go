@@ -4,16 +4,14 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"iotfast/server/mqtt/pkg/packets"
+	"iotfast/plugin/internal/raw"
 	"net"
 	"reflect"
 	"sync"
 	"sync/atomic"
 	"time"
-	"iotfast/plugin/internal/raw"
 
 	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 )
 
 // Client status
@@ -48,8 +46,9 @@ type Client interface {
 type client struct {
 	connectedAt int64
 	server      *server
-
-	wg sync.WaitGroup
+	
+	clinetId	string
+	wg          sync.WaitGroup
 
 	close     chan struct{}
 	closed    chan struct{}
@@ -115,7 +114,7 @@ func (client *client) readLoop() {
 	}()
 
 	// client.error <- err
-    code := raw.NewClientRawCodec(client.rwc)
+	code := raw.NewClientRawCodec(client.rwc)
 	for {
 		if client.IsConnected() {
 			if client.keepalive != 0 { //KeepAlive
@@ -132,7 +131,6 @@ func (client *client) readLoop() {
 			return
 		}
 
-		
 		client.in <- packet
 		<-client.connected
 	}

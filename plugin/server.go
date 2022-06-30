@@ -8,6 +8,7 @@ import (
 	"time"
 
 	// "net/rpc"
+	"iotfast/library/libUtils"
 
 	"go.uber.org/zap"
 )
@@ -70,33 +71,6 @@ type server struct {
 	unixdir string
 }
 
-// sessionExpireCheck 判断是否超时
-// sessionExpireCheck check and terminate expired sessions
-func (srv *server) sessionExpireCheck() {
-	// now := time.Now()
-	srv.mu.Lock()
-
-	srv.mu.Unlock()
-}
-
-// server event loop
-func (srv *server) eventLoop() {
-	sessionExpireTimer := time.NewTicker(time.Second * 20)
-	defer func() {
-		sessionExpireTimer.Stop()
-		srv.wg.Done()
-	}()
-	for {
-		select {
-		case <-srv.exitChan:
-			return
-		case <-sessionExpireTimer.C:
-			srv.sessionExpireCheck()
-		}
-
-	}
-}
-
 func defaultServer() *server {
 	srv := &server{
 		// status:         serverStatusInit,
@@ -123,6 +97,7 @@ func (srv *server) newClient(c net.Conn) (*client, error) {
 		error:     make(chan error, 1),
 		version:   0,
 		keepalive: 30,
+		clinetId:  string(libUtils.GetRandomUUID()),
 	}
 	client.setConnecting()
 
@@ -134,6 +109,16 @@ func (srv *server) Client(clientID string) Client {
 	srv.mu.Lock()
 	defer srv.mu.Unlock()
 	return srv.clients[clientID]
+}
+
+// 已经判断是成功了，注册
+func (srv *server) registerClient(client *client) (err error) {
+	srv.mu.Lock()
+	defer srv.mu.Unlock()
+
+	srv.clients[client.clinetId] = client
+
+	return nil
 }
 
 func (srv *server) serveTCP(l net.Listener) {
@@ -160,7 +145,7 @@ func (srv *server) serveTCP(l net.Listener) {
 		}
 		client, err := srv.newClient(rw)
 		if err != nil {
-			zaplog.Error("new client fail", zap.Error(err))
+			fmt.Println("new client fail", err)
 			return
 		}
 		go client.serve()
@@ -170,7 +155,7 @@ func (srv *server) serveTCP(l net.Listener) {
 func (srv *server) Start() {
 	listener, err := net.Listen(srv.proto, srv.conn.addr())
 	if err != nil {
-		zaplog.Error("create service fail", zap.Error(err))
+		fmt.Println("create service fail", err)
 	}
 
 	srv.serveTCP(listener)
