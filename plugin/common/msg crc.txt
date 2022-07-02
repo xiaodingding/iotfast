@@ -1,0 +1,9 @@
+crc8 data: [48 0 0 0 0 0 0 0 1 0 0 236]
+crc8 data: [48 0 0 0 0 0 0 0 1 0 0 0] 
+
+48 0 0 0  //dataLen
+0 0 0 0   //msgID
+1         //Version
+0         //protocol
+0         //control
+0
