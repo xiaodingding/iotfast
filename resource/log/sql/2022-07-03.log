@@ -1,0 +1,76 @@
+2022-07-03 00:00:07.612 [DEBU] {504ba3c4740efe16c6ea4d69b81026ac} [ 15 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-03 00:00:07.614 [DEBU] {9cdb7bc4740efe16c4ea4d69a118c3ac} [ 19 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-03 00:00:07.630 [DEBU] {9cdb7bc4740efe16c4ea4d69a118c3ac} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:00:07.682 [DEBU] {504ba3c4740efe16c6ea4d69b81026ac} [ 63 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:00:07.695 [DEBU] {288a9bc4740efe16c5ea4d69717c3d34} [ 70 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-03 00:00:07.716 [DEBU] {288a9bc4740efe16c5ea4d69717c3d34} [ 12 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:00:11.247 [DEBU] {085d6e9d750efe16c7ea4d6902a4034a} [ 13 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:00:11.288 [DEBU] {085d6e9d750efe16c7ea4d6902a4034a} [ 38 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:01:01.649 [DEBU] {844d205a810efe16c8ea4d69670b71f3} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:01:01.654 [DEBU] {844d205a810efe16c8ea4d69670b71f3} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:03:25.136 [DEBU] {d4bcbec1a20efe16c9ea4d69cad8187d} [ 19 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:03:25.262 [DEBU] {d4bcbec1a20efe16c9ea4d69cad8187d} [ 98 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:03:45.512 [DEBU] {d4b5b27fa70efe16caea4d69ab0054e1} [ 27 ms] [default] [rows:94 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-03 00:04:23.767 [DEBU] {34ec1069b00efe16cdea4d6994d8983b} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:04:23.817 [DEBU] {34ec1069b00efe16cdea4d6994d8983b} [ 23 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:04:28.714 [DEBU] {70c91b8fb10efe16ceea4d6933640a60} [ 22 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `mqtt_topic_record` 
+2022-07-03 00:04:28.750 [DEBU] {70c91b8fb10efe16ceea4d6933640a60} [ 34 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic_record` 
+2022-07-03 00:04:28.781 [DEBU] {70c91b8fb10efe16ceea4d6933640a60} [ 27 ms] [default] [rows:3  ] SELECT `id`,`name`,`topic`,`qos`,`remark`,`creat_time` FROM `mqtt_topic_record` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:04:32.503 [DEBU] {6ce0ca71b20efe16cfea4d69fb15e1b3} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:04:32.615 [DEBU] {6ce0ca71b20efe16cfea4d69fb15e1b3} [109 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:04:34.788 [DEBU] {a016b1f8b20efe16d2ea4d698e080a3b} [ 27 ms] [default] [rows:94 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-03 00:04:56.329 [DEBU] {98ee97f6b70efe16d3ea4d69750d21fe} [132 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:04:56.591 [DEBU] {98ee97f6b70efe16d3ea4d69750d21fe} [210 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:05:00.849 [DEBU] {48b07f0ab90efe16d5ea4d6941fdb7b5} [ 22 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `mqtt_topic` 
+2022-07-03 00:05:00.928 [DEBU] {48b07f0ab90efe16d5ea4d6941fdb7b5} [ 76 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:05:00.948 [DEBU] {48b07f0ab90efe16d5ea4d6941fdb7b5} [ 18 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:07:22.552 [DEBU] {6ce96109da0efe1627dfcc194c4750a8} [  9 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `mqtt_topic` 
+2022-07-03 00:07:22.557 [DEBU] {6ce96109da0efe1627dfcc194c4750a8} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:07:22.570 [DEBU] {6ce96109da0efe1627dfcc194c4750a8} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:07:35.094 [DEBU] {6c939ef2dc0efe1629dfcc195b6759d1} [ 49 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:07:35.115 [DEBU] {6c939ef2dc0efe1629dfcc195b6759d1} [ 18 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:10:16.186 [DEBU] {48188274020ffe167a383e5fa7a39f1a} [ 47 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `mqtt_topic` 
+2022-07-03 00:10:16.221 [DEBU] {48188274020ffe167a383e5fa7a39f1a} [ 25 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:10:16.228 [DEBU] {48188274020ffe167a383e5fa7a39f1a} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:10:27.767 [DEBU] {3071b426050ffe167c383e5f902c44ed} [ 50 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `mqtt_status` 
+2022-07-03 00:10:27.812 [DEBU] {3071b426050ffe167c383e5f902c44ed} [ 43 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:10:27.847 [DEBU] {3071b426050ffe167c383e5f902c44ed} [ 32 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:12:13.982 [DEBU] {8c5fe1e11d0ffe167e383e5ff51ad11a} [ 44 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:12:14.042 [DEBU] {8c5fe1e11d0ffe167e383e5ff51ad11a} [ 56 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:12:19.517 [DEBU] {f44cba2a1f0ffe1680383e5f7982d6f4} [ 63 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:12:19.531 [DEBU] {f44cba2a1f0ffe1680383e5f7982d6f4} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:12:59.644 [DEBU] {78d75185280ffe1682383e5fe7652801} [ 16 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:12:59.695 [DEBU] {78d75185280ffe1682383e5fe7652801} [ 48 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:13:55.699 [DEBU] {b4332693350ffe1684383e5f4c181871} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:13:55.708 [DEBU] {b4332693350ffe1684383e5f4c181871} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:14:06.062 [DEBU] {e4081bfb370ffe1686383e5f8be86c94} [ 32 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `mqtt_topic_record` 
+2022-07-03 00:14:06.070 [DEBU] {e4081bfb370ffe1686383e5f8be86c94} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic_record` 
+2022-07-03 00:14:06.088 [DEBU] {e4081bfb370ffe1686383e5f8be86c94} [ 11 ms] [default] [rows:3  ] SELECT `id`,`name`,`topic`,`qos`,`remark`,`creat_time` FROM `mqtt_topic_record` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:14:11.244 [DEBU] {404d9a2f390ffe1688383e5f98995fb5} [ 38 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_status` 
+2022-07-03 00:14:11.254 [DEBU] {404d9a2f390ffe1688383e5f98995fb5} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`clientId`,`status`,`userName`,`topic`,`created_at`,`updated_at` FROM `mqtt_status` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:15:14.577 [DEBU] {c0e98ff0470ffe1689383e5fbe0d2deb} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_topic` 
+2022-07-03 00:15:14.583 [DEBU] {c0e98ff0470ffe1689383e5fbe0d2deb} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`topic`,`qos`,`created_at`,`updated_at` FROM `mqtt_topic` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:15:35.480 [DEBU] {08a351ce4c0ffe168b383e5fa1f0f572} [  8 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `mqtt_msg_record` 
+2022-07-03 00:15:35.487 [DEBU] {08a351ce4c0ffe168b383e5fa1f0f572} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `mqtt_msg_record` 
+2022-07-03 00:15:35.503 [DEBU] {08a351ce4c0ffe168b383e5fa1f0f572} [ 11 ms] [default] [rows:6  ] SELECT `id`,`device_sn`,`topic_id`,`client_name`,`client_id`,`qos`,`payload`,`creat_time` FROM `mqtt_msg_record` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:16:02.093 [DEBU] {f0329700530ffe168c383e5fe2a11ba1} [  7 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-07-03 00:16:02.102 [DEBU] {f0329700530ffe168c383e5fe2a11ba1} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-03 00:16:02.103 [DEBU] {9475a600530ffe168d383e5f49032370} [  9 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-03 00:16:02.107 [DEBU] {f0329700530ffe168c383e5fe2a11ba1} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:16:02.110 [DEBU] {9475a600530ffe168d383e5f49032370} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-03 00:16:02.118 [DEBU] {38b8b500530ffe168e383e5f7202fa5f} [ 14 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-03 00:16:02.123 [DEBU] {9475a600530ffe168d383e5f49032370} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:16:02.125 [DEBU] {38b8b500530ffe168e383e5f7202fa5f} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-03 00:16:02.137 [DEBU] {38b8b500530ffe168e383e5f7202fa5f} [ 10 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-03 00:16:02.143 [DEBU] {38b8b500530ffe168e383e5f7202fa5f} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-03 00:16:07.042 [DEBU] {947b9127540ffe1690383e5f881037aa} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-03 00:16:07.051 [DEBU] {947b9127540ffe1690383e5f881037aa} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-03 00:16:07.059 [DEBU] {947b9127540ffe1690383e5f881037aa} [  7 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-03 00:16:07.065 [DEBU] {947b9127540ffe1690383e5f881037aa} [  5 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-03 00:16:07.117 [DEBU] {4869be2b540ffe1693383e5fa752158b} [ 12 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=2 and device_id=1 
+2022-07-03 00:16:07.120 [DEBU] {dc2eec2b540ffe1694383e5ff09ac4a6} [ 13 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=1 and device_id=1 
+2022-07-03 00:16:07.123 [DEBU] {4869be2b540ffe1693383e5fa752158b} [  6 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=2 and device_id=1 order by id asc limit  0,10 
+2022-07-03 00:16:07.125 [DEBU] {dc2eec2b540ffe1694383e5ff09ac4a6} [  5 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=1 and device_id=1 order by id asc limit  0,10 
+2022-07-03 00:16:30.286 [DEBU] {9cffd290590ffe1697383e5f4daaa39e} [ 11 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=1 and device_id=1 
+2022-07-03 00:16:30.287 [DEBU] {ac681391590ffe1698383e5f8ba6ada5} [  8 ms] [default] [rows:1  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE `id`=1 LIMIT 1 
+2022-07-03 00:16:30.296 [DEBU] {9cffd290590ffe1697383e5f4daaa39e} [  8 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=1 and device_id=1 order by id asc  

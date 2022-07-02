@@ -20,6 +20,8 @@ func BindMqttController(group *ghttp.RouterGroup) {
 		group.Bind(
 			controller.MqttMsgRecord,
 			controller.MqttTopicRecord,
+			controller.MqttStatus,
+			controller.MqttTopic,
 		)
 	})
 

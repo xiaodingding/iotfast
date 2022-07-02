@@ -97,8 +97,9 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			fmt.Println("start all server")
 			go Http.Func(ctx, parser)
+			go plugin.Func(ctx, parser)
 			Mqtt.Func(ctx, parser)
-			plugin.Func(ctx, parser)
+
 			return
 		},
 	}
