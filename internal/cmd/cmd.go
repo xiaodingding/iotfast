@@ -6,6 +6,8 @@ import (
 	"iotfast/internal/consts"
 	router "iotfast/internal/route"
 
+	pl "iotfast/plugin/server"
+
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/gogf/gf/v2/os/gcmd"
@@ -76,6 +78,18 @@ var (
 			return
 		},
 	}
+
+	plugin = &gcmd.Command{
+		Name:        "plugin",
+		Brief:       "start plugin server",
+		Description: "this is the command entry for starting your plugin server",
+		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
+			plu := pl.NewServer("unix", "E:\\src\\iotfast\\plugin\\examples\\client")
+			plu.Start()
+			return
+		},
+	}
+
 	All = &gcmd.Command{
 		Name:        "all",
 		Brief:       "start all server",
@@ -84,6 +98,7 @@ var (
 			fmt.Println("start all server")
 			go Http.Func(ctx, parser)
 			Mqtt.Func(ctx, parser)
+			plugin.Func(ctx, parser)
 			return
 		},
 	}
