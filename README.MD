@@ -15,14 +15,17 @@ IOTFast平台是基于Goframe2.0 + vue3.x + CompositionAPI + typescript + vite +
 * 官方QQ群：560497341
 
 # 技术栈
-1.vue3.x 
-2.typescript 
-3.vite 
-4.element plus
-5.goframe
-6.sqlite
-7.mysql
-8.redis
+- 1.vue3.x 
+- 2.typescript 
+- 3.vite 
+- 4.element plus
+- 5.goframe
+- 6.sqlite
+- 7.mysql
+- 8.redis
+
+# 个人博客
+- <a href="https://www.ddsiot.cn/" target="_blank">ddsiot</a>
 
 
 # ❤️ 鸣谢列表
