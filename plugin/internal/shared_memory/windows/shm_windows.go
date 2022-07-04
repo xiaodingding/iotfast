@@ -5,6 +5,7 @@ package windows //nolint:golint
 
 import (
 	"errors"
+	shm "iotfast/plugin/internal/shared_memory"
 	"os"
 	"reflect"
 	"syscall"
@@ -22,7 +23,7 @@ type SharedMemorySegment struct {
 
 // https://docs.microsoft.com/en-us/windows/win32/memory/creating-named-shared-memory
 // CreateSharedMemory used to create or open existing
-func CreateSharedMemory(key string, size uint) (SharedMemory, error) {
+func CreateSharedMemory(key string, size uint) (shm.SharedMemory, error) {
 	name, err := syscall.UTF16PtrFromString(key)
 	if err != nil {
 		return nil, err

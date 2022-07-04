@@ -79,7 +79,7 @@ var (
 		},
 	}
 
-	plugin = &gcmd.Command{
+	Plugin = &gcmd.Command{
 		Name:        "plugin",
 		Brief:       "start plugin server",
 		Description: "this is the command entry for starting your plugin server",
@@ -97,7 +97,7 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			fmt.Println("start all server")
 			go Http.Func(ctx, parser)
-			go plugin.Func(ctx, parser)
+			go Plugin.Func(ctx, parser)
 			Mqtt.Func(ctx, parser)
 
 			return
