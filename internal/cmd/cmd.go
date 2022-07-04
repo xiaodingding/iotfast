@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"iotfast/internal/consts"
-	router "iotfast/internal/route"
+	router "iotfast/server/http/route"
 
 	pl "iotfast/plugin/server"
 

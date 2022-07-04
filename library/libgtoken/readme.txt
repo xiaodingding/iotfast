@@ -1,0 +1,1 @@
+说明：本文件夹参考 github.com/tiger1103/gfast-cache 项目进行实现
