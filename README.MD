@@ -32,6 +32,8 @@ IOTFast平台是基于Goframe2.0 + vue3.x + CompositionAPI + typescript + vite +
 - <a href="https://gitee.com/lyt-top/vue-next-admin" target="_blank">vue-next-admin</a>
 - <a href="https://github.com/gogf/gf" target="_blank">goframe</a>
 - <a href="https://github.com/gogf/gf-cli" target="_blank">goframe cli tools</a>
+- <a href="https://gitee.com/tiger1103/gfast/tree/os-v3/" target="_blank">gfast</a>
+- <a href="https://github.com/DrmagicE/gmqtt" target="_blank">gmqtt</a>
 
 
 # 网页截图
