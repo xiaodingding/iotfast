@@ -8,7 +8,7 @@
 package controller
 
 import (
-	commonController "iotfast/server/http/controller/common"
+	commonController "github.com/xiaodingding/iotfast/server/http/controller/common"
 
 	"github.com/gogf/gf/v2/net/ghttp"
 )

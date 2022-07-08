@@ -3,9 +3,9 @@ package mem
 import (
 	"sync"
 
-	"iotfast/server/mqtt/persistence/session"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
 
-	gmqtt  "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 var _ session.Store = (*Store)(nil)

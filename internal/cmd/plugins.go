@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	_ "iotfast/server/mqtt/plugin/admin"
-	_ "iotfast/server/mqtt/plugin/auth"
-	_ "iotfast/server/mqtt/plugin/device"
-	_ "iotfast/server/mqtt/plugin/prometheus"
+	_ "github.com/xiaodingding/iotfast/server/mqtt/plugin/admin"
+	_ "github.com/xiaodingding/iotfast/server/mqtt/plugin/auth"
+	_ "github.com/xiaodingding/iotfast/server/mqtt/plugin/device"
+	_ "github.com/xiaodingding/iotfast/server/mqtt/plugin/prometheus"
 )

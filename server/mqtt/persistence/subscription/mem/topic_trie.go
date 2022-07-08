@@ -3,9 +3,9 @@ package mem
 import (
 	"strings"
 
-	"iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 // topicTrie

@@ -3,11 +3,11 @@ package mem
 import (
 	"testing"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"github.com/stretchr/testify/assert"
 
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 )
 
 var testTopicMatch = []struct {

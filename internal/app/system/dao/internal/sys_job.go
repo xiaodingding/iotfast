@@ -1,17 +1,19 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao internal操作代码，无需手动修改，重新生成会自动覆盖.
 // 生成日期：2022-06-18 13:58:41
-// 生成路径: iotfast/internal/app/system/dao/internal/sys_job.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/system/dao/internal/sys_job.go
 // 生成人：dwx
 // ==========================================================================
 
-
 package internal
+
 import (
-    "context"
-    "github.com/gogf/gf/v2/database/gdb"
-    "github.com/gogf/gf/v2/frame/g"
+	"context"
+
+	"github.com/gogf/gf/v2/database/gdb"
+	"github.com/gogf/gf/v2/frame/g"
 )
+
 // SysJobDao is the manager for logic model data accessing and custom defined data operations functions management.
 type SysJobDao struct {
     table   string         // Table is the underlying table name of the DAO.

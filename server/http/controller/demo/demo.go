@@ -9,7 +9,8 @@ package demo
 
 import (
 	"context"
-	"iotfast/api/v1/demo"
+
+	"github.com/xiaodingding/iotfast/api/v1/demo"
 )
 
 var Demo = cDemo{}

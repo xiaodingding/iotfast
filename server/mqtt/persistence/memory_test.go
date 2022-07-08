@@ -6,13 +6,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"iotfast/server/mqtt/config"
-	queue_test "iotfast/server/mqtt/persistence/queue/test"
-	sess_test "iotfast/server/mqtt/persistence/session/test"
-	"iotfast/server/mqtt/persistence/subscription"
-	sub_test "iotfast/server/mqtt/persistence/subscription/test"
-	unack_test "iotfast/server/mqtt/persistence/unack/test"
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	queue_test "github.com/xiaodingding/iotfast/server/mqtt/persistence/queue/test"
+	sess_test "github.com/xiaodingding/iotfast/server/mqtt/persistence/session/test"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	sub_test "github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription/test"
+	unack_test "github.com/xiaodingding/iotfast/server/mqtt/persistence/unack/test"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 type MemorySuite struct {

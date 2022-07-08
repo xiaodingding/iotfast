@@ -10,8 +10,9 @@ package service
 
 import (
 	"fmt"
-	"iotfast/internal/app/system/model"
-	"iotfast/library/libResponse"
+
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
+	"github.com/xiaodingding/iotfast/library/libResponse"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"

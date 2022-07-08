@@ -1,17 +1,19 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao internal操作代码，无需手动修改，重新生成会自动覆盖.
 // 生成日期：2022-06-21 22:06:16
-// 生成路径: iotfast/internal/app/dao/internal/device_category_data.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/dao/internal/device_category_data.go
 // 生成人：dwx
 // ==========================================================================
 
-
 package internal
+
 import (
-    "context"
-    "github.com/gogf/gf/v2/database/gdb"
-    "github.com/gogf/gf/v2/frame/g"
+	"context"
+
+	"github.com/gogf/gf/v2/database/gdb"
+	"github.com/gogf/gf/v2/frame/g"
 )
+
 // DeviceCategoryDataDao is the manager for logic model data accessing and custom defined data operations functions management.
 type DeviceCategoryDataDao struct {
     table   string         // Table is the underlying table name of the DAO.

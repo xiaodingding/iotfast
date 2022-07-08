@@ -4,9 +4,9 @@ import (
 	"errors"
 	"strings"
 
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 // IterationType specifies the types of subscription that will be iterated.

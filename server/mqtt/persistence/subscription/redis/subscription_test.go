@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 func TestEncodeDecodeSubscription(t *testing.T) {

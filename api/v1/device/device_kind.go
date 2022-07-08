@@ -8,9 +8,9 @@
 package device
 
 import (
-	commonApi "iotfast/api/v1/common"
-	//"iotfast/internal/app/device/model"
-	"iotfast/internal/app/device/model/entity"
+	commonApi "github.com/xiaodingding/iotfast/api/v1/common"
+	//"github.com/xiaodingding/iotfast/internal/app/device/model"
+	"github.com/xiaodingding/iotfast/internal/app/device/model/entity"
 
 	"github.com/gogf/gf/v2/frame/g"
 )

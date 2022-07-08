@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	yamux "iotfast/plugin/internal"
+	yamux "github.com/xiaodingding/iotfast/plugin/internal"
 )
 
 // MuxBroker is responsible for brokering multiplexed connections by unique ID.

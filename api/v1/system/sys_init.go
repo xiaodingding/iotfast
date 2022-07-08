@@ -2,7 +2,8 @@ package system
 
 import (
 	"fmt"
-	"iotfast/internal/app/system/model"
+
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
 
 	"github.com/gogf/gf/v2/frame/g"
 )

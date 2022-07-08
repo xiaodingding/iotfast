@@ -1,4 +1,4 @@
-package  libMsgBus_test
+package libMsgBus_test
 
 import (
 	"bytes"
@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	event "iotfast/library/libMsgBus"
 	"github.com/stretchr/testify/assert"
+	event "github.com/xiaodingding/iotfast/library/libMsgBus"
 )
 
 type testNotify struct{}

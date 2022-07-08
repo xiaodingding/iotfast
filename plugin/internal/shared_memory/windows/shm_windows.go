@@ -5,11 +5,12 @@ package windows //nolint:golint
 
 import (
 	"errors"
-	shm "iotfast/plugin/internal/shared_memory"
 	"os"
 	"reflect"
 	"syscall"
 	"unsafe"
+
+	shm "github.com/xiaodingding/iotfast/plugin/internal/shared_memory"
 )
 
 type SharedMemorySegment struct {

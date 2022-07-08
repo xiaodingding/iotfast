@@ -6,7 +6,7 @@ import (
 	"github.com/gogf/gf/v2/os/gctx"
 
 	//"github.com/goflyfox/gtoken/gtoken"
-	//"iotfast/library/libGtoken/gtoken"
+	//"github.com/xiaodingding/iotfast/library/libGtoken/gtoken"
 
 	"github.com/gogf/gf/v2/frame/g"
 )

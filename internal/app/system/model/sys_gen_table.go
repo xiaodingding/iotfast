@@ -1,7 +1,7 @@
 package model
 
 import (
-	"iotfast/internal/app/system/model/entity"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/entity"
 
 	"github.com/gogf/gf/v2/os/gtime"
 )
@@ -30,4 +30,3 @@ type SysGenTableEntityExtend struct {
 	Columns        []*entity.SysGenTableColumn `json:"columns"`                                // 表列信息
 	PkColumn       *entity.SysGenTableColumn   `json:"pkColumn"`                               // 表列信息
 }
-

@@ -5,8 +5,8 @@
 package server
 
 import (
-	gmqtt  "iotfast/server/mqtt"
-	packets "iotfast/server/mqtt/pkg/packets"
+	gmqtt  "github.com/xiaodingding/iotfast/server/mqtt"
+	packets "github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 	gomock "github.com/golang/mock/gomock"
 	net "net"
 	reflect "reflect"

@@ -1,7 +1,7 @@
 // ==========================================================================
 // 物联网快速开发自动生成控制器相关代码，只生成一次，按需修改,再次生成不会覆盖.
 // 生成日期：2022-07-02 23:41:34
-// 生成路径: iotfast/internal/app/controller/mqtt_status.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/controller/mqtt_status.go
 // 生成人：dwx
 // ==========================================================================
 
@@ -9,9 +9,10 @@ package controller
 
 import (
 	"context"
-	"iotfast/api/v1/mqtt"
-	"iotfast/internal/app/mqtt/service"
-	systemConsts "iotfast/internal/app/system/consts"
+
+	"github.com/xiaodingding/iotfast/api/v1/mqtt"
+	"github.com/xiaodingding/iotfast/internal/app/mqtt/service"
+	systemConsts "github.com/xiaodingding/iotfast/internal/app/system/consts"
 )
 
 type mqttStatusController struct {

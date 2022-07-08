@@ -8,7 +8,7 @@
 
 package model
 
-import "iotfast/internal/app/system/model/entity"
+import "github.com/xiaodingding/iotfast/internal/app/system/model/entity"
 
 // LoginUserRes 登录返回
 type LoginUserRes struct {

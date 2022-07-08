@@ -9,11 +9,12 @@ package controller
 
 import (
 	"context"
-	"iotfast/api/v1/system"
-	commonService "iotfast/internal/app/common/service"
-	"iotfast/internal/app/system/model"
-	"iotfast/internal/app/system/service"
-	"iotfast/library/libUtils"
+
+	"github.com/xiaodingding/iotfast/api/v1/system"
+	commonService "github.com/xiaodingding/iotfast/internal/app/common/service"
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
+	"github.com/xiaodingding/iotfast/internal/app/system/service"
+	"github.com/xiaodingding/iotfast/library/libUtils"
 
 	"github.com/gogf/gf/v2/crypto/gmd5"
 	"github.com/gogf/gf/v2/errors/gerror"

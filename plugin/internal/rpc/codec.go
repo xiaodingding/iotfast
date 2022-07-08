@@ -8,7 +8,7 @@ import (
 	"net/rpc"
 	"sync"
 
-	"iotfast/plugin/internal/frame"
+	"github.com/xiaodingding/iotfast/plugin/internal/frame"
 
 	"encoding/json"
 

@@ -13,6 +13,8 @@ pkg/
 bin/
 cbuild
 **/.DS_Store
+**/.log
+**/*.DS_Store
 .test/
 main
 output/

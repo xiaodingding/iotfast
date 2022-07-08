@@ -2,9 +2,10 @@ package service
 
 import (
 	"context"
-	"iotfast/internal/app/system/dao"
-	"iotfast/internal/app/system/model/entity"
 	"sync"
+
+	"github.com/xiaodingding/iotfast/internal/app/system/dao"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/entity"
 
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/model"

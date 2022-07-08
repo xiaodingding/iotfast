@@ -12,26 +12,26 @@ import (
 	"sync/atomic"
 	"time"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"github.com/gorilla/websocket"
 	"go.uber.org/zap"
 
-	"iotfast/server/mqtt/pkg/codes"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/codes"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 
-	"iotfast/server/mqtt/persistence/queue"
-	"iotfast/server/mqtt/persistence/session"
-	"iotfast/server/mqtt/persistence/unack"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/unack"
 
-	retained_trie "iotfast/server/mqtt/retained/trie"
+	retained_trie "github.com/xiaodingding/iotfast/server/mqtt/retained/trie"
 
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
 
-	"iotfast/server/mqtt/retained"
+	"github.com/xiaodingding/iotfast/server/mqtt/retained"
 )
 
 var (

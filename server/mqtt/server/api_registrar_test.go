@@ -15,7 +15,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 )
 
 func TestAPIRegistrar_serveAPIServer(t *testing.T) {

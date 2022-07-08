@@ -1,6 +1,6 @@
 package session
 
-import gmqtt "iotfast/server/mqtt"
+import gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 // IterateFn is the callback function used by Iterate()
 // Return false means to stop the iteration.

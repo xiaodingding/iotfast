@@ -1,12 +1,12 @@
 package server
 
 import (
-	"iotfast/server/mqtt/persistence/session"
-	"iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
 
-	"iotfast/server/mqtt/retained"
+	"github.com/xiaodingding/iotfast/server/mqtt/retained"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 // Publisher provides the ability to Publish messages to the broker.

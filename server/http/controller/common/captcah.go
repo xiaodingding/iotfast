@@ -9,8 +9,9 @@ package common
 
 import (
 	"context"
-	"iotfast/api/v1/common"
-	"iotfast/internal/app/common/service"
+
+	"github.com/xiaodingding/iotfast/api/v1/common"
+	"github.com/xiaodingding/iotfast/internal/app/common/service"
 )
 
 var Captcha = captchaController{}

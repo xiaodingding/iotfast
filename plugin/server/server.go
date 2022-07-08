@@ -3,14 +3,15 @@ package server
 import (
 	"fmt"
 	"io/ioutil"
-	"iotfast/library/libUtils"
-	"iotfast/plugin/common"
 	"net"
 	"os"
 	"path"
 	"runtime"
 	"sync"
 	"time"
+
+	"github.com/xiaodingding/iotfast/library/libUtils"
+	"github.com/xiaodingding/iotfast/plugin/common"
 
 	"github.com/gogf/gf/v2/frame/g"
 	// "net/rpc"
@@ -78,7 +79,7 @@ func defaultServer() *server {
 		sessions:  make(map[string]*sessionClient),
 		plugins:   make(map[string]*Plugin),
 		proto:     "unix",
-		unixdir:   os.TempDir() + "iotfast/plugin",
+		unixdir:   os.TempDir() + "github.com/xiaodingding/iotfast/plugin",
 		conn:      new(unixConn),
 		pluginDir: ".",
 		topics:    TopicNew(),

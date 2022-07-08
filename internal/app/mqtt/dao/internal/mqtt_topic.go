@@ -1,7 +1,7 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao internal操作代码，无需手动修改，重新生成会自动覆盖.
 // 生成日期：2022-07-02 23:41:34
-// 生成路径: iotfast/internal/app/dao/internal/mqtt_topic.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/dao/internal/mqtt_topic.go
 // 生成人：dwx
 // ==========================================================================
 

@@ -2,10 +2,11 @@ package controller
 
 import (
 	"context"
-	"iotfast/api/v1/system"
-	"iotfast/internal/app/system/model"
-	"iotfast/internal/app/system/model/entity"
-	"iotfast/internal/app/system/service"
+
+	"github.com/xiaodingding/iotfast/api/v1/system"
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/entity"
+	"github.com/xiaodingding/iotfast/internal/app/system/service"
 )
 
 var (

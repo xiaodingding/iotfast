@@ -1,7 +1,7 @@
 package mqtt
 
 import (
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 )
 
 type Message struct {

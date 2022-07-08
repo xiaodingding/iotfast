@@ -11,7 +11,7 @@ import (
 	"google.golang.org/grpc/status"
 	"gopkg.in/yaml.v2"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 )
 
 func TestAuth_List_Get_Delete(t *testing.T) {

@@ -18,20 +18,20 @@ import (
 	"sync/atomic"
 	"time"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"iotfast/server/mqtt/pkg/bitmap"
-	"iotfast/server/mqtt/pkg/codes"
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/bitmap"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/codes"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 
-	"iotfast/server/mqtt/persistence/queue"
-	"iotfast/server/mqtt/persistence/subscription"
-	"iotfast/server/mqtt/persistence/unack"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/unack"
 )
 
 // Error

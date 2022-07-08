@@ -1,7 +1,7 @@
 package server
 
 import (
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 )
 
 // HookWrapper groups all hook wrappers function

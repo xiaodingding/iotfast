@@ -4,12 +4,12 @@ import (
 	"testing"
 	"time"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 
-	"iotfast/server/mqtt/persistence/session"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
 )
 
 func TestSuite(t *testing.T, store session.Store) {

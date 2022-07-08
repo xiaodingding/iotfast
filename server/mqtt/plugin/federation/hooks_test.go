@@ -9,11 +9,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap"
 
-	gmqtt "iotfast/server/mqtt"
-	"iotfast/server/mqtt/config"
-	"iotfast/server/mqtt/persistence/subscription"
-	"iotfast/server/mqtt/persistence/subscription/mem"
-	"iotfast/server/mqtt/server"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription/mem"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 func init() {

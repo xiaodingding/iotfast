@@ -29,7 +29,7 @@ import (
 const (
 	pluginFile = "./cmd/gmqttd/plugins.go"
 	pluginCfg  = "plugin_imports.yml"
-	importPath = "iotfast/server/mqtt/plugin"
+	importPath = "github.com/xiaodingding/iotfast/server/mqtt/plugin"
 )
 
 type ymlCfg struct {

@@ -1,9 +1,10 @@
 package libMsgBus_test
 
 import (
-	event "iotfast/library/libMsgBus"
 	"strconv"
 	"testing"
+
+	event "github.com/xiaodingding/iotfast/library/libMsgBus"
 )
 
 func BenchmarkManager_Fire_no_listener(b *testing.B) {

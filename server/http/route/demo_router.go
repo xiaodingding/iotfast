@@ -8,8 +8,8 @@
 package router
 
 import (
-	commonService "iotfast/internal/app/common/service"
-	controller "iotfast/server/http/controller/demo"
+	commonService "github.com/xiaodingding/iotfast/internal/app/common/service"
+	controller "github.com/xiaodingding/iotfast/server/http/controller/demo"
 
 	"github.com/gogf/gf/v2/net/ghttp"
 )

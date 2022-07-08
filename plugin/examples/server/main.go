@@ -1,11 +1,11 @@
 package main
 
 import (
-	plugin "iotfast/plugin/server"
+	plugin "github.com/xiaodingding/iotfast/plugin/server"
 )
 
 func main() {
-	plu := plugin.NewServer("unix", "E:\\src\\iotfast\\plugin\\examples\\client")
+	plu := plugin.NewServer("unix", "E:\\src\\github.com/xiaodingding/iotfast\\plugin\\examples\\client")
 	defer plu.Stop()
 	plu.Start()
 
@@ -17,6 +17,6 @@ func main() {
 	// 	Id:         string(libUtils.GetRandomUUID()),
 	// 	Params:     "",
 	// }
-	// p := plu.AddPlugin("G:\\OCM\\private\\iotfast\\plugin\\examples\\client\\client.exe", cfg)
+	// p := plu.AddPlugin("G:\\OCM\\private\\github.com/xiaodingding/iotfast\\plugin\\examples\\client\\client.exe", cfg)
 	// plu.PluginStart(p)
 }

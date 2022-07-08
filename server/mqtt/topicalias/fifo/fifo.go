@@ -3,10 +3,10 @@ package fifo
 import (
 	"container/list"
 
-	"iotfast/server/mqtt/config"
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 var _ server.TopicAliasManager = (*Queue)(nil)

@@ -3,10 +3,11 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"iotfast/internal/consts"
-	router "iotfast/server/http/route"
 
-	pl "iotfast/plugin/server"
+	"github.com/xiaodingding/iotfast/internal/consts"
+	router "github.com/xiaodingding/iotfast/server/http/route"
+
+	pl "github.com/xiaodingding/iotfast/plugin/server"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
@@ -73,7 +74,7 @@ var (
 		Description: "this is the command entry for starting your mqtt server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			fmt.Println("start mqtt server")
-			SetConfigPath("E:/src/iotfast/manifest/config/default_config.yml")
+			SetConfigPath("E:/src/github.com/xiaodingding/iotfast/manifest/config/default_config.yml")
 			NewSimpleCmd()
 			return
 		},
@@ -84,7 +85,7 @@ var (
 		Brief:       "start plugin server",
 		Description: "this is the command entry for starting your plugin server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
-			plu := pl.NewServer("unix", "E:\\src\\iotfast\\plugin\\examples\\client")
+			plu := pl.NewServer("unix", "E:\\src\\github.com/xiaodingding/iotfast\\plugin\\examples\\client")
 			plu.Start()
 			return
 		},

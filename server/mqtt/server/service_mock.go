@@ -5,10 +5,10 @@
 package server
 
 import (
-	gmqtt  "iotfast/server/mqtt"
-	session "iotfast/server/mqtt/persistence/session"
-	subscription "iotfast/server/mqtt/persistence/subscription"
-	retained "iotfast/server/mqtt/retained"
+	gmqtt  "github.com/xiaodingding/iotfast/server/mqtt"
+	session "github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
+	subscription "github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	retained "github.com/xiaodingding/iotfast/server/mqtt/retained"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

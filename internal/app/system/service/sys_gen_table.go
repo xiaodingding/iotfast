@@ -14,17 +14,19 @@ import (
 	"database/sql"
 	"fmt"
 	"io"
-	"iotfast/api/v1/system"
 	"unicode"
 
-	comService "iotfast/internal/app/common/service"
-	systemConsts "iotfast/internal/app/system/consts"
-	"iotfast/internal/app/system/dao"
-	"iotfast/internal/app/system/model"
-	"iotfast/internal/app/system/model/entity"
-	"iotfast/library/libErr"
+	"github.com/xiaodingding/iotfast/api/v1/system"
+
 	"os"
 	"strings"
+
+	comService "github.com/xiaodingding/iotfast/internal/app/common/service"
+	systemConsts "github.com/xiaodingding/iotfast/internal/app/system/consts"
+	"github.com/xiaodingding/iotfast/internal/app/system/dao"
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/entity"
+	"github.com/xiaodingding/iotfast/library/libErr"
 
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/encoding/gcompress"

@@ -10,10 +10,11 @@ import (
 	"io"
 
 	// "net"
-	"iotfast/plugin/common"
 	"os"
 	"os/exec"
 	"time"
+
+	"github.com/xiaodingding/iotfast/plugin/common"
 
 	"github.com/gogf/gf/v2/encoding/gjson"
 	"github.com/gogf/gf/v2/text/gstr"

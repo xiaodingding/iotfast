@@ -6,7 +6,7 @@ package server
 
 import (
 	context "context"
-	config "iotfast/server/mqtt/config"
+	config "github.com/xiaodingding/iotfast/server/mqtt/config"
 	gomock "github.com/golang/mock/gomock"
 	reflect "reflect"
 )

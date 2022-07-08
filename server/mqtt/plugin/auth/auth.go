@@ -16,9 +16,9 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"gopkg.in/yaml.v2"
 
-	"iotfast/server/mqtt/config"
-	"iotfast/server/mqtt/plugin/admin"
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/plugin/admin"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 var _ server.Plugin = (*Auth)(nil)

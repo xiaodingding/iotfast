@@ -4,10 +4,10 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/persistence/queue"
-	"iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
 )
 
 type statsManager struct {

@@ -2,9 +2,10 @@ package controller
 
 import (
 	"context"
-	"iotfast/api/v1/system"
-	"iotfast/internal/app/system/service"
 	"runtime"
+
+	"github.com/xiaodingding/iotfast/api/v1/system"
+	"github.com/xiaodingding/iotfast/internal/app/system/service"
 
 	"github.com/shirou/gopsutil/host"
 )

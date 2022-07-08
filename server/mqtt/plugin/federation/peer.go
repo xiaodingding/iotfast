@@ -15,8 +15,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 
-	gmqtt "iotfast/server/mqtt"
-	"iotfast/server/mqtt/persistence/subscription"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
 )
 
 type peerState byte

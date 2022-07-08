@@ -4,9 +4,9 @@ import (
 	"context"
 	"sort"
 
-	gmqtt "iotfast/server/mqtt"
-	"iotfast/server/mqtt/persistence/subscription"
-	"iotfast/server/mqtt/server"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 func (f *Federation) HookWrapper() server.HookWrapper {

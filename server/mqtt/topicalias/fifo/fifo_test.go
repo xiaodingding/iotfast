@@ -7,8 +7,8 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 
-	"iotfast/server/mqtt/config"
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 )
 
 func TestQueue(t *testing.T) {

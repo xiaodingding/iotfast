@@ -3,8 +3,8 @@ package admin
 import (
 	"go.uber.org/zap"
 
-	"iotfast/server/mqtt/config"
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 var _ server.Plugin = (*Admin)(nil)

@@ -3,7 +3,7 @@ package trie
 import (
 	"testing"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"github.com/stretchr/testify/assert"
 )

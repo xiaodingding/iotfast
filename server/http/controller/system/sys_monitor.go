@@ -3,12 +3,13 @@ package controller
 import (
 	"context"
 	"fmt"
-	"iotfast/api/v1/system"
-	"iotfast/library/libUtils"
 	"os"
 	"runtime"
 	"strconv"
 	"time"
+
+	"github.com/xiaodingding/iotfast/api/v1/system"
+	"github.com/xiaodingding/iotfast/library/libUtils"
 
 	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"

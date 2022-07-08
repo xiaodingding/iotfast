@@ -3,11 +3,11 @@ package server
 import (
 	"context"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"go.uber.org/zap"
 
-	"iotfast/server/mqtt/persistence/queue"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
 )
 
 // queueNotifier implements queue.Notifier interface.

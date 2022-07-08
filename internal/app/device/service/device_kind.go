@@ -1,7 +1,7 @@
 // ==========================================================================
 // 物联网快速开发自动生成业务逻辑层相关代码，只生成一次，按需修改,再次生成不会覆盖.
 // 生成日期：2022-06-21 22:06:17
-// 生成路径: iotfast/internal/app/service/device_kind.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/service/device_kind.go
 // 生成人：dwx
 // ==========================================================================
 
@@ -9,11 +9,12 @@ package service
 
 import (
 	"context"
-	"iotfast/api/v1/device"
-	"iotfast/internal/app/device/dao"
-	"iotfast/internal/app/device/model/entity"
-	systemConsts "iotfast/internal/app/system/consts"
-	"iotfast/library/libErr"
+
+	"github.com/xiaodingding/iotfast/api/v1/device"
+	"github.com/xiaodingding/iotfast/internal/app/device/dao"
+	"github.com/xiaodingding/iotfast/internal/app/device/model/entity"
+	systemConsts "github.com/xiaodingding/iotfast/internal/app/system/consts"
+	"github.com/xiaodingding/iotfast/library/libErr"
 
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"

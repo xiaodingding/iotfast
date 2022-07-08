@@ -6,11 +6,11 @@ import (
 	"errors"
 	"time"
 
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/persistence/encoding"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/encoding"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 type MessageWithID interface {

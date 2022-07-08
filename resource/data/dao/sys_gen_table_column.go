@@ -5,7 +5,7 @@
 package dao
 
 import (
-	"iotfast/resource/data/dao/internal"
+	"github.com/xiaodingding/iotfast/resource/data/dao/internal"
 )
 
 // internalSysGenTableColumnDao is internal type for wrapping internal DAO implements.

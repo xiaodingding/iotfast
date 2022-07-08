@@ -3,11 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	client "iotfast/plugin/client"
-	"iotfast/plugin/common"
-	plugin "iotfast/plugin/common"
 	"os"
 	"time"
+
+	client "github.com/xiaodingding/iotfast/plugin/client"
+	"github.com/xiaodingding/iotfast/plugin/common"
+	plugin "github.com/xiaodingding/iotfast/plugin/common"
 
 	"github.com/gogf/gf/text/gstr"
 )

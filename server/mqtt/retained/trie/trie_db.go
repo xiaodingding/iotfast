@@ -3,9 +3,9 @@ package trie
 import (
 	"sync"
 
-	"iotfast/server/mqtt/retained"
+	"github.com/xiaodingding/iotfast/server/mqtt/retained"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 // trieDB implement the retain.Store, it use trie tree  to store retain messages .

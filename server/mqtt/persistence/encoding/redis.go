@@ -6,9 +6,9 @@ import (
 	"io"
 	"time"
 
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	gmqtt  "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 // EncodeMessage encodes message into bytes and write it to the buffer

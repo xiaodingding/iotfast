@@ -1,14 +1,14 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao操作代码，无需手动修改，重新生成不会自动覆盖.
 // 生成日期：2022-06-27 23:24:19
-// 生成路径: iotfast/internal/app/mqtt/dao/mqtt_topic_record.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/mqtt/dao/mqtt_topic_record.go
 // 生成人：dwx
 // ==========================================================================
 
 package dao
 
 import (
-	"iotfast/internal/app/mqtt/dao/internal"
+	"github.com/xiaodingding/iotfast/internal/app/mqtt/dao/internal"
 )
 
 // internalmqttTopicRecordDao is internal type for wrapping internal DAO implements.

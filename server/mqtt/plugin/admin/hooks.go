@@ -3,8 +3,8 @@ package admin
 import (
 	"context"
 
-	gmqtt "iotfast/server/mqtt"
-	"iotfast/server/mqtt/server"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 func (a *Admin) HookWrapper() server.HookWrapper {

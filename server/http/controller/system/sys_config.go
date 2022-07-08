@@ -9,8 +9,9 @@ package controller
 
 import (
 	"context"
-	"iotfast/api/v1/system"
-	systemService "iotfast/internal/app/system/service"
+
+	"github.com/xiaodingding/iotfast/api/v1/system"
+	systemService "github.com/xiaodingding/iotfast/internal/app/system/service"
 )
 
 var Config = configController{}

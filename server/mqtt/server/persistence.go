@@ -1,12 +1,12 @@
 package server
 
 import (
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 
-	"iotfast/server/mqtt/persistence/queue"
-	"iotfast/server/mqtt/persistence/session"
-	"iotfast/server/mqtt/persistence/subscription"
-	"iotfast/server/mqtt/persistence/unack"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/unack"
 )
 
 type NewPersistence func(config config.Config) (Persistence, error)

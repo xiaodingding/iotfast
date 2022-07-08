@@ -1,6 +1,6 @@
 package server
 
-import gmqtt "iotfast/server/mqtt"
+import gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 type publishService struct {
 	server *server

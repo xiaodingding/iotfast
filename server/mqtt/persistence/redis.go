@@ -3,18 +3,18 @@ package persistence
 import (
 	redigo "github.com/gomodule/redigo/redis"
 
-	"iotfast/server/mqtt/persistence/queue"
-	redis_queue "iotfast/server/mqtt/persistence/queue/redis"
-	"iotfast/server/mqtt/persistence/session"
-	redis_sess "iotfast/server/mqtt/persistence/session/redis"
-	"iotfast/server/mqtt/persistence/subscription"
-	redis_sub "iotfast/server/mqtt/persistence/subscription/redis"
-	"iotfast/server/mqtt/persistence/unack"
-	redis_unack "iotfast/server/mqtt/persistence/unack/redis"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
+	redis_queue "github.com/xiaodingding/iotfast/server/mqtt/persistence/queue/redis"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
+	redis_sess "github.com/xiaodingding/iotfast/server/mqtt/persistence/session/redis"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	redis_sub "github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription/redis"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/unack"
+	redis_unack "github.com/xiaodingding/iotfast/server/mqtt/persistence/unack/redis"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 func init() {

@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "iotfast/internal/packed"
+	_ "github.com/xiaodingding/iotfast/internal/packed"
 
 	"github.com/gogf/gf/v2/os/gctx"
 
-	"iotfast/internal/cmd"
+	"github.com/xiaodingding/iotfast/internal/cmd"
 )
 
 func main() {

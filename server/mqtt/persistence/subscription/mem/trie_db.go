@@ -4,9 +4,9 @@ import (
 	"strings"
 	"sync"
 
-	"iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 var _ subscription.Store = (*TrieDB)(nil)

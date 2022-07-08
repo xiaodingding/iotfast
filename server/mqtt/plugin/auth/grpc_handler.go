@@ -11,7 +11,7 @@ import (
 	"go.uber.org/zap"
 	"gopkg.in/yaml.v2"
 
-	"iotfast/server/mqtt/plugin/admin"
+	"github.com/xiaodingding/iotfast/server/mqtt/plugin/admin"
 )
 
 // List lists all accounts

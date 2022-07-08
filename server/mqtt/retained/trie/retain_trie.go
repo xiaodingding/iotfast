@@ -3,9 +3,9 @@ package trie
 import (
 	"strings"
 
-	"iotfast/server/mqtt/retained"
+	"github.com/xiaodingding/iotfast/server/mqtt/retained"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 )
 
 // topicTrie

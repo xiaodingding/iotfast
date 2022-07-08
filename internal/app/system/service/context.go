@@ -4,14 +4,15 @@
 * @Author: dwx
 * @Date:   2022/5/16 14:46
 * @Ref: 参考于https://gitee.com/tiger1103/gfast/
-*/
+ */
 
 package service
 
 import (
 	"context"
-	"iotfast/internal/app/system/consts"
-	"iotfast/internal/app/system/model"
+
+	"github.com/xiaodingding/iotfast/internal/app/system/consts"
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
 
 	"github.com/gogf/gf/v2/net/ghttp"
 )

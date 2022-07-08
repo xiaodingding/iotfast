@@ -7,12 +7,12 @@ import (
 	redigo "github.com/gomodule/redigo/redis"
 	"go.uber.org/zap"
 
-	"iotfast/server/mqtt/pkg/codes"
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/codes"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 
-	"iotfast/server/mqtt/persistence/queue"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/queue"
 )
 
 const (

@@ -10,12 +10,13 @@ package service
 
 import (
 	"context"
-	"iotfast/api/v1/system"
-	"iotfast/internal/app/system/consts"
-	"iotfast/internal/app/system/dao"
-	"iotfast/internal/app/system/model/do"
-	"iotfast/internal/app/system/model/entity"
-	"iotfast/library/libErr"
+
+	"github.com/xiaodingding/iotfast/api/v1/system"
+	"github.com/xiaodingding/iotfast/internal/app/system/consts"
+	"github.com/xiaodingding/iotfast/internal/app/system/dao"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/do"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/entity"
+	"github.com/xiaodingding/iotfast/library/libErr"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/util/gconv"

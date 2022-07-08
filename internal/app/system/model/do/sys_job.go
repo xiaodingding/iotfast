@@ -1,16 +1,17 @@
 // ==========================================================================
 // 物联网快速开发自动生成model代码，无需手动修改，重新生成会自动覆盖.
 // 生成日期：2022-06-18 13:58:41
-// 生成路径: iotfast/internal/app/system/model/do/sys_job.go
+// 生成路径: github.com/xiaodingding/iotfast/internal/app/system/model/do/sys_job.go
 // 生成人：dwx
 // ==========================================================================
 
-
 package do
+
 import (
-    "github.com/gogf/gf/v2/frame/g"    
-    "github.com/gogf/gf/v2/os/gtime"    
+	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
+
 // SysJob is the golang structure for table sys_job.
 type SysJob struct {
     g.Meta         `orm:"table: sys_job, do:true"`    

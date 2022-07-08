@@ -1,10 +1,10 @@
-package  libMsgBus_test
+package libMsgBus_test
 
 import (
 	"testing"
 
-	event "iotfast/library/libMsgBus"
 	"github.com/stretchr/testify/assert"
+	event "github.com/xiaodingding/iotfast/library/libMsgBus"
 )
 
 func TestFire_point_at_end(t *testing.T) {

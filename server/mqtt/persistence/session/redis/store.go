@@ -5,12 +5,12 @@ import (
 	"sync"
 	"time"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"github.com/gomodule/redigo/redis"
 
-	"iotfast/server/mqtt/persistence/encoding"
-	"iotfast/server/mqtt/persistence/session"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/encoding"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/session"
 )
 
 const (

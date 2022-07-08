@@ -9,8 +9,8 @@
 package system
 
 import (
-	"iotfast/internal/app/system/model"
-	"iotfast/internal/app/system/model/entity"
+	"github.com/xiaodingding/iotfast/internal/app/system/model"
+	"github.com/xiaodingding/iotfast/internal/app/system/model/entity"
 
 	"github.com/gogf/gf/v2/frame/g"
 )

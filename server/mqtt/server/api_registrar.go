@@ -18,7 +18,7 @@ import (
 	gcodes "google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 )
 
 // APIRegistrar is the registrar for all gRPC servers and HTTP servers.

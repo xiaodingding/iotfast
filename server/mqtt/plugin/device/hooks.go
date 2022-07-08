@@ -2,10 +2,11 @@ package device
 
 import (
 	"context"
-	"iotfast/internal/app/device/service"
-	"iotfast/server/mqtt/pkg/codes"
-	"iotfast/server/mqtt/pkg/packets"
-	"iotfast/server/mqtt/server"
+
+	"github.com/xiaodingding/iotfast/internal/app/device/service"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/codes"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 
 	"go.uber.org/zap"
 )

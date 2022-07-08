@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	gmqtt "iotfast/server/mqtt"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/hashicorp/logutils"
@@ -24,12 +24,12 @@ import (
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
 
-	"iotfast/server/mqtt/config"
-	"iotfast/server/mqtt/persistence/subscription"
-	"iotfast/server/mqtt/persistence/subscription/mem"
-	"iotfast/server/mqtt/pkg/packets"
-	"iotfast/server/mqtt/retained"
-	"iotfast/server/mqtt/server"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/subscription/mem"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/retained"
+	"github.com/xiaodingding/iotfast/server/mqtt/server"
 )
 
 var _ server.Plugin = (*Federation)(nil)

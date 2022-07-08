@@ -1,9 +1,9 @@
 package server
 
 import (
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/config"
+	"github.com/xiaodingding/iotfast/server/mqtt/config"
 )
 
 type NewTopicAliasManager func(config config.Config, maxAlias uint16, clientID string) TopicAliasManager

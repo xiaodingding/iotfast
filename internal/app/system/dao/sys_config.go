@@ -5,7 +5,7 @@
 package dao
 
 import (
-	"iotfast/internal/app/system/dao/internal"
+	"github.com/xiaodingding/iotfast/internal/app/system/dao/internal"
 )
 
 // internalSysConfigDao is internal type for wrapping internal DAO implements.

@@ -1,9 +1,9 @@
 package mem
 
 import (
-	"iotfast/server/mqtt/pkg/packets"
+	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 
-	"iotfast/server/mqtt/persistence/unack"
+	"github.com/xiaodingding/iotfast/server/mqtt/persistence/unack"
 )
 
 var _ unack.Store = (*Store)(nil)
