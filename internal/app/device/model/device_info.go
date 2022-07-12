@@ -7,7 +7,10 @@
 
 package model
 
-import "github.com/gogf/gf/v2/os/gtime"
+import (
+	"github.com/gogf/gf/v2/os/gtime"
+	"github.com/xiaodingding/iotfast/internal/app/device/model/entity"
+)
 
 // DeviceInfo is the golang structure for table device_info.
 type DeviceInfoExtern struct {
@@ -28,4 +31,10 @@ type DeviceInfoExtern struct {
 	CreatedAt          *gtime.Time `orm:"created_at" json:"createdAt"`                     // 创建时间
 	UpdatedAt          *gtime.Time `orm:"updated_at" json:"updatedAt"`                     // 修改时间
 
+}
+
+type DeviceAllInfo struct {
+	Info         *DeviceInfoExtern        `json:"info"`
+	Kind         *entity.DeviceKind       `json:"kind"`
+	CategoryList []*entity.DeviceCategoty `json:"categoryList"`
 }

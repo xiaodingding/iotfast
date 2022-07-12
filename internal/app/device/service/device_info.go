@@ -26,6 +26,7 @@ import (
 type IDeviceInfo interface {
 	List(ctx context.Context, req *device.DeviceInfoSearchReq) (total, page int, list []*model.DeviceInfoExtern, err error)
 	Get(ctx context.Context, id int) (info *model.DeviceInfoExtern, err error)
+	GetAllInfo(ctx context.Context, id int, sn string) (info *model.DeviceAllInfo, err error)
 	Add(ctx context.Context, req *device.DeviceInfoAddReq) (err error)
 	Edit(ctx context.Context, req *device.DeviceInfoEditReq) error
 	Auth(ctx context.Context, sn, pwd string) (status bool, err error)
@@ -180,6 +181,36 @@ func (s *deviceInfoImpl) Get(ctx context.Context, id int) (info *model.DeviceInf
 	}
 	if info == nil || err != nil {
 		err = gerror.New("获取信息失败")
+		return
+	}
+	return
+}
+
+func (s *deviceInfoImpl) GetAllInfo(ctx context.Context, id int, sn string) (info *model.DeviceAllInfo, err error) {
+	if id == 0 && len(sn) < 1 {
+		err = gerror.New("参数错误")
+		return
+	}
+
+	err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().Id+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Id, id).Scan(&info.Info)
+	if err != nil {
+		g.Log().Error(ctx, err)
+		return
+	}
+
+	if info == nil || err != nil {
+		err = gerror.New("获取信息失败")
+		return
+	}
+
+	info.Kind, err = DeviceKind().Get(ctx, info.Info.Kind)
+	if err != nil {
+		g.Log().Error(ctx, err)
+		return
+	}
+	info.CategoryList, err = DeviceCategoty().KindGet(ctx, info.Info.Kind)
+	if err != nil {
+		g.Log().Error(ctx, err)
 		return
 	}
 	return

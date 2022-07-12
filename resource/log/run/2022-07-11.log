@@ -1,0 +1,38 @@
+2022-07-11 23:34:45.390 [INFO] {14addb754bd000171f8a156d4e317b29} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-11 23:34:45.395 [ERRO] {14addb754bd000171f8a156d4e317b29} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-11 23:36:02.662 {982a93735dd000172d8a156d376075e8} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-11 23:36:26.339 {8c9dd0f662d00017368a156d65c46fb9} req param:&{{} 0      {[] 1 10 }} 
+ 

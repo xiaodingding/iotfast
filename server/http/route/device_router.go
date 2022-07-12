@@ -30,6 +30,7 @@ func BindDeviceController(group *ghttp.RouterGroup) {
 			controller.DeviceLabel,
 			controller.DeviceLabelData,
 			controller.DeviceStatus,
+			controller.DeviceData,
 		)
 	})
 }

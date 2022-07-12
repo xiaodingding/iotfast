@@ -1,0 +1,43 @@
+2022-07-11 23:35:54.425 [DEBU] {58b9ee845bd00017228a156d5f05c088} [ 61 ms] [default] [rows:21 ] SHOW FULL COLUMNS FROM `sys_user` 
+2022-07-11 23:35:54.448 [DEBU] {58b9ee845bd00017228a156d5f05c088} [  9 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-11 23:35:54.473 [DEBU] {58b9ee845bd00017228a156d5f05c088} [ 24 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_time`='2022-07-11 23:35:54',`updated_at`='2022-07-11 23:35:54',`last_login_ip`='::1' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-11 23:35:54.483 [DEBU] {58b9ee845bd00017228a156d5f05c088} [  8 ms] [default] [rows:8  ] SHOW FULL COLUMNS FROM `sys_role` 
+2022-07-11 23:35:54.488 [DEBU] {58b9ee845bd00017228a156d5f05c088} [  5 ms] [default] [rows:6  ] SELECT `id`,`status`,`list_order`,`name`,`remark`,`data_scope`,`created_at`,`updated_at` FROM `sys_role` ORDER BY `list_order` asc,`id` asc 
+2022-07-11 23:35:54.498 [DEBU] {00ca8d8c5bd00017258a156d04c4264d} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `casbin_rule` 
+2022-07-11 23:35:54.502 [DEBU] {58e9018d5bd00017268a156d1ab76e7c} [  4 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-11 23:35:54.512 [DEBU] {d065678d5bd00017278a156d7a697200} [  7 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-11 23:35:54.537 [DEBU] {58b9ee845bd00017228a156d5f05c088} [ 23 ms] [default] [rows:25 ] SHOW FULL COLUMNS FROM `sys_auth_rule` 
+2022-07-11 23:35:54.546 [DEBU] {58b9ee845bd00017228a156d5f05c088} [  7 ms] [default] [rows:94 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-11 23:35:54.617 [DEBU] {58b9ee845bd00017228a156d5f05c088} [  9 ms] [default] [rows:10 ] SHOW FULL COLUMNS FROM `sys_login_log` 
+2022-07-11 23:35:54.646 [DEBU] {58b9ee845bd00017228a156d5f05c088} [ 28 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`ipaddr`,`browser`,`status`,`login_name`,`login_location`,`module`,`os`,`msg`,`login_time`) VALUES('::1','Chrome',1,'demo','云南省 昆明市','系统后台','Windows 10','登录成功','2022-07-11 23:35:54')  
+2022-07-11 23:36:02.680 [DEBU] {982a93735dd000172c8a156d1d666437} [ 18 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-07-11 23:36:02.688 [DEBU] {982a93735dd000172d8a156d376075e8} [  6 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-11 23:36:02.698 [DEBU] {982a93735dd000172d8a156d376075e8} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-11 23:36:02.698 [DEBU] {982a93735dd000172c8a156d1d666437} [ 17 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-11 23:36:02.701 [DEBU] {d85ece735dd000172e8a156d4ce90c7a} [ 12 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-11 23:36:02.706 [DEBU] {982a93735dd000172c8a156d1d666437} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-11 23:36:02.722 [DEBU] {d85ece735dd000172e8a156d4ce90c7a} [ 20 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-11 23:36:02.724 [DEBU] {982a93735dd000172d8a156d376075e8} [ 22 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-11 23:36:02.734 [DEBU] {d85ece735dd000172e8a156d4ce90c7a} [ 11 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-11 23:36:02.750 [DEBU] {d85ece735dd000172e8a156d4ce90c7a} [ 15 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-11 23:36:10.342 [DEBU] {2419a83c5fd00017308a156d37333c75} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-11 23:36:10.349 [DEBU] {2419a83c5fd00017308a156d37333c75} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-11 23:36:10.365 [DEBU] {2419a83c5fd00017308a156d37333c75} [ 15 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-11 23:36:10.373 [DEBU] {2419a83c5fd00017308a156d37333c75} [  8 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-11 23:36:10.411 [DEBU] {d4c4ed405fd00017338a156d908597f4} [  9 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=2 and device_id=1 
+2022-07-11 23:36:10.413 [DEBU] {2c20f4405fd00017348a156d8616cec0} [ 11 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=1 and device_id=1 
+2022-07-11 23:36:10.417 [DEBU] {d4c4ed405fd00017338a156d908597f4} [  5 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=2 and device_id=1 order by id asc limit  0,10 
+2022-07-11 23:36:10.420 [DEBU] {2c20f4405fd00017348a156d8616cec0} [  6 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=1 and device_id=1 order by id asc limit  0,10 
+2022-07-11 23:36:26.347 [DEBU] {44e5dff662d00017378a156d993b5f2b} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-11 23:36:26.349 [DEBU] {8c9dd0f662d00017368a156d65c46fb9} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-11 23:36:26.352 [DEBU] {9c1ab2f662d00017358a156dc6d060a0} [ 14 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-11 23:36:26.360 [DEBU] {8c9dd0f662d00017368a156d65c46fb9} [ 10 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-11 23:36:26.370 [DEBU] {9c1ab2f662d00017358a156dc6d060a0} [ 17 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-11 23:36:26.370 [DEBU] {44e5dff662d00017378a156d993b5f2b} [ 22 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-11 23:36:29.029 [DEBU] {401d989663d00017388a156d201170f1} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-11 23:36:29.041 [DEBU] {401d989663d00017388a156d201170f1} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-11 23:36:29.053 [DEBU] {401d989663d00017388a156d201170f1} [ 10 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-11 23:36:29.089 [DEBU] {20f5369a63d000173a8a156de62d56f2} [ 10 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=1 and device_id=1 
+2022-07-11 23:36:29.101 [DEBU] {20f5369a63d000173a8a156de62d56f2} [  9 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=1 and device_id=1 order by id asc limit  0,10 
+2022-07-11 23:36:29.101 [DEBU] {6871189a63d00017398a156d22f89225} [ 24 ms] [default] [rows:1  ] select count(1) from device_category_data where id!=0  and category_id=2 and device_id=1 
+2022-07-11 23:36:29.117 [DEBU] {6871189a63d00017398a156d22f89225} [ 14 ms] [default] [rows:5  ] select data_int as data , id, created_at from device_category_data where id!=0  and category_id=2 and device_id=1 order by id asc limit  0,10 
