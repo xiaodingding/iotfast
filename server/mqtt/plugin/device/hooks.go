@@ -3,7 +3,9 @@ package device
 import (
 	"context"
 
+	"github.com/gogf/gf/v2/frame/g"
 	"github.com/xiaodingding/iotfast/internal/app/device/service"
+	"github.com/xiaodingding/iotfast/library/libCodec"
 	"github.com/xiaodingding/iotfast/server/mqtt/pkg/codes"
 	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 	"github.com/xiaodingding/iotfast/server/mqtt/server"
@@ -139,9 +141,26 @@ func (d *Device) OnMsgArrivedWrapper(pre server.OnMsgArrived) server.OnMsgArrive
 			}
 		}
 
-		// if isMatch := packets.TopicMatch([]byte(req.Message.Topic), []byte("/device/#")); true == isMatch {
-		// 	Access(client.ClientOptions().Username, req.Message.Topic, req.Message.Payload)
-		// }
+		if isMatch := packets.TopicMatch([]byte(req.Message.Topic), []byte("/device/#")); true == isMatch {
+			// Access(client.ClientOptions().Username, req.Message.Topic, req.Message.Payload)
+			// g.Log().Printf(ctx, "topic:%s, QoS:%v, payload:%s", req.Message.Topic, req.Message.QoS, req.Message.Payload)
+			mqttParse, err := libCodec.Open("mqtt")
+			if err != nil {
+				g.Log().Error(ctx, "get mqtt parse plugin error")
+				return err
+			}
+
+			if mqttParse != nil {
+				msg, err := mqttParse.Encode(ctx, req.Message.Payload)
+				if err != nil {
+					g.Log().Error(ctx, "mqtt data parse code error", err)
+					return err
+				}
+				// g.Log().Print(ctx, "mqtt parse msg:", msg, "err:", err)
+				err = mqttParse.Save(ctx, msg)
+				return err
+			}
+		}
 
 		return nil
 	}

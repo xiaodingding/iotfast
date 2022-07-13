@@ -28,11 +28,12 @@ func (c *deviceDataController) Add(ctx context.Context, req *device.DeviceDataAd
 	}
 
 	g.Log().Print(ctx, "after dataReq:", dataReq)
-	msg, err := libCodec.HttpCodec().Encode(ctx, req)
+	httpParse, err := libCodec.Open("http")
 	if err != nil {
 		return nil, err
 	}
-	err = libCodec.HttpCodec().Save(ctx, msg)
+	msg, err := httpParse.Encode(ctx, req)
+	err = httpParse.Save(ctx, msg)
 
 	return
 }

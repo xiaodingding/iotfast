@@ -74,7 +74,7 @@ var (
 		Description: "this is the command entry for starting your mqtt server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			fmt.Println("start mqtt server")
-			SetConfigPath("E:/src/github.com/xiaodingding/iotfast/manifest/config/default_config.yml")
+			SetConfigPath("E:/src/iotfast/manifest/config/default_config.yml")
 			NewSimpleCmd()
 			return
 		},
@@ -85,7 +85,7 @@ var (
 		Brief:       "start plugin server",
 		Description: "this is the command entry for starting your plugin server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
-			plu := pl.NewServer("unix", "E:\\src\\github.com/xiaodingding/iotfast\\plugin\\examples\\client")
+			plu := pl.NewServer("unix", "E:\\src\\iotfast\\plugin\\examples\\client")
 			plu.Start()
 			return
 		},

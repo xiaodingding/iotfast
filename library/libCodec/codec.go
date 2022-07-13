@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"encoding/gob"
 
+	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/xiaodingding/iotfast/internal/app/device/model"
 )
@@ -52,6 +53,16 @@ func Register(name string, c Codec) {
 		panic("sql: Register called twice for driver " + name)
 	}
 	codecs[name] = c
+}
+
+func Open(name string) (Codec, error) {
+	mutex.Lock()
+	defer mutex.Unlock()
+
+	if cdec, ok := codecs[name]; ok {
+		return cdec, nil
+	}
+	return nil, gerror.New("not find codec")
 }
 
 func InterfaceToBytes(key interface{}) ([]byte, error) {

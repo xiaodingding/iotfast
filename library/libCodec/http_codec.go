@@ -32,10 +32,7 @@ func HttpCodec() Codec {
 //解码
 func (c *httpCodecImpl) Encode(ctx context.Context, dataContent interface{}) (dmesg *DeviceDecodeMsg, err error) {
 	var msgCon *device.DeviceDataAddReq
-
 	// var deviceInfo *model.DeviceAllInfo
-	var dtime *gtime.Time
-	// var index int
 
 	if nil == dataContent {
 		return nil, gerror.Newf("device parse dataContent is nil, dataContent:%v", dataContent)
@@ -66,22 +63,14 @@ func (c *httpCodecImpl) Encode(ctx context.Context, dataContent interface{}) (dm
 	}
 
 	if msgCon.Property != nil && len(dmesg.deviceInfo.CategoryList) > 0 {
-
 		jsonContent := gjson.New(msgCon.Property)
-		// dmesg.dataList = make([]*DeviceData, len(dmesg.deviceInfo.CategoryList))
-		// index = 0
 
 		// g.Log().Print(ctx, "parse param :", jsonContent)
 
 		for _, category := range dmesg.deviceInfo.CategoryList {
-			// dmesg.dataList[index].CategoryId = category.Id
-			// dmesg.dataList[index].Name = category.Mark
-			// dmesg.dataList[index].Type = category.DataType
-			// dmesg.dataList[index].Ratio = category.Ratio
-			// dmesg.dataList[index].Data = jsonContent.Get(category.Mark)
-			// dtime = jsonContent.Get("Time").GTime()
-
 			// g.Log().Print(ctx, "get param time:", jsonContent.Get("Time"), jsonContent.Get("time"))
+			var dtime *gtime.Time
+
 			if nil == dtime {
 				// dtime = gtime.Now()
 				dtime = gtime.NewFromStr(msgCon.Time)
@@ -119,8 +108,7 @@ func (c *httpCodecImpl) Encode(ctx context.Context, dataContent interface{}) (dm
 	}
 
 	// g.Log().Print(ctx, "encode device indo:", dmesg.dataList, dmesg.eventList)
-
-	return
+	return dmesg, nil
 }
 
 func (c *httpCodecImpl) GetDeviceInfo(ctx context.Context, deviceId int, deviceSn string) (info *model.DeviceAllInfo, err error) {
@@ -140,6 +128,7 @@ func (c *httpCodecImpl) Save(ctx context.Context, dmesg *DeviceDecodeMsg) error 
 		for _, data := range dmesg.dataList {
 			req.CategoryId = data.CategoryId
 			req.DeviceId = dmesg.deviceInfo.Info.Id
+			req.CreatedAt = data.Time
 			switch data.Type {
 			case DeviceConsts.CategoryDataTypeBit:
 				fallthrough
@@ -171,7 +160,7 @@ func (c *httpCodecImpl) Save(ctx context.Context, dmesg *DeviceDecodeMsg) error 
 				// g.Log().Print(ctx, "save string", req.DataDouble, data.Data)
 			}
 			// g.Log().Print(ctx, "save data info", req, data)
-			err = deviceService.DeviceCategoryData().Add(ctx, req)
+			err = deviceService.DeviceCategoryData().New(ctx, req)
 			if err != nil {
 				g.Log().Errorf(ctx, "save device data err:%v", err)
 				return err

@@ -1,0 +1,136 @@
+2022-07-14 00:00:42.510 id:0, sn:1 
+2022-07-14 00:00:42.585 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:00:42.585 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:00:42.586 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:01:48.158 id:0, sn:1 
+2022-07-14 00:01:48.250 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:01:48.250 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:01:48.252 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:01:48.253 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:01:48.295 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:05:35.764 id:0, sn:1 
+2022-07-14 00:05:35.939 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:05:35.939 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:05:35.939 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:05:35.940 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:05:35.960 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:07:54.498 id:0, sn:1 
+2022-07-14 00:07:54.599 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:07:54.601 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:07:54.602 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:07:54.602 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"time":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:07:54.627 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"time":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:09:12.523 id:0, sn:1 
+2022-07-14 00:09:12.732 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:09:12.732 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:09:12.732 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:09:12.733 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:09:12.758 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:09:17.658 id:0, sn:1 
+2022-07-14 00:09:17.771 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:09:17.775 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:09:17.782 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:09:17.790 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:09:17.803 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:15:52.584 id:0, sn:1 
+2022-07-14 00:15:52.661 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:15:52.662 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:15:52.662 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:15:52.663 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:15:52.690 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:17:01.215 id:0, sn:1 
+2022-07-14 00:17:01.306 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:17:01.306 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:17:01.307 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:17:01.309 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"createdAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:17:01.400 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"createdAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:18:01.111 id:0, sn:1 
+2022-07-14 00:18:01.229 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:18:01.256 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:18:01.262 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:18:01.266 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"createdAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:18:01.332 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"createdAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:21:54.270 id:0, sn:1 
+2022-07-14 00:21:54.432 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:21:54.437 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:21:54.449 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:21:54.451 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:21:54.487 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:33:59.567 id:0, sn:1 
+2022-07-14 00:33:59.723 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:33:59.723 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:33:59.724 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:33:59.724 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:33:59.766 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:38:34.486 id:0, sn:1 
+2022-07-14 00:38:34.615 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:38:34.616 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:38:34.616 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:38:34.617 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:38:34.631 [ERRO] save device data err:Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '23.200000, 2022-07-12 01:02:03)' at line 1, INSERT INTO `device_category_data`(`category_id`,`device_id`,`data_int`,`data_str`,`data_double`, `created_at`) VALUES(1, 1,0,,23.200000, 2022-07-12 01:02:03) 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libCodec.(*mqttCodecImpl).Save
+    E:/src/iotfast/library/libCodec/mqtt_codec.go:182
+2.  github.com/xiaodingding/iotfast/server/mqtt/plugin/device.(*Device).OnMsgArrivedWrapper.func1
+    E:/src/iotfast/server/mqtt/plugin/device/hooks.go:160
+3.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).publishHandler
+    E:/src/iotfast/server/mqtt/server/client.go:1049
+4.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).readHandle
+    E:/src/iotfast/server/mqtt/server/client.go:1314
+5.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).serve.func4
+    E:/src/iotfast/server/mqtt/server/client.go:1471
+ 
+2022-07-14 00:39:59.117 id:0, sn:1 
+2022-07-14 00:39:59.332 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:39:59.346 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:39:59.354 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:39:59.356 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:39:59.380 [ERRO] save device data err:Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '01:02:03)' at line 1, INSERT INTO `device_category_data`(`category_id`,`device_id`,`data_int`,`data_str`,`data_double`, `created_at`) VALUES(1, 1,0,'', 23.2, 2022-07-12 01:02:03) 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libCodec.(*mqttCodecImpl).Save
+    E:/src/iotfast/library/libCodec/mqtt_codec.go:182
+2.  github.com/xiaodingding/iotfast/server/mqtt/plugin/device.(*Device).OnMsgArrivedWrapper.func1
+    E:/src/iotfast/server/mqtt/plugin/device/hooks.go:160
+3.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).publishHandler
+    E:/src/iotfast/server/mqtt/server/client.go:1049
+4.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).readHandle
+    E:/src/iotfast/server/mqtt/server/client.go:1314
+5.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).serve.func4
+    E:/src/iotfast/server/mqtt/server/client.go:1471
+ 
+2022-07-14 00:43:33.571 id:0, sn:1 
+2022-07-14 00:43:33.754 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:43:33.754 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:43:33.754 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:43:33.755 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:43:33.768 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:50:32.176 id:0, sn:1 
+2022-07-14 00:50:32.367 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:50:32.369 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:50:32.373 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:50:32.373 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:50:32.392 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:54:19.622 id:0, sn:1 
+2022-07-14 00:54:19.794 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:54:19.809 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:54:19.810 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:54:19.810 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:54:19.824 [ERRO] save device data err:Error 1054: Unknown column 'category_id ' in 'field list', INSERT INTO `device_category_data`(`category_id `,`device_id`,`data_int`,`data_str`,`data_double`, `created_at`) VALUES(1,1,0,'',23.2,'2022-07-12 01:02:03')
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libCodec.(*mqttCodecImpl).Save
+    E:/src/iotfast/library/libCodec/mqtt_codec.go:182
+2.  github.com/xiaodingding/iotfast/server/mqtt/plugin/device.(*Device).OnMsgArrivedWrapper.func1
+    E:/src/iotfast/server/mqtt/plugin/device/hooks.go:160
+3.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).publishHandler
+    E:/src/iotfast/server/mqtt/server/client.go:1049
+4.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).readHandle
+    E:/src/iotfast/server/mqtt/server/client.go:1314
+5.  github.com/xiaodingding/iotfast/server/mqtt/server.(*client).serve.func4
+    E:/src/iotfast/server/mqtt/server/client.go:1471
+ 
+2022-07-14 00:55:10.222 id:0, sn:1 
+2022-07-14 00:55:10.312 time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:55:10.323 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:55:10.342 pdata time: 2022-07-12 01:02:03 2022-07-12 01:02:03 
+2022-07-14 00:55:10.350 save data info {"CategoryId":1,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":23.2,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":1,"Name":"temperature","Type":6,"Data":23.2,"Time":"2022-07-12 01:02:03","Ratio":""} 
+2022-07-14 00:55:10.388 save data info {"CategoryId":2,"DeviceId":1,"DataInt":0,"DataStr":"","DataDouble":20,"CreatedAt":"2022-07-12 01:02:03"} {"CategoryId":2,"Name":"humidity","Type":6,"Data":20,"Time":"2022-07-12 01:02:03","Ratio":""} 

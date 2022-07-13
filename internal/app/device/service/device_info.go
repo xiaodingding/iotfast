@@ -193,9 +193,11 @@ func (s *deviceInfoImpl) GetAllInfo(ctx context.Context, id int, sn string) (inf
 		return
 	}
 
+	g.Log().Printf(ctx, "id:%v, sn:%v", id, sn)
+
 	if id != 0 {
 		err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().DeviceId+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Id, id).Scan(&info.Info)
-	} else if len(sn) > 1 {
+	} else if len(sn) > 0 {
 		err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().DeviceId+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Sn, sn).Scan(&info.Info)
 	} else {
 		err = gerror.New("参数错误")

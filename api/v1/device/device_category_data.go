@@ -87,11 +87,12 @@ type DeviceCategoryDataGetRes struct {
 // DeviceCategoryDataAddReq 添加操作请求参数
 type DeviceCategoryDataAddReq struct {
 	g.Meta     `path:"/deviceCategoryData/add" tags:"设备数据" method:"post" summary:"添加设备数据"`
-	CategoryId int     `p:"categoryId" v:"required#数据类别主键不能为空"`
-	DeviceId   int     `p:"deviceId" v:"required#设备主键不能为空"`
-	DataInt    uint    `p:"dataInt" `
-	DataStr    string  `p:"dataStr" `
-	DataDouble float64 `p:"dataDouble" `
+	CategoryId int         `p:"categoryId" v:"required#数据类别主键不能为空"`
+	DeviceId   int         `p:"deviceId" v:"required#设备主键不能为空"`
+	DataInt    uint        `p:"dataInt" `
+	DataStr    string      `p:"dataStr" `
+	DataDouble float64     `p:"dataDouble" `
+	CreatedAt  *gtime.Time `p:"time"` // 创建时间
 }
 type DeviceCategoryDataAddRes struct {
 }

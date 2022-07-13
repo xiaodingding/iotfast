@@ -31,6 +31,7 @@ type IDeviceCategoryData interface {
 	Recent(ctx context.Context, req *device.DeviceCategoryDataRecentReq, columns string) (total int, result []*device.DeviceCategoryDataComm, err error)
 	History(ctx context.Context, req *device.DeviceCategoryDataHistoryReq, columns string) (total int, result []*device.DeviceCategoryDataComm, err error)
 	Add(ctx context.Context, req *device.DeviceCategoryDataAddReq) (err error)
+	New(ctx context.Context, req *device.DeviceCategoryDataAddReq) (err error)
 	Edit(ctx context.Context, req *device.DeviceCategoryDataEditReq) error
 	DeleteByIds(ctx context.Context, ids []int) (err error)
 }
@@ -201,6 +202,27 @@ func (s *deviceCategoryDataImpl) Get(ctx context.Context, id int) (info *entity.
 // Add 添加
 func (s *deviceCategoryDataImpl) Add(ctx context.Context, req *device.DeviceCategoryDataAddReq) (err error) {
 	_, err = dao.DeviceCategoryData.Ctx(ctx).Insert(req)
+	return
+}
+
+func (s *deviceCategoryDataImpl) New(ctx context.Context, req *device.DeviceCategoryDataAddReq) (err error) {
+	// sql := fmt.Sprintf("INSERT INTO `device_category_data`(`category_id`,`device_id`,`data_int`,`data_str`,`data_double`, `created_at`) VALUES(%d, %d,%d,'%s', %v, '%s') ",
+	// 	req.CategoryId, req.DeviceId, req.DataInt, req.DataStr, req.DataDouble, req.CreatedAt)
+
+	sql := gdb.FormatSqlWithArgs("INSERT INTO `device_category_data`(`"+dao.DeviceCategoryData.Columns().CategoryId+
+		"`,`"+dao.DeviceCategoryData.Columns().DeviceId+"`,`"+dao.DeviceCategoryData.Columns().DataInt+
+		"`,`"+dao.DeviceCategoryData.Columns().DataStr+"`,`"+dao.DeviceCategoryData.Columns().DataDouble+
+		"`, `"+dao.DeviceCategoryData.Columns().CreatedAt+"`) VALUES(?,?,?,?,?,?)",
+		[]interface{}{req.CategoryId, req.DeviceId, req.DataInt, req.DataStr, req.DataDouble, req.CreatedAt})
+	// sql := gdb.Map{
+	// 	dao.DeviceCategoryData.Columns().CategoryId: req.CategoryId,
+	// 	dao.DeviceCategoryData.Columns().CategoryId: req.DeviceId,
+	// 	dao.DeviceCategoryData.Columns().DataInt:    req.DataInt,
+	// 	dao.DeviceCategoryData.Columns().DataStr:    req.DataStr,
+	// 	dao.DeviceCategoryData.Columns().DataDouble: req.DataDouble,
+	// 	dao.DeviceCategoryData.Columns().CreatedAt:  req.CreatedAt,
+	// }
+	_, err = g.DB().Exec(ctx, sql)
 	return
 }
 
