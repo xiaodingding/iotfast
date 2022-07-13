@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"context"
 	"encoding/gob"
-	"unsafe"
 
 	"github.com/gogf/gf/v2/encoding/gjson"
 	"github.com/gogf/gf/v2/errors/gerror"
+	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"
 	"github.com/xiaodingding/iotfast/api/v1/device"
@@ -32,67 +32,99 @@ func HttpCodec() Codec {
 //解码
 func (c *httpCodecImpl) Encode(ctx context.Context, dataContent interface{}) (dmesg *DeviceDecodeMsg, err error) {
 	var msgCon *device.DeviceDataAddReq
+
 	// var deviceInfo *model.DeviceAllInfo
 	var dtime *gtime.Time
+	// var index int
+
 	if nil == dataContent {
 		return nil, gerror.Newf("device parse dataContent is nil, dataContent:%v", dataContent)
 	}
 
-	msgCon = (*device.DeviceDataAddReq)(unsafe.Pointer(&dataContent))
+	dmesg = &DeviceDecodeMsg{}
 
-	if len(msgCon.DeviceSn) > 0 {
-		dmesg.deviceInfo, err = c.GetDeviceInfo(ctx, 0, msgCon.DeviceSn)
-		if dmesg.deviceInfo == nil || err != nil {
-			return
-		}
-	} else if msgCon.DeviceId != 0 {
-		dmesg.deviceInfo, err = c.GetDeviceInfo(ctx, msgCon.DeviceId, "")
-		if dmesg.deviceInfo == nil || err != nil {
-			return
-		}
+	// g.Log().Print(ctx, "dataContent:", dataContent)
+
+	msgCon, ok := dataContent.(*device.DeviceDataAddReq)
+
+	if !ok {
+		g.Log().Printf(ctx, "interface to type err")
+		return nil, gerror.Newf("param errror")
 	}
 
-	dmesg = &DeviceDecodeMsg{}
-	var index int
+	// g.Log().Print(ctx, "msgCon:", msgCon)
 
-	if msgCon.Property != nil {
+	dmesg.deviceInfo, err = deviceService.DeviceInfo().GetAllInfo(ctx, msgCon.DeviceId, msgCon.DeviceSn)
+	if err != nil {
+		g.Log().Errorf(ctx, "get deviceinfo err:%v, info:%v", err, dmesg.deviceInfo)
+		return
+	}
+
+	if dmesg.deviceInfo == nil {
+		g.Log().Debug(ctx, "get deviceInfo failed")
+		return nil, gerror.New("get deviceInfo failed")
+	}
+
+	if msgCon.Property != nil && len(dmesg.deviceInfo.CategoryList) > 0 {
 
 		jsonContent := gjson.New(msgCon.Property)
-		dmesg.dataList = make([]*DeviceData, len(dmesg.deviceInfo.CategoryList))
-		index = 0
+		// dmesg.dataList = make([]*DeviceData, len(dmesg.deviceInfo.CategoryList))
+		// index = 0
+
+		// g.Log().Print(ctx, "parse param :", jsonContent)
 
 		for _, category := range dmesg.deviceInfo.CategoryList {
-			dmesg.dataList[index].CategoryId = category.Id
-			dmesg.dataList[index].Name = category.Mark
-			dmesg.dataList[index].Type = category.DataType
-			dmesg.dataList[index].Ratio = category.Ratio
-			dmesg.dataList[index].Data = jsonContent.Get(category.Mark)
-			dtime = jsonContent.Get("time").GTime()
+			// dmesg.dataList[index].CategoryId = category.Id
+			// dmesg.dataList[index].Name = category.Mark
+			// dmesg.dataList[index].Type = category.DataType
+			// dmesg.dataList[index].Ratio = category.Ratio
+			// dmesg.dataList[index].Data = jsonContent.Get(category.Mark)
+			// dtime = jsonContent.Get("Time").GTime()
+
+			// g.Log().Print(ctx, "get param time:", jsonContent.Get("Time"), jsonContent.Get("time"))
+			if nil == dtime {
+				// dtime = gtime.Now()
+				dtime = gtime.NewFromStr(msgCon.Time)
+			}
+
 			if nil == dtime {
 				dtime = gtime.Now()
 			}
-			dmesg.dataList[index].Time = dtime
-			index = index + 1
+
+			// dmesg.dataList[index].Time = dtime
+			// index = index + 1
+			pdata := &DeviceData{
+				CategoryId: category.Id,
+				Name:       category.Mark,
+				Type:       category.DataType,
+				Ratio:      category.Ratio,
+				Data:       jsonContent.Get(category.Mark),
+				Time:       dtime,
+			}
+			dmesg.dataList = append(dmesg.dataList, pdata)
 		}
 
 	}
 
 	if msgCon.Event != nil {
 		jsonContent := gconv.MapStrStr(msgCon.Event)
-		dmesg.eventList = make([]*DeviceEvent, len(jsonContent))
-		index = 0
+		// dmesg.eventList = make([]*DeviceEvent, len(jsonContent))
 		for key, value := range jsonContent {
-			dmesg.eventList[index].Name = key
-			dmesg.eventList[index].Data = value
-			index = index + 1
+			pevent := &DeviceEvent{
+				Name: key,
+				Data: value,
+			}
+			dmesg.eventList = append(dmesg.eventList, pevent)
 		}
 	}
+
+	// g.Log().Print(ctx, "encode device indo:", dmesg.dataList, dmesg.eventList)
 
 	return
 }
 
 func (c *httpCodecImpl) GetDeviceInfo(ctx context.Context, deviceId int, deviceSn string) (info *model.DeviceAllInfo, err error) {
-	info = &model.DeviceAllInfo{}
+	// info = &model.DeviceAllInfo{}
 	info, err = deviceService.DeviceInfo().GetAllInfo(ctx, deviceId, deviceSn)
 	return
 }
@@ -110,28 +142,38 @@ func (c *httpCodecImpl) Save(ctx context.Context, dmesg *DeviceDecodeMsg) error 
 			req.DeviceId = dmesg.deviceInfo.Info.Id
 			switch data.Type {
 			case DeviceConsts.CategoryDataTypeBit:
+				fallthrough
 			case DeviceConsts.CategoryDataTypeByte:
+				fallthrough
 			case DeviceConsts.CategoryDataTypeShort:
+				fallthrough
 			case DeviceConsts.CategoryDataTypeUnShort:
+				fallthrough
 			case DeviceConsts.CategoryDataTypeInt:
+				fallthrough
 			case DeviceConsts.CategoryDataTypeUnInt:
 				req.DataInt = gconv.Uint(data.Data)
 				if data.Ratio != "" && len(data.Ratio) > 0 {
 					req.DataInt = gconv.Uint(gconv.Float64(req.DataInt) * gconv.Float64(data.Ratio))
 				}
+				// g.Log().Print(ctx, "save int", req.DataDouble, data.Data)
 			case DeviceConsts.CategoryDataTypeFloat:
+				fallthrough
 			case DeviceConsts.CategoryDataTypeDouble:
 				req.DataDouble = gconv.Float64(data.Data)
 
 				if data.Ratio != "" && len(data.Ratio) > 0 {
 					req.DataDouble = gconv.Float64(req.DataDouble) * gconv.Float64(data.Ratio)
 				}
-
+				// g.Log().Print(ctx, "save float", req.DataDouble, data.Data)
 			default:
 				req.DataStr = gconv.String(data.Data)
+				// g.Log().Print(ctx, "save string", req.DataDouble, data.Data)
 			}
+			// g.Log().Print(ctx, "save data info", req, data)
 			err = deviceService.DeviceCategoryData().Add(ctx, req)
 			if err != nil {
+				g.Log().Errorf(ctx, "save device data err:%v", err)
 				return err
 			}
 		}

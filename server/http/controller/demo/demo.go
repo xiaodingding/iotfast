@@ -19,7 +19,7 @@ type cDemo struct {
 }
 
 func (c *cDemo) Demo(ctx context.Context, req *demo.DmReq) (res *demo.DmRes, err error) {
-	res = &demo.DmRes{Name: "赵四"}
-	panic("demo wrong")
+	res = &demo.DmRes{Name: req.Name}
+	// panic("demo wrong")
 	return
 }

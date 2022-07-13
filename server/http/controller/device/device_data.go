@@ -3,8 +3,9 @@ package device
 import (
 	"context"
 
+	"github.com/gogf/gf/frame/g"
 	"github.com/xiaodingding/iotfast/api/v1/device"
-	libCodec "github.com/xiaodingding/iotfast/library/libCodec"
+	"github.com/xiaodingding/iotfast/library/libCodec"
 )
 
 type deviceDataController struct {
@@ -18,6 +19,15 @@ var DeviceData = deviceDataController{}
 
 // Add 添加
 func (c *deviceDataController) Add(ctx context.Context, req *device.DeviceDataAddReq) (res *device.DeviceDataAddRes, err error) {
+
+	g.Log().Print(ctx, "before req:", req)
+
+	var dataReq *device.DeviceDataAddReq
+	if err := c.Request.Parse(&dataReq); err != nil {
+		return nil, err
+	}
+
+	g.Log().Print(ctx, "after dataReq:", dataReq)
 	msg, err := libCodec.HttpCodec().Encode(ctx, req)
 	if err != nil {
 		return nil, err

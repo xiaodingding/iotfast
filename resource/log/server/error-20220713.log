@@ -1,0 +1,757 @@
+2022-07-13 00:05:21.322 {28edb9498b2001178d0073454da28a1a} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.865, ::1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.49", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/gogf/gf/v2/internal/json.Marshal
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/internal/json/json.go:28
+   2).  github.com/gogf/gf/v2/util/gconv.String
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gconv/gconv.go:461
+   3).  github.com/gogf/gf/v2/util/gconv.String
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gconv/gconv.go:458
+   4).  github.com/gogf/gf/v2/os/glog.(*Logger).print
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/glog/glog_logger.go:204
+   5).  github.com/gogf/gf/v2/os/glog.(*Logger).printStd
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/glog/glog_logger.go:339
+   6).  github.com/gogf/gf/v2/os/glog.(*Logger).Print
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/glog/glog_logger_api.go:18
+   7).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:48
+   8).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:25
+   9).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   10). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   11). github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 00:34:07.128 {f44a3d4f1d220117bfea3f171529c9df} 200 "POST http localhost:8201 /api/v1/device/deviceLabel/add HTTP/1.1" 0.001, 127.0.0.1, "", "curl/7.79.1", 51, "Validation Failed", ""
+Stack:
+标签内容不能为空 
+2022-07-13 07:11:39.869 {38905ff5ce3701173084ad3dcb1d4f86} 200 "POST http 127.0.0.1:8201 /api/v1/demo/demo HTTP/1.1" 0.001, 127.0.0.1, "", "curl/7.79.1", 51, "Validation Failed", ""
+Stack:
+标签内容不能为空 
+2022-07-13 07:27:43.735 {6426eb43af380117704ef446f4bece94} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.477, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceInfoImpl).GetAllInfo
+    	E:/src/iotfast/internal/app/device/service/device_info.go:195
+   2).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).GetDeviceInfo
+    	E:/src/iotfast/library/libCodec/http_codec.go:109
+   3).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:55
+   4).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   6).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   11). github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   13). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   15). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   17). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   19). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   21). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   23). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   25). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   27). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:30:15.642 {a831eca2d2380117abf02262ed2268ba} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.466, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceInfoImpl).GetAllInfo
+    	E:/src/iotfast/internal/app/device/service/device_info.go:195
+   2).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).GetDeviceInfo
+    	E:/src/iotfast/library/libCodec/http_codec.go:111
+   3).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:55
+   4).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   6).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   11). github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   13). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   15). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   17). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   19). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   21). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   23). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   25). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   27). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:33:32.755 {7c662187003901171871df4228f7994d} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.477, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceInfoImpl).GetAllInfo
+    	E:/src/iotfast/internal/app/device/service/device_info.go:195
+   2).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).GetDeviceInfo
+    	E:/src/iotfast/library/libCodec/http_codec.go:111
+   3).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:55
+   4).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   6).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   7).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   9).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   11). github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   13). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   15). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   17). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   19). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   21). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   23). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   25). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   27). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:40:42.734 {28221fa4643901177454e66072697220} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.472, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:55
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:42:58.628 {e80d2546843901179f2ea214924d12fa} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.504, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:55
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:45:01.384 {80ca5cd9a0390117abb7dd20ca79fd4d} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.532, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:68
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:49:25.482 {7857d656de39011768d06a71ce0c46c7} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.531, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:68
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:53:04.325 {8c21c349113a0117ab0b02346a6662ba} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.550, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:69
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 07:56:57.139 {740e0480473a0117b7da22211a08e4c0} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.526, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:69
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 08:00:25.606 {a4695108783a0117b954fe00bcf1524b} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.547, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:54
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 08:01:13.173 {3469401f833a0117616d4f77dad51dca} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.485, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:54
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 
+2022-07-13 08:02:19.052 {80058e75923a0117c4ff780940aef67d} 500 "POST http localhost:8201 /api/v1/device/deviceData/add HTTP/1.1" 0.492, ::1, "", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36", 50, "Internal Error", ""
+Stack:
+1. exception recovered
+   1).  github.com/xiaodingding/iotfast/library/libCodec.(*httpCodecImpl).Encode
+    	E:/src/iotfast/library/libCodec/http_codec.go:95
+   2).  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceDataController).Add
+    	E:/src/iotfast/server/http/controller/device/device_data.go:31
+   3).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+   4).  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   5).  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+   6).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+   7).  github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   8).  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   9).  github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    	E:/src/iotfast/internal/app/common/service/middleware.go:29
+   10). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   11). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   12). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   13). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   14). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   15). github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+   16). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+   17). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   18). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+   19). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   20). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   21). github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+   22). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+   23). github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+   24). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+   25). github.com/gogf/gf/v2/util/gutil.TryCatch
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+   26). github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+   27). github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    	C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+2. runtime error: invalid memory address or nil pointer dereference
+ 

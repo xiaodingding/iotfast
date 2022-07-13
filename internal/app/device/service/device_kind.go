@@ -96,7 +96,7 @@ func (s *deviceKindImpl) Get(ctx context.Context, id int) (info *entity.DeviceKi
 	}
 	err = dao.DeviceKind.Ctx(ctx).Where(dao.DeviceKind.Columns().Id, id).Scan(&info)
 	if err != nil {
-		g.Log().Error(ctx, err)
+		g.Log().Error(ctx, "get device kind err", err, info)
 	}
 	if info == nil || err != nil {
 		err = gerror.New("获取信息失败")

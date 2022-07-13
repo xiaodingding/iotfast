@@ -1,0 +1,155 @@
+2022-07-13 00:10:03.410 [DEBU] {d4b3242acd2001175e9b167a5bf395fd} [ 11 ms] [default] [rows:25 ] SHOW FULL COLUMNS FROM `sys_auth_rule` 
+2022-07-13 00:10:03.420 [DEBU] {d4b3242acd2001175e9b167a5bf395fd} [  8 ms] [default] [rows:94 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-13 00:10:03.477 [DEBU] {14e27a2ecd200117609b167aa24c244c} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `casbin_rule` 
+2022-07-13 00:10:03.483 [DEBU] {e040042fcd200117619b167a76846b9c} [  5 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-13 00:10:03.489 [DEBU] {100f6f2fcd200117629b167a3b1dbbba} [  4 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-13 00:10:32.069 [DEBU] {bc9130d4d3200117659b167a2acbbc37} [ 15 ms] [default] [rows:94 ] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-13 00:10:32.120 [DEBU] {28d53fd4d3200117679b167a699af972} [ 65 ms] [default] [rows:9  ] SHOW FULL COLUMNS FROM `sys_dict_type` 
+2022-07-13 00:10:32.130 [DEBU] {28d53fd4d3200117679b167a699af972} [  7 ms] [default] [rows:1  ] SELECT `dict_name`,`remark` FROM `sys_dict_type` WHERE (`dict_type`='sys_show_hide') AND (`status`=1) LIMIT 1 
+2022-07-13 00:10:32.145 [DEBU] {28d53fd4d3200117679b167a699af972} [ 14 ms] [default] [rows:15 ] SHOW FULL COLUMNS FROM `sys_dict_data` 
+2022-07-13 00:10:32.152 [DEBU] {28d53fd4d3200117679b167a699af972} [  6 ms] [default] [rows:2  ] SELECT `dict_value`,`dict_label`,`is_default`,`remark` FROM `sys_dict_data` WHERE `dict_type`='sys_show_hide' ORDER BY `dict_sort` asc,`dict_code` asc 
+2022-07-13 00:30:47.600 [DEBU] {44c300d9ee210117baea3f17c59796c3} [ 24 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_label` 
+2022-07-13 00:30:47.619 [DEBU] {44c300d9ee210117baea3f17c59796c3} [ 12 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-13 00:30:47.629 [DEBU] {44c300d9ee210117baea3f17c59796c3} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-13 00:30:55.142 [DEBU] {9c8ff09af0210117bcea3f174d56f380} [ 17 ms] [default] [rows:1  ] INSERT INTO `device_label`(`name`,`created_at`,`updated_at`) VALUES('1','2022-07-13 00:30:55','2022-07-13 00:30:55')  
+2022-07-13 00:30:55.209 [DEBU] {54826e9ff0210117beea3f17bc7c789a} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-13 00:30:55.222 [DEBU] {54826e9ff0210117beea3f17bc7c789a} [  6 ms] [default] [rows:2  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-13 07:45:01.337 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  9 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 07:45:01.345 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 07:45:01.353 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 07:45:01.361 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  7 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 07:45:01.368 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 07:45:01.377 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  9 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 07:45:01.383 [DEBU] {80ca5cd9a0390117abb7dd20ca79fd4d} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 07:49:25.435 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  9 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 07:49:25.444 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 07:49:25.450 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 07:49:25.458 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  7 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 07:49:25.466 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 07:49:25.474 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 07:49:25.481 [DEBU] {7857d656de39011768d06a71ce0c46c7} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 07:53:04.263 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [ 22 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 07:53:04.272 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 07:53:04.283 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 07:53:04.297 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [ 12 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 07:53:04.305 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 07:53:04.315 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 07:53:04.324 [DEBU] {8c21c349113a0117ab0b02346a6662ba} [  7 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 07:56:57.088 [DEBU] {740e0480473a0117b7da22211a08e4c0} [ 11 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 07:56:57.096 [DEBU] {740e0480473a0117b7da22211a08e4c0} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 07:56:57.105 [DEBU] {740e0480473a0117b7da22211a08e4c0} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 07:56:57.113 [DEBU] {740e0480473a0117b7da22211a08e4c0} [  7 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 07:56:57.121 [DEBU] {740e0480473a0117b7da22211a08e4c0} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 07:56:57.130 [DEBU] {740e0480473a0117b7da22211a08e4c0} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 07:56:57.137 [DEBU] {740e0480473a0117b7da22211a08e4c0} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:00:25.552 [DEBU] {a4695108783a0117b954fe00bcf1524b} [ 31 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:00:25.564 [DEBU] {a4695108783a0117b954fe00bcf1524b} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:00:25.585 [DEBU] {a4695108783a0117b954fe00bcf1524b} [ 20 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:00:25.596 [DEBU] {a4695108783a0117b954fe00bcf1524b} [  9 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:00:25.605 [DEBU] {a4695108783a0117b954fe00bcf1524b} [  8 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:01:13.157 [DEBU] {3469401f833a0117616d4f77dad51dca} [ 14 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:01:13.165 [DEBU] {3469401f833a0117616d4f77dad51dca} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:01:13.172 [DEBU] {3469401f833a0117616d4f77dad51dca} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:02:19.036 [DEBU] {80058e75923a0117c4ff780940aef67d} [ 10 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:02:19.044 [DEBU] {80058e75923a0117c4ff780940aef67d} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:02:19.051 [DEBU] {80058e75923a0117c4ff780940aef67d} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:08:07.227 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  9 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:08:07.236 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:08:07.243 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:08:07.251 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  8 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:08:07.258 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:08:07.268 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  9 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:08:07.275 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:08:07.283 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:08:07.291 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_str`,`data_double`,`created_at`,`category_id`,`device_id`,`data_int`) VALUES('',0,'2022-07-13 08:08:07',1,1,0)  
+2022-07-13 08:08:07.300 [DEBU] {1408d686e33a0117b9e95b0b234dcef6} [  8 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`device_id`,`data_int`,`created_at`,`data_double`,`category_id`,`data_str`) VALUES(1,0,'2022-07-13 08:08:07',0,2,'')  
+2022-07-13 08:10:28.801 [DEBU] {14c00a7e043b0117f901e32c051b6233} [ 15 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:10:28.809 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:10:28.819 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  9 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:10:28.827 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  7 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:10:28.833 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:10:28.842 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  9 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:10:28.848 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  5 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:10:28.858 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:10:28.866 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`device_id`,`created_at`,`data_str`,`data_double`,`category_id`,`data_int`) VALUES(1,'2022-07-13 08:10:28','',0,1,0)  
+2022-07-13 08:10:28.874 [DEBU] {14c00a7e043b0117f901e32c051b6233} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_str`,`data_double`,`created_at`,`category_id`,`device_id`,`data_int`) VALUES('',0,'2022-07-13 08:10:28',2,1,0)  
+2022-07-13 08:12:25.525 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 16 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:12:25.533 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:12:25.553 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 18 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:12:25.590 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 35 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:12:25.606 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:12:25.617 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 10 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:12:25.626 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [  9 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:12:25.641 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 13 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:12:25.654 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 13 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_str`,`data_double`,`created_at`,`category_id`,`device_id`,`data_int`) VALUES('',0,'2022-07-13 08:12:25',1,1,0)  
+2022-07-13 08:12:25.668 [DEBU] {34d1ce951f3b0117bfd2e876af4a7c79} [ 13 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`device_id`,`data_int`,`data_str`,`data_double`,`created_at`,`category_id`) VALUES(1,0,'',0,'2022-07-13 08:12:25',2)  
+2022-07-13 08:15:38.140 [DEBU] {607eb7834c3b011745fde005497393cb} [  8 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:15:38.150 [DEBU] {607eb7834c3b011745fde005497393cb} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:15:38.170 [DEBU] {607eb7834c3b011745fde005497393cb} [ 20 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:15:38.179 [DEBU] {607eb7834c3b011745fde005497393cb} [  7 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:15:38.186 [DEBU] {607eb7834c3b011745fde005497393cb} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:15:38.194 [DEBU] {607eb7834c3b011745fde005497393cb} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:15:38.201 [DEBU] {607eb7834c3b011745fde005497393cb} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:15:38.211 [DEBU] {607eb7834c3b011745fde005497393cb} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:15:38.218 [DEBU] {607eb7834c3b011745fde005497393cb} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_str`,`data_double`,`created_at`,`category_id`,`device_id`,`data_int`) VALUES('',0,'2022-07-13 08:15:38',1,1,0)  
+2022-07-13 08:15:38.226 [DEBU] {607eb7834c3b011745fde005497393cb} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`category_id`,`device_id`,`created_at`,`data_int`,`data_str`,`data_double`) VALUES(2,1,'2022-07-13 08:15:38',0,'',0)  
+2022-07-13 08:17:05.500 [DEBU] {2c4591da603b0117df44a6255a186525} [ 11 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:17:05.508 [DEBU] {2c4591da603b0117df44a6255a186525} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:17:05.515 [DEBU] {2c4591da603b0117df44a6255a186525} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:17:05.534 [DEBU] {2c4591da603b0117df44a6255a186525} [ 18 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:17:05.540 [DEBU] {2c4591da603b0117df44a6255a186525} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:17:05.549 [DEBU] {2c4591da603b0117df44a6255a186525} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:17:05.555 [DEBU] {2c4591da603b0117df44a6255a186525} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:17:05.565 [DEBU] {2c4591da603b0117df44a6255a186525} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:17:05.572 [DEBU] {2c4591da603b0117df44a6255a186525} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`device_id`,`data_int`,`data_str`,`data_double`,`created_at`,`category_id`) VALUES(1,0,'',0,'2022-07-13 08:17:05',1)  
+2022-07-13 08:17:05.581 [DEBU] {2c4591da603b0117df44a6255a186525} [  8 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_int`,`data_str`,`data_double`,`category_id`,`device_id`,`created_at`) VALUES(0,'',0,2,1,'2022-07-13 08:17:05')  
+2022-07-13 08:21:13.022 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  9 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:21:13.031 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:21:13.038 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:21:13.046 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  8 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:21:13.052 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:21:13.061 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:21:13.068 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:21:13.079 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:21:13.086 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  6 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`created_at`,`data_int`,`data_str`,`data_double`,`category_id`,`device_id`) VALUES('2022-07-13 08:21:13',0,'',23.2,1,1)  
+2022-07-13 08:21:13.096 [DEBU] {2ceee47b9a3b0117877d4118a1245485} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`device_id`,`data_int`,`data_str`,`data_double`,`created_at`,`category_id`) VALUES(1,0,'',20,'2022-07-13 08:21:13',2)  
+2022-07-13 08:23:06.473 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [ 12 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:23:06.482 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:23:06.489 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:23:06.497 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  8 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:23:06.509 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:23:06.518 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  8 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:23:06.527 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  8 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:23:06.537 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:23:06.546 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  8 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`category_id`,`data_double`,`device_id`,`data_int`,`data_str`,`created_at`) VALUES(1,23.2,1,0,'','2022-07-13 08:23:06')  
+2022-07-13 08:23:06.553 [DEBU] {8425d5e6b43b011792cadd6010c8c7fc} [  6 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_int`,`device_id`,`created_at`,`data_str`,`data_double`,`category_id`) VALUES(0,1,'2022-07-13 08:23:06','',20,2)  
+2022-07-13 08:24:42.820 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [ 13 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:24:42.829 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:24:42.836 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:24:42.845 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  8 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:24:42.851 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:24:42.861 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  9 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:24:42.867 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:24:42.883 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [ 13 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:24:42.893 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  9 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_str`,`data_double`,`created_at`,`category_id`,`device_id`,`data_int`) VALUES('',23.2,'2022-07-13 08:24:42',1,1,0)  
+2022-07-13 08:24:42.903 [DEBU] {b0295c55cb3b01176aa667510bd0adcc} [  8 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`created_at`,`data_int`,`data_str`,`data_double`,`category_id`,`device_id`) VALUES('2022-07-13 08:24:42',0,'',20,2,1)  
+2022-07-13 08:26:10.444 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [ 11 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:26:10.452 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:26:10.462 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:26:10.469 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  6 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:26:10.480 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [ 10 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:26:10.490 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  9 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:26:10.497 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  6 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:26:10.508 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  7 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:26:10.515 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  6 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_int`,`data_str`,`data_double`,`created_at`,`category_id`,`device_id`) VALUES(0,'',23.2,'2022-07-13 08:26:10',1,1)  
+2022-07-13 08:26:10.524 [DEBU] {900be3bbdf3b01171cae375dc319c87b} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`category_id`,`device_id`,`created_at`,`data_int`,`data_str`,`data_double`) VALUES(2,1,'2022-07-13 08:26:10',0,'',20)  
+2022-07-13 08:28:11.835 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  9 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-13 08:28:11.844 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-13 08:28:11.851 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.device_id=device_info.id) WHERE `device_info`.`id`=1 LIMIT 1 
+2022-07-13 08:28:11.859 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  7 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-13 08:28:11.866 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` WHERE `id`=1 LIMIT 1 
+2022-07-13 08:28:11.874 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  7 ms] [default] [rows:13 ] SHOW FULL COLUMNS FROM `device_categoty` 
+2022-07-13 08:28:11.883 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  8 ms] [default] [rows:2  ] SELECT `id`,`kind_id`,`name`,`mark`,`data_type`,`unit`,`ratio`,`format`,`home_show`,`remark`,`created_at`,`updated_at` FROM `device_categoty` WHERE kind_id = 1 ORDER BY `id` asc 
+2022-07-13 08:28:11.894 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_category_data` 
+2022-07-13 08:28:11.901 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  6 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_str`,`data_double`,`created_at`,`category_id`,`device_id`,`data_int`) VALUES('',23.2,'2022-07-13 08:28:11',1,1,0)  
+2022-07-13 08:28:11.910 [DEBU] {78a6f0fffb3b01176d554f1b660abc4b} [  7 ms] [default] [rows:1  ] INSERT INTO `device_category_data`(`data_double`,`created_at`,`category_id`,`device_id`,`data_int`,`data_str`) VALUES(20,'2022-07-13 08:28:11',2,1,0,'')  

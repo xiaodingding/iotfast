@@ -187,30 +187,42 @@ func (s *deviceInfoImpl) Get(ctx context.Context, id int) (info *model.DeviceInf
 }
 
 func (s *deviceInfoImpl) GetAllInfo(ctx context.Context, id int, sn string) (info *model.DeviceAllInfo, err error) {
+	info = &model.DeviceAllInfo{}
 	if id == 0 && len(sn) < 1 {
 		err = gerror.New("参数错误")
 		return
 	}
 
-	err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().Id+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Id, id).Scan(&info.Info)
+	if id != 0 {
+		err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().DeviceId+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Id, id).Scan(&info.Info)
+	} else if len(sn) > 1 {
+		err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().DeviceId+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Sn, sn).Scan(&info.Info)
+	} else {
+		err = gerror.New("参数错误")
+		return
+	}
+
 	if err != nil {
 		g.Log().Error(ctx, err)
 		return
 	}
 
 	if info == nil || err != nil {
+		g.Log().Error(ctx, "get device info err", err, info)
 		err = gerror.New("获取信息失败")
 		return
 	}
 
 	info.Kind, err = DeviceKind().Get(ctx, info.Info.Kind)
-	if err != nil {
-		g.Log().Error(ctx, err)
+	if err != nil || info.Kind == nil {
+		g.Log().Error(ctx, "get device kind err", err, info.Kind)
+		err = gerror.New("get device kind is nil")
 		return
 	}
 	info.CategoryList, err = DeviceCategoty().KindGet(ctx, info.Info.Kind)
-	if err != nil {
-		g.Log().Error(ctx, err)
+	if err != nil || info.CategoryList == nil {
+		g.Log().Error(ctx, "get device CategoryList err", err, info.CategoryList)
+		err = gerror.New("get device categoryList is nil")
 		return
 	}
 	return
