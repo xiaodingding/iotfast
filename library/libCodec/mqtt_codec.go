@@ -65,7 +65,7 @@ func (c *mqttCodecImpl) Encode(ctx context.Context, dataContent interface{}) (dm
 
 	ntime = jsonContent.Get("time").GTime()
 
-	g.Log().Print(ctx, "time:", ntime, jsonContent.Get("time"))
+	// g.Log().Print(ctx, "time:", ntime, jsonContent.Get("time"))
 
 	if nil == dmesg.deviceInfo {
 		err = gerror.New("get deviceinfo nil")
@@ -92,7 +92,7 @@ func (c *mqttCodecImpl) Encode(ctx context.Context, dataContent interface{}) (dm
 				dtime = gtime.Now()
 			}
 
-			g.Log().Print(ctx, "pdata time:", ntime, dtime)
+			// g.Log().Print(ctx, "pdata time:", ntime, dtime)
 
 			// dmesg.dataList[index].Time = dtime
 			// index = index + 1

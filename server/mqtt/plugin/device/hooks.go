@@ -141,7 +141,7 @@ func (d *Device) OnMsgArrivedWrapper(pre server.OnMsgArrived) server.OnMsgArrive
 			}
 		}
 
-		if isMatch := packets.TopicMatch([]byte(req.Message.Topic), []byte("/device/#")); true == isMatch {
+		if isMatch := packets.TopicMatch([]byte(req.Message.Topic), []byte("/device/+/report")); true == isMatch {
 			// Access(client.ClientOptions().Username, req.Message.Topic, req.Message.Payload)
 			// g.Log().Printf(ctx, "topic:%s, QoS:%v, payload:%s", req.Message.Topic, req.Message.QoS, req.Message.Payload)
 			mqttParse, err := libCodec.Open("mqtt")
