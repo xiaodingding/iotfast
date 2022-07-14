@@ -6,8 +6,8 @@ import (
 	"math"
 )
 
-// #cgo CFLAGS: -I./luajit/src -I./luajit/src -I./luajit/src/jit -I./luajit/src/host
-// #cgo LDFLAGS:  -L./luajit/src -lluajit-5.1.dll -lstdc++
+// #cgo CFLAGS: -I./lua/LuaJIT-2.0.5/src -I./lua/LuaJIT-2.0.5/src -I./lua/LuaJIT-2.0.5/src/jit -I./lua/LuaJIT-2.0.5/src/host
+// #cgo LDFLAGS:  -L./lua/LuaJIT-2.0.5/src ./lua51.dll -lstdc++
 //#include "libLua.h"
 import "C"
 
