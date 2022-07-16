@@ -1,6 +1,6 @@
 // ==========================================================================
 // 物联网快速开发自动生成model代码，无需手动修改，重新生成会自动覆盖.
-// 生成日期：2022-07-02 23:41:34
+// 生成日期：2022-07-15 22:11:03
 // 生成路径: github.com/xiaodingding/iotfast/internal/app/model/do/mqtt_status.go
 // 生成人：dwx
 // ==========================================================================
@@ -20,7 +20,6 @@ type MqttStatus struct {
 	ClientId  interface{} // MQTT连接的客户端Id
 	Status    interface{} // MQTT连接的状态
 	UserName  interface{} // 登录名
-	Topic     interface{} // 订阅的Topic信息
 	CreatedAt *gtime.Time // 创建时间
 	UpdatedAt *gtime.Time // 修改时间
 }

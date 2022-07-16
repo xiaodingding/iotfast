@@ -11,3 +11,5 @@ const (
 	CategoryDataTypeDouble  = 7
 	CategoryDataTypeString  = 8
 )
+
+

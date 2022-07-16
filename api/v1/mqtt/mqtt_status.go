@@ -24,7 +24,6 @@ type MqttStatusSearchReq struct {
 	ClientId  string `p:"clientId"`  //MQTT连接的客户端Id
 	Status    string `p:"status"`    //MQTT连接的状态
 	UserName  string `p:"userName"`  //登录名
-	Topic     string `p:"topic"`     //订阅的Topic信息
 	BeginTime string `p:"beginTime"` //开始时间
 	EndTime   string `p:"endTime"`   //结束时间
 	commonApi.PageReq
@@ -50,7 +49,6 @@ type MqttStatusAddReq struct {
 	ClientId string `p:"clientId" `
 	Status   int    `p:"status" v:"required#MQTT连接的状态不能为空"`
 	UserName string `p:"userName" `
-	Topic    string `p:"topic" `
 }
 type MqttStatusAddRes struct {
 }
@@ -63,9 +61,19 @@ type MqttStatusEditReq struct {
 	ClientId string `p:"clientId" `
 	Status   int    `p:"status" v:"required#MQTT连接的状态不能为空"`
 	UserName string `p:"userName" `
-	Topic    string `p:"topic" `
 }
 type MqttStatusEditRes struct {
+}
+
+type MqttStatusUpdateReq struct {
+	g.Meta   `path:"/mqttStatus/edit" tags:"MQTT客户端连接状态" method:"put" summary:"修改MQTT客户端连接状态"`
+	Id       int    `p:"id" v:"required#主键ID不能为空"`
+	Name     string `p:"name" v:"required#设备名称不能为空"`
+	ClientId string `p:"clientId" `
+	Status   int    `p:"status" v:"required#MQTT连接的状态不能为空"`
+	UserName string `p:"userName" `
+}
+type MqttStatusUpdateRes struct {
 }
 
 // MqttStatusStatusReq 设置用户状态参数

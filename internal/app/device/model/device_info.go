@@ -23,6 +23,7 @@ type DeviceInfoExtern struct {
 	Logo               string      `orm:"logo" json:"logo"`                                // logo
 	Monitor            int         `orm:"monitor" json:"monitor"`                          // 是否监视
 	Location           int         `orm:"location" json:"location"`                        // 地理位置
+	StatusId           int         `orm:"status_id" json:"status_id"`                      // 状态Id
 	Status             int         `orm:"status" json:"status"`                            // 状态
 	TimeOut            int         `orm:"time_out" json:"timeOut"`                         // 超时时间
 	UpTime             int         `orm:"up_time" json:"upTime"`                           // 上线时间

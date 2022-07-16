@@ -4,8 +4,14 @@ import (
 	"context"
 
 	"github.com/gogf/gf/v2/frame/g"
-	"github.com/xiaodingding/iotfast/internal/app/device/service"
+
+	mqttApi "github.com/xiaodingding/iotfast/api/v1/mqtt"
+	mqttService "github.com/xiaodingding/iotfast/internal/app/mqtt/service"
+
+	deviceConst "github.com/xiaodingding/iotfast/internal/app/device/consts"
+	deviceService "github.com/xiaodingding/iotfast/internal/app/device/service"
 	"github.com/xiaodingding/iotfast/library/libCodec"
+	gmqtt "github.com/xiaodingding/iotfast/server/mqtt"
 	"github.com/xiaodingding/iotfast/server/mqtt/pkg/codes"
 	"github.com/xiaodingding/iotfast/server/mqtt/pkg/packets"
 	"github.com/xiaodingding/iotfast/server/mqtt/server"
@@ -15,11 +21,13 @@ import (
 
 func (d *Device) HookWrapper() server.HookWrapper {
 	return server.HookWrapper{
-		OnBasicAuthWrapper:  d.OnBasicAuthWrapper,
-		OnSubscribeWrapper:  d.OnSubscribeWrapper,
-		OnMsgArrivedWrapper: d.OnMsgArrivedWrapper,
-		OnConnectedWrapper:  d.OnConnectedWrapper,
-		OnClosedWrapper:     d.OnClosedWrapper,
+		OnBasicAuthWrapper:    d.OnBasicAuthWrapper,
+		OnSubscribeWrapper:    d.OnSubscribeWrapper,
+		OnSubscribedWrapper:   d.OnSubscribedWrapper,
+		OnUnsubscribedWrapper: d.OnUnsubscribedWrapper,
+		OnMsgArrivedWrapper:   d.OnMsgArrivedWrapper,
+		OnConnectedWrapper:    d.OnConnectedWrapper,
+		OnClosedWrapper:       d.OnClosedWrapper,
 	}
 }
 
@@ -29,7 +37,7 @@ func (d *Device) validateDevice(ctx context.Context, username string, password s
 		return false, nil
 	}
 
-	status, err = service.DeviceInfo().Auth(ctx, username, password)
+	status, err = deviceService.DeviceInfo().Auth(ctx, username, password)
 
 	return
 }
@@ -89,6 +97,31 @@ func (d *Device) OnSubscribeWrapper(pre server.OnSubscribe) server.OnSubscribe {
 			}
 		}
 		return nil
+	}
+}
+
+func (d *Device) OnUnsubscribedWrapper(pre server.OnUnsubscribed) server.OnUnsubscribed {
+	return func(ctx context.Context, client server.Client, topicName string) {
+		err := mqttService.MqttTopic().DeleteByClientIdAndTopic(ctx, client.ClientOptions().ClientID, topicName)
+		if err != nil {
+			g.Log().Error(ctx, "save topic info error", err)
+		}
+	}
+}
+
+func (d *Device) OnSubscribedWrapper(pre server.OnSubscribed) server.OnSubscribed {
+	return func(ctx context.Context, client server.Client, subscription *gmqtt.Subscription) {
+		req := &mqttApi.MqttTopicAddReq{}
+		req.ClientId = client.ClientOptions().ClientID
+		req.Name = client.Connection().RemoteAddr().String()
+		req.Topic = subscription.TopicFilter
+		req.Qos = int(subscription.QoS)
+		req.RetainAsPub = subscription.RetainAsPublished
+		req.RetainHandle = subscription.RetainHandling
+		err := mqttService.MqttTopic().Add(ctx, req)
+		if err != nil {
+			g.Log().Error(ctx, "save topic info error", err)
+		}
 	}
 }
 
@@ -175,13 +208,23 @@ func (d *Device) OnConnectedWrapper(pre server.OnConnected) server.OnConnected {
 		}
 		//Status(client.ClientOptions().Username, true)
 		log.Debug("client Connect ", zap.String("ClientID:", client.ClientOptions().ClientID))
+
+		mqttService.MqttStatus().Update(ctx, client.ClientOptions().Username, client.ClientOptions().ClientID, client.Connection().RemoteAddr().String(), deviceConst.DeviceStatusOnLine)
+		deviceService.DeviceInfo().UpdateStatus(ctx, client.ClientOptions().Username, deviceConst.DeviceStatusOnLine)
 	}
 }
 
 func (d *Device) OnClosedWrapper(pre server.OnClosed) server.OnClosed {
 	return func(ctx context.Context, client server.Client, err error) {
-		log.Debug("client id:" + client.ClientOptions().ClientID + "is closed with error:" + err.Error())
-		//Status(client.ClientOptions().Username, false)
-		//g.Log().Debug("client id:"+client.ClientOptions().ClientID+" is closed with error: ", err)
+		if client != nil && nil != client.ClientOptions() {
+			// log.Debug("client id:" + client.ClientOptions().ClientID + "is closed with error:" + err.Error())
+			//Status(client.ClientOptions().Username, false)
+			g.Log().Debug(ctx, "client id:"+client.ClientOptions().ClientID+" is closed with error: ", err)
+			mqttService.MqttStatus().Update(ctx, client.ClientOptions().Username, client.ClientOptions().ClientID, "", deviceConst.DeviceStatusOffLine)
+			mqttService.MqttTopic().DeleteByClientId(ctx, client.ClientOptions().ClientID)
+			deviceService.DeviceInfo().UpdateStatus(ctx, client.ClientOptions().Username, deviceConst.DeviceStatusOffLine)
+		} else {
+			g.Log().Debug(ctx, "clinet is nil", client)
+		}
 	}
 }

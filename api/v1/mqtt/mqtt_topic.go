@@ -20,8 +20,9 @@ import (
 // MqttTopicSearchReq 分页请求参数
 type MqttTopicSearchReq struct {
 	g.Meta    `path:"/mqttTopic/list" tags:"MQTT客户端的订阅信息" method:"get" summary:"MQTT客户端的订阅信息列表"`
-	Name      string `p:"name"`      //设备名称
-	Topic     string `p:"topic"`     //订阅的Topic信息
+	Name      string `p:"name"`  //设备名称
+	Topic     string `p:"topic"` //订阅的Topic信息
+	ClientId  string `p:"clientId" `
 	Qos       string `p:"qos"`       //等级
 	BeginTime string `p:"beginTime"` //开始时间
 	EndTime   string `p:"endTime"`   //结束时间
@@ -43,21 +44,25 @@ type MqttTopicGetRes struct {
 
 // MqttTopicAddReq 添加操作请求参数
 type MqttTopicAddReq struct {
-	g.Meta `path:"/mqttTopic/add" tags:"MQTT客户端的订阅信息" method:"post" summary:"添加MQTT客户端的订阅信息"`
-	Name   string `p:"name" v:"required#设备名称不能为空"`
-	Topic  string `p:"topic" `
-	Qos    int    `p:"qos" `
+	g.Meta       `path:"/mqttTopic/add" tags:"MQTT客户端的订阅信息" method:"post" summary:"添加MQTT客户端的订阅信息"`
+	Name         string `p:"name" v:"required#设备名称不能为空"`
+	ClientId     string `p:"clientId" v:"required#设备Id不能为空"`
+	Topic        string `p:"topic" `
+	Qos          int    `p:"qos" `
+	RetainAsPub  bool   `p:"retainAsPub" `
+	RetainHandle byte   `p:"retainHandle" `
 }
 type MqttTopicAddRes struct {
 }
 
 // MqttTopicEditReq 修改操作请求参数
 type MqttTopicEditReq struct {
-	g.Meta `path:"/mqttTopic/edit" tags:"MQTT客户端的订阅信息" method:"put" summary:"修改MQTT客户端的订阅信息"`
-	Id     int    `p:"id" v:"required#主键ID不能为空"`
-	Name   string `p:"name" v:"required#设备名称不能为空"`
-	Topic  string `p:"topic" `
-	Qos    int    `p:"qos" `
+	g.Meta   `path:"/mqttTopic/edit" tags:"MQTT客户端的订阅信息" method:"put" summary:"修改MQTT客户端的订阅信息"`
+	Id       int    `p:"id" v:"required#主键ID不能为空"`
+	Name     string `p:"name" v:"required#设备名称不能为空"`
+	ClientId string `p:"clientId" v:"required#设备Id不能为空"`
+	Topic    string `p:"topic" `
+	Qos      int    `p:"qos" `
 }
 type MqttTopicEditRes struct {
 }
@@ -66,4 +71,12 @@ type MqttTopicDeleteReq struct {
 	Ids    []int `p:"ids"`
 }
 type MqttTopicDeleteRes struct {
+}
+
+type MqttTopicDeleteByTopicReq struct {
+	g.Meta   `path:"/mqttTopic/delete" tags:"MQTT客户端的订阅信息" method:"deleteTopic" summary:"删除MQTT客户端的订阅信息"`
+	ClientId string `p:"clientId" v:"required#设备Id不能为空"`
+	Topic    string `p:"topic" v:"required#Topic不能为空"`
+}
+type MqttTopicDeleteByTopicRes struct {
 }

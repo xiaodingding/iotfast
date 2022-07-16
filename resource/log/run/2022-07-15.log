@@ -8,3 +8,466 @@
  
 2022-07-15 00:23:04.591 {50379d2facbe011718535a2f384fda86} req param:&{{} 0      {[] 1 10 }} 
  
+2022-07-15 21:58:56.710 [INFO] {d84d1043630502170c8aae53de3c5bcc} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 21:58:56.721 [ERRO] {d84d1043630502170c8aae53de3c5bcc} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-15 22:00:18.756 {3c8c4a5d76050217198aae53469f1303} delet ids:[109] 
+2022-07-15 22:03:56.796 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:model_do, path:E:\src\iotfast/internal/app/mqtt//model/do/mqtt_topic.go 
+2022-07-15 22:03:56.799 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:model_entity, path:E:\src\iotfast/internal/app/mqtt//model/entity/mqtt_topic.go 
+2022-07-15 22:03:56.800 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:service, path:E:\src\iotfast/internal/app/mqtt//service/mqtt_topic.go 
+2022-07-15 22:03:56.802 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:dao_internal, path:E:\src\iotfast/internal/app/mqtt//dao/internal/mqtt_topic.go 
+2022-07-15 22:03:56.804 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:dao, path:E:\src\iotfast/internal/app/mqtt//dao/mqtt_topic.go 
+2022-07-15 22:03:56.820 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:controller, path:E:\src\iotfast/internal/app/mqtt//controller/mqtt_topic.go 
+2022-07-15 22:03:56.821 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//internal/app/mqtt_topic.sql 
+2022-07-15 22:03:56.821 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/mqtt/mqttTopic.ts 
+2022-07-15 22:03:56.822 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:vue, path:E:/src/iotfast/web/src/views/mqtt/mqttTopic/index.vue 
+2022-07-15 22:03:56.822 {98729a0ba90502172a8aae53f52cbe28} curDir:E:\src\iotfast, packageName:/internal/app, key:goApi, path: 
+2022-07-15 22:10:51.228 {c03b969f090602172b8aae53c4fbfb38} delet ids:[110] 
+2022-07-15 22:10:54.010 {fcbd72450a0602172d8aae533480a62e} delet ids:[108] 
+2022-07-15 22:13:05.024 {dc117cb7280602173d8aae537b5aad2b} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/mqtt/mqttTopic.ts 
+2022-07-15 22:13:05.031 {dc117cb7280602173d8aae537b5aad2b} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:dao_internal, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//dao/internal/mqtt_topic.go 
+2022-07-15 22:13:05.035 {dc117cb7280602173d8aae537b5aad2b} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:model_do, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//model/do/mqtt_topic.go 
+2022-07-15 22:13:05.037 {dc117cb7280602173d8aae537b5aad2b} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:model_entity, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//model/entity/mqtt_topic.go 
+2022-07-15 22:13:05.040 {dc117cb7280602173d8aae537b5aad2b} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:controller, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//controller/mqtt_topic.go 
+2022-07-15 22:13:05.044 {dc117cb7280602173d8aae537b5aad2b} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:service, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//service/mqtt_topic.go 
+2022-07-15 22:13:05.099 [ERRO] {dc117cb7280602173d8aae537b5aad2b} Error 1062: Duplicate entry 'mqtt/mqttTopic' for key 'name', INSERT INTO `sys_auth_rule` (`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`always_show`,`path`,`jump_path`,`component`,`is_iframe`,`module_type`,`model_id`,`created_at`,`updated_at`,`deleted_at` )VALUES(0,'mqtt/mqttTopic','订阅的主题信息管理','form','','订阅的主题信息管理',0,0,0,0,'/mqtt/mqttTopic','','',0,'sys_admin',0,@now,@now,NULL );
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/system/service.(*sysGenTableImpl).writeDb
+    E:/src/iotfast/internal/app/system/service/sys_gen_table.go:961
+2.  github.com/xiaodingding/iotfast/internal/app/system/service.(*sysGenTableImpl).GenCode
+    E:/src/iotfast/internal/app/system/service/sys_gen_table.go:522
+3.  github.com/xiaodingding/iotfast/server/http/controller/system.(*genTableController).GenCode
+    E:/src/iotfast/server/http/controller/system/gen_table.go:124
+4.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+5.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+7.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+8.  github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+10. github.com/xiaodingding/iotfast/internal/app/system/service.(*middlewareImpl).Auth
+    E:/src/iotfast/internal/app/system/service/middleware.go:83
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+12. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+16. github.com/xiaodingding/iotfast/internal/app/system/service.(*middlewareImpl).Ctx
+    E:/src/iotfast/internal/app/system/service/middleware.go:56
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-15 22:13:11.315 [ERRO] {d4b0c22d2a0602173e8aae53ca632d43} Error 1062: Duplicate entry 'mqtt/mqttStatus' for key 'name', INSERT INTO `sys_auth_rule` (`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`always_show`,`path`,`jump_path`,`component`,`is_iframe`,`module_type`,`model_id`,`created_at`,`updated_at`,`deleted_at` )VALUES(0,'mqtt/mqttStatus','客户端连接状态管理','form','','客户端连接状态管理',0,0,0,0,'/mqtt/mqttStatus','','',0,'sys_admin',0,@now,@now,NULL );
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/system/service.(*sysGenTableImpl).writeDb
+    E:/src/iotfast/internal/app/system/service/sys_gen_table.go:961
+2.  github.com/xiaodingding/iotfast/internal/app/system/service.(*sysGenTableImpl).GenCode
+    E:/src/iotfast/internal/app/system/service/sys_gen_table.go:522
+3.  github.com/xiaodingding/iotfast/server/http/controller/system.(*genTableController).GenCode
+    E:/src/iotfast/server/http/controller/system/gen_table.go:124
+4.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+5.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+7.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+8.  github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+10. github.com/xiaodingding/iotfast/internal/app/system/service.(*middlewareImpl).Auth
+    E:/src/iotfast/internal/app/system/service/middleware.go:83
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+12. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+16. github.com/xiaodingding/iotfast/internal/app/system/service.(*middlewareImpl).Ctx
+    E:/src/iotfast/internal/app/system/service/middleware.go:56
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-15 22:16:26.928 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:model_do, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//model/do/mqtt_topic.go 
+2022-07-15 22:16:26.929 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:model_entity, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//model/entity/mqtt_topic.go 
+2022-07-15 22:16:26.930 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:controller, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//controller/mqtt_topic.go 
+2022-07-15 22:16:26.931 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:vue, path:E:/src/iotfast/web/src/views/mqtt/mqttTopic/index.vue 
+2022-07-15 22:16:26.932 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:goApi, path: 
+2022-07-15 22:16:26.934 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:dao, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//dao/mqtt_topic.go 
+2022-07-15 22:16:26.936 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:dao_internal, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//dao/internal/mqtt_topic.go 
+2022-07-15 22:16:26.936 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:service, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//service/mqtt_topic.go 
+2022-07-15 22:16:26.937 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//xiaodingding/iotfast/internal/app/mqtt_topic.sql 
+2022-07-15 22:16:26.938 {58cbc3ba570602173f8aae531cb8ab85} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/mqtt/mqttTopic.ts 
+2022-07-15 22:16:31.041 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:model_do, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//model/do/mqtt_status.go 
+2022-07-15 22:16:31.043 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:model_entity, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//model/entity/mqtt_status.go 
+2022-07-15 22:16:31.046 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:controller, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//controller/mqtt_status.go 
+2022-07-15 22:16:31.046 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//xiaodingding/iotfast/internal/app/mqtt_status.sql 
+2022-07-15 22:16:31.047 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:goApi, path: 
+2022-07-15 22:16:31.049 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:dao, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//dao/mqtt_status.go 
+2022-07-15 22:16:31.052 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:dao_internal, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//dao/internal/mqtt_status.go 
+2022-07-15 22:16:31.054 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:service, path:E:\src\iotfast/xiaodingding/iotfast/internal/app/mqtt//service/mqtt_status.go 
+2022-07-15 22:16:31.055 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/mqtt/mqttStatus.ts 
+2022-07-15 22:16:31.055 {e46c95b058060217408aae53aeac5fa1} curDir:E:\src\iotfast, packageName:/xiaodingding/iotfast/internal/app, key:vue, path:E:/src/iotfast/web/src/views/mqtt/mqttStatus/index.vue 
+2022-07-15 22:41:54.411 [INFO] {30d4f26dbb0702176851c4187d50e8d6} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 22:41:54.413 [ERRO] {30d4f26dbb0702176851c4187d50e8d6} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 22:43:18.254 [INFO] {440c6df3ce070217563200207595e0d9} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 22:43:18.258 [ERRO] {440c6df3ce070217563200207595e0d9} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 22:46:28.991 [INFO] {842cec5afb070217bdfa5e6fa9e7a161} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 22:46:29.031 [ERRO] {842cec5afb070217bdfa5e6fa9e7a161} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 22:59:04.679 [INFO] {c4bbc34eab0802178f091e67db677001} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 22:59:04.682 [ERRO] {c4bbc34eab0802178f091e67db677001} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 23:00:21.574 [INFO] {888e1536bd0802170e49256d12382012} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 23:00:21.577 [ERRO] {888e1536bd0802170e49256d12382012} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 23:01:26.307 [INFO] {a0406648cc0802170e8f621f4caa3f8e} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 23:01:26.310 [ERRO] {a0406648cc0802170e8f621f4caa3f8e} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 23:01:30.108 [DEBU] client id:MQTT_FX_Client is closed with error:   
+2022-07-15 23:02:09.359 [DEBU] client id:MQTT_FX_Client is closed with error:  read tcp 127.0.0.1:1883->127.0.0.1:50282: use of closed network connection 
+2022-07-15 23:07:58.586 [INFO] {408d1d9e2709021776e3193a0258738f} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 23:07:58.590 [ERRO] {408d1d9e2709021776e3193a0258738f} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 23:08:24.673 [DEBU] client id:MQTT_FX_Client is closed with error:   
+2022-07-15 23:08:49.697 [DEBU] client id:MQTT_FX_Client is closed with error:   
+2022-07-15 23:09:12.307 [DEBU] client id:MQTT_FX_Client is closed with error:  read tcp 127.0.0.1:1883->127.0.0.1:50778: use of closed network connection 
+2022-07-15 23:16:21.717 [INFO] {4029fbc29c090217b6a6292c75d5e2d5} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 23:16:21.719 [ERRO] {4029fbc29c090217b6a6292c75d5e2d5} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 23:16:57.239 [DEBU] client id:MQTT_FX_Client is closed with error:   
+2022-07-15 23:17:49.506 [DEBU] client id:MQTT_FX_Client is closed with error:   
+2022-07-15 23:18:56.072 [INFO] {b8a93eb3c0090217eb2e8609747da3c8} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-15 23:18:56.075 [ERRO] {b8a93eb3c0090217eb2e8609747da3c8} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+ 
+2022-07-15 23:19:14.010 [DEBU] client id:MQTT_FX_Client is closed with error:  read tcp 127.0.0.1:1883->127.0.0.1:51464: use of closed network connection 

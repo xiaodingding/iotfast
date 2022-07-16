@@ -66,6 +66,6 @@ func (c *deviceStatusController) Delete(ctx context.Context, req *device.DeviceS
 // ChangeStatus 修改状态
 func (c *deviceStatusController) ChangeStatus(ctx context.Context, req *device.DeviceStatusStatusReq) (res *device.DeviceStatusStatusRes, err error) {
 	res = &device.DeviceStatusStatusRes{}
-	err = service.DeviceStatus().ChangeStatus(ctx, req)
+	err = service.DeviceStatus().ChangeStatus(ctx, req.Id, req.Status)
 	return
 }

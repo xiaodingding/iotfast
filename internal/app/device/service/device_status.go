@@ -11,6 +11,7 @@ import (
 	"context"
 
 	"github.com/xiaodingding/iotfast/api/v1/device"
+	deviceConsts "github.com/xiaodingding/iotfast/internal/app/device/consts"
 	"github.com/xiaodingding/iotfast/internal/app/device/dao"
 	"github.com/xiaodingding/iotfast/internal/app/device/model/entity"
 	systemConsts "github.com/xiaodingding/iotfast/internal/app/system/consts"
@@ -18,6 +19,7 @@ import (
 
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 //type deviceStatus struct {
@@ -29,7 +31,7 @@ type IDeviceStatus interface {
 	Add(ctx context.Context, req *device.DeviceStatusAddReq) (err error)
 	Edit(ctx context.Context, req *device.DeviceStatusEditReq) error
 	DeleteByIds(ctx context.Context, ids []int) (err error)
-	ChangeStatus(ctx context.Context, req *device.DeviceStatusStatusReq) error
+	ChangeStatus(ctx context.Context, deviceId int, status int) error
 }
 type deviceStatusImpl struct {
 }
@@ -132,9 +134,27 @@ func (s *deviceStatusImpl) DeleteByIds(ctx context.Context, ids []int) (err erro
 }
 
 // ChangeStatus 修改状态
-func (s *deviceStatusImpl) ChangeStatus(ctx context.Context, req *device.DeviceStatusStatusReq) error {
-	_, err := dao.DeviceStatus.Ctx(ctx).WherePri(req.Id).Update(g.Map{
-		dao.DeviceStatus.Columns().Status: req.Status,
-	})
-	return err
+func (s *deviceStatusImpl) ChangeStatus(ctx context.Context, deviceId int, status int) error {
+	if status == deviceConsts.DeviceStatusOffLine {
+		_, err := dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", deviceId).Update(g.Map{
+			dao.DeviceStatus.Columns().Status:   status,
+			dao.DeviceStatus.Columns().DownTime: gtime.Now().Timestamp(),
+		})
+		return err
+	} else if status == deviceConsts.DeviceStatusOnLine {
+		_, err := dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", deviceId).Update(g.Map{
+			dao.DeviceStatus.Columns().Status: status,
+			dao.DeviceStatus.Columns().UpTime: gtime.Now().Timestamp(),
+		})
+		return err
+	} else if status == deviceConsts.DeviceStatusDataUp {
+		_, err := dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", deviceId).Update(g.Map{
+			dao.DeviceStatus.Columns().Status:             status,
+			dao.DeviceStatus.Columns().LastDataUpdateTime: gtime.Now().Timestamp(),
+		})
+		return err
+	} else {
+		return gerror.Newf("not support status:%v", status)
+	}
+
 }

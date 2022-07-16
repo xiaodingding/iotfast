@@ -29,6 +29,8 @@ type IMqttTopic interface {
 	Add(ctx context.Context, req *mqtt.MqttTopicAddReq) (err error)
 	Edit(ctx context.Context, req *mqtt.MqttTopicEditReq) error
 	DeleteByIds(ctx context.Context, ids []int) (err error)
+	DeleteByClientId(ctx context.Context, clientId string) (err error)
+	DeleteByClientIdAndTopic(ctx context.Context, clientId, topic string) (err error)
 }
 type mqttTopicImpl struct {
 }
@@ -50,6 +52,9 @@ func (s *mqttTopicImpl) List(ctx context.Context, req *mqtt.MqttTopicSearchReq) 
 	m := dao.MqttTopic.Ctx(ctx)
 	if req.Name != "" {
 		m = m.Where(dao.MqttTopic.Columns().Name+" like ?", "%"+req.Name+"%")
+	}
+	if req.ClientId != "" {
+		m = m.Where(dao.MqttTopic.Columns().ClientId+" like ?", "%"+req.ClientId+"%")
 	}
 	if req.Topic != "" {
 		m = m.Where(dao.MqttTopic.Columns().Topic+" = ?", req.Topic)
@@ -114,6 +119,33 @@ func (s *mqttTopicImpl) DeleteByIds(ctx context.Context, ids []int) (err error) 
 		return
 	}
 	_, err = dao.MqttTopic.Ctx(ctx).Delete(dao.MqttTopic.Columns().Id+" in (?)", ids)
+	if err != nil {
+		g.Log().Error(ctx, err)
+		err = gerror.New("删除失败")
+	}
+	return
+}
+
+// DeleteByIds 删除
+func (s *mqttTopicImpl) DeleteByClientId(ctx context.Context, clientId string) (err error) {
+	if len(clientId) == 0 {
+		err = gerror.New("参数错误")
+		return
+	}
+	_, err = dao.MqttTopic.Ctx(ctx).Delete(dao.MqttTopic.Columns().ClientId+" = (?)", clientId)
+	if err != nil {
+		g.Log().Error(ctx, err)
+		err = gerror.New("删除失败")
+	}
+	return
+}
+
+func (s *mqttTopicImpl) DeleteByClientIdAndTopic(ctx context.Context, clientId, topic string) (err error) {
+	if len(clientId) == 0 || len(topic) == 0 {
+		err = gerror.New("参数错误")
+		return
+	}
+	_, err = dao.MqttTopic.Ctx(ctx).Where(dao.MqttTopic.Columns().Topic+" = ?", topic).Where(dao.MqttTopic.Columns().ClientId+" = ?", clientId).Delete()
 	if err != nil {
 		g.Log().Error(ctx, err)
 		err = gerror.New("删除失败")

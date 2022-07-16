@@ -1,6 +1,6 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao internal操作代码，无需手动修改，重新生成会自动覆盖.
-// 生成日期：2022-07-02 23:41:34
+// 生成日期：2022-07-15 22:11:03
 // 生成路径: github.com/xiaodingding/iotfast/internal/app/dao/internal/mqtt_status.go
 // 生成人：dwx
 // ==========================================================================
@@ -28,7 +28,6 @@ type MqttStatusColumns struct {
 	ClientId  string // MQTT连接的客户端Id
 	Status    string // MQTT连接的状态
 	UserName  string // 登录名
-	Topic     string // 订阅的Topic信息
 	CreatedAt string // 创建时间
 	UpdatedAt string // 修改时间
 }
@@ -39,7 +38,6 @@ var mqttStatusColumns = MqttStatusColumns{
 	ClientId:  "clientId",
 	Status:    "status",
 	UserName:  "userName",
-	Topic:     "topic",
 	CreatedAt: "created_at",
 	UpdatedAt: "updated_at",
 }

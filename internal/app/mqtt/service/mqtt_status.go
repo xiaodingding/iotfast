@@ -27,6 +27,7 @@ type IMqttStatus interface {
 	List(ctx context.Context, req *mqtt.MqttStatusSearchReq) (total, page int, list []*entity.MqttStatus, err error)
 	Get(ctx context.Context, id int) (info *entity.MqttStatus, err error)
 	Add(ctx context.Context, req *mqtt.MqttStatusAddReq) (err error)
+	Update(ctx context.Context, UserName, ClientId, Name string, Status int) error
 	Edit(ctx context.Context, req *mqtt.MqttStatusEditReq) error
 	DeleteByIds(ctx context.Context, ids []int) (err error)
 	ChangeStatus(ctx context.Context, req *mqtt.MqttStatusStatusReq) error
@@ -60,9 +61,6 @@ func (s *mqttStatusImpl) List(ctx context.Context, req *mqtt.MqttStatusSearchReq
 	}
 	if req.UserName != "" {
 		m = m.Where(dao.MqttStatus.Columns().UserName+" = ?", req.UserName)
-	}
-	if req.Topic != "" {
-		m = m.Where(dao.MqttStatus.Columns().Topic+" = ?", req.Topic)
 	}
 	err = g.Try(func() {
 		total, err = m.Count()
@@ -112,6 +110,36 @@ func (s *mqttStatusImpl) Edit(ctx context.Context, req *mqtt.MqttStatusEditReq) 
 	_, err := dao.MqttStatus.Ctx(ctx).FieldsEx(dao.MqttStatus.Columns().Id, dao.MqttStatus.Columns().CreatedAt).Where(dao.MqttStatus.Columns().Id, req.Id).
 		Update(req)
 	return err
+}
+
+func (s *mqttStatusImpl) Update(ctx context.Context, UserName, ClientId, Name string, Status int) error {
+	var MqttSta *entity.MqttStatus
+	err := dao.MqttStatus.Ctx(ctx).Where(dao.MqttStatus.Columns().ClientId, ClientId).Scan(&MqttSta)
+	if err != nil {
+		g.Log().Errorf(ctx, "get mqtt status err UserName:%s, ClientId:%s, Status:%d", UserName, ClientId, Status)
+		return err
+	}
+	if MqttSta != nil {
+		MqttSta.UserName = UserName
+		if Status > 0 {
+			MqttSta.Name = Name
+		}
+		MqttSta.Status = Status
+
+		_, err = dao.MqttStatus.Ctx(ctx).FieldsEx(dao.MqttStatus.Columns().Id, dao.MqttStatus.Columns().CreatedAt).Where(dao.MqttStatus.Columns().Id, MqttSta.Id).
+			Update(MqttSta)
+		return err
+	} else {
+		MqttSta = &entity.MqttStatus{}
+		MqttSta.UserName = UserName
+		MqttSta.Status = Status
+		MqttSta.ClientId = ClientId
+		if Status > 0 {
+			MqttSta.Name = Name
+		}
+		_, err = dao.MqttStatus.Ctx(ctx).FieldsEx(dao.MqttStatus.Columns().Id).Insert(MqttSta)
+		return err
+	}
 }
 
 // DeleteByIds 删除

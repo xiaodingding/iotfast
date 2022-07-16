@@ -1,6 +1,6 @@
 // ==========================================================================
 // 物联网快速开发自动生成dao internal操作代码，无需手动修改，重新生成会自动覆盖.
-// 生成日期：2022-07-02 23:41:34
+// 生成日期：2022-07-15 22:11:03
 // 生成路径: github.com/xiaodingding/iotfast/internal/app/dao/internal/mqtt_topic.go
 // 生成人：dwx
 // ==========================================================================
@@ -23,21 +23,27 @@ type MqttTopicDao struct {
 
 // MqttTopicColumns defines and stores column names for table mqtt_topic.
 type MqttTopicColumns struct {
-	Id        string // 主键
-	Name      string // 设备名称
-	Topic     string // 订阅的Topic信息
-	Qos       string // 等级
-	CreatedAt string // 创建时间
-	UpdatedAt string // 修改时间
+	Id           string // 主键
+	Name         string // 设备名称
+	ClientId     string // 客户端Id
+	Topic        string // 订阅的Topic信息
+	Qos          string // 等级
+	RetainAsPub  string // Retain As Published option
+	RetainHandle string // Retain Handling option
+	CreatedAt    string // 创建时间
+	UpdatedAt    string // 修改时间
 }
 
 var mqttTopicColumns = MqttTopicColumns{
-	Id:        "id",
-	Name:      "name",
-	Topic:     "topic",
-	Qos:       "qos",
-	CreatedAt: "created_at",
-	UpdatedAt: "updated_at",
+	Id:           "id",
+	Name:         "name",
+	ClientId:     "clientId",
+	Topic:        "topic",
+	Qos:          "qos",
+	RetainAsPub:  "retainAsPub",
+	RetainHandle: "retainHandle",
+	CreatedAt:    "created_at",
+	UpdatedAt:    "updated_at",
 }
 
 // NewMqttTopicDao creates and returns a new DAO object for table data access.

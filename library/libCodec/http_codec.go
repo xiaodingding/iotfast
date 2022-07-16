@@ -166,6 +166,7 @@ func (c *httpCodecImpl) Save(ctx context.Context, dmesg *DeviceDecodeMsg) error 
 				return err
 			}
 		}
+		deviceService.DeviceStatus().ChangeStatus(ctx, dmesg.GetDeviceInfo().Info.Id, DeviceConsts.DeviceStatusOnLine)
 	}
 
 	return nil

@@ -11,6 +11,7 @@ import (
 	"context"
 
 	"github.com/xiaodingding/iotfast/api/v1/device"
+	deviceConsts "github.com/xiaodingding/iotfast/internal/app/device/consts"
 	"github.com/xiaodingding/iotfast/internal/app/device/dao"
 	"github.com/xiaodingding/iotfast/internal/app/device/model"
 	systemConsts "github.com/xiaodingding/iotfast/internal/app/system/consts"
@@ -18,6 +19,7 @@ import (
 
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 //type deviceInfo struct {
@@ -30,6 +32,7 @@ type IDeviceInfo interface {
 	Add(ctx context.Context, req *device.DeviceInfoAddReq) (err error)
 	Edit(ctx context.Context, req *device.DeviceInfoEditReq) error
 	Auth(ctx context.Context, sn, pwd string) (status bool, err error)
+	UpdateStatus(ctx context.Context, sn string, status int) (err error)
 	DeleteByIds(ctx context.Context, ids []int) (err error)
 }
 type deviceInfoImpl struct {
@@ -255,4 +258,47 @@ func (s *deviceInfoImpl) DeleteByIds(ctx context.Context, ids []int) (err error)
 		err = gerror.New("删除失败")
 	}
 	return
+}
+
+func (s *deviceInfoImpl) UpdateStatus(ctx context.Context, sn string, status int) (err error) {
+	var info *model.DeviceInfoExtern
+	// err = dao.DeviceInfo.Ctx(ctx).Where(dao.DeviceInfo.Columns().Sn+" = ?", sn).Scan(&info)
+	err = dao.DeviceInfo.Ctx(ctx).LeftJoin(dao.DeviceStatus.Table(), dao.DeviceStatus.Table()+"."+dao.DeviceStatus.Columns().DeviceId+"="+dao.DeviceInfo.Table()+"."+dao.DeviceInfo.Columns().Id).Where(dao.DeviceInfo.Columns().Sn, sn).Scan(&info)
+	if err != nil {
+		return err
+	}
+
+	if info != nil {
+		if status == deviceConsts.DeviceStatusOnLine {
+			if info.StatusId > 0 {
+				_, err = dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", info.Id).Update(g.Map{
+					dao.DeviceStatus.Columns().Status:   status,
+					dao.DeviceStatus.Columns().UpTime:   gtime.Now().Timestamp(),
+					dao.DeviceStatus.Columns().DownTime: gtime.Now().Timestamp(),
+				})
+			} else {
+				_, err = dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", info.Id).FieldsEx(dao.DeviceStatus.Columns().Id).Insert(g.Map{
+					dao.DeviceStatus.Columns().Status:   status,
+					dao.DeviceStatus.Columns().DeviceId: info.Id,
+					dao.DeviceStatus.Columns().UpTime:   gtime.Now().Timestamp(),
+					dao.DeviceStatus.Columns().DownTime: 0,
+					dao.DeviceStatus.Columns().TimeOut:  deviceConsts.DeviceTimeOutDefault,
+				})
+			}
+
+		} else if status == deviceConsts.DeviceStatusOffLine {
+			_, err = dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", info.Id).Update(g.Map{
+				dao.DeviceStatus.Columns().Status:   status,
+				dao.DeviceStatus.Columns().DownTime: gtime.Now().Timestamp(),
+			})
+		} else if status == deviceConsts.DeviceStatusDataUp {
+			_, err = dao.DeviceStatus.Ctx(ctx).Where(dao.DeviceStatus.Columns().DeviceId+" = ?", info.Id).Update(g.Map{
+				dao.DeviceStatus.Columns().Status:             status,
+				dao.DeviceStatus.Columns().LastDataUpdateTime: gtime.Now().Timestamp(),
+			})
+		}
+		return err
+	} else {
+		return gerror.New("not find device")
+	}
 }

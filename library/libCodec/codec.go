@@ -37,6 +37,18 @@ type DeviceDecodeMsg struct {
 	deviceInfo *model.DeviceAllInfo
 }
 
+func (d *DeviceDecodeMsg) GetDeviceInfo() *model.DeviceAllInfo {
+	return d.deviceInfo
+}
+
+func (d *DeviceDecodeMsg) GetDataList() []*DeviceData {
+	return d.dataList
+}
+
+func (d *DeviceDecodeMsg) GetEventList() []*DeviceEvent {
+	return d.eventList
+}
+
 type Codec interface {
 	Encode(ctx context.Context, rawData interface{}) (*DeviceDecodeMsg, error)
 	Decode(ctx context.Context, msg DeviceData) (interface{}, error)
