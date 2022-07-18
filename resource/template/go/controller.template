@@ -7,7 +7,7 @@
 ////
 {{$structName := .table.BusinessName | CaseCamelLower}}
 
-package controller
+package {{.table.ModuleName}}
 
 {{$hasGStr:=false}}
 {{$gjsonTag:=false}}
@@ -23,16 +23,16 @@ package controller
 
 import (
     "context"
-    "iotfast/api/v1/{{$.table.ModuleName}}"
-    systemConsts "iotfast/internal/app/system/consts"
+    "github.com/xiaodingding/iotfast/api/v1/{{$.table.ModuleName}}"
+    systemConsts "github.com/xiaodingding/iotfast/internal/app/system/consts"
     {{if ne $.table.ModuleName "system"}}
-    sysApi "iotfast/app/system/api"
+    sysApi "github.com/xiaodingding/iotfast/app/system/api"
     {{end}}
     {{if $libTag}}
-    "iotfast/library"
+    "github.com/xiaodingding/iotfast/library"
     {{end}}
-    "{{.table.PackageName}}/{{.table.ModuleName}}/dao"
-    "{{.table.PackageName}}/{{.table.ModuleName}}/service"
+    "github.com/xiaodingding/{{.table.PackageName}}/{{.table.ModuleName}}/dao"
+    "github.com/xiaodingding/{{.table.PackageName}}/{{.table.ModuleName}}/service"
     "github.com/gogf/gf/frame/g"
     "github.com/gogf/gf/net/ghttp"
     "github.com/gogf/gf/util/gvalid"

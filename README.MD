@@ -36,6 +36,22 @@ IOTFast平台是基于Goframe2.0 + vue3.x + CompositionAPI + typescript + vite +
 - <a href="https://github.com/DrmagicE/gmqtt" target="_blank">gmqtt</a>
 
 
+# 采集器实现计划
+* MODBUS RTC 最近一个星期
+* MODBUS TCP 最近两个星期
+* MODBUS ASCII 最近一个月
+* IEC61850  最近半年
+* OPC 最近半年 
+
+# 功能完善计划
+* HTTP数据接入已完成
+* MQTT协议数据接入已完成
+* MQTT协议设备控制 最近一个月完成
+
+# 使用手册
+* 平台使用说明：最近2个月完成
+* 接入协议说明：最近3个月完成
+
 # 网页截图
 ![avatar](manifest/image/home.png)
 
@@ -48,8 +64,20 @@ IOTFast平台是基于Goframe2.0 + vue3.x + CompositionAPI + typescript + vite +
 # MQTT客户端消息列表
 ![avatar](manifest/image/mqtt_msg.png)
 
-# 设备属性展示
-![avatar](manifest/image/mqtt_msg.png)
+# 设备信息展示
+![avatar](manifest/image/device_info.png)
+
+# 设备模型展示
+![avatar](manifest/image/device_model.png)
+
+# 设备数据展示
+![avatar](manifest/image/device_data.png)
+
+# 串口采集配置
+![avatar](manifest/image/serial.png)
+
+# 网络采集配置
+![avatar](manifest/image/net.png)
 
 # 设备历史数据展示
 ![avatar](manifest/image/proper_chart.png)
@@ -57,10 +85,8 @@ IOTFast平台是基于Goframe2.0 + vue3.x + CompositionAPI + typescript + vite +
 # 软件开发目标及开发计划
 ![avatar](manifest/image/soft_gogal.png)
 
-
 # 系统架构
 ![avatar](manifest/image/soft_arch.png)
-
 
 # WEB服务架构
 ![avatar](manifest/image/web_arch.png)

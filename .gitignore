@@ -19,6 +19,8 @@ main
 output/
 manifest/output/
 temp/
+driver/
+plugin/app/
 #web
 web/node_modules
 web/dist

@@ -15,7 +15,7 @@ package dao
 {{end}}
 
 import (
-    "{{.table.PackageName}}/{{.table.ModuleName}}/dao/internal"
+    "github.com/xiaodingding/{{.table.PackageName}}/{{.table.ModuleName}}/dao/internal"
     {{if $hasGTime}}
    // "github.com/gogf/gf/v2/os/gtime"
     {{end}}

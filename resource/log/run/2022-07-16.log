@@ -73,3 +73,264 @@ Stack:
     E:/src/iotfast/internal/cmd/cmd.go:60
  
 2022-07-16 14:15:25.442 [DEBU] client id:MQTT_FX_Client is closed with error:  read tcp 127.0.0.1:1883->127.0.0.1:51195: use of closed network connection 
+2022-07-16 15:24:18.161 [INFO] {7cf8d5bc6e3e0217b4bf431185775937} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-16 15:24:18.163 [ERRO] {7cf8d5bc6e3e0217b4bf431185775937} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-16 15:36:37.743 {389057ef1a3f0217debf4311e4a43dea} delet ids:[113] 
+2022-07-16 15:38:02.744 [INFO] {7cd4c8b92e3f0217200ffa7bbaeb7123} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-16 15:38:02.747 [ERRO] {7cd4c8b92e3f0217200ffa7bbaeb7123} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-16 15:38:27.907 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:model_entity, path:E:\src\iotfast/internal/app/link//model/entity/link_info.go 
+2022-07-16 15:38:27.910 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:controller, path:E:\src\iotfast/internal/app/link//controller/link_info.go 
+2022-07-16 15:38:27.935 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//internal/app/link_info.sql 
+2022-07-16 15:38:27.936 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/link/linkInfo.ts 
+2022-07-16 15:38:27.940 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:vue, path:E:/src/iotfast/web/src/views/link/linkInfo/index.vue 
+2022-07-16 15:38:27.943 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:goApi, path: 
+2022-07-16 15:38:27.945 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:dao, path:E:\src\iotfast/internal/app/link//dao/link_info.go 
+2022-07-16 15:38:27.948 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:dao_internal, path:E:\src\iotfast/internal/app/link//dao/internal/link_info.go 
+2022-07-16 15:38:27.952 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:model_do, path:E:\src\iotfast/internal/app/link//model/do/link_info.go 
+2022-07-16 15:38:27.955 {0c095388343f02172d0ffa7bfc604f6b} curDir:E:\src\iotfast, packageName:/internal/app, key:service, path:E:\src\iotfast/internal/app/link//service/link_info.go 
+2022-07-16 15:43:24.860 [INFO] {68ad59b9793f0217f54f104b524d89f0} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-16 15:43:24.862 [ERRO] {68ad59b9793f0217f54f104b524d89f0} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-16 15:43:31.700 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:service, path:E:\src\iotfast/internal/app/link//service/link_info.go 
+2022-07-16 15:43:31.700 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//internal/app/link_info.sql 
+2022-07-16 15:43:31.701 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:vue, path:E:/src/iotfast/web/src/views/link/linkInfo/index.vue 
+2022-07-16 15:43:31.702 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:model_do, path:E:\src\iotfast/internal/app/link//model/do/link_info.go 
+2022-07-16 15:43:31.703 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:model_entity, path:E:\src\iotfast/internal/app/link//model/entity/link_info.go 
+2022-07-16 15:43:31.707 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:controller, path:E:\src\iotfastserver/http/controller/link/link_info.go 
+2022-07-16 15:43:31.707 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/link/linkInfo.ts 
+2022-07-16 15:43:31.708 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:goApi, path: 
+2022-07-16 15:43:31.708 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:dao, path:E:\src\iotfast/internal/app/link//dao/link_info.go 
+2022-07-16 15:43:31.710 {50bcf33f7b3f0217f64f104b64215c00} curDir:E:\src\iotfast, packageName:/internal/app, key:dao_internal, path:E:\src\iotfast/internal/app/link//dao/internal/link_info.go 
+2022-07-16 15:44:22.544 [INFO] {4c2e9727873f02178b9756355102c8ad} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-16 15:44:22.546 [ERRO] {4c2e9727873f02178b9756355102c8ad} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-16 15:44:30.343 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:service, path:E:\src\iotfast/internal/app/link//service/link_info.go 
+2022-07-16 15:44:30.343 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//internal/app/link_info.sql 
+2022-07-16 15:44:30.344 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/link/linkInfo.ts 
+2022-07-16 15:44:30.344 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:goApi, path: 
+2022-07-16 15:44:30.345 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:dao, path:E:\src\iotfast/internal/app/link//dao/link_info.go 
+2022-07-16 15:44:30.347 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:dao_internal, path:E:\src\iotfast/internal/app/link//dao/internal/link_info.go 
+2022-07-16 15:44:30.348 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:model_entity, path:E:\src\iotfast/internal/app/link//model/entity/link_info.go 
+2022-07-16 15:44:30.349 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:controller, path:E:\src\iotfast/server/http/controller/link/link_info.go 
+2022-07-16 15:44:30.351 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:model_do, path:E:\src\iotfast/internal/app/link//model/do/link_info.go 
+2022-07-16 15:44:30.352 {c4e4fce6883f02178c97563519fa7327} curDir:E:\src\iotfast, packageName:/internal/app, key:vue, path:E:/src/iotfast/web/src/views/link/linkInfo/index.vue 
+2022-07-16 15:52:37.569 [INFO] {34505569fa3f02177e9f3a13ac76329e} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-16 15:52:37.571 [ERRO] {34505569fa3f02177e9f3a13ac76329e} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-16 15:59:43.288 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:model_do, path:E:\src\iotfast/internal/app/link//model/do/link_serial.go 
+2022-07-16 15:59:43.291 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:controller, path:E:\src\iotfast/server/http/controller/link/link_serial.go 
+2022-07-16 15:59:43.292 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/link/linkSerial.ts 
+2022-07-16 15:59:43.293 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:goApi, path: 
+2022-07-16 15:59:43.296 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:dao_internal, path:E:\src\iotfast/internal/app/link//dao/internal/link_serial.go 
+2022-07-16 15:59:43.298 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:service, path:E:\src\iotfast/internal/app/link//service/link_serial.go 
+2022-07-16 15:59:43.325 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//internal/app/link_serial.sql 
+2022-07-16 15:59:43.327 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:vue, path:E:/src/iotfast/web/src/views/link/linkSerial/index.vue 
+2022-07-16 15:59:43.330 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:dao, path:E:\src\iotfast/internal/app/link//dao/link_serial.go 
+2022-07-16 15:59:43.331 {4448327b5d400217ea9f3a13b7faa426} curDir:E:\src\iotfast, packageName:/internal/app, key:model_entity, path:E:\src\iotfast/internal/app/link//model/entity/link_serial.go 
+2022-07-16 15:59:51.379 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:goApi, path: 
+2022-07-16 15:59:51.381 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:dao, path:E:\src\iotfast/internal/app/link//dao/link_net.go 
+2022-07-16 15:59:51.413 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:sql, path:E:\src\iotfast/resource/data/gen_sql//internal/app/link_net.sql 
+2022-07-16 15:59:51.415 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:dao_internal, path:E:\src\iotfast/internal/app/link//dao/internal/link_net.go 
+2022-07-16 15:59:51.418 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:model_do, path:E:\src\iotfast/internal/app/link//model/do/link_net.go 
+2022-07-16 15:59:51.419 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:model_entity, path:E:\src\iotfast/internal/app/link//model/entity/link_net.go 
+2022-07-16 15:59:51.421 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:controller, path:E:\src\iotfast/server/http/controller/link/link_net.go 
+2022-07-16 15:59:51.423 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:service, path:E:\src\iotfast/internal/app/link//service/link_net.go 
+2022-07-16 15:59:51.425 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:jsApi, path:E:/src/iotfast/web/src/api/link/linkNet.ts 
+2022-07-16 15:59:51.429 {c86ab05e5f400217ed9f3a135c1f6b3a} curDir:E:\src\iotfast, packageName:/internal/app, key:vue, path:E:/src/iotfast/web/src/views/link/linkNet/index.vue 
+2022-07-16 16:03:26.106 [INFO] {78db43699140021729a188721b3a75b9} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-16 16:03:26.108 [ERRO] {78db43699140021729a188721b3a75b9} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:61
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:60
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:18
+ 
+2022-07-16 16:29:09.189 {2c79cbaef841021799a1887272f2fa7d} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-16 16:29:54.363 {508ec534034202179ca18872445a95db} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-16 16:31:17.115 {e080277916420217a1a18872d5869cd9} req param:&{{} 0      {[] 1 10 }} 
+ 

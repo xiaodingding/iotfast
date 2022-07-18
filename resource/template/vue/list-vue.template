@@ -70,7 +70,8 @@
             <ele-Search />
           </el-icon>
         查询</el-button>
-
+ </el-form-item>
+        <el-form-item style="vertical-align: top;">
         <el-button
          @click="resetQuery">
          <el-icon>

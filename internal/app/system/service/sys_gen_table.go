@@ -485,7 +485,7 @@ func (s *sysGenTableImpl) GenCode(ctx context.Context, ids []int64) (err error) 
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "controller":
-				path = strings.Join([]string{curDir, packageName, "/" + extendData.ModuleName + "/", "/controller/", extendData.TableName, ".go"}, "")
+				path = strings.Join([]string{curDir, "/server/http/controller", "/" + extendData.ModuleName + "/", extendData.TableName, ".go"}, "")
 				err = s.createFile(path, code, false)
 				libErr.ErrPrint(ctx, err, "创建文件(%s)失败", path)
 			case "dao":
@@ -941,7 +941,7 @@ func (s *sysGenTableImpl) writeDb(ctx context.Context, path string) (err error) 
 			continue
 		}
 		if strings.HasSuffix(str, ";") {
-			
+
 			if gstr.ContainsI(str, "select") {
 				if gstr.ContainsI(str, "@now") {
 					continue

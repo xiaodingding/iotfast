@@ -18,9 +18,9 @@ package {{.table.ModuleName}}
 {{end}}
 
 import (
-    commonApi "iotfast/api/v1/common"
-    //"{{.table.PackageName}}/{{.table.ModuleName}}/model"
-    "{{.table.PackageName}}/{{.table.ModuleName}}/model/entity"
+    commonApi "github.com/xiaodingding/iotfast/api/v1/common"
+    //"github.com/xiaodingding/{{.table.PackageName}}/{{.table.ModuleName}}/model"
+    "github.com/xiaodingding/{{.table.PackageName}}/{{.table.ModuleName}}/model/entity"
     {{if $hasGTime}}
     "github.com/gogf/gf/v2/os/gtime"
     {{end}}

@@ -24,7 +24,7 @@ SELECT @parentId := LAST_INSERT_ID();
 
 -- 菜单 SQL
 INSERT INTO `sys_auth_rule` (`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`always_show`,`path`,`jump_path`,`component`,`is_iframe`,`module_type`,`model_id`,`created_at`,`updated_at`,`deleted_at` )
-VALUES(@parentId,'api/v1/{{$plugin}}{{.table.ModuleName}}/{{.table.BusinessName | CaseCamelLower}}/index','{{.table.FunctionName}}列表','list','','{{.table.FunctionName}}列表',1,0,0,0,'/{{$plugin}}{{.table.ModuleName}}/{{.table.BusinessName | CaseCamelLower}}/list','','{{$plugin}}{{.table.ModuleName}}/{{.table.BusinessName | CaseCamelLower}}/list',0,'sys_admin',0,@now,@now,NULL );
+VALUES(@parentId,'api/v1/{{$plugin}}{{.table.ModuleName}}/{{.table.BusinessName | CaseCamelLower}}/index','{{.table.FunctionName}}列表','list','','{{.table.FunctionName}}列表',1,0,0,0,'/{{$plugin}}{{.table.ModuleName}}/{{.table.BusinessName | CaseCamelLower}}/list','','{{$plugin}}{{.table.ModuleName}}/{{.table.BusinessName | CaseCamelLower}}/index',0,'sys_admin',0,@now,@now,NULL );
 
 -- 按钮父目录ID
 SELECT @parentId := LAST_INSERT_ID();

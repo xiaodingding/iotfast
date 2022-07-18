@@ -8,12 +8,12 @@
 package router
 
 import (
-    "{{.table.PackageName}}/api"
-    "iotfast/middleware"
+    "github.com/xiaodingding/{{.table.PackageName}}/api"
+    "github.com/xiaodingding/iotfast/middleware"
     "github.com/gogf/gf/frame/g"
     "github.com/gogf/gf/net/ghttp"
     {{if ne $.table.ModuleName "system"}}
-    sysApi "iotfast/app/system/api"
+    sysApi "github.com/xiaodingding/iotfast/app/system/api"
     {{end}}
 )
 
