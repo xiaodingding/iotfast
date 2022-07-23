@@ -1,5 +1,7 @@
 package common
 
+import "context"
+
 const (
 	PluginUnStart = iota
 	PluginStarting
@@ -30,3 +32,10 @@ type TopicInfo struct {
 }
 
 type TopicMap map[string]TopicInfo
+
+type PluginApp interface {
+	Open(ctx context.Context) error
+	Start(ctx context.Context) error
+	Close(ctx context.Context) error
+	Update(ctx context.Context) error
+}

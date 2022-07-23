@@ -9,13 +9,14 @@ require (
 	github.com/casbin/casbin/v2 v2.47.1
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/gogf/gf v1.16.9
+	github.com/gogf/gf/contrib/drivers/sqlite/v2 v2.1.2 // indirect
 	github.com/gogf/gf/v2 v2.0.6
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang/mock v1.4.4
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v1.8.5
-	github.com/google/uuid v1.1.2
+	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
@@ -24,6 +25,7 @@ require (
 	github.com/hashicorp/logutils v1.0.0
 	github.com/hashicorp/serf v0.9.8
 	github.com/mattn/go-colorable v0.1.12 // indirect
+	github.com/mattn/go-sqlite3 v1.14.14 // indirect
 	github.com/mojocn/base64Captcha v1.3.5
 	github.com/mssola/user_agent v0.5.3
 	github.com/pkg/errors v0.9.1

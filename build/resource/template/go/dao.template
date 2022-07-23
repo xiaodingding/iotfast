@@ -1,0 +1,40 @@
+// ==========================================================================
+// 物联网快速开发自动生成dao操作代码，无需手动修改，重新生成不会自动覆盖.
+// 生成日期：{{.table.CreateTime}}
+// 生成路径: {{.table.PackageName}}/{{.table.ModuleName}}/dao/{{.table.TableName}}.go
+// 生成人：{{.table.FunctionAuthor}}
+// ==========================================================================
+////
+package dao
+
+{{$hasGTime:=false}}
+{{range $index, $column := .table.Columns}}
+{{if eq $column.GoType "Time"}}
+{{$hasGTime = true}}
+{{end}}
+{{end}}
+
+import (
+    "github.com/xiaodingding/{{.table.PackageName}}/{{.table.ModuleName}}/dao/internal"
+    {{if $hasGTime}}
+   // "github.com/gogf/gf/v2/os/gtime"
+    {{end}}
+)
+
+// internal{{.table.BusinessName | CaseCamelLower}}Dao is internal type for wrapping internal DAO implements.
+type internal{{.table.BusinessName | CaseCamel}}Dao = *internal.{{.table.ClassName}}Dao
+
+
+// {{.table.BusinessName | CaseCamelLower}}Dao is the manager for logic model data accessing and custom defined data operations functions management.
+// You can define custom methods on it to extend its functionality as you wish.
+type {{.table.BusinessName | CaseCamelLower}}Dao struct {
+	internal{{.table.BusinessName | CaseCamel}}Dao
+}
+
+var (
+    // {{.table.ClassName}} is globally public accessible object for table tools_gen_table operations.
+    {{.table.ClassName}} = {{.table.BusinessName | CaseCamelLower}}Dao{
+        internal.New{{.table.ClassName}}Dao(),
+    }
+)
+

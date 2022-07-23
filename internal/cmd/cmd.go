@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 
+	// _ "github.com/mattn/go-sqlite3"
+
 	"github.com/xiaodingding/iotfast/internal/consts"
 	router "github.com/xiaodingding/iotfast/server/http/route"
 
@@ -57,6 +59,8 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			fmt.Println("start http server")
 			s := g.Server()
+			s.SetIndexFolder(true)
+			s.SetServerRoot("./resource/public/html")
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				router.BindController(group)
 				group.GET("/swagger", func(r *ghttp.Request) {

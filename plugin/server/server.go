@@ -73,6 +73,8 @@ type server struct {
 	topics      *Topic //topic
 }
 
+
+
 func defaultServer() *server {
 	srv := &server{
 		// status:         serverStatusInit,

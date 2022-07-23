@@ -23,6 +23,7 @@ import (
 //}
 //var LinkSerial = new(linkSerial)
 type ILinkSerial interface {
+	All(ctx context.Context) (list []*entity.LinkSerial, err error)
 	List(ctx context.Context, req *link.LinkSerialSearchReq) (total, page int, list []*entity.LinkSerial, err error)
 	Get(ctx context.Context, id int) (info *entity.LinkSerial, err error)
 	Add(ctx context.Context, req *link.LinkSerialAddReq) (err error)
@@ -81,6 +82,19 @@ func (s *linkSerialImpl) List(ctx context.Context, req *link.LinkSerialSearchReq
 			order = req.OrderBy
 		}
 		err = m.Page(page, req.PageSize).Order(order).Scan(&list)
+		if err != nil {
+			g.Log().Error(ctx, err)
+			err = gerror.New("获取数据失败")
+		}
+	})
+	return
+}
+
+func (s *linkSerialImpl) All(ctx context.Context) (list []*entity.LinkSerial, err error) {
+	m := dao.LinkSerial.Ctx(ctx)
+	err = g.Try(func() {
+		order := "id asc"
+		err = m.Order(order).Scan(&list)
 		if err != nil {
 			g.Log().Error(ctx, err)
 			err = gerror.New("获取数据失败")
