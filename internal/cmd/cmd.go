@@ -78,7 +78,7 @@ var (
 		Description: "this is the command entry for starting your mqtt server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			fmt.Println("start mqtt server")
-			SetConfigPath("E:/src/iotfast/manifest/config/default_config.yml")
+			SetConfigPath("./manifest/config/default_config.yml")
 			NewSimpleCmd()
 			return
 		},

@@ -20,6 +20,8 @@ output/
 manifest/output/
 temp/
 driver/
+build/
+web/dist/
 plugin/app/
 #web
 web/node_modules

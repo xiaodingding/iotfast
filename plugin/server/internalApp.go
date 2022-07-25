@@ -42,8 +42,7 @@ func interAppOpen(ctx context.Context) {
 	mutex.Lock()
 	defer mutex.Unlock()
 
-	if (StatusNil == statusFlag) ||(StatusNil == StatusClose)
-	{
+	if (StatusNil == statusFlag) || (StatusNil == StatusClose) {
 		for n, p := range internalApp {
 			err = p.Open(ctx)
 			if err != nil {
@@ -61,7 +60,7 @@ func interAppOpen(ctx context.Context) {
 		}
 
 		statusFlag = StatusOpen
-	}else{
+	} else {
 		g.Log().Warningf("internal app have been open")
 	}
 }
@@ -72,7 +71,7 @@ func interAppStart(ctx context.Context) {
 	mutex.Lock()
 	defer mutex.Unlock()
 
-	if(StatusOpen == statusFlag  ){
+	if StatusOpen == statusFlag {
 
 		if len(internalApp) > 0 {
 			for n, p := range internalApp {
@@ -93,7 +92,6 @@ func interAppUpdate(ctx context.Context) {
 	mutex.Lock()
 	defer mutex.Unlock()
 
-
 	if len(internalApp) > 0 {
 		for n, p := range internalApp {
 			err = p.Update(ctx)
@@ -111,7 +109,7 @@ func interAppClose(ctx context.Context) {
 	mutex.Lock()
 	defer mutex.Unlock()
 
-	if statusFlag>StatusOpen{
+	if statusFlag > StatusOpen {
 		if len(internalApp) > 0 {
 			for n, p := range internalApp {
 				err = p.Close(ctx)
