@@ -16,7 +16,8 @@ IOTFast平台是基于Goframe2.0 + vue3.x + CompositionAPI + typescript + vite +
 * 官方QQ群：560497341
 
 # 帮助文档
- 暂时没有时间来完善文档，大家可以暂时先使用[wiki](https://github.com/xiaodingding/iotfast/wiki "https://github.com/xiaodingding/iotfast/wiki") <https://github.com/xiaodingding/iotfast/wiki> 过渡一下。
+ 暂时没有时间来完善文档，大家可以暂时先使用[wiki](https://github.com/xiaodingding/iotfast/wiki "https://github.com/xiaodingding/iotfast/wiki")。
+ 链接 <https://github.com/xiaodingding/iotfast/wiki> 过渡一下。
 
 # 技术栈
 - 1.vue3.x 
