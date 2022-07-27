@@ -1,0 +1,503 @@
+2022-07-26 16:30:38.793 [INFO] {34fc0d3adb530517029f7e3f4d2563cd} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-26 16:30:38.795 [ERRO] {34fc0d3adb530517029f7e3f4d2563cd} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-26 16:31:37.075 {0830eecbe8530517199f7e3ff7b46b31} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 16:31:45.446 {1c40eebeea530517219f7e3f86341101} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 16:31:48.734 [ERRO] {cc8ca87feb530517259f7e3f8e17ace3} SQL logic error: no such column: id (1), SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:86
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+5.  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 16:34:04.372 {f8a588170b540517539f7e3fc10cfdb8} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 23:17:34.860 [INFO] {f81b0b09106a0517a88a733e54419ff7} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-26 23:17:34.884 [ERRO] {f81b0b09106a0517a88a733e54419ff7} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-26 23:23:49.360 {94420a3b676a0517d18a733e329f6fd7} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 23:23:57.828 [ERRO] {28109132696a0517d78a733e1fb60f4a} SQL logic error: no such column: id (1), SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:86
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+5.  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:24:00.717 {486ef6df696a0517d98a733e94863a11} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 23:24:04.192 {a02b16af6a6a0517dd8a733e228b5c11} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 23:24:05.097 [ERRO] {d8d4d7e36a6a0517e18a733e03c18ece} SQL logic error: no such column: id (1), SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:86
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+5.  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:24:10.893 {c401863e6c6a0517e78a733ec6e6179b} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 23:24:21.524 [ERRO] {14adf6b66e6a0517ed8a733ed51a46f0} SQL logic error: no such column: id (1), SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:86
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+5.  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:24:30.999 [ERRO] {b8cfdaeb706a0517ef8a733ea57229b3} SQL logic error: no such column: id (1), SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Stack:
+1.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:86
+2.  github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+3.  github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+4.  github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+5.  github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+6.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+7.  github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+8.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+10. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+12. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+16. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+18. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+24. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+30. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:28:28.363 [INFO] {d813eb30a86a0517553388362846b6f1} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-26 23:28:28.365 [ERRO] {d813eb30a86a0517553388362846b6f1} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-26 23:48:32.696 [INFO] {781db698c06b0517584d6e3518c2b5ca} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-26 23:48:32.706 [ERRO] {781db698c06b0517584d6e3518c2b5ca} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-26 23:49:54.358 [INFO] {ac84369cd36b0517e1c202030c4e186c} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-26 23:49:54.361 [ERRO] {ac84369cd36b0517e1c202030c4e186c} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-26 23:50:46.556 {f8fd38c3df6b0517eac20203a3424cbc} req param:&{{} 0      {[] 1 10 }} 
+ 
+2022-07-26 23:50:50.540 {8849e7b0e06b0517edc20203c23aca44} req param:&{{} 0      {[] 1 10 }} 
+ 

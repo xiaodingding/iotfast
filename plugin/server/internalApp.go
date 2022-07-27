@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"fmt"
 	"sync"
 
 	"github.com/gogf/gf/frame/g"
@@ -19,6 +20,7 @@ const (
 
 var (
 	internalApp map[string]common.PluginApp
+	topics      *Topic //topic
 	mutex       sync.Mutex
 	statusFlag  int
 )
@@ -35,6 +37,34 @@ func Register(name string, app common.PluginApp) {
 	internalApp[name] = app
 }
 
+func interAppSubTopic(filter, client string, qos byte) bool {
+	mutex.Lock()
+	defer mutex.Unlock()
+
+	q := topics.Subscribe(filter, client, qos)
+	if q {
+		fmt.Printf("internal app name(%s) subTopic(%s) Qos(%d) successful \n", client, filter, qos)
+	} else {
+		fmt.Printf("internal app name(%s) subTopic(%s) failed \n", client, filter)
+	}
+
+	return q
+}
+
+func interAppUnsubTopic(filter, client string) bool {
+	mutex.Lock()
+	defer mutex.Unlock()
+
+	q := topics.Unsubscribe(filter, client)
+	if q {
+		fmt.Printf("internal app name(%s) unsubTopic(%s) successful \n", client, filter)
+	} else {
+		fmt.Printf("internal app name(%s) unsubTopic(%s) failed \n", client, filter)
+	}
+
+	return q
+}
+
 func interAppOpen(ctx context.Context) {
 	var err error
 	var errApp []string
@@ -42,9 +72,11 @@ func interAppOpen(ctx context.Context) {
 	mutex.Lock()
 	defer mutex.Unlock()
 
+	topics = TopicNew()
+
 	if (StatusNil == statusFlag) || (StatusNil == StatusClose) {
 		for n, p := range internalApp {
-			err = p.Open(ctx)
+			err = p.Open(ctx, interAppSubTopic)
 			if err != nil {
 				g.Log().Errorf("open internal  app(%v) error:%v", n, err)
 				errApp = append(errApp, n)
@@ -75,9 +107,9 @@ func interAppStart(ctx context.Context) {
 
 		if len(internalApp) > 0 {
 			for n, p := range internalApp {
-				err = p.Start(ctx)
+				err = p.Start(nil, ctx)
 				if err != nil {
-					g.Log().Errorf("start internal  app(%v) error:%v", n, err)
+					g.Log().Errorf("start internal  app(%v, %v) error:%v", n, p, err)
 				}
 			}
 		}

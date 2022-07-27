@@ -23,6 +23,7 @@ driver/
 build/
 web/dist/
 plugin/app/
+plugin/plugin/
 #web
 web/node_modules
 web/dist

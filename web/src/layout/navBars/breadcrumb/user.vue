@@ -74,18 +74,18 @@
 </template>
 
 <script lang="ts">
-import { ElMessage, ElMessageBox } from 'element-plus';
-import { storeToRefs } from 'pinia';
-import screenfull from 'screenfull';
-import { computed, defineComponent, getCurrentInstance, onMounted, reactive, ref, toRefs } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { ref, getCurrentInstance, computed, reactive, toRefs, onMounted, defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
-import Search from '/@/layout/navBars/breadcrumb/search.vue';
-import UserNews from '/@/layout/navBars/breadcrumb/userNews.vue';
-import { useThemeConfig } from '/@/stores/themeConfig';
+import { ElMessageBox, ElMessage } from 'element-plus';
+import screenfull from 'screenfull';
+import { useI18n } from 'vue-i18n';
+import { storeToRefs } from 'pinia';
 import { useUserInfo } from '/@/stores/userInfo';
+import { useThemeConfig } from '/@/stores/themeConfig';
 import other from '/@/utils/other';
-import { Local, Session } from '/@/utils/storage';
+import { Session, Local } from '/@/utils/storage';
+import UserNews from '/@/layout/navBars/breadcrumb/userNews.vue';
+import Search from '/@/layout/navBars/breadcrumb/search.vue';
 
 export default defineComponent({
 	name: 'layoutBreadcrumbUser',
@@ -279,16 +279,16 @@ export default defineComponent({
 			}
 		}
 	}
-	::v-deep(.el-dropdown) {
+	:deep(.el-dropdown) {
 		color: var(--next-bg-topBarColor);
 	}
-	::v-deep(.el-badge) {
+	:deep(.el-badge) {
 		height: 40px;
 		line-height: 40px;
 		display: flex;
 		align-items: center;
 	}
-	::v-deep(.el-badge__content.is-fixed) {
+	:deep(.el-badge__content.is-fixed) {
 		top: 12px;
 	}
 }

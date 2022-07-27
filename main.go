@@ -13,7 +13,7 @@ import (
 func main() {
 	// cmd.Main.Run(gctx.New())
 
-	err := cmd.Main.AddCommand(cmd.Http, cmd.Mqtt, cmd.All)
+	err := cmd.Main.AddCommand(cmd.Http, cmd.Mqtt, cmd.Plugin, cmd.All)
 	if err != nil {
 		panic(err)
 	}

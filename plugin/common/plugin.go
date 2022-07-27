@@ -34,8 +34,8 @@ type TopicInfo struct {
 type TopicMap map[string]TopicInfo
 
 type PluginApp interface {
-	Open(ctx context.Context) error
-	Start(ctx context.Context) error
+	Open(ctx context.Context, f func(filter, client string, qos byte) bool) error
+	Start(cfg *PluginCfg, ctx context.Context) error
 	Close(ctx context.Context) error
 	Update(ctx context.Context) error
 }

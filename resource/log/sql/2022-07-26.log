@@ -1,0 +1,621 @@
+2022-07-26 16:31:02.098 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [  7 ms] [default] [rows:21 ] PRAGMA TABLE_INFO(sys_user) 
+2022-07-26 16:31:02.105 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [  3 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 16:31:02.193 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [ 83 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_time`='2022-07-26 16:31:02',`last_login_ip`='::1',`updated_at`='2022-07-26 16:31:02' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 16:31:02.207 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [  2 ms] [default] [rows:8  ] PRAGMA TABLE_INFO(sys_role) 
+2022-07-26 16:31:02.211 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [  3 ms] [default] [rows:6  ] SELECT `id`,`status`,`list_order`,`name`,`remark`,`data_scope`,`created_at`,`updated_at` FROM `sys_role` ORDER BY `list_order` asc,`id` asc 
+2022-07-26 16:31:02.215 [DEBU] {1c3604aee0530517079f7e3fc7c52493} [  2 ms] [default] [rows:7  ] PRAGMA TABLE_INFO(casbin_rule) 
+2022-07-26 16:31:02.219 [DEBU] {cc9d32aee0530517099f7e3f029d8ab2} [  3 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-26 16:31:02.232 [DEBU] {e8fc01afe05305170a9f7e3ff022b2fd} [  4 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-26 16:31:02.239 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [  2 ms] [default] [rows:25 ] PRAGMA TABLE_INFO(sys_auth_rule) 
+2022-07-26 16:31:02.253 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [ 13 ms] [default] [rows:110] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-26 16:31:02.752 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [296 ms] [default] [rows:10 ] PRAGMA TABLE_INFO(sys_login_log) 
+2022-07-26 16:31:02.844 [DEBU] {d03f9ea6e0530517059f7e3fcff511b4} [ 86 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`login_time`,`login_name`,`ipaddr`,`browser`,`os`,`login_location`,`status`,`msg`,`module`) VALUES('2022-07-26 16:31:02','demo','::1','Edge','Windows 10','云南省 昆明市',1,'登录成功','系统后台')  
+2022-07-26 16:31:18.798 [DEBU] {ac4e5687e4530517109f7e3fce5c8fa8} [  1 ms] [default] [rows:9  ] PRAGMA TABLE_INFO(sys_dict_type) 
+2022-07-26 16:31:18.805 [DEBU] {ac4e5687e4530517109f7e3fce5c8fa8} [  6 ms] [default] [rows:1  ] SELECT `dict_name`,`remark` FROM `sys_dict_type` WHERE (`dict_type`='sys_yes_no') AND (`status`=1) LIMIT 1 
+2022-07-26 16:31:18.808 [DEBU] {ac4e5687e4530517109f7e3fce5c8fa8} [  2 ms] [default] [rows:15 ] PRAGMA TABLE_INFO(sys_dict_data) 
+2022-07-26 16:31:18.814 [DEBU] {ac4e5687e4530517109f7e3fce5c8fa8} [  3 ms] [default] [rows:2  ] SELECT `dict_value`,`dict_label`,`is_default`,`remark` FROM `sys_dict_data` WHERE `dict_type`='sys_yes_no' ORDER BY `dict_sort` asc,`dict_code` asc 
+2022-07-26 16:31:37.077 [DEBU] {0830eecbe85305171a9f7e3f6efba41d} [  2 ms] [default] [rows:11 ] PRAGMA TABLE_INFO(device_info) 
+2022-07-26 16:31:37.084 [DEBU] {0830eecbe85305171a9f7e3f6efba41d} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 16:31:37.085 [DEBU] {d4f7f5cbe85305171b9f7e3fbe602d67} [  3 ms] [default] [rows:4  ] PRAGMA TABLE_INFO(device_group) 
+2022-07-26 16:31:37.089 [DEBU] {d4f7f5cbe85305171b9f7e3fbe602d67} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 16:31:37.091 [DEBU] {0830eecbe85305171a9f7e3f6efba41d} [  4 ms] [default] [rows:7  ] PRAGMA TABLE_INFO(device_status) 
+2022-07-26 16:31:37.097 [DEBU] {0830eecbe8530517199f7e3ff7b46b31} [  4 ms] [default] [rows:6  ] PRAGMA TABLE_INFO(device_kind) 
+2022-07-26 16:31:37.105 [DEBU] {0830eecbe85305171a9f7e3f6efba41d} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:37.110 [DEBU] {0830eecbe8530517199f7e3ff7b46b31} [ 13 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 16:31:37.111 [DEBU] {d4f7f5cbe85305171b9f7e3fbe602d67} [ 13 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:37.117 [DEBU] {0830eecbe8530517199f7e3ff7b46b31} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:42.505 [DEBU] {3405440fea5305171d9f7e3fa3f8fab6} [  5 ms] [default] [rows:4  ] PRAGMA TABLE_INFO(device_label) 
+2022-07-26 16:31:42.515 [DEBU] {3405440fea5305171d9f7e3fa3f8fab6} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-26 16:31:42.517 [DEBU] {3405440fea5305171d9f7e3fa3f8fab6} [  2 ms] [default] [rows:2  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:45.449 [DEBU] {1c40eebeea530517229f7e3f3f66b14d} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 16:31:45.453 [DEBU] {1c40eebeea530517219f7e3f86341101} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 16:31:45.457 [DEBU] {406568bfea530517239f7e3ff0b8e919} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 16:31:45.458 [DEBU] {1c40eebeea530517229f7e3f3f66b14d} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:45.475 [DEBU] {1c40eebeea530517219f7e3f86341101} [ 15 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:45.473 [DEBU] {406568bfea530517239f7e3ff0b8e919} [ 12 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:31:48.683 [DEBU] {cc8ca87feb530517259f7e3f8e17ace3} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 16:31:48.704 [ERRO] {cc8ca87feb530517259f7e3f8e17ace3} [  3 ms] [default] [rows:0  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Error: SQL logic error: no such column: id (1) 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:84
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+15. github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 16:33:05.042 [DEBU] {9c760b47fd530517339f7e3f7cb15933} [  2 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 16:33:05.123 [DEBU] {9c760b47fd530517339f7e3f7cb15933} [ 80 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_time`='2022-07-26 16:33:05',`last_login_ip`='::1',`updated_at`='2022-07-26 16:33:05' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 16:33:05.312 [DEBU] {9c760b47fd530517339f7e3f7cb15933} [ 83 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`ipaddr`,`msg`,`login_location`,`os`,`status`,`browser`,`login_name`,`login_time`,`module`) VALUES('::1','登录成功','云南省 昆明市','Windows 10',1,'Chrome','demo','2022-07-26 16:33:05','系统后台')  
+2022-07-26 16:33:09.706 [DEBU] {00a4cc5cfe530517399f7e3f4f412f52} [  7 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 16:33:09.796 [DEBU] {00a4cc5cfe530517399f7e3f4f412f52} [ 84 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-07-26 16:33:09',`updated_at`='2022-07-26 16:33:09' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 16:33:10.029 [DEBU] {00a4cc5cfe530517399f7e3f4f412f52} [134 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`msg`,`login_name`,`status`,`login_time`,`os`,`ipaddr`,`module`,`login_location`,`browser`) VALUES('登录成功','demo',1,'2022-07-26 16:33:09','Windows 10','::1','系统后台','云南省 昆明市','Chrome')  
+2022-07-26 16:33:17.144 [DEBU] {74716918005405173e9f7e3f953e986a} [  2 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 16:33:17.223 [DEBU] {74716918005405173e9f7e3f953e986a} [ 78 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-07-26 16:33:17',`updated_at`='2022-07-26 16:33:17' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 16:33:17.397 [DEBU] {74716918005405173e9f7e3f953e986a} [ 83 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`status`,`login_time`,`module`,`login_name`,`msg`,`os`,`browser`,`login_location`,`ipaddr`) VALUES(1,'2022-07-26 16:33:17','系统后台','demo','登录成功','Windows 10','Chrome','云南省 昆明市','::1')  
+2022-07-26 16:33:24.881 [DEBU] {d83b49e501540517439f7e3fb8d4f254} [  6 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 16:33:24.978 [DEBU] {d83b49e501540517439f7e3fb8d4f254} [ 95 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-07-26 16:33:24',`updated_at`='2022-07-26 16:33:24' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 16:33:25.174 [DEBU] {d83b49e501540517439f7e3fb8d4f254} [ 95 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`login_time`,`os`,`status`,`msg`,`module`,`login_name`,`login_location`,`browser`,`ipaddr`) VALUES('2022-07-26 16:33:25','Windows 10',1,'登录成功','系统后台','demo','云南省 昆明市','Chrome','::1')  
+2022-07-26 16:33:44.634 [DEBU] {a02bf37e06540517499f7e3f66bdf71a} [  2 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 16:33:44.718 [DEBU] {a02bf37e06540517499f7e3f66bdf71a} [ 82 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_ip`='::1',`last_login_time`='2022-07-26 16:33:44',`updated_at`='2022-07-26 16:33:44' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 16:33:44.909 [DEBU] {a02bf37e06540517499f7e3f66bdf71a} [ 83 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`msg`,`login_location`,`browser`,`ipaddr`,`os`,`login_name`,`login_time`,`status`,`module`) VALUES('登录成功','云南省 昆明市','Chrome','::1','Windows 10','demo','2022-07-26 16:33:44',1,'系统后台')  
+2022-07-26 16:34:04.370 [DEBU] {a008f7160b540517519f7e3f8d3fd523} [  8 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 16:34:04.383 [DEBU] {f8a588170b540517539f7e3fc10cfdb8} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 16:34:04.386 [DEBU] {f8a588170b540517539f7e3fc10cfdb8} [  1 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:34:04.376 [DEBU] {a008f7160b540517519f7e3f8d3fd523} [  2 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:34:04.373 [DEBU] {00ae5a170b540517529f7e3fe54918e7} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 16:34:04.410 [DEBU] {00ae5a170b540517529f7e3fe54918e7} [  2 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 16:34:25.064 [DEBU] {0cb2d1e50f540517609f7e3f1022dce3} [  2 ms] [default] [rows:1  ] SELECT `dict_name`,`remark` FROM `sys_dict_type` WHERE (`dict_type`='sys_show_hide') AND (`status`=1) LIMIT 1 
+2022-07-26 16:34:25.068 [DEBU] {0cb2d1e50f540517609f7e3f1022dce3} [  3 ms] [default] [rows:2  ] SELECT `dict_value`,`dict_label`,`is_default`,`remark` FROM `sys_dict_data` WHERE `dict_type`='sys_show_hide' ORDER BY `dict_sort` asc,`dict_code` asc 
+2022-07-26 16:34:25.079 [DEBU] {68a3fce50f540517629f7e3fadc92182} [  6 ms] [default] [rows:110] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-26 23:18:53.509 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [  6 ms] [default] [rows:21 ] PRAGMA TABLE_INFO(sys_user) 
+2022-07-26 23:18:53.514 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [  2 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 23:18:53.619 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [103 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_time`='2022-07-26 23:18:53',`updated_at`='2022-07-26 23:18:53',`last_login_ip`='::1' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 23:18:53.623 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [  2 ms] [default] [rows:8  ] PRAGMA TABLE_INFO(sys_role) 
+2022-07-26 23:18:53.625 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [  2 ms] [default] [rows:6  ] SELECT `id`,`status`,`list_order`,`name`,`remark`,`data_scope`,`created_at`,`updated_at` FROM `sys_role` ORDER BY `list_order` asc,`id` asc 
+2022-07-26 23:18:53.631 [DEBU] {388e1760226a0517ae8a733ef3ba1876} [  2 ms] [default] [rows:7  ] PRAGMA TABLE_INFO(casbin_rule) 
+2022-07-26 23:18:53.637 [DEBU] {18637160226a0517af8a733e0c189b0e} [  2 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-26 23:18:53.647 [DEBU] {0c41c260226a0517b08a733e286a1b63} [  7 ms] [default] [rows:33 ] SELECT `ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5` FROM `casbin_rule` 
+2022-07-26 23:18:53.657 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [  1 ms] [default] [rows:25 ] PRAGMA TABLE_INFO(sys_auth_rule) 
+2022-07-26 23:18:53.690 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [ 14 ms] [default] [rows:110] SELECT `id`,`pid`,`name`,`title`,`icon`,`condition`,`remark`,`menu_type`,`weigh`,`is_hide`,`is_cached`,`is_affix`,`path`,`redirect`,`component`,`is_iframe`,`is_link`,`link_url` FROM `sys_auth_rule` WHERE `deleted_at` IS NULL ORDER BY `weigh` desc,`id` asc 
+2022-07-26 23:18:53.856 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [  2 ms] [default] [rows:10 ] PRAGMA TABLE_INFO(sys_login_log) 
+2022-07-26 23:18:53.956 [DEBU] {4cbb8358226a0517ab8a733e532bf253} [ 93 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`ipaddr`,`module`,`os`,`login_location`,`login_name`,`browser`,`status`,`msg`,`login_time`) VALUES('::1','系统后台','Windows 10','云南省 昆明市','demo','Edge',1,'登录成功','2022-07-26 23:18:53')  
+2022-07-26 23:20:28.143 [DEBU] {70d1fd60386a0517b88a733e68b3ef09} [  9 ms] [default] [rows:1  ] SELECT `id`,`user_name`,`user_nickname`,`user_password`,`user_salt`,`user_status`,`is_admin`,`avatar`,`dept_id` FROM `sys_user` WHERE (`user_name`='demo') AND `deleted_at` IS NULL LIMIT 1 
+2022-07-26 23:20:28.234 [DEBU] {70d1fd60386a0517b88a733e68b3ef09} [ 89 ms] [default] [rows:1  ] UPDATE `sys_user` SET `last_login_time`='2022-07-26 23:20:28',`updated_at`='2022-07-26 23:20:28',`last_login_ip`='::1' WHERE (`id`=31) AND `deleted_at` IS NULL 
+2022-07-26 23:20:28.690 [DEBU] {70d1fd60386a0517b88a733e68b3ef09} [328 ms] [default] [rows:1  ] INSERT INTO `sys_login_log`(`browser`,`status`,`os`,`login_time`,`login_name`,`ipaddr`,`module`,`login_location`,`msg`) VALUES('Edge',1,'Windows 10','2022-07-26 23:20:28','demo','::1','系统后台','云南省 昆明市','登录成功')  
+2022-07-26 23:23:30.702 [DEBU] {04fbb6e2626a0517c68a733e54fdee35} [  3 ms] [default] [rows:9  ] PRAGMA TABLE_INFO(sys_dict_type) 
+2022-07-26 23:23:30.707 [DEBU] {04fbb6e2626a0517c68a733e54fdee35} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `sys_dict_type` 
+2022-07-26 23:23:30.710 [DEBU] {04fbb6e2626a0517c68a733e54fdee35} [  3 ms] [default] [rows:10 ] SELECT `dict_id`,`dict_name`,`dict_type`,`status`,`remark`,`created_at` FROM `sys_dict_type` ORDER BY `dict_id` asc LIMIT 0,10 
+2022-07-26 23:23:36.715 [DEBU] {18f02749646a0517c88a733e7cdc5eaa} [  2 ms] [default] [rows:1  ] SELECT `dict_name`,`remark` FROM `sys_dict_type` WHERE (`dict_type`='sys_yes_no') AND (`status`=1) LIMIT 1 
+2022-07-26 23:23:36.726 [DEBU] {18f02749646a0517c88a733e7cdc5eaa} [  9 ms] [default] [rows:15 ] PRAGMA TABLE_INFO(sys_dict_data) 
+2022-07-26 23:23:36.730 [DEBU] {18f02749646a0517c88a733e7cdc5eaa} [  3 ms] [default] [rows:2  ] SELECT `dict_value`,`dict_label`,`is_default`,`remark` FROM `sys_dict_data` WHERE `dict_type`='sys_yes_no' ORDER BY `dict_sort` asc,`dict_code` asc 
+2022-07-26 23:23:36.739 [DEBU] {00f87c4a646a0517cb8a733eaee23a2d} [  4 ms] [default] [rows:10 ] PRAGMA TABLE_INFO(sys_config) 
+2022-07-26 23:23:36.742 [DEBU] {00f87c4a646a0517cb8a733eaee23a2d} [  1 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `sys_config` 
+2022-07-26 23:23:36.746 [DEBU] {00f87c4a646a0517cb8a733eaee23a2d} [  3 ms] [default] [rows:5  ] SELECT `config_id`,`config_name`,`config_key`,`config_value`,`config_type`,`create_by`,`update_by`,`remark`,`created_at`,`updated_at` FROM `sys_config` ORDER BY `config_id` asc LIMIT 0,10 
+2022-07-26 23:23:43.544 [DEBU] {80bc00e0656a0517cd8a733ed6fe22a9} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `sys_dict_type` 
+2022-07-26 23:23:43.548 [DEBU] {80bc00e0656a0517cd8a733ed6fe22a9} [  2 ms] [default] [rows:10 ] SELECT `dict_id`,`dict_name`,`dict_type`,`status`,`remark`,`created_at` FROM `sys_dict_type` ORDER BY `dict_id` asc LIMIT 0,10 
+2022-07-26 23:23:49.368 [DEBU] {a89c193b676a0517d28a733e8da0a265} [  7 ms] [default] [rows:4  ] PRAGMA TABLE_INFO(device_group) 
+2022-07-26 23:23:49.371 [DEBU] {589a933b676a0517d38a733e5d572a8f} [  1 ms] [default] [rows:11 ] PRAGMA TABLE_INFO(device_info) 
+2022-07-26 23:23:49.373 [DEBU] {a89c193b676a0517d28a733e8da0a265} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 23:23:49.375 [DEBU] {589a933b676a0517d38a733e5d572a8f} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 23:23:49.376 [DEBU] {94420a3b676a0517d18a733e329f6fd7} [  3 ms] [default] [rows:6  ] PRAGMA TABLE_INFO(device_kind) 
+2022-07-26 23:23:49.379 [DEBU] {589a933b676a0517d38a733e5d572a8f} [  2 ms] [default] [rows:7  ] PRAGMA TABLE_INFO(device_status) 
+2022-07-26 23:23:49.379 [DEBU] {94420a3b676a0517d18a733e329f6fd7} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 23:23:49.379 [DEBU] {a89c193b676a0517d28a733e8da0a265} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:23:49.384 [DEBU] {589a933b676a0517d38a733e5d572a8f} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:23:49.390 [DEBU] {94420a3b676a0517d18a733e329f6fd7} [  8 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:23:56.067 [DEBU] {ec1495ca686a0517d58a733e78abd188} [  3 ms] [default] [rows:4  ] PRAGMA TABLE_INFO(device_label) 
+2022-07-26 23:23:56.070 [DEBU] {ec1495ca686a0517d58a733e78abd188} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-26 23:23:56.074 [DEBU] {ec1495ca686a0517d58a733e78abd188} [  3 ms] [default] [rows:2  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:23:57.811 [DEBU] {28109132696a0517d78a733e1fb60f4a} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:23:57.815 [ERRO] {28109132696a0517d78a733e1fb60f4a} [  2 ms] [default] [rows:0  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Error: SQL logic error: no such column: id (1) 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:84
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+15. github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:24:00.720 [DEBU] {486ef6df696a0517d98a733e94863a11} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 23:24:00.722 [DEBU] {486ef6df696a0517d98a733e94863a11} [  2 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:04.196 [DEBU] {b89525af6a6a0517de8a733e7cd25cb1} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 23:24:04.198 [DEBU] {04c12baf6a6a0517df8a733e27508390} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 23:24:04.199 [DEBU] {a02b16af6a6a0517dd8a733e228b5c11} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 23:24:04.203 [DEBU] {04c12baf6a6a0517df8a733e27508390} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:04.204 [DEBU] {a02b16af6a6a0517dd8a733e228b5c11} [  3 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:04.204 [DEBU] {b89525af6a6a0517de8a733e7cd25cb1} [  6 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:05.079 [DEBU] {d8d4d7e36a6a0517e18a733e03c18ece} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:24:05.086 [ERRO] {d8d4d7e36a6a0517e18a733e03c18ece} [  4 ms] [default] [rows:0  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Error: SQL logic error: no such column: id (1) 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:84
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+15. github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:24:08.644 [DEBU] {306245b86b6a0517e38a733eff88f268} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-26 23:24:08.647 [DEBU] {306245b86b6a0517e38a733eff88f268} [  2 ms] [default] [rows:2  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:10.897 [DEBU] {c401863e6c6a0517e78a733ec6e6179b} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 23:24:10.898 [DEBU] {c401863e6c6a0517e88a733e1093789e} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 23:24:10.901 [DEBU] {2c99953e6c6a0517e98a733e6db90de0} [  7 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 23:24:10.901 [DEBU] {c401863e6c6a0517e78a733ec6e6179b} [  2 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:10.905 [DEBU] {c401863e6c6a0517e88a733e1093789e} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:10.905 [DEBU] {2c99953e6c6a0517e98a733e6db90de0} [  3 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:17.302 [DEBU] {844044bc6d6a0517eb8a733e23bee1f2} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 23:24:17.305 [DEBU] {844044bc6d6a0517eb8a733e23bee1f2} [  2 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:24:21.508 [DEBU] {14adf6b66e6a0517ed8a733ed51a46f0} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:24:21.512 [ERRO] {14adf6b66e6a0517ed8a733ed51a46f0} [  2 ms] [default] [rows:0  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Error: SQL logic error: no such column: id (1) 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:84
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+15. github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:24:30.985 [DEBU] {b8cfdaeb706a0517ef8a733ea57229b3} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:24:30.988 [ERRO] {b8cfdaeb706a0517ef8a733ea57229b3} [  2 ms] [default] [rows:0  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `id` asc LIMIT 0,10
+Error: SQL logic error: no such column: id (1) 
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:662
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:300
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core_underlying.go:62
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_hook.go:110
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:543
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).All
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:31
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStructs
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:278
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/database/gdb/gdb_model_select.go:319
+11. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List.func1
+    E:/src/iotfast/internal/app/device/service/device_status.go:84
+12. github.com/gogf/gf/v2/util/gutil.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:39
+13. github.com/gogf/gf/v2/frame/g.Try
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/frame/g/g_func.go:67
+14. github.com/xiaodingding/iotfast/internal/app/device/service.(*deviceStatusImpl).List
+    E:/src/iotfast/internal/app/device/service/device_status.go:72
+15. github.com/xiaodingding/iotfast/server/http/controller/device.(*deviceStatusController).List
+    E:/src/iotfast/server/http/controller/device/device_status.go:37
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:151
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:128
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:74
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+22. github.com/xiaodingding/iotfast/internal/app/common/service.(*middlewareImpl).MiddlewareCORS
+    E:/src/iotfast/internal/app/common/service/middleware.go:29
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_handler_response.go:26
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:54
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:53
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+34. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_middleware_tracing.go:78
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:95
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_func.go:56
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:94
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/util/gutil/gutil.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_request_middleware.go:48
+40. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_handler.go:121
+ 
+2022-07-26 23:28:36.400 [DEBU] {acc8400faa6a0517573388365ff3481b} [  8 ms] [default] [rows:7  ] PRAGMA TABLE_INFO(device_status) 
+2022-07-26 23:28:36.405 [DEBU] {acc8400faa6a0517573388365ff3481b} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:28:36.408 [DEBU] {acc8400faa6a0517573388365ff3481b} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:39:52.139 [DEBU] {0898b864476b0517593388369cd8b596} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:39:52.157 [DEBU] {0898b864476b0517593388369cd8b596} [ 16 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:40:56.333 [DEBU] {ac32134e566b05175b338836ea8852d1} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:40:56.341 [DEBU] {ac32134e566b05175b338836ea8852d1} [  1 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:41:00.080 [DEBU] {18168536576b05175d338836b4430d04} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:41:00.088 [DEBU] {18168536576b05175d338836b4430d04} [  4 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:41:08.745 [DEBU] {e0e6f43a596b05175f3388367aa12566} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:41:08.751 [DEBU] {e0e6f43a596b05175f3388367aa12566} [  3 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:41:24.291 [DEBU] {3cd7abd95c6b051761338836f9efbfa9} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:41:24.294 [DEBU] {3cd7abd95c6b051761338836f9efbfa9} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:41:51.651 [DEBU] {884e7938636b05176333883601a8237c} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:41:51.655 [DEBU] {884e7938636b05176333883601a8237c} [  3 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:41:54.186 [DEBU] {408895cf636b05176533883650cc85af} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:41:54.188 [DEBU] {408895cf636b05176533883650cc85af} [  1 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:41:56.793 [DEBU] {2490f96a646b051767338836328c8e29} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:41:56.798 [DEBU] {2490f96a646b051767338836328c8e29} [  4 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:00.190 [DEBU] {f89e7835656b051769338836917849e6} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:00.193 [DEBU] {f89e7835656b051769338836917849e6} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:02.268 [DEBU] {9c034eb1656b05176b33883653c6666f} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:02.274 [DEBU] {9c034eb1656b05176b33883653c6666f} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:05.042 [DEBU] {b4679a56666b05176d33883668499881} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:05.047 [DEBU] {b4679a56666b05176d33883668499881} [  4 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:12.433 [DEBU] {5cbc060f686b05176f33883667cf2b82} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:12.439 [DEBU] {5cbc060f686b05176f33883667cf2b82} [  4 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:14.045 [DEBU] {60858964686b0517713388366f381193} [182 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:14.058 [DEBU] {60858964686b0517713388366f381193} [ 10 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:15.113 [DEBU] {ec51dcae686b051773338836999644de} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:15.118 [DEBU] {ec51dcae686b051773338836999644de} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:21.701 [DEBU] {344a80376a6b05177533883663cb6ee7} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:21.708 [DEBU] {344a80376a6b05177533883663cb6ee7} [  1 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:30.806 [DEBU] {a4cb45566c6b051777338836ec68e28a} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:30.812 [DEBU] {a4cb45566c6b051777338836ec68e28a} [  4 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:35.081 [DEBU] {784ef9546d6b0517793388365a6d1938} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:35.085 [DEBU] {784ef9546d6b0517793388365a6d1938} [  3 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:42:59.869 [DEBU] {b89c771a736b05177b3388363f76b4f1} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:42:59.872 [DEBU] {b89c771a736b05177b3388363f76b4f1} [  3 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:45:27.949 [DEBU] {1c49ca94956b05177d338836d522276f} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:45:27.952 [DEBU] {1c49ca94956b05177d338836d522276f} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:46:46.755 [DEBU] {84270eeea76b05177f33883626302ebb} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:46:46.758 [DEBU] {84270eeea76b05177f33883626302ebb} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:48:40.200 [DEBU] {34ca9b57c26b05175a4d6e35876a5fea} [  3 ms] [default] [rows:7  ] PRAGMA TABLE_INFO(device_status) 
+2022-07-26 23:48:40.204 [DEBU] {34ca9b57c26b05175a4d6e35876a5fea} [  3 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:48:40.207 [DEBU] {34ca9b57c26b05175a4d6e35876a5fea} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:48:49.682 [DEBU] {304b0f8dc46b05175c4d6e35cb527ff7} [  2 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:48:49.685 [DEBU] {304b0f8dc46b05175c4d6e35cb527ff7} [  2 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:50:02.067 [DEBU] {10061167d56b0517e3c20203ded338c6} [  8 ms] [default] [rows:7  ] SHOW FULL COLUMNS FROM `device_status` 
+2022-07-26 23:50:02.075 [DEBU] {10061167d56b0517e3c20203ded338c6} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_status` 
+2022-07-26 23:50:02.085 [DEBU] {10061167d56b0517e3c20203ded338c6} [  9 ms] [default] [rows:1  ] SELECT `device_id`,`status`,`time_out`,`up_time`,`down_time`,`last_data_update_time` FROM `device_status` ORDER BY `status_id` asc LIMIT 0,10 
+2022-07-26 23:50:42.953 [DEBU] {2c223becde6b0517e5c202035425f04a} [  7 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_label` 
+2022-07-26 23:50:42.959 [DEBU] {2c223becde6b0517e5c202035425f04a} [  6 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-26 23:50:42.966 [DEBU] {2c223becde6b0517e5c202035425f04a} [  5 ms] [default] [rows:2  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:50:46.563 [DEBU] {d0ce21c3df6b0517e9c202035e73da6a} [  7 ms] [default] [rows:4  ] SHOW FULL COLUMNS FROM `device_group` 
+2022-07-26 23:50:46.570 [DEBU] {f8fd38c3df6b0517eac20203a3424cbc} [  6 ms] [default] [rows:6  ] SHOW FULL COLUMNS FROM `device_kind` 
+2022-07-26 23:50:46.574 [DEBU] {d0ce21c3df6b0517e9c202035e73da6a} [ 10 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 23:50:46.580 [DEBU] {f8fd38c3df6b0517eac20203a3424cbc} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 23:50:46.582 [DEBU] {20eb8cc3df6b0517ebc20203d94459f1} [ 11 ms] [default] [rows:11 ] SHOW FULL COLUMNS FROM `device_info` 
+2022-07-26 23:50:46.587 [DEBU] {20eb8cc3df6b0517ebc20203d94459f1} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_info` 
+2022-07-26 23:50:46.590 [DEBU] {d0ce21c3df6b0517e9c202035e73da6a} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:50:46.590 [DEBU] {f8fd38c3df6b0517eac20203a3424cbc} [  7 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:50:46.598 [DEBU] {20eb8cc3df6b0517ebc20203d94459f1} [ 11 ms] [default] [rows:1  ] SELECT `id`,`name`,`group`,`sn`,`pwd`,`kind`,`logo`,`monitor`,`location`,`created_at`,`updated_at` FROM `device_info` LEFT JOIN `device_status` ON (device_status.status_id=device_info.id) ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:50:50.546 [DEBU] {8849e7b0e06b0517edc20203c23aca44} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_kind` 
+2022-07-26 23:50:50.552 [DEBU] {8849e7b0e06b0517edc20203c23aca44} [  4 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`time_out`,`created_at`,`updated_at` FROM `device_kind` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:50:54.454 [DEBU] {982dd799e16b0517efc20203122276c5} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_group` 
+2022-07-26 23:50:54.462 [DEBU] {982dd799e16b0517efc20203122276c5} [  7 ms] [default] [rows:1  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_group` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:50:57.473 [DEBU] {04479d4de26b0517f1c20203aab7a42b} [  9 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `device_label` 
+2022-07-26 23:50:57.479 [DEBU] {04479d4de26b0517f1c20203aab7a42b} [  4 ms] [default] [rows:2  ] SELECT `id`,`name`,`created_at`,`updated_at` FROM `device_label` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:51:04.243 [DEBU] {600f3ee1e36b0517f3c20203d215774e} [  7 ms] [default] [rows:5  ] SHOW FULL COLUMNS FROM `link_info` 
+2022-07-26 23:51:04.249 [DEBU] {600f3ee1e36b0517f3c20203d215774e} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `link_info` 
+2022-07-26 23:51:04.254 [DEBU] {600f3ee1e36b0517f3c20203d215774e} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`created_at`,`updated_at` FROM `link_info` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:51:06.864 [DEBU] {043d527de46b0517f5c20203b1f421aa} [  9 ms] [default] [rows:10 ] SHOW FULL COLUMNS FROM `link_serial` 
+2022-07-26 23:51:06.870 [DEBU] {043d527de46b0517f5c20203b1f421aa} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `link_serial` 
+2022-07-26 23:51:06.875 [DEBU] {043d527de46b0517f5c20203b1f421aa} [  5 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`serial_name`,`serial_baund`,`serial_parity`,`serial_data`,`serial_stop`,`created_at`,`updated_at` FROM `link_serial` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:51:10.926 [DEBU] {6cda776fe56b0517f7c20203ab846ccc} [  8 ms] [default] [rows:9  ] SHOW FULL COLUMNS FROM `link_net` 
+2022-07-26 23:51:10.930 [DEBU] {6cda776fe56b0517f7c20203ab846ccc} [  4 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `link_net` 
+2022-07-26 23:51:10.935 [DEBU] {6cda776fe56b0517f7c20203ab846ccc} [  4 ms] [default] [rows:1  ] SELECT `id`,`name`,`mark`,`remote_type`,`remote_addr`,`remote_port`,`timeout`,`created_at`,`updated_at` FROM `link_net` ORDER BY `id` asc LIMIT 0,10 
+2022-07-26 23:51:21.183 [DEBU] {042714d3e76b0517f8c20203c59507a6} [  5 ms] [default] [rows:1  ] SELECT COUNT(1) FROM `link_info` 
+2022-07-26 23:51:21.188 [DEBU] {042714d3e76b0517f8c20203c59507a6} [  5 ms] [default] [rows:3  ] SELECT `id`,`name`,`mark`,`created_at`,`updated_at` FROM `link_info` ORDER BY `id` asc LIMIT 0,10 

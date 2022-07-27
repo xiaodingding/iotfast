@@ -73,8 +73,6 @@ type server struct {
 	topics      *Topic //topic
 }
 
-
-
 func defaultServer() *server {
 	srv := &server{
 		// status:         serverStatusInit,
@@ -381,8 +379,10 @@ func (srv *server) Start() {
 	}
 
 	// srv.Discover()
+	interAppOpen(nil)
 	go srv.eventLoop()
 	srv.serveTCP(listener)
+
 }
 
 func NewServer(proto string, path string) *server {

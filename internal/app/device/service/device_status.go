@@ -77,7 +77,7 @@ func (s *deviceStatusImpl) List(ctx context.Context, req *device.DeviceStatusSea
 			err = gerror.New("获取总行数失败")
 			return
 		}
-		order := "id asc"
+		order := "status_id asc"
 		if req.OrderBy != "" {
 			order = req.OrderBy
 		}

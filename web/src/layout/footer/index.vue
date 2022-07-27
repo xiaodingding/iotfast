@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
+import { toRefs, reactive, defineComponent } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
 
 export default defineComponent({

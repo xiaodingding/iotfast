@@ -69,9 +69,21 @@
 				</template>
 			</el-table-column>
 			<el-table-column label="超时时间" align="center" prop="timeOut" />
-			<el-table-column label="上线时间" align="center" prop="upTime" />
-			<el-table-column label="离线时间" align="center" prop="downTime" />
-			<el-table-column label="最新一次数据更新时间" align="center" prop="lastDataUpdateTime" />
+			<el-table-column label="上线时间" align="center" prop="upTime" >
+                <template #default="scope">
+                    <span>{{ stampTimeFormat(scope.row.upTime * 1000) }}</span>
+                </template>
+            </el-table-column>
+			<el-table-column label="离线时间" align="center" prop="downTime" >
+                 <template #default="scope">
+                    <span>{{ stampTimeFormat(scope.row.downTime * 1000) }}</span>
+                </template>
+            </el-table-column>
+			<el-table-column label="最新一次数据更新时间" align="center" prop="lastDataUpdateTime" >
+                <template #default="scope">
+                    <span>{{ stampTimeFormat(scope.row.lastDataUpdateTime * 1000) }}</span>
+                </template>
+            </el-table-column>
 			<el-table-column label="操作" align="center" class-name="small-padding fixed-width">
 				<template #default="scope">
 					<el-button type="text" class="no_padding" size="small" @click="handleUpdate(scope.row)">修改</el-button>
@@ -126,6 +138,7 @@
 <script lang="ts">
 import { ElMessage, ElMessageBox, FormInstance } from 'element-plus';
 import { defineComponent, getCurrentInstance, onMounted, reactive, ref, toRefs, unref } from 'vue';
+import {intTimeFormat} from '/@/utils/common';
 import {
 	listDeviceStatus,
 	getDeviceStatus,
@@ -284,6 +297,10 @@ export default defineComponent({
 				state.title = '修改设备状态';
 			});
 		};
+        const stampTimeFormat = (ti:any) =>{
+            return intTimeFormat(ti);
+        };
+
 		/** 提交按钮 */
 		const submitForm = () => {
 			//const formWrap = unref(formRef) as any;
@@ -336,6 +353,7 @@ export default defineComponent({
 		});
 		return {
 			formRef,
+            stampTimeFormat,
 			handlestatusChange,
 			handleGetList,
 			handleCancel,

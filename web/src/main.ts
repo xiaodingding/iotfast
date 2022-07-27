@@ -1,22 +1,23 @@
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
-import mitt from 'mitt';
 import { createApp } from 'vue';
-import VueGridLayout from 'vue-grid-layout';
+import pinia from '/@/stores/index';
 import App from './App.vue';
 import router from './router';
+import { directive } from '/@/utils/directive';
+import { i18n } from '/@/i18n/index';
+import other from '/@/utils/other';
+
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
+import '/@/theme/index.scss';
+import mitt from 'mitt';
+import VueGridLayout from 'vue-grid-layout';
+
 // 分页组件
 import pagination from '/@/components/pagination/index.vue';
-import { i18n } from '/@/i18n/index';
-import pinia from '/@/stores/index';
-import '/@/theme/index.scss';
-import { directive } from '/@/utils/directive';
-import other from '/@/utils/other';
 
 //highlight 的样式，依赖包，组件
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css'; //导入代码高亮样式
-
 
 const app = createApp(App);
 
