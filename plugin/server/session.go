@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 
 	// "errors"
 
@@ -17,13 +18,6 @@ import (
 
 	"github.com/gogf/gf/v2/frame/g"
 	// "github.com/gogf/gf/v2/internal/json"
-)
-
-// Session status
-const (
-	Connecting = iota
-	Connected
-	Closed
 )
 
 // const (
@@ -56,15 +50,16 @@ type sessionClient struct {
 
 	//topic
 	Subscriptions Subscriptions // a map of the subscription filters a client maintains.
-
-	clientId string
 	//当前连接的ID 也可以称作为SessionID，ID全局唯一
 	ConnID uint32
+
+	Active time.Time
+
+	clientId string
+
 	status int32
 	//当前连接的socket TCP套接字
-	rwc net.Conn //raw tcp connection
-
-	registed bool //是否已经注册
+	rwc net.Conn //raw tcp connectio
 
 	//告知该链接已经退出/停止的channel
 	ctx    context.Context
@@ -97,11 +92,15 @@ func (client *sessionClient) Status() int32 {
 
 // IsConnected returns whether the client is connected or not.
 func (client *sessionClient) IsConnected() bool {
-	return client.Status() == Connected
+	status := client.Status()
+	if (status >= common.ClientStaConnect) && (status < common.ClientStaClose) {
+		return true
+	}
+	return false
 }
 
 func (client *sessionClient) setConnecting() {
-	atomic.StoreInt32(&client.status, Connecting)
+	atomic.StoreInt32(&client.status, common.ClientStaConnect)
 }
 
 func (client *sessionClient) Stop() {
@@ -119,6 +118,27 @@ func (client *sessionClient) SendMsg(msgID uint32, ctr byte, data []byte) error 
 	//将data封包，并且发送
 	dp := client.Packet
 	msg, err := dp.Pack(common.NewMsgPackage(msgID, ctr, data))
+	if err != nil {
+		g.Log().Printf(client.ctx, "Pack error msg ID = %v \n", msgID)
+		return errors.New("Pack error msg ")
+	}
+
+	//写回客户端
+	_, err = client.rwc.Write(msg)
+	return err
+}
+
+//SendMsg 直接将Message数据发送数据给远程的TCP客户端
+func (client *sessionClient) SendMsgWithProtocol(msgID uint32, ctr byte, protocol byte, data []byte) error {
+	client.RLock()
+	defer client.RUnlock()
+	if !client.IsConnected() {
+		return errors.New("connection closed when send msg")
+	}
+
+	//将data封包，并且发送
+	dp := client.Packet
+	msg, err := dp.Pack(common.NewMsgPackageWithProtocol(msgID, ctr, protocol, data))
 	if err != nil {
 		g.Log().Printf(client.ctx, "Pack error msg ID = %v \n", msgID)
 		return errors.New("Pack error msg ")
@@ -194,6 +214,7 @@ func (client *sessionClient) internalClose() {
 		g.Log().Print(client.ctx, "session subtopic func is nil")
 	}
 
+	g.Log().Printf(client.ctx, "session (%s) internal close", client.clientId)
 }
 
 func (client *sessionClient) Close() {
@@ -206,10 +227,8 @@ func (client *sessionClient) Close() {
 
 	g.Log().Printf(client.ctx, "Conn Stop()...ConnID = %v \n", client.ConnID)
 
-	client.registed = false
-
 	//如果当前链接已经关闭
-	if client.status == Closed {
+	if client.status == common.ClientStaClose {
 
 	} else {
 
@@ -224,7 +243,7 @@ func (client *sessionClient) Close() {
 		//关闭该链接全部管道
 		close(client.in)
 		close(client.out)
-		atomic.StoreInt32(&client.status, Closed)
+		atomic.StoreInt32(&client.status, common.ClientStaClose)
 	}
 
 }
@@ -271,16 +290,90 @@ func (client *sessionClient) MsgHandler(p common.IMessage) error {
 	g.Log().Printf(client.ctx, "id:%v, ver:%d, proto:%d, ctr:%d", p.GetMsgID(), p.GetVer(), p.GetProtocol(), p.GetControl())
 	//client.out <- p
 
+	switch p.GetControl() {
+	case common.ControlLogin:
+		loginCfg := common.LoginCfg{}
+		err := json.Unmarshal(p.GetData(), &loginCfg)
+		if err != nil {
+			g.Log().Printf(client.ctx, "get login param error")
+			return err
+		}
+		g.Log().Printf(client.ctx, "login cfg:%v", loginCfg)
+		client.out <- p
+		return nil
+	case common.ControlRegister:
+		regCfg := common.RegisterCfg{}
+		err := json.Unmarshal(p.GetData(), &regCfg)
+		if err != nil {
+			g.Log().Printf(client.ctx, "get register param error")
+			return err
+		}
+		if len(regCfg.Topic) > 1 {
+			g.Log().Printf(client.ctx, "register succseeful cfg:%v", regCfg)
+			client.Subscription(regCfg.Topic, regCfg.Qos)
+			client.out <- p
+		} else {
+			g.Log().Printf(client.ctx, "register fail cfg:%v", regCfg)
+			return fmt.Errorf("register failed topic is nil")
+		}
+		return nil
+	case common.ControlClosed:
+		client.Stop()
+		return nil
+	case common.ControlHeart:
+		client.Active = time.Now()
+		return nil
+	}
+
 	msg, err := common.TopMsgUnpack(p.GetData())
 	if err != nil {
 		g.Log().Errorf(client.ctx, "byte to topic msg unpack err:%v", err)
 		return err
 	}
-	g.Log().Printf(client.ctx, "recv topic msg TopicName:%s, TopicLen:%d, Data:%s ,DataLen:%d ,Qos:%d ,Retain:%d",
-		string(msg.TopicName), msg.TopicLen, string(msg.Data), msg.DataLen, msg.Qos, msg.Retain)
 
-	if client.deliverMessage != nil {
-		client.deliverMessage(client.clientId, msg)
+	switch p.GetProtocol() {
+	case common.ProtocolTopic:
+
+		g.Log().Printf(client.ctx, "recv topic msg TopicName:%s, TopicLen:%d, Data:%s ,DataLen:%d ,Qos:%d ,Retain:%d",
+			string(msg.TopicName), msg.TopicLen, string(msg.Data), msg.DataLen, msg.Qos, msg.Retain)
+
+		if client.deliverMessage != nil {
+			client.deliverMessage(client.clientId, msg)
+		}
+
+	case common.ProtocolRPC:
+		var msCtrFlag byte
+		packMsg := common.TopMessage{}
+		topicName := string(msg.TopicName)
+		data, err := Service(client.ctx, topicName, msg.Data)
+
+		if err != nil {
+			packMsg.Data = []byte(err.Error())
+			packMsg.TopicName = msg.TopicName
+			packMsg.Qos = msg.Qos
+			packMsg.Retain = msg.Retain
+			msCtrFlag = common.ControlError
+		} else {
+			packMsg.Data = data
+			packMsg.TopicName = msg.TopicName
+			packMsg.Qos = msg.Qos
+			packMsg.Retain = msg.Retain
+			msCtrFlag = common.ControlData
+		}
+
+		sdata, err := common.TopMsgPack(&packMsg)
+		if err != nil {
+			g.Log().Errorf(client.ctx, "rpc msg pack err:%v", err)
+			return err
+		}
+
+		err = client.SendMsgWithProtocol(p.GetMsgID(), msCtrFlag, common.ProtocolRPC, sdata)
+		if err != nil {
+			g.Log().Errorf(client.ctx, "rpc msg send err:%v", err)
+			return err
+		}
+	default:
+		g.Log().Errorf(client.ctx, "not support protocol:%v", p.GetProtocol())
 	}
 
 	return nil
@@ -296,7 +389,7 @@ func (client *sessionClient) readLoop() {
 		client.Stop()
 	}()
 
-	g.Log().Printf(client.ctx, "[Reader Goroutine is running]")
+	g.Log().Printf(client.ctx, "Reader Goroutine is running")
 
 	// 创建拆包解包的对象
 	for {
@@ -343,10 +436,12 @@ func (client *sessionClient) readLoop() {
 			if msg.CheckDataCRC(crc) {
 				msg.SetData(data)
 
-				if client.registed == true {
+				if (client.status >= common.ClientStaLogin) && (client.status < common.ClientStaClose) {
 					client.MsgHandler(msg)
-				} else {
+				} else if client.status < common.ClientStaLogin {
 					client.in <- msg
+				} else {
+					g.Log().Errorf(client.ctx, "client status err:%v", client.status)
 				}
 
 			} else {
@@ -370,7 +465,7 @@ func (client *sessionClient) writeLoop() {
 		client.Stop()
 	}()
 
-	g.Log().Printf(client.ctx, "[Writer Goroutine is running]")
+	g.Log().Printf(client.ctx, "Writer Goroutine is running")
 
 	for {
 		select {
@@ -390,7 +485,7 @@ func (client *sessionClient) writeLoop() {
 }
 
 func (client *sessionClient) connectWithTimeOut() (ok bool) {
-	timeout := time.NewTimer(10 * time.Second)
+	timeout := time.NewTimer(15 * time.Second)
 	defer timeout.Stop()
 	ok = false
 
@@ -398,21 +493,19 @@ func (client *sessionClient) connectWithTimeOut() (ok bool) {
 		select {
 		case p := <-client.in:
 			if p != nil {
-				regCfg := common.RegisterCfg{}
 				g.Log().Printf(client.ctx, "id:%v, ver:%d, proto:%d, ctr:%d, data:%s", p.GetMsgID(), p.GetVer(), p.GetProtocol(), p.GetControl(), string(p.GetData()))
-				if p.GetControl() == common.ControlRegister {
-					err := json.Unmarshal(p.GetData(), &regCfg)
+				if p.GetControl() == common.ControlLogin {
+					loginCfg := common.LoginCfg{}
+					err := json.Unmarshal(p.GetData(), &loginCfg)
 					if err != nil {
-						g.Log().Printf(client.ctx, "get register param error")
+						g.Log().Printf(client.ctx, "get login param error")
+						continue
 					}
-					if len(regCfg.Topic) > 1 {
-						g.Log().Printf(client.ctx, "register succseeful cfg:%v", regCfg)
-						client.Subscription(regCfg.Topic, regCfg.Qos)
-						client.out <- p
-						return true
-					} else {
-						g.Log().Printf(client.ctx, "register fail cfg:%v", regCfg)
-					}
+					g.Log().Printf(client.ctx, "login cfg:%v", loginCfg)
+					client.out <- p
+					return true
+				} else {
+					g.Log().Printf(client.ctx, "not support control flag:%v", p.GetControl())
 				}
 			}
 		case <-client.ctx.Done():
@@ -422,7 +515,7 @@ func (client *sessionClient) connectWithTimeOut() (ok bool) {
 			return
 		}
 	}
-	return true
+	return false
 }
 
 //server goroutine结束的条件:1客户端断开连接 或 2发生错误
@@ -438,18 +531,29 @@ func (client *sessionClient) serve() {
 	//按照用户传递进来的创建连接时需要处理的业务，执行钩子方法
 	// client.CallOnConnStart(c)
 
+	atomic.StoreInt32(&client.status, common.ClientStaConnect)
+
 	if ok := client.connectWithTimeOut(); ok {
-		client.register(client)
-		client.registed = true
-		atomic.StoreInt32(&client.status, Connected)
+		atomic.StoreInt32(&client.status, common.ClientStaLogin)
 	} else {
 		client.Close()
 	}
 
-	select {
-	case <-client.ctx.Done():
-		client.Close()
-		return
+	timeout := time.NewTimer(15 * time.Second)
+	defer timeout.Stop()
+
+	for {
+		select {
+		case <-client.ctx.Done():
+			client.Close()
+			return
+		case <-timeout.C:
+			if time.Now().Sub(client.Active) > (time.Second * 30) {
+				g.Log().Infof(client.ctx, "InActive device in long time, now kill it: %v, time_span:%d", client.clientId, time.Now().Sub(client.Active)/time.Second)
+				// client.Close()
+				// return
+			}
+		}
 	}
 
 }

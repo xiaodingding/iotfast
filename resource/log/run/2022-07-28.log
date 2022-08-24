@@ -1,0 +1,358 @@
+2022-07-28 09:30:54.115 client have been create successful 
+2022-07-28 09:30:54.117 [Writer Goroutine is running] 
+2022-07-28 09:30:54.117 [Reader Goroutine is running] 
+2022-07-28 09:30:54.118 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 09:30:54.118 not support control flag:0 
+2022-07-28 09:31:09.126 client(62e1e6ceef2f9b50b8000001) connect to register timeout 
+2022-07-28 09:31:09.127 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 09:31:09.129 [ERRO] read msg head error:read unix C:\Users\dwx\AppData\Local\Temp/iotfast_plugin->@: use of closed network connection 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:402
+ 
+2022-07-28 09:31:09.135 @ [conn Reader exit!] 
+2022-07-28 09:31:09.137 @ [conn Writer exit!] 
+2022-07-28 09:31:09.137 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 09:36:59.426 client have been create successful 
+2022-07-28 09:36:59.427 [Writer Goroutine is running] 
+2022-07-28 09:36:59.427 [Reader Goroutine is running] 
+2022-07-28 09:36:59.429 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 09:36:59.429 login cfg:{serial  1} 
+2022-07-28 09:37:05.994 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:402
+ 
+2022-07-28 09:37:05.995 @ [conn Reader exit!] 
+2022-07-28 09:37:05.996 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 09:37:05.996 @ [conn Writer exit!] 
+2022-07-28 10:15:21.412 client have been create successful 
+2022-07-28 10:15:21.414 [Writer Goroutine is running] 
+2022-07-28 10:15:21.414 [Reader Goroutine is running] 
+2022-07-28 10:15:21.415 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 10:15:21.416 login cfg:{serial  1} 
+2022-07-28 10:15:23.516 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:402
+ 
+2022-07-28 10:15:23.518 @ [conn Reader exit!] 
+2022-07-28 10:15:23.519 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 10:15:23.520 @ [conn Writer exit!] 
+2022-07-28 10:16:01.848 client have been create successful 
+2022-07-28 10:16:01.849 [Writer Goroutine is running] 
+2022-07-28 10:16:01.849 [Reader Goroutine is running] 
+2022-07-28 10:16:01.850 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 10:16:01.850 login cfg:{serial  1} 
+2022-07-28 10:16:16.861 [INFO] InActive device in long time, now kill it: 62e1f161ef2f9b4fa4000003, time_span:9223372036 
+2022-07-28 10:16:28.189 [ERRO] read msg head error:read unix C:\Users\dwx\AppData\Local\Temp/iotfast_plugin->@: wsarecv: An existing connection was forcibly closed by the remote host. 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:402
+ 
+2022-07-28 10:16:28.190 @ [conn Reader exit!] 
+2022-07-28 10:16:28.191 @ [conn Writer exit!] 
+2022-07-28 10:17:17.454 client have been create successful 
+2022-07-28 10:17:17.454 [Writer Goroutine is running] 
+2022-07-28 10:17:17.454 [Reader Goroutine is running] 
+2022-07-28 10:17:17.455 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 10:17:17.455 login cfg:{serial  1} 
+2022-07-28 10:17:32.466 [INFO] InActive device in long time, now kill it: 62e1f1adef2f9b4fa4000004, time_span:9223372036 
+2022-07-28 10:19:57.507 client have been create successful 
+2022-07-28 10:19:57.508 [Writer Goroutine is running] 
+2022-07-28 10:19:57.509 [Reader Goroutine is running] 
+2022-07-28 10:19:57.510 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 10:19:57.511 login cfg:{serial  1} 
+2022-07-28 10:20:12.512 [INFO] InActive device in long time, now kill it: 62e1f24def2f9b51c0000001, time_span:9223372036 
+2022-07-28 10:23:35.729 client have been create successful 
+2022-07-28 10:23:35.731 [Writer Goroutine is running] 
+2022-07-28 10:23:35.731 [Reader Goroutine is running] 
+2022-07-28 10:23:35.732 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 10:23:35.733 login cfg:{serial  1} 
+2022-07-28 10:23:35.749 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 10:23:50.743 [INFO] InActive device in long time, now kill it: 62e1f327ef2f9b22b0000001, time_span:9223372036 
+2022-07-28 10:43:14.262 client have been create successful 
+2022-07-28 10:43:14.263 Writer Goroutine is running 
+2022-07-28 10:43:14.264 Reader Goroutine is running 
+2022-07-28 10:43:14.266 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 10:43:14.266 login cfg:{serial  1} 
+2022-07-28 10:43:14.277 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:00:58.969 client have been create successful 
+2022-07-28 11:00:58.970 Writer Goroutine is running 
+2022-07-28 11:00:58.970 Reader Goroutine is running 
+2022-07-28 11:00:58.971 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:00:58.971 login cfg:{serial  1} 
+2022-07-28 11:00:58.980 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:01:08.586 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:403
+ 
+2022-07-28 11:01:08.588 @ [conn Reader exit!] 
+2022-07-28 11:01:08.588 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 11:01:08.590 session (62e1fbeaef2f9b2230000001) internal close 
+2022-07-28 11:01:08.589 @ [conn Writer exit!] 
+2022-07-28 11:07:33.336 client have been create successful 
+2022-07-28 11:07:33.337 Writer Goroutine is running 
+2022-07-28 11:07:33.337 Reader Goroutine is running 
+2022-07-28 11:07:33.338 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:07:33.338 login cfg:{serial  1} 
+2022-07-28 11:07:33.346 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:07:48.348 [INFO] InActive device in long time, now kill it: 62e1fd75ef2f9b2230000002, time_span:9223372036 
+2022-07-28 11:08:48.828 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:403
+ 
+2022-07-28 11:08:48.832 @ [conn Reader exit!] 
+2022-07-28 11:08:48.834 @ [conn Writer exit!] 
+2022-07-28 11:08:48.834 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 11:08:48.837 session (62e1fd75ef2f9b2230000002) internal close 
+2022-07-28 11:09:09.638 [INFO] {78ef774179df05177e0b5f37cfb94b1c} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-28 11:09:09.642 [ERRO] {78ef774179df05177e0b5f37cfb94b1c} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-28 11:12:29.321 [INFO] {d8097ebfa7df051711d73a5433d48af0} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-28 11:12:29.323 [ERRO] {d8097ebfa7df051711d73a5433d48af0} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-28 11:15:33.860 [INFO] {746be0b6d2df051728985a56799c0de0} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-28 11:15:33.862 [ERRO] {746be0b6d2df051728985a56799c0de0} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-28 11:16:02.657 client have been create successful 
+2022-07-28 11:16:02.658 Writer Goroutine is running 
+2022-07-28 11:16:02.658 Reader Goroutine is running 
+2022-07-28 11:16:02.659 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:16:02.660 login cfg:{serial  1} 
+2022-07-28 11:16:02.669 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:16:02.815 [ERRO] read msg head error:read unix C:\Users\dwx\AppData\Local\Temp/iotfast_plugin->@: wsarecv: An existing connection was forcibly closed by the remote host. 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:403
+ 
+2022-07-28 11:16:02.836 @ [conn Reader exit!] 
+2022-07-28 11:16:02.840 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 11:16:02.842 session (62e1ff72ef2f9b3d60000001) internal close 
+2022-07-28 11:16:02.841 @ [conn Writer exit!] 
+2022-07-28 11:16:27.070 client have been create successful 
+2022-07-28 11:16:27.070 Writer Goroutine is running 
+2022-07-28 11:16:27.070 Reader Goroutine is running 
+2022-07-28 11:16:27.071 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:16:27.072 login cfg:{serial  1} 
+2022-07-28 11:16:27.082 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:16:42.085 [INFO] InActive device in long time, now kill it: 62e1ff8bef2f9b3d60000002, time_span:9223372036 
+2022-07-28 11:18:00.896 [INFO] {5077eff2f4df05177f42467428730534} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-28 11:18:00.939 [ERRO] {5077eff2f4df05177f42467428730534} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-28 11:18:36.567 client have been create successful 
+2022-07-28 11:18:36.568 Writer Goroutine is running 
+2022-07-28 11:18:36.568 Reader Goroutine is running 
+2022-07-28 11:18:36.569 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:18:36.569 login cfg:{serial  1} 
+2022-07-28 11:18:36.578 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:18:51.571 [INFO] InActive device in long time, now kill it: 62e2000cef2f9b4894000001, time_span:9223372036 
+2022-07-28 11:19:08.252 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:403
+ 
+2022-07-28 11:19:08.254 @ [conn Reader exit!] 
+2022-07-28 11:19:08.255 @ [conn Writer exit!] 
+2022-07-28 11:19:08.256 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 11:19:08.257 session (62e2000cef2f9b4894000001) internal close 
+2022-07-28 11:19:09.418 client have been create successful 
+2022-07-28 11:19:09.420 Writer Goroutine is running 
+2022-07-28 11:19:09.420 Reader Goroutine is running 
+2022-07-28 11:19:09.420 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:19:09.421 login cfg:{serial  1} 
+2022-07-28 11:19:09.438 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:19:15.904 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:403
+ 
+2022-07-28 11:19:15.905 @ [conn Reader exit!] 
+2022-07-28 11:19:15.905 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 11:19:15.906 @ [conn Writer exit!] 
+2022-07-28 11:19:15.908 session (62e2002def2f9b4894000002) internal close 
+2022-07-28 11:29:55.773 [INFO] {a88eee649be00517bba1b3073b331fe8} [GToken][params:{"AuthExcludePaths":"[\"/api/v1/system/xxx\",\"/api/v1/system/xxx2\"]","AuthFailMsg":"请求错误或登录超时","AuthPaths":"","CacheKey":"gfToken_","CacheMode":1,"EncryptKey":"49c54195e750b04e74a8429b17aefc77","LoginPath":"","LogoutPath":"","MiddlewareType":1,"MultiLogin":true,"Timeout":10800,"TokenDelimiter":"_"}]start...  
+2022-07-28 11:29:55.776 [ERRO] {a88eee649be00517bba1b3073b331fe8} [GToken]LoginPath or LoginBeforeFunc not set 
+Stack:
+1.  github.com/xiaodingding/iotfast/library/libGtoken.(*GToken).Middleware
+    E:/src/iotfast/library/libGtoken/gtoken_group.go:27
+2.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController.func1
+    E:/src/iotfast/server/http/route/system_router.go:30
+3.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+4.  github.com/xiaodingding/iotfast/server/http/route.BindSystemController
+    E:/src/iotfast/server/http/route/system_router.go:19
+5.  github.com/xiaodingding/iotfast/server/http/route.BindController.func1
+    E:/src/iotfast/server/http/route/router.go:22
+6.  github.com/gogf/gf/v2/net/ghttp.(*RouterGroup).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:134
+7.  github.com/xiaodingding/iotfast/server/http/route.BindController
+    E:/src/iotfast/server/http/route/router.go:15
+8.  github.com/xiaodingding/iotfast/internal/cmd.glob..func1.1
+    E:/src/iotfast/internal/cmd/cmd.go:65
+9.  github.com/gogf/gf/v2/net/ghttp.(*Server).Group
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/net/ghttp/ghttp_server_router_group.go:90
+10. github.com/xiaodingding/iotfast/internal/cmd.glob..func1
+    E:/src/iotfast/internal/cmd/cmd.go:64
+11. github.com/gogf/gf/v2/os/gcmd.(*Command).doRun
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:117
+12. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValueError
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:77
+13. github.com/gogf/gf/v2/os/gcmd.(*Command).RunWithValue
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:32
+14. github.com/gogf/gf/v2/os/gcmd.(*Command).Run
+    C:/Users/dwx/go/pkg/mod/github.com/gogf/gf/v2@v2.0.6/os/gcmd/gcmd_command_run.go:26
+15. main.main
+    E:/src/iotfast/main.go:20
+ 
+2022-07-28 11:31:04.579 client have been create successful 
+2022-07-28 11:31:04.580 Writer Goroutine is running 
+2022-07-28 11:31:04.580 Reader Goroutine is running 
+2022-07-28 11:31:04.582 id:1, ver:1, proto:0, ctr:0, data:{"name":"serial","passwd":"","id":1} 
+2022-07-28 11:31:04.582 login cfg:{serial  1} 
+2022-07-28 11:31:04.592 id:2, ver:1, proto:1, ctr:2 
+2022-07-28 11:31:08.706 [ERRO] read msg head error:EOF 
+Stack:
+1.  github.com/xiaodingding/iotfast/plugin/server.(*sessionClient).readLoop
+    E:/src/iotfast/plugin/server/session.go:403
+ 
+2022-07-28 11:31:08.707 @ [conn Reader exit!] 
+2022-07-28 11:31:08.708 Conn Stop()...ConnID = 0 
+ 
+2022-07-28 11:31:08.710 session (62e202f8ef2f9b5078000001) internal close 
+2022-07-28 11:31:08.710 @ [conn Writer exit!] 

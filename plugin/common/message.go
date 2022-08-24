@@ -5,9 +5,25 @@ import (
 )
 
 const (
-	ControlRegister = iota
+	ControlLogin = iota
+	ControlRegister
 	ControlData
+	ControlHeart
+	ControlError
 	ControlClosed
+)
+
+const (
+	ProtocolTopic = iota //byte
+	ProtocolRPC
+)
+
+const (
+	ClientStaConnect = iota //connect
+	ClientStaLogin
+	ClientStaRegister
+	ClientStaData
+	ClientStaClose
 )
 
 type IMessage interface {
@@ -46,7 +62,18 @@ func NewMsgPackage(ID uint32, ctr byte, data []byte) IMessage {
 		ID:       ID,
 		Data:     data,
 		Version:  1,
-		Protocol: 0,
+		Protocol: ProtocolTopic,
+		Control:  ctr,
+	}
+}
+
+func NewMsgPackageWithProtocol(ID uint32, ctr byte, Protocol byte, data []byte) IMessage {
+	return &Message{
+		DataLen:  uint32(len(data)),
+		ID:       ID,
+		Data:     data,
+		Version:  1,
+		Protocol: Protocol,
 		Control:  ctr,
 	}
 }

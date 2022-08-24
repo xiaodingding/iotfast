@@ -16,7 +16,7 @@ type LinkSerial struct {
 	Mark         string      `orm:"mark" json:"mark"`                  // 串口标记
 	SerialName   string      `orm:"serial_name" json:"serialName"`     // 串口号
 	SerialBaund  int         `orm:"serial_baund" json:"serialBaund"`   // 串口波特率
-	SerialParity byte        `orm:"serial_parity" json:"serialParity"` // 串口校验位
+	SerialParity string      `orm:"serial_parity" json:"serialParity"` // 串口校验位
 	SerialData   int         `orm:"serial_data" json:"serialData"`     // 串口数据位
 	SerialStop   int         `orm:"serial_stop" json:"serialStop"`     // 串口停止位
 	CreatedAt    *gtime.Time `orm:"created_at" json:"createdAt"`       // 创建时间

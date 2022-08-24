@@ -71,6 +71,7 @@ type server struct {
 	pubMsg      chan PublicMsg
 	msgId       uint32
 	topics      *Topic //topic
+
 }
 
 func defaultServer() *server {
@@ -124,9 +125,9 @@ func (srv *server) unRegisterClient(client *sessionClient) {
 
 	if _, ok := srv.sessions[client.clientId]; ok {
 		delete(srv.sessions, client.clientId)
-		fmt.Printf("client id(%s) have been unregister \n", client.clientId)
+		fmt.Printf("client id(%s) have been unregister ok \n", client.clientId)
 	} else {
-		fmt.Printf("client id(%s) not register \n", client.clientId)
+		fmt.Printf("client id(%s) not register not to unregister\n", client.clientId)
 	}
 }
 
@@ -153,6 +154,16 @@ func (srv *server) GetMsgID() uint32 {
 func (srv *server) deliverMessage(srcClientID string, msg *common.TopMessage) {
 	srv.mu.Lock()
 	defer srv.mu.Unlock()
+	var pulic PublicMsg
+	pulic.clientId = srcClientID
+	pulic.msg = msg
+	srv.pubMsg <- pulic
+}
+
+func (srv *server) deliverService(srcClientID string, msg *common.TopMessage) {
+	srv.mu.Lock()
+	defer srv.mu.Unlock()
+
 	var pulic PublicMsg
 	pulic.clientId = srcClientID
 	pulic.msg = msg
@@ -379,7 +390,8 @@ func (srv *server) Start() {
 	}
 
 	// srv.Discover()
-	interAppOpen(nil)
+	// interAppOpen(nil)
+	Print()
 	go srv.eventLoop()
 	srv.serveTCP(listener)
 

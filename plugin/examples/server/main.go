@@ -1,7 +1,9 @@
 package main
 
 import (
+	_ "github.com/xiaodingding/iotfast/plugin/service"
 	plugin "github.com/xiaodingding/iotfast/plugin/server"
+	
 )
 
 func main() {

@@ -15,6 +15,7 @@ type PluginCfg struct {
 	Unixdir    string `p:"unixdir" json:"unixdir"`       //unix文件地址
 	ServerAddr string `p:"serveraddr" json:"serveraddr"` //服务器地址
 	Name       string `p:"name" json:"name"`             //名称
+	Passwd     string `p:"passwd" json:"passwd"`         //名称
 	Params     string `p:"params" json:"params"`         //参数
 }
 
@@ -25,10 +26,20 @@ type RegisterCfg struct {
 	Qos   byte   `p:"topic" json:"qos"`   //等级
 }
 
+type LoginCfg struct {
+	Name   string `p:"name" json:"name"`     //名称
+	Passwd string `p:"passwd" json:"passwd"` //名
+	Id     uint32 `p:"id" json:"id"`         //id
+}
+
 type TopicInfo struct {
 	TopicName string
 	Retain    bool
 	Qos       byte
+}
+
+type ServiceMsg struct{
+	
 }
 
 type TopicMap map[string]TopicInfo
